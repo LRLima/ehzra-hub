@@ -2,10 +2,11 @@
  * Liga o domínio ao React: lê eventos do Dexie, reduz para GameState e expõe
  * dispatch/desfazer. O estado de interface (folhas abertas, toasts) fica no Zustand.
  */
-import { createContext, useCallback, useContext, useMemo, useSyncExternalStore, type ReactNode } from 'react';
+import { createContext, useCallback, useContext, useEffect, useMemo, useSyncExternalStore, type ReactNode } from 'react';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { create } from 'zustand';
 import { db, aparelho, novoId } from './db/dexie';
+import { agendarSync, iniciarSync } from './db/sync';
 import { carregarRegras } from './domain/data';
 import type { Envelope, Evento } from './domain/events';
 import { SCHEMA_VERSION } from './domain/schemas';
@@ -79,6 +80,7 @@ export function JogoProvider({ children }: { children: ReactNode }) {
   const dispatch = useCallback<Jogo['dispatch']>(async (e, opts) => {
     const env: Envelope = { id: novoId(), em: Date.now(), aparelho: await aparelho(), v: SCHEMA_VERSION, e };
     await db.eventos.add({ ...env, enviado: 0 });
+    agendarSync();
     // Avisos calculados na hora, a partir do estado que o evento produz.
     const todos = await db.eventos.toArray();
     const depois = reduzir(regras, todos);
@@ -91,7 +93,10 @@ export function JogoProvider({ children }: { children: ReactNode }) {
   const desfazer = useCallback(async (alvo: string) => {
     const env: Envelope = { id: novoId(), em: Date.now(), aparelho: await aparelho(), v: SCHEMA_VERSION, e: { t: 'desfazer', alvo } };
     await db.eventos.add({ ...env, enviado: 0 });
+    agendarSync();
   }, []);
+
+  useEffect(() => iniciarSync(), []);
 
   const valor = useMemo<Jogo>(
     () => ({ r: regras, s, c: contexto(s), eventos: lista, pronto: eventos !== undefined, dispatch, desfazer }),

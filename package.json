@@ -15,7 +15,9 @@
     "extract": "tsx scripts/extract.ts",
     "validate-data": "tsx scripts/validate-data.ts",
     "build-data": "tsx scripts/build-data.ts",
-    "data": "npm run extract && npm run build-data"
+    "data": "npm run extract && npm run build-data",
+    "e2e:sync": "playwright test sync --project=desktop",
+    "deploy": "npm run build && wrangler deploy"
   },
   "dependencies": {
     "@fontsource/cinzel": "^5.3.0",
@@ -27,6 +29,7 @@
     "dexie-react-hooks": "^4.4.0",
     "dompurify": "^3.4.16",
     "fuse.js": "^7.5.0",
+    "jose": "^6.2.12",
     "marked": "^18.0.14",
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
@@ -34,6 +37,7 @@
     "zustand": "^5.0.15"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "^5.20260929.1",
     "@eslint/js": "^10.0.1",
     "@playwright/test": "^1.63.0",
     "@testing-library/react": "^16.3.3",
@@ -55,6 +59,7 @@
     "typescript-eslint": "^8.71.0",
     "vite": "^8.3.1",
     "vite-plugin-pwa": "^1.3.0",
-    "vitest": "^5.0.2"
+    "vitest": "^5.0.2",
+    "wrangler": "^4.143.1"
   }
 }

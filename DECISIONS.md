@@ -51,3 +51,12 @@ Pontos que continuam em aberto (não mudei, só registrei): Iniciativa +4 com DE
 | Validação 2024 na UI | Selo discreto no grimório e no detalhe, nunca no HUD de combate | A ferramenta não pode discutir com o mestre na mesa |
 | Efeitos com duração | Descem ao avançar a rodada; em 0 viram "expirou?" e você dispensa | O mestre nem sempre conta rodadas |
 | "Executar passo" | Abre o Conjurar já preenchido, nunca gasta sozinho | Plano de turno muda no meio do turno |
+| Desfazer no toast | Só a ação mais recente mostra "Desfazer"; as antigas se desfazem pelo Log | Dois botões iguais empilhados desfaziam a ação errada (achado pelo teste) |
+| Topo fixo | Altura medida em tempo real; o conteúdo desce junto quando a faixa de concentração aparece | A faixa cobria o botão Descansar (achado pelo teste) |
+| Sync | Troca de eventos por cursor (`seq` do D1), `INSERT OR IGNORE` por id, lotes de 200 | Idempotente: rede caindo no meio não duplica nem perde |
+| Login expirado | `fetch` com `redirect: 'manual'`; redirect vira "Entrar de novo", que navega para `/api/entrar` (fora do cache do service worker) | O PWA nunca guarda a tela de login como se fosse dado |
+| Dono dos eventos | E-mail do JWT do Access, conferido com as chaves públicas do time | Defesa em profundidade além do próprio Access |
+| Playwright local | Usa o Edge instalado (`channel: 'msedge'`); no CI usa o Chromium do Playwright | Evita baixar 170 MB de navegador no PC da empresa |
+| Tamanho do JS | ~236 KB gzip num pacote só | Aceitável para PWA que baixa uma vez; dividir o código é melhoria futura |
+| Fontes | Self-host via @fontsource | Google Fonts quebra offline e vaza dados |
+| Tema | Só escuro por enquanto | Pedido do prompt ("escuro como padrão"); tema claro fica para depois |

@@ -1,0 +1,26 @@
+// Configuração do Cloudflare Worker. Explicação de cada campo no DEPLOY.md.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "ehzra-hub",
+  "main": "worker/index.ts",
+  "compatibility_date": "2026-09-01",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": ["/api/*"]
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "ehzra-hub",
+      "database_id": "PREENCHER_COM_O_ID_DO_D1",
+      "migrations_dir": "worker/migrations"
+    }
+  ],
+  "vars": {
+    "TEAM_DOMAIN": "PREENCHER_https://SEU-TIME.cloudflareaccess.com",
+    "POLICY_AUD": "PREENCHER_COM_A_AUD_TAG"
+  },
+  "observability": { "enabled": true }
+}

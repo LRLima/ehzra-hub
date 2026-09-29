@@ -2,7 +2,9 @@
 import { useRef, useState } from 'react';
 import {
   CaretRightIcon, FeatherIcon, SwordIcon, SunIcon, ArrowUpIcon, WarningIcon, ListBulletsIcon, DownloadSimpleIcon, SparkleIcon,
+  CloudIcon, CloudSlashIcon,
 } from '@phosphor-icons/react';
+import { useSync, sincronizar, reentrar, type StatusSync as StatusSyncT } from '../db/sync';
 import { useJogo, useUI, ir } from '../store';
 import { Markdown, SpellCard } from '../ui/components';
 import { carregarLore, carregarEstrategiasOriginais } from '../domain/data';
@@ -48,6 +50,7 @@ function Menu() {
   return (
     <>
       <h1 className="page-title">Mais</h1>
+      <StatusSync />
       <div className="stack">
         {item('#/mais/estrategias', SwordIcon, 'Estratégias', 'Playbooks por turno com custo de mana')}
         {item('#/mais/avatar', SunIcon, 'Avatar dos Quatro Túmulos', s.avatar ? 'Ativo agora' : 'Role o d4 e descubra quem responde')}
@@ -60,6 +63,32 @@ function Menu() {
         {item('#/mais/backup', DownloadSimpleIcon, 'Backup', 'Exportar e importar tudo em JSON')}
       </div>
     </>
+  );
+}
+
+const TEXTO_SYNC: Record<StatusSyncT, string> = {
+  desligado: 'Só neste aparelho (sem servidor de sync nesta versão).',
+  offline: 'Sem internet. Tudo continua salvo aqui e sobe quando a conexão voltar.',
+  sincronizando: 'Sincronizando...',
+  ok: 'Sincronizado com a nuvem.',
+  login: 'Seu login expirou. Suas ações estão guardadas neste aparelho.',
+  erro: 'Falha ao sincronizar. Tento de novo em instantes.',
+};
+
+function StatusSync() {
+  const { status, ultimo, detalhe } = useSync();
+  const { eventos } = useJogo();
+  return (
+    <div className={`card row${status === 'login' || status === 'erro' ? ' aviso perigo' : ''}`} style={{ marginBottom: 10 }} data-testid="sync">
+      <span className="grow" style={{ fontSize: 15 }}>
+        {status === 'offline' ? <CloudSlashIcon size={16} /> : <CloudIcon size={16} />} {TEXTO_SYNC[status]}
+        {ultimo && status === 'ok' && <span className="faint"> Última vez: {new Date(ultimo).toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' })}.</span>}
+        {detalhe && status === 'erro' && <span className="faint"> ({detalhe})</span>}
+        <span className="faint"> {eventos.length} eventos.</span>
+      </span>
+      {status === 'login' ? <button className="btn mini ouro" onClick={reentrar}>Entrar de novo</button>
+        : status !== 'desligado' && <button className="btn mini" onClick={() => sincronizar()}>Sincronizar</button>}
+    </div>
   );
 }
 
