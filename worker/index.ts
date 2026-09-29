@@ -25,12 +25,20 @@ let jwks: ReturnType<typeof createRemoteJWKSet> | null = null;
 async function dono(req: Request, env: Env): Promise<string | null> {
   if (env.DEV_DONO) return env.DEV_DONO;
   const token = req.headers.get('cf-access-jwt-assertion');
-  if (!token || !env.TEAM_DOMAIN || !env.POLICY_AUD) return null;
+  if (!token || !env.TEAM_DOMAIN || !env.POLICY_AUD) {
+    console.warn('auth: sem token do Access', { temToken: !!token });
+    return null;
+  }
   jwks ??= createRemoteJWKSet(new URL(`${env.TEAM_DOMAIN}/cdn-cgi/access/certs`));
   try {
     const { payload } = await jwtVerify(token, jwks, { issuer: env.TEAM_DOMAIN, audience: env.POLICY_AUD });
+    if (typeof payload.email !== 'string') console.warn('auth: token sem e-mail', { claims: Object.keys(payload), type: payload.type });
     return typeof payload.email === 'string' ? payload.email.toLowerCase() : null;
-  } catch {
+  } catch (e) {
+    // Mostra só metadados do token (nunca o token inteiro) para diagnosticar.
+    let meta: unknown = null;
+    try { const p = JSON.parse(atob(token.split('.')[1].replace(/-/g, '+').replace(/_/g, '/'))); meta = { iss: p.iss, aud: p.aud, type: p.type, temEmail: !!p.email }; } catch { /* ignora */ }
+    console.warn('auth: token recusado', { erro: (e as Error).message, meta });
     return null;
   }
 }
