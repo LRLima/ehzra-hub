@@ -1,0 +1,292 @@
+{
+  "schemaVersion": 1,
+  "paginas": [
+    {
+      "id": "retrato",
+      "eyebrow": "Personas · D&D 2024",
+      "titulo": "Ehzra Thanaris",
+      "sub": "Portador da Foice do Crepúsculo Eterno",
+      "blocos": [
+        {
+          "tipo": "paragrafo",
+          "md": "Nascido em Fervora, cidade de fontes termais e devoção a Apolo, filho do Sacerdote do Sol Altharion. Morto na noite em que um dragão vermelho reduziu sua cidade a cinzas, e devolvido à vida pela vontade de Myrkul, o Senhor dos Ossos, para caminhar entre o crepúsculo da vida e o silêncio da morte."
+        },
+        {
+          "tipo": "titulo",
+          "md": "Alinhamento — Leal Neutro"
+        },
+        {
+          "tipo": "paragrafo",
+          "md": "Ehzra segue rigorosamente as leis da morte impostas por seu deus, encarando-a como passagem natural e inevitável. Não hesita em matar quando necessário, mas o faz de forma impessoal, buscando causar o mínimo de dor possível. Sua moralidade é pragmática e orientada pela ordem — não pela bondade ou pela maldade — e ele age segundo um código estruturado, cumprindo sua missão sem impulsos caóticos ou egoístas."
+        }
+      ]
+    },
+    {
+      "id": "historia",
+      "eyebrow": "Lore",
+      "titulo": "A Queda de Fervora",
+      "sub": "A história de Ehzra Thanaris, tal como anotada em seu grimório.",
+      "blocos": [
+        {
+          "tipo": "paragrafo",
+          "md": "Nas colinas envoltas por vapores e águas cálidas, erguia-se a cidade de Fervora, um lugar de devoção e sossego. Ali, as fontes termais cantavam sob a brisa suave, e os habitantes diziam que suas águas carregavam a bênção de Apolo. Foi nessa terra de névoas douradas que nasceu **Ehzra Thanaris**, filho de Altharion, o Sacerdote do Sol."
+        },
+        {
+          "tipo": "paragrafo",
+          "md": "Altharion era um homem de coração ardente e devoção inflexível, cuja voz ecoava nas pedras do templo como o rugido do próprio Apolo. Mas onde o fogo da fé queimava brilhante no pai, no filho havia apenas silêncio e hesitação. Ehzra era um jovem de fala baixa e olhar tímido, e, desde os primeiros dias de aprendizado, demonstrava uma dificuldade incomum em dominar as palavras sagradas. Era como se a luz do deus se recusasse a penetrar sua alma, como se um véu invisível o separasse do brilho divino."
+        },
+        {
+          "tipo": "paragrafo",
+          "md": "Altharion, impaciente e austero, interpretava isso como indolência. Para ele, a falta de progresso de Ehzra era uma afronta à sua fé. A cada erro nos cânticos, a cada ritual falhado, o pai fazia cair sobre o filho um julgamento severo. Ehzra, por sua vez, aceitava cada reprimenda com uma humildade melancólica, incapaz de conceber que o homem que via como um pilar da verdade pudesse estar errado."
+        },
+        {
+          "tipo": "paragrafo",
+          "md": "Foi numa noite serena que o destino desceu sobre Fervora, não com o murmúrio das águas, mas com o rugido de asas batendo contra o firmamento. O céu, antes estrelado, foi tomado por uma sombra carmesim. Do alto, um dragão vermelho emergiu, sua figura titânica iluminada pelo brilho das chamas que lançava sobre a cidade."
+        },
+        {
+          "tipo": "paragrafo",
+          "md": "Como um trovão na escuridão, a voz do dragão reverberou pelas colinas:"
+        },
+        {
+          "tipo": "citacao",
+          "md": "\"O Culto do Dragão ascenderá! Fervora cairá, e seus tesouros alimentarão o poder dos deuses antigos!\""
+        },
+        {
+          "tipo": "paragrafo",
+          "md": "Sem aviso, o fogo consumiu as casas, os templos e as fontes termais, transformando a cidade num inferno de vapor e cinzas. Ehzra acordou com o calor sufocante e o som de pedras se despedaçando. Ele correu para o templo, buscando o pai, mas encontrou apenas caos e gritos."
+        },
+        {
+          "tipo": "paragrafo",
+          "md": "Entre as chamas e a fumaça, ele vislumbrou uma figura que se destacava da destruição: um homem em armadura reluzente, seu peito gravado com o símbolo de um dragão de platina. O cavaleiro avançava em sua direção, o brilho de sua armadura contrastando com a devastação ao redor. Ele parecia desesperado, como se tentasse gritar um aviso, mas as palavras jamais alcançaram Ehzra. Um instante depois, tudo se desfez em frio, escuridão e silêncio absoluto."
+        },
+        {
+          "tipo": "paragrafo",
+          "md": "No vazio que se seguiu, Ehzra não encontrou a luz acolhedora de Apolo, mas uma presença fria e antiga. Do abismo, surgiu uma voz grave, inalterada pelo tempo:"
+        },
+        {
+          "tipo": "citacao",
+          "md": "\"Você não pereceu por acaso, filho da mortalidade. O fio de seu destino ainda não foi cortado. Levante-se, Ehzra Thanaris, pois a eternidade reclama sua alma.\""
+        },
+        {
+          "tipo": "paragrafo",
+          "md": "Diante dele, mesmo na escuridão do além, apareceu uma arma: uma foice com uma lâmina que parecia beber a própria luz ao seu redor. Era a **Foice do Crepúsculo Eterno**, um artefato que outrora servira a Myrkul, o Senhor dos Ossos."
+        },
+        {
+          "tipo": "paragrafo",
+          "md": "Ao tocar o cabo da arma, Ehzra sentiu sua alma ser arrastada de volta à carne fria de seu corpo. Ele ergueu-se de sua cova improvisada, mas não como um homem vivo. Sua pele, agora acinzentada como a cinza da fornalha, e seus olhos, vazios de emoção, denunciavam sua nova condição: um morto que caminhava entre os vivos."
+        },
+        {
+          "tipo": "paragrafo",
+          "md": "Os sussurros da foice contaram-lhe verdades que ele nunca compreendera em vida. Ele era um descendente distante de Myrkul, marcado pelo sangue antigo do deus antes de sua ascensão. A morte, que ele temera e buscara entender, não era um fim, mas uma passagem — uma porta que ele agora guardava como arauto do equilíbrio."
+        },
+        {
+          "tipo": "paragrafo",
+          "md": "Revigorado por seu renascimento sombrio, Ehzra caminhou por entre as ruínas de Fervora, agora apenas um cemitério de cinzas e vapor. O Culto do Dragão não apenas havia destruído sua cidade, mas corrompia o ciclo natural da vida e da morte com sua ganância e rituais profanos. Eles haviam desafiado o equilíbrio eterno, e a foice exigia que Ehzra restaurasse aquilo que fora rompido."
+        },
+        {
+          "tipo": "paragrafo",
+          "md": "A cada aldeia por onde passava, sua figura gerava temor e fascínio. Sua voz, calma e desprovida de emoção, proferia palavras que pareciam carregar o peso da eternidade:"
+        },
+        {
+          "tipo": "citacao",
+          "md": "\"O fogo reclama o que é efêmero; as cinzas guardam o que perdura.\"  \n\"Não lamente os que partiram. Eles seguem um caminho mais claro do que o nosso.\""
+        },
+        {
+          "tipo": "paragrafo",
+          "md": "Mas em seu coração silencioso, Ehzra se questionava sobre a figura do cavaleiro do dragão de platina. Quem era ele? Um inimigo do culto, um salvador que chegara tarde demais, ou uma peça de um jogo ainda maior? Essa dúvida o impulsionava tanto quanto a voz da foice, guiando-o para além das sombras do passado e em direção ao desconhecido."
+        },
+        {
+          "tipo": "paragrafo",
+          "md": "**Ehzra Thanaris, o Portador da Foice do Crepúsculo**, agora caminha entre o crepúsculo da vida e o silêncio da morte. Sua jornada é solene, não para buscar vingança, mas para lembrar aos vivos que todas as coisas, até mesmo as mais brilhantes, devem passar para o outro lado."
+        }
+      ]
+    },
+    {
+      "id": "personalidade",
+      "eyebrow": "Psique",
+      "titulo": "Personalidade",
+      "sub": "As três camadas de Ehzra: o que se vê, o que se sente e o que se esconde.",
+      "blocos": [
+        {
+          "tipo": "titulo",
+          "md": "Externo"
+        },
+        {
+          "tipo": "paragrafo",
+          "md": "Um homem forte fisicamente, de presença intimidadora, graças à sua estatura e feições. Ele age com uma postura estoica; a frieza e a calma são seus métodos para alcançar seus objetivos."
+        },
+        {
+          "tipo": "paragrafo",
+          "md": "A morte não é algo banal; é parte inevitável da trajetória de todo ser humano. Não deve ser vista com aversão, pois é a porta que conduz à vida eterna. No entanto, não devemos torná-la uma tortura ou algo aterrador, pois isso afronta seu verdadeiro significado e propósito."
+        },
+        {
+          "tipo": "titulo",
+          "md": "Interno"
+        },
+        {
+          "tipo": "paragrafo",
+          "md": "Um garoto humilde e gentil. Seu objetivo não é buscar vingança ou se tornar um herói, mas apenas evitar que aquilo que lhe trouxe dor atinja os inocentes."
+        },
+        {
+          "tipo": "paragrafo",
+          "md": "A morte foi gentil com ele, aliviando suas dores e apagando as memórias de seus traumas. Foi uma experiência aconchegante e tranquila. Sempre que necessário, ele refletirá essa mesma calma nos outros, com gentileza, independentemente de serem amigos ou inimigos."
+        },
+        {
+          "tipo": "titulo",
+          "md": "Subconsciente"
+        },
+        {
+          "tipo": "paragrafo",
+          "md": "Tanto sua infância quanto seu momento de pré-consumação da morte lhe trouxeram traumas e revelações que se infundiram profundamente à sua psique. Ele tornou-se exageradamente humilde e desprovido de apegos, pois foi ensinado, desde cedo, a não se valorizar e a desprezar-se, em especial por seu pai."
+        },
+        {
+          "tipo": "paragrafo",
+          "md": "Antes de sua morte, enquanto fugia dos ataques flamejantes do dragão vermelho, ele encontrou seu pai no meio da multidão. Aproximou-se dele acreditando que o pai o levaria à segurança."
+        },
+        {
+          "tipo": "paragrafo",
+          "md": "Nesse momento, ao ouvir seus clamores por ajuda, Altharion, pai de Ehzra, virou-se com desprezo, arremessou-o contra o chão e, com palavras desprovidas de apreço ou carinho, amaldiçoou seu nascimento e o vínculo de parentesco entre eles. Revelou a Ehzra que descobrira a verdade sobre a linhagem da mãe do garoto, que falecera poucos anos após seu nascimento, deixando poucas lembranças. Altharion disse que, se soubesse desse fato antes, teria matado a mulher ainda grávida, evitando dar à luz àquela prole."
+        },
+        {
+          "tipo": "paragrafo",
+          "md": "Absorver essas palavras, em um momento de desespero, partiu o coração e a consciência de Ehzra, a ponto de levantar uma faca contra seu próprio pai e apunhalá-lo violentamente. Depois, ajoelhou-se sob o cadáver do homem, caindo em um estado catatônico. Foi quando um cavalheiro prateado gritou por ele, demonstrando preocupação. Mesmo a certa distância, o grito foi suficiente para trazer um breve momento de sobriedade a Ehzra, mas esse momento foi logo interrompido por um ataque devastador do dragão vermelho, que resultou em sua morte."
+        },
+        {
+          "tipo": "paragrafo",
+          "md": "Após renascer graças à bênção de Myrkul, o Senhor dos Ossos, as revelações de seu pré-morte foram apagadas junto à sua vida. Porém, ele continua a carregar os traumas causados por sua breve vida, temendo aqueles que se assemelham àquele que traiu seu entendimento da realidade."
+        }
+      ]
+    },
+    {
+      "id": "apendice",
+      "eyebrow": "Apêndice",
+      "titulo": "Ezrah Thanaris — versão alternativa",
+      "sub": "Um rascunho da mesma origem, registrado como NPC na campanha \"Flamméria em Chamas\".",
+      "blocos": [
+        {
+          "tipo": "caixa",
+          "md": "Encontrado em: Flamméria em Chamas → Personagens NPCs → Flamméria\n\nEste texto usa a grafia **\"Ezrah\"** e ambienta a mesma premissa (um curandeiro que perde tudo para o Culto do Dragão e recebe poder de Myrkul) em outra aldeia e contexto de campanha, com Tiamat no lugar de Apolo como culto rival. Provavelmente um rascunho anterior ou paralelo da origem de Ehzra, reaproveitado como NPC."
+        },
+        {
+          "tipo": "separador",
+          "md": ""
+        },
+        {
+          "tipo": "paragrafo",
+          "md": "Em uma terra distante, onde os ventos sussurravam segredos dos deuses antigos e as árvores se erguem com sabedoria, existia uma aldeia de paz e luz. Seu povo, devoto e nobre, sempre honrou as forças da vida e da cura, com seus dias repletos de reverência aos deuses divinos. Entre eles, estava um jovem homem, forte de coração e suave de espírito, destinado a seguir os passos de seu pai, um curandeiro e guardião do conhecimento sagrado."
+        },
+        {
+          "tipo": "paragrafo",
+          "md": "Mas o mundo é frequentemente implacável com tal serenidade."
+        },
+        {
+          "tipo": "paragrafo",
+          "md": "Em uma noite envolta em um silêncio terrível, o céu sangrou em vermelho, lançando um brilho ominoso sobre a terra. Das profundezas dos céus, uma tempestade como nenhuma outra desceu sobre a aldeia. Era a seita do Culto do Dragão, seguidores da deusa Tiamat, cuja sede de poder e destruição não conhecia limites. Eles devastaram a terra com fogo e fúria, suas vozes malignas abafando os gritos dos inocentes. Os templos foram profanados, os mortos foram desonrados, e os corações do povo da aldeia foram arrancados de seus lares."
+        },
+        {
+          "tipo": "paragrafo",
+          "md": "O jovem, preso no caos, lutou ferozmente, mas foi impotente para proteger aqueles que amava. Seu pai caiu diante das mãos dos cultistas, e a aldeia foi consumida pelas chamas. Somente ele sobreviveu, embora os motivos para sua sorte lhe fossem desconhecidos. Ao se encontrar de pé, sozinho, no meio das cinzas, ele descobriu, em suas mãos, o relicário de seu pai: uma antiga foice, antes símbolo da vida cíclica, agora distorcida pelo sangue derramado ao seu redor. Era um lembrete de tudo o que ele havia perdido, mas também a chave para seu novo destino. E no silêncio, uma voz o alcançou. Fria e distante, falou-lhe não de misericórdia, mas de poder."
+        },
+        {
+          "tipo": "paragrafo",
+          "md": "A voz prometia vingança. Oferecia-lhe o domínio sobre a morte, caso ele abandonasse seu passado e abraçasse a escuridão."
+        },
+        {
+          "tipo": "paragrafo",
+          "md": "Desesperado, despedaçado e tomado pela dor, o jovem cedeu. Ele vestiu o manto dos caídos, vermelho como o sangue, bordado com runas antigas mais velhas que o próprio tempo. Colocou os braceletes dourados, como espinhos, cujas voltas agora o amarravam a este destino sombrio. Empunhou a foice, uma arma massiva de julgamento, com uma lâmina única, grande como um homem, tão afiada quanto a dor que o consumia."
+        },
+        {
+          "tipo": "paragrafo",
+          "md": "Os anos passaram, e o curandeiro de outrora se transformou em um arauto da morte. Já não mais caminhava pela senda da luz, pois essa via fora despedaçada diante de seus olhos. Agora, ele buscava não só vingança, mas respostas: respostas sobre a escuridão que havia tomado tudo o que ele amava. Nas profundezas de seu novo poder, ele sentia o toque frio da morte ao seu lado, guiando-o."
+        },
+        {
+          "tipo": "paragrafo",
+          "md": "Entretanto, o Culto do Dragão não o esqueceu. Eles também reconheceram o poder que agora residia nele. Para eles, ele era tanto uma arma quanto um possível aliado, alguém que poderia servir aos desígnios de Tiamat e ajudar a trazer a deusa da destruição ao mundo. Sussurraram-lhe promessas: promessas de ressuscitar seus entes queridos, de oferecer-lhe o domínio sobre a vida e a morte. Procuravam curvar sua vontade, fazê-lo um de seus próprios."
+        },
+        {
+          "tipo": "paragrafo",
+          "md": "Mas ele não era tolo. Embora as ofertas do Culto o tentassem, estas apenas o lembravam da tortura que havia sofrido. Sabia que o poder deles não passava de uma cortina, uma ilusão que procurava devorá-lo, assim como devorou sua aldeia. Contudo, no fundo, uma parte dele permanecia dividida. Ele era movido por seu desejo de vingança, mas também pela esperança de que, em sua busca pela destruição do Culto, ele pudesse descobrir a verdade sobre sua sobrevivência, e talvez, apenas talvez, encontrar uma maneira de redimir a alma que já estava perdida para a escuridão."
+        },
+        {
+          "tipo": "paragrafo",
+          "md": "Mas foi a própria morte que o guiou até ali."
+        },
+        {
+          "tipo": "paragrafo",
+          "md": "Mirkhul, o Deus da Morte, o senhor dos mortos e das almas, foi quem lhe concedeu os poderes que agora ele detém. Ao aceitar o pacto, o jovem não apenas abraçou a vingança, mas também se tornou um arauto da morte, um servo do próprio Mirkhul, que o guiaria em sua busca por justiça. O deus, em sua sabedoria sombria, viu em sua dor e solidão uma alma que poderia servir aos seus próprios desígnios, e lhe ofereceu o poder que poderia destruir todos os que estavam ligados ao Culto de Tiamat. A foice, agora seu símbolo, não era apenas uma arma de julgamento, mas também um reflexo do poder sombrio que ele agora servia."
+        },
+        {
+          "tipo": "paragrafo",
+          "md": "E assim, ele caminha, o peso da foice sobre o ombro, o manto vermelho como uma sombra a envolvê-lo, e seus olhos, vazios e cinzentos, buscam a destruição do Culto. Mas enquanto ele os caça, sente a tentação das promessas sombrias, testando sua firmeza. Será ele sucumbir à própria escuridão que jurou destruir, ou encontrará a redenção no silêncio da morte?"
+        },
+        {
+          "tipo": "paragrafo",
+          "md": "*Somente o tempo dirá.*"
+        }
+      ]
+    },
+    {
+      "id": "reliquia",
+      "eyebrow": "Relíquia",
+      "titulo": "Ceifadora de Myrkul",
+      "sub": "Foice Longa · Relíquia Sintonizada",
+      "blocos": [
+        {
+          "tipo": "paragrafo",
+          "md": "A sintonia com essa foice é extremamente sensível: caso fique 1 hora sem tocá-la, você perde a sintonização. Enquanto está sintonizado a esta foice, você volta à vida mesmo que morra — isso leva 1d4 horas, e você não perde a sintonia nesse período."
+        },
+        {
+          "tipo": "paragrafo",
+          "md": "Além disso, as seguintes magias estão sempre preparadas, e você pode conjurá-las gastando somente metade da mana:"
+        }
+      ]
+    },
+    {
+      "id": "avatar",
+      "eyebrow": "Habilidade Suprema · Custo: 1 Inspiração",
+      "titulo": "Avatar dos Quatro Túmulos",
+      "sub": "Ao ativar, Ehzra sente sua alma ser \"escolhida\" por uma entidade — a escolha é caótica, mesmo que ele possua todas as relíquias.",
+      "blocos": [
+        {
+          "tipo": "paragrafo",
+          "md": "O aspecto manifestado é determinado por uma rolagem de 1d4:"
+        }
+      ]
+    }
+  ],
+  "diario": {
+    "eyebrow": "Mesa · Diário",
+    "titulo": "Diário de Sessões",
+    "sub": "Vida, mana e treinamento, sessão a sessão.",
+    "treinamento": "Treinamento: Estilo de Combate — 2/15",
+    "sessoes": [
+      {
+        "titulo": "Sessão 13/07 — Combate",
+        "resumo": [
+          "Vida: 60/60",
+          "Mana: 38"
+        ],
+        "notas": []
+      },
+      {
+        "titulo": "Sessão 29/03",
+        "resumo": [
+          "Vida: 50/60",
+          "Mana: 38"
+        ],
+        "notas": [
+          "15:45 — Vida 50/60 · Mana 21/34 · Dois Mortos-Vivos + 2 CA (Fio da Obediência) + armaduras encontradas = 17 CA.",
+          "16:22 — Vida 70/70 · Mana 40/40 · Dois Mortos-Vivos + 2 CA (Fio da Obediência) + armaduras encontradas = 17 CA."
+        ]
+      },
+      {
+        "titulo": "Sessão 29/03 (continuação)",
+        "resumo": [
+          "Vida: 70/70",
+          "Mana: 46"
+        ],
+        "notas": []
+      }
+    ]
+  }
+}

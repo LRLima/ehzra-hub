@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "fonte": "Resumo próprio das condições do PHB 2024 / SRD 5.2 (Rules Glossary)",
+  "condicoes": [
+    { "id": "agarrado", "nome": "Agarrado", "nomeOriginal": "Grappled", "efeitos": ["Deslocamento 0.", "Desvantagem em ataques contra qualquer um que não seja quem agarrou.", "Quem agarrou pode arrastar você (custa deslocamento extra)."] },
+    { "id": "amedrontado", "nome": "Amedrontado", "nomeOriginal": "Frightened", "efeitos": ["Desvantagem em testes de habilidade e ataques enquanto vê a fonte do medo.", "Não pode se aproximar da fonte por vontade própria."] },
+    { "id": "atordoado", "nome": "Atordoado", "nomeOriginal": "Stunned", "efeitos": ["Incapacitado.", "Falha automática em salvaguardas de FOR e DES.", "Ataques contra ele têm vantagem."] },
+    { "id": "caido", "nome": "Caído", "nomeOriginal": "Prone", "efeitos": ["Só rasteja, ou gasta metade do deslocamento para levantar.", "Desvantagem nos próprios ataques.", "Ataques a até 1,5 m têm vantagem; de mais longe, desvantagem."] },
+    { "id": "cego", "nome": "Cego", "nomeOriginal": "Blinded", "efeitos": ["Não enxerga e falha testes que dependem de visão.", "Ataques contra ele têm vantagem; os dele têm desvantagem."] },
+    { "id": "contido", "nome": "Contido", "nomeOriginal": "Restrained", "efeitos": ["Deslocamento 0.", "Ataques contra ele têm vantagem; os dele têm desvantagem.", "Desvantagem em salvaguardas de DES."] },
+    { "id": "enfeiticado", "nome": "Enfeitiçado", "nomeOriginal": "Charmed", "efeitos": ["Não pode atacar nem mirar dano em quem enfeitiçou.", "Quem enfeitiçou tem vantagem em testes sociais contra ele."] },
+    { "id": "envenenado", "nome": "Envenenado", "nomeOriginal": "Poisoned", "efeitos": ["Desvantagem em ataques e testes de habilidade."] },
+    { "id": "exaustao", "nome": "Exaustão", "nomeOriginal": "Exhaustion", "efeitos": ["Níveis 1 a 6; no 6 a criatura morre.", "Testes d20 sofrem −2 por nível.", "Deslocamento −1,5 m por nível.", "Descanso longo remove 1 nível."] },
+    { "id": "incapacitado", "nome": "Incapacitado", "nomeOriginal": "Incapacitated", "efeitos": ["Sem ação, ação bônus nem reação.", "Perde a concentração.", "Não pode falar.", "Desvantagem na iniciativa se estiver assim ao rolar."] },
+    { "id": "inconsciente", "nome": "Inconsciente", "nomeOriginal": "Unconscious", "efeitos": ["Incapacitado e Caído; solta o que segura.", "Deslocamento 0.", "Falha automática em salvaguardas de FOR e DES.", "Ataques contra ele têm vantagem; acertos a até 1,5 m são críticos."] },
+    { "id": "invisivel", "nome": "Invisível", "nomeOriginal": "Invisible", "efeitos": ["Vantagem na iniciativa se surpreender.", "Não pode ser alvo de efeitos que exigem ver o alvo.", "Ataques contra ele têm desvantagem; os dele têm vantagem."] },
+    { "id": "paralisado", "nome": "Paralisado", "nomeOriginal": "Paralyzed", "efeitos": ["Incapacitado e deslocamento 0.", "Falha automática em salvaguardas de FOR e DES.", "Ataques contra ele têm vantagem; acertos a até 1,5 m são críticos."] },
+    { "id": "petrificado", "nome": "Petrificado", "nomeOriginal": "Petrified", "efeitos": ["Vira pedra: Incapacitado e deslocamento 0.", "Falha automática em salvaguardas de FOR e DES; ataques contra ele têm vantagem.", "Resistência a todo dano e imunidade a veneno."] },
+    { "id": "surdo", "nome": "Surdo", "nomeOriginal": "Deafened", "efeitos": ["Não ouve e falha testes que dependem de audição."] }
+  ]
+}

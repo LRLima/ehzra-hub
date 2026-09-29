@@ -1,0 +1,430 @@
+{
+  "_leia": "Curadoria das magias. A chave é o nome como estava na ficha original. Campos mecânicos refletem a FICHA; a versão oficial 2024 fica em v2024 e só vale se o id estiver em character.aprovacoes2024. Componentes, escola, duração, concentração, ritual, tempo e alcance são derivados do original pelo build-data.ts.",
+  "Soar os Mortos": {
+    "id": "soar-os-mortos", "nome": "Soar os Mortos", "nomeOriginal": "Toll the Dead",
+    "tags": ["dano"], "fonte": "PHB 2024", "listaClerigo": true, "status2024": "mudou", "itemValidacao": "M1", "origens": ["classe"],
+    "resumo": "Sino fúnebre: SAB ou dano necrótico, maior se o alvo já estiver ferido.",
+    "resolucao": { "tipo": "salvaguarda", "atributo": "sab" },
+    "dano": [
+      { "rotulo": "Alvo com PV máximo", "dados": "1d8", "tipo": "necrotico", "porNivel": { "5": "2d8", "11": "3d8", "17": "4d8" } },
+      { "rotulo": "Alvo ferido", "dados": "1d12", "tipo": "necrotico", "porNivel": { "5": "2d12", "11": "2d12", "17": "4d12" }, "condicao": "se o alvo não estiver com PV máximo" }
+    ],
+    "relacionadas": ["ceifador", "conjurador-potente"],
+    "v2024": {
+      "texto": "Escalonamento oficial: 2d8/2d12 no 5º, 3d8/3d12 no 11º, 4d8/4d12 no 17º. Sempre necrótico.",
+      "dano": [
+        { "rotulo": "Alvo com PV máximo", "dados": "1d8", "tipo": "necrotico", "porNivel": { "5": "2d8", "11": "3d8", "17": "4d8" } },
+        { "rotulo": "Alvo ferido", "dados": "1d12", "tipo": "necrotico", "porNivel": { "5": "2d12", "11": "3d12", "17": "4d12" }, "condicao": "se o alvo não estiver com PV máximo" }
+      ]
+    }
+  },
+  "Orientação": {
+    "id": "orientacao", "nome": "Orientação", "nomeOriginal": "Guidance",
+    "tags": ["buff", "utilidade"], "fonte": "PHB 2024", "listaClerigo": true, "status2024": "mudou", "itemValidacao": "M2", "origens": ["classe"],
+    "resumo": "+1d4 num teste de habilidade de quem você tocar.",
+    "resolucao": { "tipo": "automatico" },
+    "v2024": {
+      "texto": "Ação. Toque numa criatura disposta e escolha uma perícia: até o fim, ela soma 1d4 em qualquer teste com essa perícia.",
+      "tempo": { "tipo": "acao", "texto": "1 ação" },
+      "resumo": "+1d4 em todos os testes de uma perícia escolhida, por 1 minuto."
+    }
+  },
+  "Light": {
+    "id": "luz", "nome": "Luz", "nomeOriginal": "Light",
+    "tags": ["utilidade"], "fonte": "PHB 2024", "listaClerigo": true, "status2024": "ok", "itemValidacao": "M3", "origens": ["classe"],
+    "resumo": "Objeto brilha: luz forte em 6 m e fraca por mais 6 m.",
+    "material": "um vagalume ou musgo fosforescente"
+  },
+  "Lâmina Necrótica": {
+    "id": "lamina-necrotica", "nome": "Lâmina Necrótica", "nomeOriginal": "Booming Blade (reflavor)",
+    "tags": ["dano", "controle"], "fonte": "Homebrew (reflavor necrótico de Booming Blade, Tasha)", "listaClerigo": false, "status2024": "homebrew", "itemValidacao": "M4", "origens": ["classe"],
+    "resumo": "Ataque com arma que pune o alvo se ele se mover e bloqueia cura.",
+    "alcanceTexto": "Pessoal (raio de 1,5 m)",
+    "resolucao": { "tipo": "ataque", "alcance": "corpo" },
+    "dano": [
+      { "rotulo": "Ao acertar (além da arma)", "dados": "0d8", "tipo": "necrotico", "porNivel": { "5": "1d8", "11": "2d8", "17": "3d8" } },
+      { "rotulo": "Se ele se mover", "dados": "1d8", "tipo": "necrotico", "porNivel": { "5": "2d8", "11": "3d8", "17": "4d8" }, "condicao": "salvaguarda de CON; na falha, não recupera PV até o fim do seu próximo turno" }
+    ],
+    "relacionadas": ["ceifadora-de-myrkul", "ceifador"]
+  },
+  "Salve o Moribundo": {
+    "id": "salve-o-moribundo", "nome": "Salve o Moribundo", "nomeOriginal": "Spare the Dying",
+    "tags": ["cura", "utilidade"], "fonte": "PHB 2024", "listaClerigo": true, "status2024": "mudou", "itemValidacao": "M5", "origens": ["classe"],
+    "resumo": "Estabiliza uma criatura com 0 PV.",
+    "resolucao": { "tipo": "automatico" },
+    "v2024": {
+      "texto": "Alcance de 4,5 m, que dobra no 5º (9 m), 11º (18 m) e 17º (36 m). No nível 8: 9 m. O alvo fica Estável.",
+      "alcance": { "tipo": "distancia", "metros": 9, "pes": 30, "texto": "9 m (nível 5+)" }
+    }
+  },
+  "Necropsia": {
+    "id": "necropsia", "nome": "Necropsia",
+    "tags": ["utilidade"], "fonte": "Homebrew", "listaClerigo": false, "status2024": "homebrew", "itemValidacao": "M6", "origens": ["classe"],
+    "resumo": "Sem anotação no grimório."
+  },
+  "Ceremony": {
+    "id": "cerimonia", "nome": "Cerimônia", "nomeOriginal": "Ceremony",
+    "tags": ["buff", "utilidade"], "fonte": "Xanathar (2017)", "listaClerigo": false, "status2024": "legado", "itemValidacao": "M7", "origens": ["classe"],
+    "resumo": "Rito religioso que dá uma bênção temporária aos participantes.",
+    "material": "25 po de pó de prata, consumido"
+  },
+  "Infligir Ferimentos": {
+    "id": "infligir-ferimentos", "nome": "Infligir Ferimentos", "nomeOriginal": "Inflict Wounds",
+    "tags": ["dano"], "fonte": "PHB 2024 (texto da ficha é 2014)", "listaClerigo": true, "status2024": "mudou", "itemValidacao": "M8", "origens": ["classe"],
+    "resumo": "Toque necrótico pesado. Combina com Toque da Morte.",
+    "resolucao": { "tipo": "ataque", "alcance": "corpo" },
+    "dano": [{ "dados": "3d10", "tipo": "necrotico", "porCiclo": "1d10" }],
+    "relacionadas": ["toque-da-morte", "canalizar-divindade"],
+    "v2024": {
+      "texto": "Salvaguarda de CON: 2d10 necrótico, metade no sucesso, +1d10 por ciclo. Sem ataque, então não dispara o Toque da Morte.",
+      "resolucao": { "tipo": "salvaguarda", "atributo": "con", "metadeNoSucesso": true },
+      "dano": [{ "dados": "2d10", "tipo": "necrotico", "porCiclo": "1d10" }]
+    }
+  },
+  "Curar Ferimentos": {
+    "id": "curar-ferimentos", "nome": "Curar Ferimentos", "nomeOriginal": "Cure Wounds",
+    "tags": ["cura"], "fonte": "PHB 2024 (texto da ficha é 2014)", "listaClerigo": true, "status2024": "mudou", "itemValidacao": "M9", "origens": ["classe"],
+    "resumo": "Cura pelo toque.",
+    "resolucao": { "tipo": "automatico" },
+    "cura": { "dados": "1d8", "somaMod": "sab", "porCiclo": "1d8" },
+    "v2024": {
+      "texto": "Cura 2d8 + SAB, +2d8 por ciclo. Escola: Abjuração.",
+      "cura": { "dados": "2d8", "somaMod": "sab", "porCiclo": "2d8" },
+      "escola": "Abjuração"
+    }
+  },
+  "Palavra Curativa": {
+    "id": "palavra-curativa", "nome": "Palavra Curativa", "nomeOriginal": "Healing Word",
+    "tags": ["cura"], "fonte": "PHB 2024 (texto da ficha é 2014)", "listaClerigo": true, "status2024": "mudou", "itemValidacao": "M10", "origens": ["classe"],
+    "resumo": "Cura à distância com ação bônus.",
+    "resolucao": { "tipo": "automatico" },
+    "cura": { "dados": "1d4", "somaMod": "sab", "porCiclo": "1d4" },
+    "v2024": {
+      "texto": "Cura 2d4 + SAB, +2d4 por ciclo. Escola: Abjuração.",
+      "cura": { "dados": "2d4", "somaMod": "sab", "porCiclo": "2d4" },
+      "escola": "Abjuração"
+    }
+  },
+  "Sanctuary": {
+    "id": "santuario", "nome": "Santuário", "nomeOriginal": "Sanctuary",
+    "tags": ["defesa"], "fonte": "PHB 2024", "listaClerigo": true, "status2024": "ok", "itemValidacao": "M11", "origens": ["classe"],
+    "resumo": "Inimigos precisam passar em SAB para atacar o protegido.",
+    "resolucao": { "tipo": "salvaguarda", "atributo": "sab" },
+    "material": "um caco de espelho"
+  },
+  "Raio da Doença": {
+    "id": "raio-da-doenca", "nome": "Raio da Doença", "nomeOriginal": "Ray of Sickness",
+    "tags": ["dano", "controle"], "fonte": "PHB 2024 / Domínio da Morte (DMG 2014)", "listaClerigo": false, "status2024": "mudou", "itemValidacao": "M12", "origens": ["dominio"],
+    "resumo": "Raio de veneno que pode deixar o alvo Envenenado.",
+    "resolucao": { "tipo": "ataque", "alcance": "distancia" },
+    "dano": [{ "dados": "2d8", "tipo": "veneno", "porCiclo": "1d8" }],
+    "condicoes": ["envenenado"],
+    "v2024": {
+      "texto": "Sem salvaguarda: no acerto, 2d8 veneno e o alvo fica Envenenado até o fim do seu próximo turno."
+    }
+  },
+  "Vitalidade Falsa": {
+    "id": "vitalidade-falsa", "nome": "Vitalidade Falsa", "nomeOriginal": "False Life",
+    "tags": ["defesa"], "fonte": "PHB 2024 / Domínio da Morte (DMG 2014)", "listaClerigo": false, "status2024": "ok", "itemValidacao": "M13", "origens": ["dominio"],
+    "resumo": "PV temporários em você.",
+    "resolucao": { "tipo": "automatico" },
+    "cura": { "dados": "2d4", "bonus": 4, "bonusPorCiclo": 5, "pvTemporario": true }
+  },
+  "Batedores de Sarcófagos": {
+    "id": "batedores-de-sarcofagos", "nome": "Batedores de Sarcófagos",
+    "tags": ["buff", "mortos-vivos"], "fonte": "Homebrew", "listaClerigo": false, "status2024": "homebrew", "itemValidacao": "M14", "origens": ["classe"],
+    "cicloNota": "Registrada na ficha como 1º ciclo, mas a nota original diz 2º.",
+    "resumo": "Até 3 mortos-vivos ganham Percepção, Furtividade e +1d8 no ataque furtivo.",
+    "resolucao": { "tipo": "automatico" },
+    "dano": [{ "rotulo": "1º ataque fora da visão do inimigo (por morto-vivo)", "dados": "1d8", "tipo": "necrotico" }],
+    "relacionadas": ["animar-morto", "fio-da-obediencia"]
+  },
+  "Fio da Obediência": {
+    "id": "fio-da-obediencia", "nome": "Fio da Obediência",
+    "tags": ["buff", "defesa", "mortos-vivos"], "fonte": "Homebrew", "listaClerigo": false, "status2024": "homebrew", "itemValidacao": "M15", "origens": ["classe"],
+    "cicloNota": "Registrada na ficha como 1º ciclo, mas a nota original diz 2º.",
+    "resumo": "Morto-vivo age sozinho, resiste a controle e ganha +2 CA perto de outro.",
+    "resolucao": { "tipo": "automatico" },
+    "alvosPorCiclo": 1,
+    "relacionadas": ["animar-morto", "batedores-de-sarcofagos", "campeao-do-tumulo"]
+  },
+  "Comando": {
+    "id": "comando", "nome": "Comando", "nomeOriginal": "Command",
+    "tags": ["controle"], "fonte": "PHB 2024", "listaClerigo": true, "status2024": "mudou", "itemValidacao": "M16", "origens": ["classe"],
+    "resumo": "Ordem de uma palavra: SAB ou o alvo obedece no turno dele.",
+    "resolucao": { "tipo": "salvaguarda", "atributo": "sab" },
+    "v2024": {
+      "texto": "Só 5 ordens: Aproxime-se, Solte, Fuja, Rasteje, Pare. Duração instantânea. +1 alvo por ciclo acima do 1º.",
+      "duracao": { "texto": "Instantânea", "rodadas": null },
+      "alvosPorCiclo": 1
+    }
+  },
+  "Escudo da Fé": {
+    "id": "escudo-da-fe", "nome": "Escudo da Fé", "nomeOriginal": "Shield of Faith",
+    "tags": ["defesa", "buff"], "fonte": "PHB 2024", "listaClerigo": true, "status2024": "ok", "itemValidacao": "M17", "origens": ["classe"],
+    "resumo": "+2 de CA numa criatura.",
+    "resolucao": { "tipo": "automatico" },
+    "material": "um pergaminho com texto sagrado"
+  },
+  "Proteção Contra o Bem e o Mal": {
+    "id": "protecao-contra-o-bem-e-o-mal", "nome": "Proteção contra o Bem e o Mal", "nomeOriginal": "Protection from Evil and Good",
+    "tags": ["defesa"], "fonte": "PHB 2024", "listaClerigo": true, "status2024": "ok", "itemValidacao": "M18", "origens": ["classe"],
+    "resumo": "Aberrações, celestiais, corruptores e cia. têm desvantagem contra o alvo.",
+    "resolucao": { "tipo": "automatico" },
+    "material": "um frasco de água benta de 25 po, consumido"
+  },
+  "Calm Emotions": {
+    "id": "acalmar-emocoes", "nome": "Acalmar Emoções", "nomeOriginal": "Calm Emotions",
+    "tags": ["controle"], "fonte": "PHB 2024", "listaClerigo": true, "status2024": "ok", "itemValidacao": "M19", "origens": ["classe"],
+    "resumo": "Suprime hostilidade, medo ou encantamento numa esfera de 6 m.",
+    "area": "esfera de 6 m",
+    "resolucao": { "tipo": "salvaguarda", "atributo": "car" }
+  },
+  "Lesser Restoration": {
+    "id": "restauracao-menor", "nome": "Restauração Menor", "nomeOriginal": "Lesser Restoration",
+    "tags": ["cura", "utilidade"], "fonte": "PHB 2024", "listaClerigo": true, "status2024": "mudou", "itemValidacao": "M20", "origens": ["classe"],
+    "resumo": "Remove uma doença ou condição debilitante.",
+    "resolucao": { "tipo": "automatico" },
+    "v2024": {
+      "texto": "Ação bônus. Remove Cego, Surdo, Paralisado ou Envenenado. Não cura mais doença.",
+      "tempo": { "tipo": "acaoBonus", "texto": "1 ação bônus" },
+      "resumo": "Ação bônus: remove Cego, Surdo, Paralisado ou Envenenado."
+    }
+  },
+  "Prayer of Healing": {
+    "id": "oracao-de-cura", "nome": "Oração de Cura", "nomeOriginal": "Prayer of Healing",
+    "tags": ["cura"], "fonte": "PHB 2024", "listaClerigo": true, "status2024": "mudou", "itemValidacao": "M21", "origens": ["classe"],
+    "resumo": "Cura até seis criaturas depois de 10 minutos de oração.",
+    "alvo": "até 6 criaturas",
+    "resolucao": { "tipo": "automatico" },
+    "cura": { "dados": "2d8", "somaMod": "sab", "porCiclo": "1d8" },
+    "v2024": {
+      "texto": "Até 5 criaturas ganham os benefícios de um descanso curto + 2d8 PV (sem modificador), 1 vez por descanso longo. +1d8 por ciclo. Não é ritual. Escola: Abjuração.",
+      "ritual": false,
+      "alvo": "até 5 criaturas",
+      "cura": { "dados": "2d8", "porCiclo": "1d8" },
+      "escola": "Abjuração"
+    }
+  },
+  "Silence": {
+    "id": "silencio", "nome": "Silêncio", "nomeOriginal": "Silence",
+    "tags": ["controle"], "fonte": "PHB 2024", "listaClerigo": true, "status2024": "ok", "itemValidacao": "M22", "origens": ["classe"],
+    "resumo": "Esfera de 6 m sem som: bloqueia magias com componente verbal.",
+    "area": "esfera de 6 m",
+    "resolucao": { "tipo": "automatico" }
+  },
+  "Cegueira e Surdez": {
+    "id": "cegueira-e-surdez", "nome": "Cegueira e Surdez", "nomeOriginal": "Blindness/Deafness",
+    "tags": ["controle"], "fonte": "PHB 2024 / Domínio da Morte (DMG 2014)", "listaClerigo": true, "status2024": "mudou", "itemValidacao": "M23", "origens": ["dominio"],
+    "resumo": "CON ou fica Cego ou Surdo; repete no fim de cada turno.",
+    "resolucao": { "tipo": "salvaguarda", "atributo": "con" },
+    "condicoes": ["cego", "surdo"],
+    "alvosPorCiclo": 1,
+    "v2024": {
+      "texto": "Alcance de 36 m (120 pés). Escola: Transmutação.",
+      "alcance": { "tipo": "distancia", "metros": 36, "pes": 120, "texto": "36 m" },
+      "escola": "Transmutação"
+    }
+  },
+  "Raio do Enfraquecimento": {
+    "id": "raio-do-enfraquecimento", "nome": "Raio do Enfraquecimento", "nomeOriginal": "Ray of Enfeeblement",
+    "tags": ["controle"], "fonte": "PHB 2024 / Domínio da Morte (DMG 2014)", "listaClerigo": false, "status2024": "mudou", "itemValidacao": "M24", "origens": ["dominio"],
+    "resumo": "O alvo causa metade do dano com armas de Força.",
+    "resolucao": { "tipo": "ataque", "alcance": "distancia" },
+    "v2024": {
+      "texto": "Salvaguarda de CON em vez de ataque. Na falha: desvantagem em testes d20 de FOR e −1d8 em toda rolagem de dano; repete no fim de cada turno. No sucesso: desvantagem no próximo ataque.",
+      "resolucao": { "tipo": "salvaguarda", "atributo": "con" },
+      "resumo": "CON ou desvantagem em FOR e −1d8 em cada dano que causar."
+    }
+  },
+  "Repouso Gentil": {
+    "id": "repouso-gentil", "nome": "Repouso Gentil", "nomeOriginal": "Gentle Repose",
+    "tags": ["utilidade", "mortos-vivos"], "fonte": "PHB 2024", "listaClerigo": true, "status2024": "mudou", "itemValidacao": "M25", "origens": ["ceifadora"],
+    "resumo": "Protege um cadáver de decomposição e reanimação por 10 dias.",
+    "resolucao": { "tipo": "automatico" },
+    "material": "2 pc, colocadas nos olhos do corpo",
+    "relacionadas": ["falar-com-os-mortos", "animar-morto"],
+    "v2024": {
+      "texto": "Ritual. Não prende a alma nem é pré-requisito de Falar com os Mortos: só impede o corpo de virar morto-vivo e pausa o prazo de ressurreição.",
+      "ritual": true
+    }
+  },
+  "Taxidermia de Ehzra": {
+    "id": "taxidermia-de-ehzra", "nome": "Taxidermia de Ehzra",
+    "tags": ["utilidade", "mortos-vivos"], "fonte": "Homebrew", "listaClerigo": false, "status2024": "homebrew", "itemValidacao": "M26", "origens": ["classe"],
+    "resumo": "Sem anotação no grimório."
+  },
+  "Animar Morto": {
+    "id": "animar-morto", "nome": "Animar Morto", "nomeOriginal": "Animate Dead",
+    "tags": ["invocacao", "mortos-vivos"], "fonte": "PHB 2024", "listaClerigo": true, "status2024": "ok", "itemValidacao": "M27", "origens": ["dominio", "ceifadora"],
+    "resumo": "Ergue um esqueleto ou zumbi sob seu controle por 24 h.",
+    "resolucao": { "tipo": "automatico" },
+    "alvosPorCiclo": 2,
+    "material": "uma gota de sangue, um pedaço de carne e uma pitada de pó de osso",
+    "relacionadas": ["fio-da-obediencia", "batedores-de-sarcofagos", "campeao-do-tumulo", "despelar"]
+  },
+  "Aura de Vitalidade": {
+    "id": "aura-de-vitalidade", "nome": "Aura de Vitalidade", "nomeOriginal": "Aura of Vitality",
+    "tags": ["cura"], "fonte": "PHB 2024", "listaClerigo": true, "status2024": "mudou", "itemValidacao": "M29", "origens": ["classe"],
+    "resumo": "Aura de 9 m: ação bônus por turno para curar 2d6.",
+    "area": "emanação de 9 m",
+    "resolucao": { "tipo": "automatico" },
+    "cura": { "dados": "2d6" },
+    "v2024": {
+      "texto": "Só componente V. Cura 2d6 numa criatura na aura ao criá-la e no início de cada turno seu, sem gastar ação bônus. Escola: Abjuração.",
+      "componentes": { "v": true, "s": false, "m": false },
+      "escola": "Abjuração",
+      "resumo": "Aura de 9 m: cura 2d6 no início de cada turno seu, sem ação."
+    }
+  },
+  "Dispel Magic": {
+    "id": "dissipar-magia", "nome": "Dissipar Magia", "nomeOriginal": "Dispel Magic",
+    "tags": ["utilidade"], "fonte": "PHB 2024", "listaClerigo": true, "status2024": "ok", "itemValidacao": "M30", "origens": ["classe"],
+    "resumo": "Encerra magias de 3º ciclo ou menor; acima, teste de SAB.",
+    "resolucao": { "tipo": "automatico" }
+  },
+  "Mass Healing Word": {
+    "id": "palavra-curativa-em-massa", "nome": "Palavra Curativa em Massa", "nomeOriginal": "Mass Healing Word",
+    "tags": ["cura"], "fonte": "PHB 2024", "listaClerigo": true, "status2024": "mudou", "itemValidacao": "M33", "origens": ["classe"],
+    "resumo": "Cura até seis aliados com ação bônus.",
+    "alvo": "até 6 criaturas",
+    "resolucao": { "tipo": "automatico" },
+    "cura": { "dados": "1d4", "somaMod": "sab", "porCiclo": "1d4" },
+    "v2024": {
+      "texto": "Cura 2d4 + SAB, +1d4 por ciclo. Escola: Abjuração.",
+      "cura": { "dados": "2d4", "somaMod": "sab", "porCiclo": "1d4" },
+      "escola": "Abjuração"
+    }
+  },
+  "Falar com os Mortos": {
+    "id": "falar-com-os-mortos", "nome": "Falar com os Mortos", "nomeOriginal": "Speak with Dead",
+    "tags": ["utilidade"], "fonte": "PHB 2024", "listaClerigo": true, "status2024": "ok", "itemValidacao": "M28", "origens": ["classe"],
+    "resumo": "Cinco perguntas a um cadáver.",
+    "resolucao": { "tipo": "automatico" },
+    "material": "incenso aceso",
+    "relacionadas": ["repouso-gentil"]
+  },
+  "Spirit Guardians": {
+    "id": "guardioes-espirituais", "nome": "Guardiões Espirituais", "nomeOriginal": "Spirit Guardians",
+    "tags": ["dano", "controle"], "fonte": "PHB 2024", "listaClerigo": true, "status2024": "mudou", "itemValidacao": "M31", "origens": ["classe"],
+    "resumo": "Espíritos em volta de você ferem e atrasam inimigos.",
+    "area": "emanação de 4,5 m",
+    "alcanceTexto": "Pessoal (raio de 4,5 m)",
+    "resolucao": { "tipo": "salvaguarda", "atributo": "sab", "metadeNoSucesso": true },
+    "dano": [{ "dados": "3d8", "tipo": "radiante", "porCiclo": "1d8", "condicao": "radiante para bom ou neutro, necrótico para mau" }],
+    "material": "um pergaminho de oração",
+    "v2024": {
+      "texto": "Deslocamento pela metade. Dano quando a área entra no espaço da criatura, quando ela entra ou quando termina o turno ali; 1 vez por turno. Escola: Conjuração.",
+      "escola": "Conjuração"
+    }
+  },
+  "Manto Espiritual": {
+    "id": "manto-espiritual", "nome": "Manto Espiritual", "nomeOriginal": "Spirit Shroud",
+    "tags": ["dano", "buff"], "fonte": "Tasha (2020)", "listaClerigo": false, "status2024": "legado", "itemValidacao": "M32", "origens": ["classe"],
+    "resumo": "Seus ataques corpo a corpo causam dano extra e bloqueiam cura.",
+    "resolucao": { "tipo": "automatico" },
+    "dano": [{ "rotulo": "Por acerto de ataque", "dados": "1d8", "tipo": "escolha", "porNivel": { "5": "2d8", "11": "3d8" }, "condicao": "necrótico, radiante ou gélido" }],
+    "relacionadas": ["intencao-mortal", "lamina-necrotica"],
+    "v2024": {
+      "texto": "Texto oficial (Tasha): o dano cresce por ciclo, +1d8 a cada 2 ciclos acima do 3º (2d8 no 5º, 3d8 no 7º). Não cresce com o nível do personagem.",
+      "dano": [{ "rotulo": "Por acerto de ataque", "dados": "1d8", "tipo": "escolha", "porCiclo": "1d8", "porCicloACada": 2, "condicao": "necrótico, radiante ou gélido" }]
+    }
+  },
+  "Life Transference": {
+    "id": "transferencia-de-vida", "nome": "Transferência de Vida", "nomeOriginal": "Life Transference",
+    "tags": ["cura"], "fonte": "Xanathar (2017)", "listaClerigo": false, "status2024": "legado", "itemValidacao": "M34", "origens": ["ceifadora"],
+    "resumo": "Você sofre dano necrótico e cura o dobro em outra criatura.",
+    "resolucao": { "tipo": "automatico" },
+    "dano": [{ "rotulo": "Você sofre (não reduzível)", "dados": "4d8", "tipo": "necrotico", "porCiclo": "1d8", "condicao": "o alvo recupera o dobro do dano que você sofreu" }]
+  },
+  "Toque Vampírico": {
+    "id": "toque-vampirico", "nome": "Toque Vampírico", "nomeOriginal": "Vampiric Touch",
+    "tags": ["dano", "cura"], "fonte": "PHB 2024 / Domínio da Morte (DMG 2014)", "listaClerigo": false, "status2024": "ok", "itemValidacao": "M35", "origens": ["dominio"],
+    "resumo": "Toque que drena vida; repete como ação enquanto durar.",
+    "alcanceTexto": "Pessoal",
+    "resolucao": { "tipo": "ataque", "alcance": "corpo" },
+    "dano": [{ "dados": "3d6", "tipo": "necrotico", "porCiclo": "1d6", "condicao": "você recupera metade do dano causado" }]
+  },
+  "Impor Maldição": {
+    "id": "impor-maldicao", "nome": "Impor Maldição", "nomeOriginal": "Bestow Curse",
+    "tags": ["controle", "dano"], "fonte": "PHB 2024", "listaClerigo": true, "status2024": "mudou", "itemValidacao": "M36", "origens": ["classe"],
+    "resumo": "SAB ou fica amaldiçoado com um de quatro efeitos.",
+    "resolucao": { "tipo": "salvaguarda", "atributo": "sab" },
+    "dano": [{ "rotulo": "Opção 4: extra por acerto", "dados": "1d8", "tipo": "necrotico", "condicao": "só se escolheu a quarta maldição" }],
+    "v2024": {
+      "texto": "Opção 1: desvantagem em testes e salvaguardas do atributo. Opção 3: SAB no início do turno ou é forçado a usar Esquivar. 4º ciclo: 10 min com concentração; 5º e 6º: 8 h sem concentração; 7º e 8º: 24 h; 9º: até ser dissipada."
+    }
+  },
+  "Intenção Mortal": {
+    "id": "intencao-mortal", "nome": "Intenção Mortal",
+    "tags": ["dano", "buff"], "fonte": "Homebrew (variante à distância de Spirit Shroud)", "listaClerigo": false, "status2024": "homebrew", "itemValidacao": "M37", "origens": ["classe"],
+    "resumo": "Seus ataques à distância causam dano extra e bloqueiam cura.",
+    "resolucao": { "tipo": "automatico" },
+    "dano": [{ "rotulo": "Por acerto de ataque à distância", "dados": "1d8", "tipo": "escolha", "porNivel": { "5": "2d8", "11": "3d8" }, "condicao": "necrótico, radiante ou gélido" }],
+    "relacionadas": ["manto-espiritual", "soar-os-mortos"]
+  },
+  "Guardian of Faith": {
+    "id": "guardiao-da-fe", "nome": "Guardião da Fé", "nomeOriginal": "Guardian of Faith",
+    "tags": ["dano", "defesa"], "fonte": "PHB 2024", "listaClerigo": true, "status2024": "ok", "itemValidacao": "M38", "origens": ["classe"],
+    "resumo": "Guardião espectral fere inimigos que se aproximam.",
+    "resolucao": { "tipo": "salvaguarda", "atributo": "des", "metadeNoSucesso": true },
+    "dano": [{ "dados": "20", "tipo": "radiante", "condicao": "inimigo a até 3 m; some após causar 60 de dano no total" }]
+  },
+  "Banishment": {
+    "id": "banimento", "nome": "Banimento", "nomeOriginal": "Banishment",
+    "tags": ["controle"], "fonte": "PHB 2024", "listaClerigo": true, "status2024": "ok", "itemValidacao": "M39", "origens": ["classe"],
+    "resumo": "CAR ou a criatura some para outro plano enquanto durar.",
+    "resolucao": { "tipo": "salvaguarda", "atributo": "car" },
+    "alvosPorCiclo": 1,
+    "material": "um pentagrama"
+  },
+  "Praga": {
+    "id": "praga", "nome": "Praga", "nomeOriginal": "Blight",
+    "tags": ["dano"], "fonte": "PHB 2024 / Domínio da Morte (DMG 2014)", "listaClerigo": false, "status2024": "mudou", "itemValidacao": "M40", "origens": ["dominio"],
+    "resumo": "Drena a vida de um alvo: 8d8 necrótico.",
+    "resolucao": { "tipo": "salvaguarda", "atributo": "con", "metadeNoSucesso": true },
+    "dano": [{ "dados": "8d8", "tipo": "necrotico", "porCiclo": "1d8" }],
+    "v2024": {
+      "texto": "Sem exceção para mortos-vivos e constructos. Criatura Planta falha automaticamente (sem dano máximo)."
+    }
+  },
+  "Ala da Morte": {
+    "id": "ala-da-morte", "nome": "Ala da Morte", "nomeOriginal": "Death Ward",
+    "tags": ["defesa"], "fonte": "PHB 2024", "listaClerigo": true, "status2024": "ok", "itemValidacao": "M41", "origens": ["dominio", "ceifadora"],
+    "resumo": "A primeira queda a 0 PV vira 1 PV.",
+    "resolucao": { "tipo": "automatico" }
+  },
+  "Campeão do Túmulo": {
+    "id": "campeao-do-tumulo", "nome": "Campeão do Túmulo",
+    "tags": ["buff", "mortos-vivos"], "fonte": "Homebrew", "listaClerigo": false, "status2024": "homebrew", "itemValidacao": "M42", "origens": ["classe"],
+    "cicloNota": "5º ciclo: só pode ser conjurada a partir do nível 9.",
+    "resumo": "Um morto-vivo vira campeão: PV ×3, +3 CA, +2d8 necrótico.",
+    "resolucao": { "tipo": "automatico" },
+    "dano": [
+      { "rotulo": "Ataques do campeão", "dados": "2d8", "tipo": "necrotico" },
+      { "rotulo": "Explosão ao cair a 0 PV", "dados": "4d10", "tipo": "necrotico", "condicao": "CON, raio de 3 m, 1 vez por combate" }
+    ],
+    "relacionadas": ["animar-morto", "fio-da-obediencia"]
+  },
+  "Despelar": {
+    "id": "despelar", "nome": "Despelar",
+    "tags": ["utilidade", "mortos-vivos"], "fonte": "Homebrew", "listaClerigo": false, "status2024": "homebrew", "itemValidacao": "M43", "origens": ["grimorio"],
+    "resumo": "Deixa um cadáver só nos ossos, pronto para animar.",
+    "resolucao": { "tipo": "automatico" },
+    "relacionadas": ["animar-morto"]
+  },
+  "Minguar Ossos": {
+    "id": "minguar-ossos", "nome": "Minguar Ossos",
+    "tags": ["utilidade", "mortos-vivos"], "fonte": "Homebrew", "listaClerigo": false, "status2024": "homebrew", "itemValidacao": "M45", "origens": ["grimorio"],
+    "resumo": "Encolhe um cadáver ou morto-vivo para 1/5 do tamanho.",
+    "resolucao": { "tipo": "automatico" },
+    "relacionadas": ["bolsa-de-ossos"]
+  },
+  "Bolsa de Ossos": {
+    "id": "bolsa-de-ossos", "nome": "Bolsa de Ossos",
+    "tags": ["utilidade", "mortos-vivos"], "fonte": "Homebrew", "listaClerigo": false, "status2024": "homebrew", "itemValidacao": "M44", "origens": ["grimorio"],
+    "resumo": "Guarda um morto-vivo desmontado num saco de até 2 kg.",
+    "resolucao": { "tipo": "automatico" },
+    "relacionadas": ["minguar-ossos", "animar-morto"]
+  }
+}

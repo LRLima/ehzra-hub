@@ -1,0 +1,24 @@
+{
+  "_leia": "Regras homebrew. Os textos do Avatar e da Ceifadora vêm do original (data/extracted) no build-data.ts; aqui ficam só os números.",
+  "mana": {
+    "fonte": "Variante Pontos de Magia, DMG 2014 (decidido em 29/09/2026)",
+    "custoPorCiclo": [2, 3, 5, 6, 7, 9, 10, 11, 13],
+    "maximoPorNivel": [4, 6, 14, 17, 27, 32, 38, 44, 57, 64, 73, 73, 83, 83, 94, 94, 107, 114, 123, 133],
+    "cicloMaximoPorNivel": [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 9, 9],
+    "limitePorDescansoAPartirDoCiclo": 6
+  },
+  "ceifadora": {
+    "magias": ["animar-morto", "transferencia-de-vida", "repouso-gentil", "ala-da-morte"],
+    "fatorCusto": 0.5,
+    "arredondamento": "baixo",
+    "ressurreicaoHoras": "1d4",
+    "perdaSintoniaMinutos": 60
+  },
+  "avatar": {
+    "custo": "1 Inspiração",
+    "recarga": "amanhecer",
+    "duracaoRodadas": 10,
+    "ids": ["myrkul", "bhaal", "rainha-corvo", "jergal"]
+  },
+  "treinamento": [{ "nome": "Estilo de Combate", "atual": 2, "total": 15 }]
+}

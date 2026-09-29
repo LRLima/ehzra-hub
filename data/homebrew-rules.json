@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "mana": {
+    "fonte": "Variante Pontos de Magia, DMG 2014 (decidido em 29/09/2026)",
+    "custoPorCiclo": [
+      2,
+      3,
+      5,
+      6,
+      7,
+      9,
+      10,
+      11,
+      13
+    ],
+    "maximoPorNivel": [
+      4,
+      6,
+      14,
+      17,
+      27,
+      32,
+      38,
+      44,
+      57,
+      64,
+      73,
+      73,
+      83,
+      83,
+      94,
+      94,
+      107,
+      114,
+      123,
+      133
+    ],
+    "cicloMaximoPorNivel": [
+      1,
+      1,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5,
+      5,
+      6,
+      6,
+      7,
+      7,
+      8,
+      8,
+      9,
+      9,
+      9,
+      9
+    ],
+    "limitePorDescansoAPartirDoCiclo": 6
+  },
+  "ceifadora": {
+    "magias": [
+      "animar-morto",
+      "transferencia-de-vida",
+      "repouso-gentil",
+      "ala-da-morte"
+    ],
+    "fatorCusto": 0.5,
+    "arredondamento": "baixo",
+    "ressurreicaoHoras": "1d4",
+    "perdaSintoniaMinutos": 60
+  },
+  "avatar": {
+    "custo": "1 Inspiração",
+    "recarga": "amanhecer",
+    "duracaoRodadas": 10,
+    "aspectos": [
+      {
+        "d4": 1,
+        "id": "myrkul",
+        "nome": "Myrkul",
+        "titulo": "o Senhor dos Ossos",
+        "citacao": "No fim, tudo se desfaz em pó, e o pó obedece a mim.",
+        "visual": "os ossos de Ehzra atravessam a pele, formando uma armadura espinhenta.",
+        "efeitos": [
+          "**Mestre das Marionetes:** sempre que você reduzir uma criatura a 0 pontos de vida a até 18 m de você, ela se ergue automaticamente como um esqueleto ou zumbi sob seu controle, até um número de criaturas igual ao seu modificador de Sabedoria + bônus de proficiência.",
+          "**Reino da Morte:** enquanto durar o Avatar, criaturas mortas-vivas dentro de um raio igual ao seu modificador de Sabedoria + bônus de proficiência ganham resistência a dano cortante, perfurante e contundente, e recebem +1d6 de dano necrótico em seus ataques."
+        ]
+      },
+      {
+        "d4": 2,
+        "id": "bhaal",
+        "nome": "Bhaal",
+        "titulo": "o Senhor do Assassinato",
+        "citacao": "A oferenda do sangue é o único idioma que os deuses escutam.",
+        "visual": "sangue escurecido escorre de todas as aberturas do corpo, formando glifos tribais sob a pele.",
+        "efeitos": [
+          "+3 m de velocidade e vantagem no primeiro ataque de cada turno.",
+          "Ao atacar, recupera metade do dano necrótico infligido em PV.",
+          "Não pode ser amedrontado enquanto durar a forma."
+        ]
+      },
+      {
+        "d4": 3,
+        "id": "rainha-corvo",
+        "nome": "A Rainha Corvo",
+        "titulo": "Senhora dos Espíritos",
+        "citacao": "As almas não partem, orbitam, em silêncio, até que eu as libere.",
+        "visual": "a capa transmuta em penas negras e arroxeadas, cercada por orbes espirituais azulados.",
+        "efeitos": [
+          "Voo de 9 m (asas de sombra e pena) e visão/ataque contra criaturas invisíveis ou etéreas.",
+          "Ao reduzir uma criatura a 0 PV, ganha 1 Alma Espiritual (máx. igual ao mod. de Sabedoria, mín. 1).",
+          "Com ao menos 1 Alma: ataques corpo a corpo recebidos causam 1d8 de dano necrótico ao agressor; se cortante, perfurante ou de impacto, teste de Sabedoria CD 15 ou fica assombrado (desvantagem no próximo ataque).",
+          "Ação bônus — Explosão Espiritual: libera todas as almas; inimigos a até 4,5 m fazem teste de Constituição CD 16, sofrendo 2d8 de dano necrótico por alma liberada (metade em sucesso)."
+        ]
+      },
+      {
+        "d4": 4,
+        "id": "jergal",
+        "nome": "Jergal",
+        "titulo": "o Escriba do Fim",
+        "citacao": "Nem luz, nem trevas: apenas o registro.",
+        "visual": "Ehzra conjura um papiro e uma pena; sua voz ecoa como três vozes em uníssono.",
+        "efeitos": [
+          "Resistência a dano necrótico e psíquico.",
+          "Uma vez por ativação — Julgamento Final: escolhe uma criatura a até 9 m, que faz teste de Constituição CD 16, sofrendo 5d12 de dano necrótico (metade em sucesso).",
+          "Criaturas mortas por esse dano não podem ser ressuscitadas por meios comuns até o próximo amanhecer."
+        ]
+      }
+    ]
+  },
+  "treinamento": [
+    {
+      "nome": "Estilo de Combate",
+      "atual": 2,
+      "total": 15
+    }
+  ]
+}

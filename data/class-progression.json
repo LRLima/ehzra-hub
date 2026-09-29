@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "classe": "Clérigo",
+  "fonte": "PHB 2024 (https://dnd2024.wikidot.com/cleric:main) + Domínio da Morte DMG 2014 (legado aprovado)",
+  "dadoDeVida": 8,
+  "pvMedio": 5,
+  "niveis": [
+    { "nivel": 1, "proficiencia": 2, "features": ["Conjuração", "Ordem Divina"], "canalizar": 0, "truques": 3, "preparadas": 4, "espacos": [2,0,0,0,0,0,0,0,0], "subclasse": ["Ceifador", "Proficiência Bônus (armas marciais)"] },
+    { "nivel": 2, "proficiencia": 2, "features": ["Canalizar Divindade"], "canalizar": 2, "truques": 3, "preparadas": 5, "espacos": [3,0,0,0,0,0,0,0,0], "subclasse": ["Toque da Morte"] },
+    { "nivel": 3, "proficiencia": 2, "features": ["Subclasse de Clérigo"], "canalizar": 2, "truques": 3, "preparadas": 6, "espacos": [4,2,0,0,0,0,0,0,0] },
+    { "nivel": 4, "proficiencia": 2, "features": ["Aumento no Valor de Atributo"], "canalizar": 2, "truques": 4, "preparadas": 7, "espacos": [4,3,0,0,0,0,0,0,0], "asi": true },
+    { "nivel": 5, "proficiencia": 3, "features": ["Queimar Mortos-Vivos"], "canalizar": 2, "truques": 4, "preparadas": 9, "espacos": [4,3,2,0,0,0,0,0,0] },
+    { "nivel": 6, "proficiencia": 3, "features": ["Habilidade de Subclasse"], "canalizar": 3, "truques": 4, "preparadas": 10, "espacos": [4,3,3,0,0,0,0,0,0], "subclasse": ["Morte Inescapável"] },
+    { "nivel": 7, "proficiencia": 3, "features": ["Golpes Abençoados"], "canalizar": 3, "truques": 4, "preparadas": 11, "espacos": [4,3,3,1,0,0,0,0,0] },
+    { "nivel": 8, "proficiencia": 3, "features": ["Aumento no Valor de Atributo"], "canalizar": 3, "truques": 4, "preparadas": 12, "espacos": [4,3,3,2,0,0,0,0,0], "asi": true },
+    { "nivel": 9, "proficiencia": 4, "features": [], "canalizar": 3, "truques": 4, "preparadas": 14, "espacos": [4,3,3,3,1,0,0,0,0] },
+    { "nivel": 10, "proficiencia": 4, "features": ["Intervenção Divina"], "canalizar": 3, "truques": 5, "preparadas": 15, "espacos": [4,3,3,3,2,0,0,0,0] },
+    { "nivel": 11, "proficiencia": 4, "features": [], "canalizar": 3, "truques": 5, "preparadas": 16, "espacos": [4,3,3,3,2,1,0,0,0] },
+    { "nivel": 12, "proficiencia": 4, "features": ["Aumento no Valor de Atributo"], "canalizar": 3, "truques": 5, "preparadas": 16, "espacos": [4,3,3,3,2,1,0,0,0], "asi": true },
+    { "nivel": 13, "proficiencia": 5, "features": [], "canalizar": 3, "truques": 5, "preparadas": 17, "espacos": [4,3,3,3,2,1,1,0,0] },
+    { "nivel": 14, "proficiencia": 5, "features": ["Golpes Abençoados Aprimorados"], "canalizar": 3, "truques": 5, "preparadas": 17, "espacos": [4,3,3,3,2,1,1,0,0] },
+    { "nivel": 15, "proficiencia": 5, "features": [], "canalizar": 3, "truques": 5, "preparadas": 18, "espacos": [4,3,3,3,2,1,1,1,0] },
+    { "nivel": 16, "proficiencia": 5, "features": ["Aumento no Valor de Atributo"], "canalizar": 3, "truques": 5, "preparadas": 18, "espacos": [4,3,3,3,2,1,1,1,0], "asi": true },
+    { "nivel": 17, "proficiencia": 6, "features": ["Habilidade de Subclasse"], "canalizar": 3, "truques": 5, "preparadas": 19, "espacos": [4,3,3,3,2,1,1,1,1], "subclasse": ["Ceifador Aprimorado"] },
+    { "nivel": 18, "proficiencia": 6, "features": [], "canalizar": 4, "truques": 5, "preparadas": 20, "espacos": [4,3,3,3,3,1,1,1,1] },
+    { "nivel": 19, "proficiencia": 6, "features": ["Dádiva Épica"], "canalizar": 4, "truques": 5, "preparadas": 21, "espacos": [4,3,3,3,3,2,1,1,1], "asi": true },
+    { "nivel": 20, "proficiencia": 6, "features": ["Intervenção Divina Maior"], "canalizar": 4, "truques": 5, "preparadas": 22, "espacos": [4,3,3,3,3,2,2,1,1] }
+  ],
+  "magiasDeDominio": {
+    "1": ["vitalidade-falsa", "raio-da-doenca"],
+    "3": ["cegueira-e-surdez", "raio-do-enfraquecimento"],
+    "5": ["animar-morto", "toque-vampirico"],
+    "7": ["praga", "ala-da-morte"],
+    "9": ["Concha Antivida (Antilife Shell)", "Névoa Mortal (Cloudkill)"]
+  }
+}

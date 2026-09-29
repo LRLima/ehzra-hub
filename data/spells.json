@@ -1,0 +1,2613 @@
+{
+  "schemaVersion": 1,
+  "magias": [
+    {
+      "tempo": {
+        "tipo": "acao",
+        "texto": "1 ação"
+      },
+      "alcance": {
+        "tipo": "distancia",
+        "metros": 18,
+        "pes": 60,
+        "texto": "18 m"
+      },
+      "componentes": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duracao": {
+        "texto": "Instantânea",
+        "rodadas": null
+      },
+      "concentracao": false,
+      "ritual": false,
+      "resolucao": {
+        "tipo": "salvaguarda",
+        "atributo": "sab",
+        "metadeNoSucesso": false
+      },
+      "dano": [
+        {
+          "porNivel": {
+            "5": "2d8",
+            "11": "3d8",
+            "17": "4d8"
+          },
+          "rotulo": "Alvo com PV máximo",
+          "dados": "1d8",
+          "tipo": "necrotico"
+        },
+        {
+          "porNivel": {
+            "5": "2d12",
+            "11": "2d12",
+            "17": "4d12"
+          },
+          "rotulo": "Alvo ferido",
+          "dados": "1d12",
+          "tipo": "necrotico",
+          "condicao": "se o alvo não estiver com PV máximo"
+        }
+      ],
+      "condicoes": [],
+      "escola": "Necromancia",
+      "resumo": "Sino fúnebre: SAB ou dano necrótico, maior se o alvo já estiver ferido.",
+      "id": "soar-os-mortos",
+      "nome": "Soar os Mortos",
+      "nomeOriginal": "Toll the Dead",
+      "nomeFicha": "Soar os Mortos",
+      "ciclo": 0,
+      "tags": [
+        "dano"
+      ],
+      "fonte": "PHB 2024",
+      "listaClerigo": true,
+      "status2024": "mudou",
+      "itemValidacao": "M1",
+      "origens": [
+        "classe"
+      ],
+      "perdida": false,
+      "descricaoCompleta": "Você aponta para uma criatura que pode ver dentro do alcance, e o som doloroso de um sino enche o ar ao seu redor por um momento. O alvo deve ser bem-sucedido em um teste de resistência de Sabedoria ou sofrerá **1d8 de dano necrótico**. Se o alvo não estiver com seu máximo de PV, ele sofre **1d12** de dano necrótico em vez disso.\n\n**No 5º nível:** os danos aumentam para 2d8 e 2d12.  \n**No 11º nível:** aumentam para 3d8 e 2d12, e o dano passa a ser psíquico e necrótico.  \n**No 17º nível:** aumentam para 4d8 e 4d12.",
+      "relacionadas": [
+        "ceifador",
+        "conjurador-potente"
+      ],
+      "v2024": {
+        "ritual": false,
+        "dano": [
+          {
+            "porNivel": {
+              "5": "2d8",
+              "11": "3d8",
+              "17": "4d8"
+            },
+            "rotulo": "Alvo com PV máximo",
+            "dados": "1d8",
+            "tipo": "necrotico"
+          },
+          {
+            "porNivel": {
+              "5": "2d12",
+              "11": "3d12",
+              "17": "4d12"
+            },
+            "rotulo": "Alvo ferido",
+            "dados": "1d12",
+            "tipo": "necrotico",
+            "condicao": "se o alvo não estiver com PV máximo"
+          }
+        ],
+        "condicoes": [],
+        "texto": "Escalonamento oficial: 2d8/2d12 no 5º, 3d8/3d12 no 11º, 4d8/4d12 no 17º. Sempre necrótico."
+      }
+    },
+    {
+      "tempo": {
+        "tipo": "acaoBonus",
+        "texto": "1 ação bônus"
+      },
+      "alcance": {
+        "tipo": "toque",
+        "texto": "Toque"
+      },
+      "componentes": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duracao": {
+        "texto": "Concentração, até 1 minuto",
+        "rodadas": 10
+      },
+      "concentracao": true,
+      "ritual": false,
+      "resolucao": {
+        "tipo": "automatico"
+      },
+      "dano": [],
+      "condicoes": [],
+      "escola": "Adivinhação",
+      "resumo": "+1d4 num teste de habilidade de quem você tocar.",
+      "id": "orientacao",
+      "nome": "Orientação",
+      "nomeOriginal": "Guidance",
+      "nomeFicha": "Orientação",
+      "ciclo": 0,
+      "tags": [
+        "buff",
+        "utilidade"
+      ],
+      "fonte": "PHB 2024",
+      "listaClerigo": true,
+      "status2024": "mudou",
+      "itemValidacao": "M2",
+      "origens": [
+        "classe"
+      ],
+      "perdida": false,
+      "descricaoCompleta": "Você toca uma criatura que recebe um bônus de **d4** para um teste de habilidade à sua escolha. O bônus deve ser usado antes do resultado do teste ser revelado.",
+      "relacionadas": [],
+      "v2024": {
+        "tempo": {
+          "tipo": "acao",
+          "texto": "1 ação"
+        },
+        "ritual": false,
+        "dano": [],
+        "condicoes": [],
+        "resumo": "+1d4 em todos os testes de uma perícia escolhida, por 1 minuto.",
+        "texto": "Ação. Toque numa criatura disposta e escolha uma perícia: até o fim, ela soma 1d4 em qualquer teste com essa perícia."
+      }
+    },
+    {
+      "tempo": {
+        "tipo": "acao",
+        "texto": "1 ação"
+      },
+      "alcance": {
+        "tipo": "toque",
+        "texto": "Toque"
+      },
+      "componentes": {
+        "v": true,
+        "s": false,
+        "m": true
+      },
+      "material": "um vagalume ou musgo fosforescente",
+      "duracao": {
+        "texto": "1 hora",
+        "rodadas": 600
+      },
+      "concentracao": false,
+      "ritual": false,
+      "dano": [],
+      "condicoes": [],
+      "escola": "Evocação",
+      "resumo": "Objeto brilha: luz forte em 6 m e fraca por mais 6 m.",
+      "id": "luz",
+      "nome": "Luz",
+      "nomeOriginal": "Light",
+      "nomeFicha": "Light",
+      "ciclo": 0,
+      "tags": [
+        "utilidade"
+      ],
+      "fonte": "PHB 2024",
+      "listaClerigo": true,
+      "status2024": "ok",
+      "itemValidacao": "M3",
+      "origens": [
+        "classe"
+      ],
+      "perdida": false,
+      "descricaoCompleta": "Magia padrão de D&D 5e, sem anotação própria no grimório. Você toca um objeto que não exceda 3 metros em nenhuma dimensão; ele passa a emitir luz forte num raio de 6 m e luz fraca por mais 6 m, na cor que você escolher.",
+      "relacionadas": []
+    },
+    {
+      "tempo": {
+        "tipo": "acao",
+        "texto": "1 ação"
+      },
+      "alcance": {
+        "tipo": "pessoal",
+        "texto": "Pessoal (raio de 1,5 m)"
+      },
+      "componentes": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duracao": {
+        "texto": "Instantânea",
+        "rodadas": null
+      },
+      "concentracao": false,
+      "ritual": false,
+      "resolucao": {
+        "tipo": "ataque",
+        "alcance": "corpo"
+      },
+      "dano": [
+        {
+          "porNivel": {
+            "5": "1d8",
+            "11": "2d8",
+            "17": "3d8"
+          },
+          "rotulo": "Ao acertar (além da arma)",
+          "dados": "0d8",
+          "tipo": "necrotico"
+        },
+        {
+          "porNivel": {
+            "5": "2d8",
+            "11": "3d8",
+            "17": "4d8"
+          },
+          "rotulo": "Se ele se mover",
+          "dados": "1d8",
+          "tipo": "necrotico",
+          "condicao": "salvaguarda de CON; na falha, não recupera PV até o fim do seu próximo turno"
+        }
+      ],
+      "condicoes": [],
+      "escola": "Necromancia",
+      "resumo": "Ataque com arma que pune o alvo se ele se mover e bloqueia cura.",
+      "id": "lamina-necrotica",
+      "nome": "Lâmina Necrótica",
+      "nomeOriginal": "Booming Blade (reflavor)",
+      "nomeFicha": "Lâmina Necrótica",
+      "ciclo": 0,
+      "tags": [
+        "dano",
+        "controle"
+      ],
+      "fonte": "Homebrew (reflavor necrótico de Booming Blade, Tasha)",
+      "listaClerigo": false,
+      "status2024": "homebrew",
+      "itemValidacao": "M4",
+      "origens": [
+        "classe"
+      ],
+      "perdida": false,
+      "descricaoCompleta": "Você canaliza energia necromântica em sua arma corpo a corpo e atinge uma criatura ao seu alcance. O ataque não causa dano imediato adicional além do dano normal da arma.\n\nSe a criatura se mover voluntariamente antes do início do seu próximo turno, tentáculos sombrios emergem do solo, forçando-a a um teste de resistência de Constituição. Em caso de falha, sofre **1d8 de dano necrótico** e não pode recuperar pontos de vida até o final do seu próximo turno.\n\n**No 5º nível:** +1d8 ao ser atingida inicialmente, +2d8 se sair do lugar antes do próximo turno.  \n**No 11º nível:** 2d8 e 3d8.  \n**No 17º nível:** 3d8 e 4d8.",
+      "relacionadas": [
+        "ceifadora-de-myrkul",
+        "ceifador"
+      ]
+    },
+    {
+      "tempo": {
+        "tipo": "acao",
+        "texto": "1 ação"
+      },
+      "alcance": {
+        "tipo": "toque",
+        "texto": "Toque"
+      },
+      "componentes": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duracao": {
+        "texto": "Instantânea",
+        "rodadas": null
+      },
+      "concentracao": false,
+      "ritual": false,
+      "resolucao": {
+        "tipo": "automatico"
+      },
+      "dano": [],
+      "condicoes": [],
+      "escola": "Necromancia",
+      "resumo": "Estabiliza uma criatura com 0 PV.",
+      "id": "salve-o-moribundo",
+      "nome": "Salve o Moribundo",
+      "nomeOriginal": "Spare the Dying",
+      "nomeFicha": "Salve o Moribundo",
+      "ciclo": 0,
+      "tags": [
+        "cura",
+        "utilidade"
+      ],
+      "fonte": "PHB 2024",
+      "listaClerigo": true,
+      "status2024": "mudou",
+      "itemValidacao": "M5",
+      "origens": [
+        "classe"
+      ],
+      "perdida": false,
+      "descricaoCompleta": "Você toca uma criatura morrendo, estabilizando-a imediatamente. A criatura fica com 0 pontos de vida e não precisa fazer testes de salvaguarda para estabilização.",
+      "relacionadas": [],
+      "v2024": {
+        "alcance": {
+          "tipo": "distancia",
+          "metros": 9,
+          "pes": 30,
+          "texto": "9 m (nível 5+)"
+        },
+        "ritual": false,
+        "dano": [],
+        "condicoes": [],
+        "texto": "Alcance de 4,5 m, que dobra no 5º (9 m), 11º (18 m) e 17º (36 m). No nível 8: 9 m. O alvo fica Estável."
+      }
+    },
+    {
+      "tempo": {
+        "tipo": "longo",
+        "texto": "não registrado"
+      },
+      "alcance": {
+        "tipo": "especial",
+        "texto": "não registrado"
+      },
+      "componentes": {
+        "v": false,
+        "s": false,
+        "m": false
+      },
+      "duracao": {
+        "texto": "não registrada",
+        "rodadas": null
+      },
+      "concentracao": false,
+      "ritual": false,
+      "dano": [],
+      "condicoes": [],
+      "escola": "Necromancia",
+      "resumo": "Sem anotação no grimório.",
+      "id": "necropsia",
+      "nome": "Necropsia",
+      "nomeFicha": "Necropsia",
+      "ciclo": 0,
+      "tags": [
+        "utilidade"
+      ],
+      "fonte": "Homebrew",
+      "listaClerigo": false,
+      "status2024": "homebrew",
+      "itemValidacao": "M6",
+      "origens": [
+        "classe"
+      ],
+      "perdida": true,
+      "descricaoCompleta": null,
+      "relacionadas": []
+    },
+    {
+      "tempo": {
+        "tipo": "longo",
+        "texto": "1 hora (ritual)"
+      },
+      "alcance": {
+        "tipo": "toque",
+        "texto": "Toque"
+      },
+      "componentes": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "material": "25 po de pó de prata, consumido",
+      "duracao": {
+        "texto": "Instantânea",
+        "rodadas": null
+      },
+      "concentracao": false,
+      "ritual": true,
+      "dano": [],
+      "condicoes": [],
+      "escola": "Abjuração",
+      "resumo": "Rito religioso que dá uma bênção temporária aos participantes.",
+      "id": "cerimonia",
+      "nome": "Cerimônia",
+      "nomeOriginal": "Ceremony",
+      "nomeFicha": "Ceremony",
+      "ciclo": 1,
+      "tags": [
+        "buff",
+        "utilidade"
+      ],
+      "fonte": "Xanathar (2017)",
+      "listaClerigo": false,
+      "status2024": "legado",
+      "itemValidacao": "M7",
+      "origens": [
+        "classe"
+      ],
+      "perdida": false,
+      "descricaoCompleta": "Magia padrão de D&D 5e, sem anotação própria no grimório. Celebra um rito religioso (batismo, casamento, funeral, entre outros), concedendo uma bênção temporária a quem participa, como pontos de vida temporários ou vantagem em um tipo de teste de resistência, conforme o rito escolhido.",
+      "relacionadas": []
+    },
+    {
+      "tempo": {
+        "tipo": "acao",
+        "texto": "1 ação"
+      },
+      "alcance": {
+        "tipo": "toque",
+        "texto": "Toque"
+      },
+      "componentes": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duracao": {
+        "texto": "Instantânea",
+        "rodadas": null
+      },
+      "concentracao": false,
+      "ritual": false,
+      "resolucao": {
+        "tipo": "ataque",
+        "alcance": "corpo"
+      },
+      "dano": [
+        {
+          "porCiclo": "1d10",
+          "dados": "3d10",
+          "tipo": "necrotico"
+        }
+      ],
+      "condicoes": [],
+      "escola": "Necromancia",
+      "resumo": "Toque necrótico pesado. Combina com Toque da Morte.",
+      "id": "infligir-ferimentos",
+      "nome": "Infligir Ferimentos",
+      "nomeOriginal": "Inflict Wounds",
+      "nomeFicha": "Infligir Ferimentos",
+      "ciclo": 1,
+      "tags": [
+        "dano"
+      ],
+      "fonte": "PHB 2024 (texto da ficha é 2014)",
+      "listaClerigo": true,
+      "status2024": "mudou",
+      "itemValidacao": "M8",
+      "origens": [
+        "classe"
+      ],
+      "perdida": false,
+      "descricaoCompleta": "Faça um ataque mágico corpo a corpo contra uma criatura que você pode alcançar. Em um acerto, o alvo sofre **3d10 de dano necrótico**.\n\n**Em níveis superiores:** ao conjurar usando um espaço de 2º nível ou superior, o dano aumenta em 1d10 para cada nível acima do 1º.",
+      "relacionadas": [
+        "toque-da-morte",
+        "canalizar-divindade"
+      ],
+      "v2024": {
+        "ritual": false,
+        "resolucao": {
+          "tipo": "salvaguarda",
+          "atributo": "con",
+          "metadeNoSucesso": true
+        },
+        "dano": [
+          {
+            "porCiclo": "1d10",
+            "dados": "2d10",
+            "tipo": "necrotico"
+          }
+        ],
+        "condicoes": [],
+        "texto": "Salvaguarda de CON: 2d10 necrótico, metade no sucesso, +1d10 por ciclo. Sem ataque, então não dispara o Toque da Morte."
+      }
+    },
+    {
+      "tempo": {
+        "tipo": "acao",
+        "texto": "1 ação"
+      },
+      "alcance": {
+        "tipo": "toque",
+        "texto": "Toque"
+      },
+      "componentes": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duracao": {
+        "texto": "Instantânea",
+        "rodadas": null
+      },
+      "concentracao": false,
+      "ritual": false,
+      "resolucao": {
+        "tipo": "automatico"
+      },
+      "dano": [],
+      "cura": {
+        "porCiclo": "1d8",
+        "dados": "1d8",
+        "somaMod": "sab",
+        "pvTemporario": false
+      },
+      "condicoes": [],
+      "escola": "Evocação",
+      "resumo": "Cura pelo toque.",
+      "id": "curar-ferimentos",
+      "nome": "Curar Ferimentos",
+      "nomeOriginal": "Cure Wounds",
+      "nomeFicha": "Curar Ferimentos",
+      "ciclo": 1,
+      "tags": [
+        "cura"
+      ],
+      "fonte": "PHB 2024 (texto da ficha é 2014)",
+      "listaClerigo": true,
+      "status2024": "mudou",
+      "itemValidacao": "M9",
+      "origens": [
+        "classe"
+      ],
+      "perdida": false,
+      "descricaoCompleta": "Uma criatura que você toca recupera uma quantidade de pontos de vida igual a **1d8 + seu modificador de habilidade de conjuração**.\n\n**Níveis superiores:** ao conjurar usando um espaço de 2º nível ou superior, a cura aumenta em 1d8 para cada nível do espaço acima do 1º.",
+      "relacionadas": [],
+      "v2024": {
+        "ritual": false,
+        "dano": [],
+        "cura": {
+          "porCiclo": "2d8",
+          "dados": "2d8",
+          "somaMod": "sab",
+          "pvTemporario": false
+        },
+        "condicoes": [],
+        "escola": "Abjuração",
+        "texto": "Cura 2d8 + SAB, +2d8 por ciclo. Escola: Abjuração."
+      }
+    },
+    {
+      "tempo": {
+        "tipo": "acaoBonus",
+        "texto": "1 ação bônus"
+      },
+      "alcance": {
+        "tipo": "distancia",
+        "metros": 18,
+        "pes": 60,
+        "texto": "18 m"
+      },
+      "componentes": {
+        "v": true,
+        "s": false,
+        "m": false
+      },
+      "duracao": {
+        "texto": "Instantânea",
+        "rodadas": null
+      },
+      "concentracao": false,
+      "ritual": false,
+      "resolucao": {
+        "tipo": "automatico"
+      },
+      "dano": [],
+      "cura": {
+        "porCiclo": "1d4",
+        "dados": "1d4",
+        "somaMod": "sab",
+        "pvTemporario": false
+      },
+      "condicoes": [],
+      "escola": "Evocação",
+      "resumo": "Cura à distância com ação bônus.",
+      "id": "palavra-curativa",
+      "nome": "Palavra Curativa",
+      "nomeOriginal": "Healing Word",
+      "nomeFicha": "Palavra Curativa",
+      "ciclo": 1,
+      "tags": [
+        "cura"
+      ],
+      "fonte": "PHB 2024 (texto da ficha é 2014)",
+      "listaClerigo": true,
+      "status2024": "mudou",
+      "itemValidacao": "M10",
+      "origens": [
+        "classe"
+      ],
+      "perdida": false,
+      "descricaoCompleta": "Uma criatura à sua escolha que você possa ver dentro do alcance recupera **1d4 + seu modificador de habilidade de conjuração** em pontos de vida.\n\n**Níveis superiores:** ao conjurar usando um espaço de 2º nível ou superior, a cura aumenta em 1d4 para cada nível do espaço acima do 1º.",
+      "relacionadas": [],
+      "v2024": {
+        "ritual": false,
+        "dano": [],
+        "cura": {
+          "porCiclo": "2d4",
+          "dados": "2d4",
+          "somaMod": "sab",
+          "pvTemporario": false
+        },
+        "condicoes": [],
+        "escola": "Abjuração",
+        "texto": "Cura 2d4 + SAB, +2d4 por ciclo. Escola: Abjuração."
+      }
+    },
+    {
+      "tempo": {
+        "tipo": "acaoBonus",
+        "texto": "1 ação bônus"
+      },
+      "alcance": {
+        "tipo": "distancia",
+        "metros": 9,
+        "pes": 30,
+        "texto": "9 m"
+      },
+      "componentes": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "material": "um caco de espelho",
+      "duracao": {
+        "texto": "1 minuto",
+        "rodadas": 10
+      },
+      "concentracao": false,
+      "ritual": false,
+      "resolucao": {
+        "tipo": "salvaguarda",
+        "atributo": "sab",
+        "metadeNoSucesso": false
+      },
+      "dano": [],
+      "condicoes": [],
+      "escola": "Abjuração",
+      "resumo": "Inimigos precisam passar em SAB para atacar o protegido.",
+      "id": "santuario",
+      "nome": "Santuário",
+      "nomeOriginal": "Sanctuary",
+      "nomeFicha": "Sanctuary",
+      "ciclo": 1,
+      "tags": [
+        "defesa"
+      ],
+      "fonte": "PHB 2024",
+      "listaClerigo": true,
+      "status2024": "ok",
+      "itemValidacao": "M11",
+      "origens": [
+        "classe"
+      ],
+      "perdida": false,
+      "descricaoCompleta": "Magia padrão de D&D 5e, sem anotação própria no grimório. Protege uma criatura voluntária: qualquer inimigo que tente atacá-la diretamente deve primeiro ser bem-sucedido em um teste de Sabedoria, ou escolher outro alvo.",
+      "relacionadas": []
+    },
+    {
+      "tempo": {
+        "tipo": "acao",
+        "texto": "1 ação"
+      },
+      "alcance": {
+        "tipo": "distancia",
+        "metros": 18,
+        "pes": 60,
+        "texto": "18 m"
+      },
+      "componentes": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duracao": {
+        "texto": "Instantânea",
+        "rodadas": null
+      },
+      "concentracao": false,
+      "ritual": false,
+      "resolucao": {
+        "tipo": "ataque",
+        "alcance": "distancia"
+      },
+      "dano": [
+        {
+          "porCiclo": "1d8",
+          "dados": "2d8",
+          "tipo": "veneno"
+        }
+      ],
+      "condicoes": [
+        "envenenado"
+      ],
+      "escola": "Necromancia",
+      "resumo": "Raio de veneno que pode deixar o alvo Envenenado.",
+      "id": "raio-da-doenca",
+      "nome": "Raio da Doença",
+      "nomeOriginal": "Ray of Sickness",
+      "nomeFicha": "Raio da Doença",
+      "ciclo": 1,
+      "tags": [
+        "dano",
+        "controle"
+      ],
+      "fonte": "PHB 2024 / Domínio da Morte (DMG 2014)",
+      "listaClerigo": false,
+      "status2024": "mudou",
+      "itemValidacao": "M12",
+      "origens": [
+        "dominio"
+      ],
+      "perdida": false,
+      "descricaoCompleta": "Um raio de energia esverdeada repugnante ataca uma criatura dentro do alcance. Faça um ataque mágico à distância. Ao acertar, o alvo sofre **2d8 de dano de veneno** e deve fazer um teste de resistência de Constituição; em uma falha, também fica envenenado até o final do seu próximo turno.\n\n**Em níveis mais altos:** ao conjurar usando um espaço de 2º nível ou superior, o dano aumenta em 1d8 para cada nível acima do 1º.",
+      "relacionadas": [],
+      "v2024": {
+        "ritual": false,
+        "dano": [],
+        "condicoes": [],
+        "texto": "Sem salvaguarda: no acerto, 2d8 veneno e o alvo fica Envenenado até o fim do seu próximo turno."
+      }
+    },
+    {
+      "tempo": {
+        "tipo": "acao",
+        "texto": "1 ação"
+      },
+      "alcance": {
+        "tipo": "pessoal",
+        "texto": "Pessoal"
+      },
+      "componentes": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duracao": {
+        "texto": "Instantânea",
+        "rodadas": null
+      },
+      "concentracao": false,
+      "ritual": false,
+      "resolucao": {
+        "tipo": "automatico"
+      },
+      "dano": [],
+      "cura": {
+        "dados": "2d4",
+        "bonus": 4,
+        "bonusPorCiclo": 5,
+        "pvTemporario": true
+      },
+      "condicoes": [],
+      "escola": "Necromancia",
+      "resumo": "PV temporários em você.",
+      "id": "vitalidade-falsa",
+      "nome": "Vitalidade Falsa",
+      "nomeOriginal": "False Life",
+      "nomeFicha": "Vitalidade Falsa",
+      "ciclo": 1,
+      "tags": [
+        "defesa"
+      ],
+      "fonte": "PHB 2024 / Domínio da Morte (DMG 2014)",
+      "listaClerigo": false,
+      "status2024": "ok",
+      "itemValidacao": "M13",
+      "origens": [
+        "dominio"
+      ],
+      "perdida": false,
+      "descricaoCompleta": "Reforçando-se com uma vitalidade necromântica ilusória, você ganha **2d4 + 4 pontos de vida temporários**.\n\n**Em níveis superiores:** ganha 5 pontos de vida temporários adicionais para cada nível do espaço de magia acima do 1º.",
+      "relacionadas": []
+    },
+    {
+      "tempo": {
+        "tipo": "acao",
+        "texto": "1 ação"
+      },
+      "alcance": {
+        "tipo": "toque",
+        "texto": "Toque"
+      },
+      "alvo": "Até 3 mortos-vivos sob seu controle",
+      "componentes": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duracao": {
+        "texto": "1 hora",
+        "rodadas": 600
+      },
+      "concentracao": false,
+      "ritual": false,
+      "resolucao": {
+        "tipo": "automatico"
+      },
+      "dano": [
+        {
+          "rotulo": "1º ataque fora da visão do inimigo (por morto-vivo)",
+          "dados": "1d8",
+          "tipo": "necrotico"
+        }
+      ],
+      "condicoes": [],
+      "escola": "Necromancia",
+      "resumo": "Até 3 mortos-vivos ganham Percepção, Furtividade e +1d8 no ataque furtivo.",
+      "id": "batedores-de-sarcofagos",
+      "nome": "Batedores de Sarcófagos",
+      "nomeFicha": "Batedores de Sarcófagos",
+      "ciclo": 1,
+      "tags": [
+        "buff",
+        "mortos-vivos"
+      ],
+      "fonte": "Homebrew",
+      "listaClerigo": false,
+      "status2024": "homebrew",
+      "itemValidacao": "M14",
+      "origens": [
+        "classe"
+      ],
+      "perdida": false,
+      "cicloNota": "Registrada na ficha como 1º ciclo, mas a nota original diz 2º.",
+      "descricaoCompleta": "Você infunde seus servos com ecos espectrais vindos do além, aguçando seus sentidos com fragmentos de consciência esquecida.\n\nEnquanto a magia estiver ativa, os mortos-vivos escolhidos recebem: **proficiência temporária em Percepção e Furtividade**; e, se estiverem fora da linha de visão de um inimigo, o **primeiro ataque causa +1d8 de dano necrótico**.",
+      "relacionadas": [
+        "animar-morto",
+        "fio-da-obediencia"
+      ]
+    },
+    {
+      "tempo": {
+        "tipo": "acao",
+        "texto": "1 ação"
+      },
+      "alcance": {
+        "tipo": "toque",
+        "texto": "Toque"
+      },
+      "componentes": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duracao": {
+        "texto": "8 horas",
+        "rodadas": 4800
+      },
+      "concentracao": false,
+      "ritual": false,
+      "resolucao": {
+        "tipo": "automatico"
+      },
+      "dano": [],
+      "alvosPorCiclo": 1,
+      "condicoes": [],
+      "escola": "Necromancia",
+      "resumo": "Morto-vivo age sozinho, resiste a controle e ganha +2 CA perto de outro.",
+      "id": "fio-da-obediencia",
+      "nome": "Fio da Obediência",
+      "nomeFicha": "Fio da Obediência",
+      "ciclo": 1,
+      "tags": [
+        "buff",
+        "defesa",
+        "mortos-vivos"
+      ],
+      "fonte": "Homebrew",
+      "listaClerigo": false,
+      "status2024": "homebrew",
+      "itemValidacao": "M15",
+      "origens": [
+        "classe"
+      ],
+      "perdida": false,
+      "cicloNota": "Registrada na ficha como 1º ciclo, mas a nota original diz 2º.",
+      "descricaoCompleta": "Você estende um fio etéreo feito de obediência e vontade entre você e um morto-vivo sob seu controle. Esse vínculo reforça sua lealdade e funcionalidade tática.\n\nO morto-vivo alvo recebe: **vantagem** em testes de resistência contra efeitos que alterem seu comportamento (medo, encantamento, comandos mágicos); pode agir fora da sua linha de visão sem ficar inativo; e, se estiver a até 3 m de outro morto-vivo sob seu controle, sua **CA aumenta em 2**.\n\n**Em níveis superiores:** com um espaço de 3º nível ou superior, você pode afetar um morto-vivo adicional.",
+      "relacionadas": [
+        "animar-morto",
+        "batedores-de-sarcofagos",
+        "campeao-do-tumulo"
+      ]
+    },
+    {
+      "tempo": {
+        "tipo": "acao",
+        "texto": "1 ação"
+      },
+      "alcance": {
+        "tipo": "distancia",
+        "metros": 18,
+        "pes": 60,
+        "texto": "18 m"
+      },
+      "componentes": {
+        "v": true,
+        "s": false,
+        "m": false
+      },
+      "duracao": {
+        "texto": "1 rodada",
+        "rodadas": 1
+      },
+      "concentracao": false,
+      "ritual": false,
+      "resolucao": {
+        "tipo": "salvaguarda",
+        "atributo": "sab",
+        "metadeNoSucesso": false
+      },
+      "dano": [],
+      "condicoes": [],
+      "escola": "Encantamento",
+      "resumo": "Ordem de uma palavra: SAB ou o alvo obedece no turno dele.",
+      "id": "comando",
+      "nome": "Comando",
+      "nomeOriginal": "Command",
+      "nomeFicha": "Comando",
+      "ciclo": 1,
+      "tags": [
+        "controle"
+      ],
+      "fonte": "PHB 2024",
+      "listaClerigo": true,
+      "status2024": "mudou",
+      "itemValidacao": "M16",
+      "origens": [
+        "classe"
+      ],
+      "perdida": false,
+      "descricaoCompleta": "Você fala uma ordem curta e firme a uma criatura que possa ver dentro do alcance. O alvo deve fazer um teste de resistência de Sabedoria; se falhar, deve seguir a ordem na próxima rodada de seu turno. A ordem deve ser uma palavra única e clara, como \"Ajoelhe\", \"Fuja\", \"Caia\", \"Pare\" ou \"Corra\".\n\nSe a ordem for contraditória ou impossível, o alvo perde sua ação.",
+      "relacionadas": [],
+      "v2024": {
+        "duracao": {
+          "texto": "Instantânea",
+          "rodadas": null
+        },
+        "ritual": false,
+        "dano": [],
+        "alvosPorCiclo": 1,
+        "condicoes": [],
+        "texto": "Só 5 ordens: Aproxime-se, Solte, Fuja, Rasteje, Pare. Duração instantânea. +1 alvo por ciclo acima do 1º."
+      }
+    },
+    {
+      "tempo": {
+        "tipo": "acaoBonus",
+        "texto": "1 ação bônus"
+      },
+      "alcance": {
+        "tipo": "distancia",
+        "metros": 18,
+        "pes": 60,
+        "texto": "18 m"
+      },
+      "componentes": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "material": "um pergaminho com texto sagrado",
+      "duracao": {
+        "texto": "Concentração, até 10 minutos",
+        "rodadas": 100
+      },
+      "concentracao": true,
+      "ritual": false,
+      "resolucao": {
+        "tipo": "automatico"
+      },
+      "dano": [],
+      "condicoes": [],
+      "escola": "Abjuração",
+      "resumo": "+2 de CA numa criatura.",
+      "id": "escudo-da-fe",
+      "nome": "Escudo da Fé",
+      "nomeOriginal": "Shield of Faith",
+      "nomeFicha": "Escudo da Fé",
+      "ciclo": 1,
+      "tags": [
+        "defesa",
+        "buff"
+      ],
+      "fonte": "PHB 2024",
+      "listaClerigo": true,
+      "status2024": "ok",
+      "itemValidacao": "M17",
+      "origens": [
+        "classe"
+      ],
+      "perdida": false,
+      "descricaoCompleta": "Uma criatura à sua escolha que você possa ver dentro do alcance ganha um escudo mágico que aumenta sua Classe de Armadura em **+2** até o final da magia.",
+      "relacionadas": []
+    },
+    {
+      "tempo": {
+        "tipo": "acao",
+        "texto": "1 ação"
+      },
+      "alcance": {
+        "tipo": "toque",
+        "texto": "Toque"
+      },
+      "componentes": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "material": "um frasco de água benta de 25 po, consumido",
+      "duracao": {
+        "texto": "Concentração, até 10 minutos",
+        "rodadas": 100
+      },
+      "concentracao": true,
+      "ritual": false,
+      "resolucao": {
+        "tipo": "automatico"
+      },
+      "dano": [],
+      "condicoes": [],
+      "escola": "Abjuração",
+      "resumo": "Aberrações, celestiais, corruptores e cia. têm desvantagem contra o alvo.",
+      "id": "protecao-contra-o-bem-e-o-mal",
+      "nome": "Proteção contra o Bem e o Mal",
+      "nomeOriginal": "Protection from Evil and Good",
+      "nomeFicha": "Proteção Contra o Bem e o Mal",
+      "ciclo": 1,
+      "tags": [
+        "defesa"
+      ],
+      "fonte": "PHB 2024",
+      "listaClerigo": true,
+      "status2024": "ok",
+      "itemValidacao": "M18",
+      "origens": [
+        "classe"
+      ],
+      "perdida": false,
+      "descricaoCompleta": "Você toca uma criatura voluntária e a protege de aberrações, celestiais, elementais, fadas, demônios e mortos-vivos.\n\nEnquanto durar: essas criaturas têm **desvantagem** em ataques contra o alvo; o alvo não pode ser enfeitiçado, amedrontado ou possuído por elas; e se já estiver sob um desses efeitos, faz um novo teste de resistência com vantagem para encerrá-lo.",
+      "relacionadas": []
+    },
+    {
+      "tempo": {
+        "tipo": "acao",
+        "texto": "1 ação"
+      },
+      "alcance": {
+        "tipo": "distancia",
+        "metros": 18,
+        "pes": 60,
+        "texto": "18 m"
+      },
+      "area": "esfera de 6 m",
+      "componentes": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duracao": {
+        "texto": "Concentração, até 1 minuto",
+        "rodadas": 10
+      },
+      "concentracao": true,
+      "ritual": false,
+      "resolucao": {
+        "tipo": "salvaguarda",
+        "atributo": "car",
+        "metadeNoSucesso": false
+      },
+      "dano": [],
+      "condicoes": [],
+      "escola": "Encantamento",
+      "resumo": "Suprime hostilidade, medo ou encantamento numa esfera de 6 m.",
+      "id": "acalmar-emocoes",
+      "nome": "Acalmar Emoções",
+      "nomeOriginal": "Calm Emotions",
+      "nomeFicha": "Calm Emotions",
+      "ciclo": 2,
+      "tags": [
+        "controle"
+      ],
+      "fonte": "PHB 2024",
+      "listaClerigo": true,
+      "status2024": "ok",
+      "itemValidacao": "M19",
+      "origens": [
+        "classe"
+      ],
+      "perdida": false,
+      "descricaoCompleta": "Magia padrão de D&D 5e, sem anotação própria no grimório. Suprime emoções fortes numa área, podendo neutralizar hostilidade (evitando um combate) ou suprimir encantamentos e efeitos de medo sobre os alvos.",
+      "relacionadas": []
+    },
+    {
+      "tempo": {
+        "tipo": "acao",
+        "texto": "1 ação"
+      },
+      "alcance": {
+        "tipo": "toque",
+        "texto": "Toque"
+      },
+      "componentes": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duracao": {
+        "texto": "Instantânea",
+        "rodadas": null
+      },
+      "concentracao": false,
+      "ritual": false,
+      "resolucao": {
+        "tipo": "automatico"
+      },
+      "dano": [],
+      "condicoes": [],
+      "escola": "Abjuração",
+      "resumo": "Remove uma doença ou condição debilitante.",
+      "id": "restauracao-menor",
+      "nome": "Restauração Menor",
+      "nomeOriginal": "Lesser Restoration",
+      "nomeFicha": "Lesser Restoration",
+      "ciclo": 2,
+      "tags": [
+        "cura",
+        "utilidade"
+      ],
+      "fonte": "PHB 2024",
+      "listaClerigo": true,
+      "status2024": "mudou",
+      "itemValidacao": "M20",
+      "origens": [
+        "classe"
+      ],
+      "perdida": false,
+      "descricaoCompleta": "Magia padrão de D&D 5e, sem anotação própria no grimório. Remove uma doença ou uma condição debilitante (cego, surdo, paralisado, envenenado, entre outras) de uma criatura tocada.",
+      "relacionadas": [],
+      "v2024": {
+        "tempo": {
+          "tipo": "acaoBonus",
+          "texto": "1 ação bônus"
+        },
+        "ritual": false,
+        "dano": [],
+        "condicoes": [],
+        "resumo": "Ação bônus: remove Cego, Surdo, Paralisado ou Envenenado.",
+        "texto": "Ação bônus. Remove Cego, Surdo, Paralisado ou Envenenado. Não cura mais doença."
+      }
+    },
+    {
+      "tempo": {
+        "tipo": "longo",
+        "texto": "10 minutos (ritual)"
+      },
+      "alcance": {
+        "tipo": "distancia",
+        "metros": 9,
+        "pes": 30,
+        "texto": "9 m"
+      },
+      "alvo": "até 6 criaturas",
+      "componentes": {
+        "v": true,
+        "s": false,
+        "m": false
+      },
+      "duracao": {
+        "texto": "Instantânea",
+        "rodadas": null
+      },
+      "concentracao": false,
+      "ritual": true,
+      "resolucao": {
+        "tipo": "automatico"
+      },
+      "dano": [],
+      "cura": {
+        "porCiclo": "1d8",
+        "dados": "2d8",
+        "somaMod": "sab",
+        "pvTemporario": false
+      },
+      "condicoes": [],
+      "escola": "Evocação",
+      "resumo": "Cura até seis criaturas depois de 10 minutos de oração.",
+      "id": "oracao-de-cura",
+      "nome": "Oração de Cura",
+      "nomeOriginal": "Prayer of Healing",
+      "nomeFicha": "Prayer of Healing",
+      "ciclo": 2,
+      "tags": [
+        "cura"
+      ],
+      "fonte": "PHB 2024",
+      "listaClerigo": true,
+      "status2024": "mudou",
+      "itemValidacao": "M21",
+      "origens": [
+        "classe"
+      ],
+      "perdida": false,
+      "descricaoCompleta": "Magia padrão de D&D 5e, sem anotação própria no grimório. Cura pontos de vida de até seis criaturas ao final de um descanso curto.",
+      "relacionadas": [],
+      "v2024": {
+        "alvo": "até 5 criaturas",
+        "ritual": false,
+        "dano": [],
+        "cura": {
+          "porCiclo": "1d8",
+          "dados": "2d8",
+          "pvTemporario": false
+        },
+        "condicoes": [],
+        "escola": "Abjuração",
+        "texto": "Até 5 criaturas ganham os benefícios de um descanso curto + 2d8 PV (sem modificador), 1 vez por descanso longo. +1d8 por ciclo. Não é ritual. Escola: Abjuração."
+      }
+    },
+    {
+      "tempo": {
+        "tipo": "acao",
+        "texto": "1 ação"
+      },
+      "alcance": {
+        "tipo": "distancia",
+        "metros": 36,
+        "pes": 120,
+        "texto": "36 m"
+      },
+      "area": "esfera de 6 m",
+      "componentes": {
+        "v": false,
+        "s": true,
+        "m": false
+      },
+      "duracao": {
+        "texto": "Concentração, até 10 minutos",
+        "rodadas": 100
+      },
+      "concentracao": true,
+      "ritual": true,
+      "resolucao": {
+        "tipo": "automatico"
+      },
+      "dano": [],
+      "condicoes": [],
+      "escola": "Ilusão",
+      "resumo": "Esfera de 6 m sem som: bloqueia magias com componente verbal.",
+      "id": "silencio",
+      "nome": "Silêncio",
+      "nomeOriginal": "Silence",
+      "nomeFicha": "Silence",
+      "ciclo": 2,
+      "tags": [
+        "controle"
+      ],
+      "fonte": "PHB 2024",
+      "listaClerigo": true,
+      "status2024": "ok",
+      "itemValidacao": "M22",
+      "origens": [
+        "classe"
+      ],
+      "perdida": false,
+      "descricaoCompleta": "Magia padrão de D&D 5e, sem anotação própria no grimório. Cria uma esfera de silêncio absoluto numa área; impede sons e a conjuração de magias com componente verbal ali dentro.",
+      "relacionadas": []
+    },
+    {
+      "tempo": {
+        "tipo": "acao",
+        "texto": "1 ação"
+      },
+      "alcance": {
+        "tipo": "distancia",
+        "metros": 9,
+        "pes": 30,
+        "texto": "9 m"
+      },
+      "componentes": {
+        "v": true,
+        "s": false,
+        "m": false
+      },
+      "duracao": {
+        "texto": "1 minuto",
+        "rodadas": 10
+      },
+      "concentracao": false,
+      "ritual": false,
+      "resolucao": {
+        "tipo": "salvaguarda",
+        "atributo": "con",
+        "metadeNoSucesso": false
+      },
+      "dano": [],
+      "alvosPorCiclo": 1,
+      "condicoes": [
+        "cego",
+        "surdo"
+      ],
+      "escola": "Necromancia",
+      "resumo": "CON ou fica Cego ou Surdo; repete no fim de cada turno.",
+      "id": "cegueira-e-surdez",
+      "nome": "Cegueira e Surdez",
+      "nomeOriginal": "Blindness/Deafness",
+      "nomeFicha": "Cegueira e Surdez",
+      "ciclo": 2,
+      "tags": [
+        "controle"
+      ],
+      "fonte": "PHB 2024 / Domínio da Morte (DMG 2014)",
+      "listaClerigo": true,
+      "status2024": "mudou",
+      "itemValidacao": "M23",
+      "origens": [
+        "dominio"
+      ],
+      "perdida": false,
+      "descricaoCompleta": "Você pode cegar ou ensurdecer um inimigo. Escolha uma criatura que possa ver dentro do alcance para um teste de resistência de Constituição. Se falhar, o alvo fica cego ou ensurdecido (sua escolha) durante a duração. No final de cada um dos turnos do alvo, ele pode repetir o teste; em sucesso, o feitiço termina.\n\n**Em níveis mais altos:** com um espaço de 3º nível ou superior, você pode mirar em uma criatura adicional para cada nível acima do 2º.",
+      "relacionadas": [],
+      "v2024": {
+        "alcance": {
+          "tipo": "distancia",
+          "metros": 36,
+          "pes": 120,
+          "texto": "36 m"
+        },
+        "ritual": false,
+        "dano": [],
+        "condicoes": [],
+        "escola": "Transmutação",
+        "texto": "Alcance de 36 m (120 pés). Escola: Transmutação."
+      }
+    },
+    {
+      "tempo": {
+        "tipo": "acao",
+        "texto": "1 ação"
+      },
+      "alcance": {
+        "tipo": "distancia",
+        "metros": 18,
+        "pes": 60,
+        "texto": "18 m"
+      },
+      "componentes": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duracao": {
+        "texto": "Concentração, até 1 minuto",
+        "rodadas": 10
+      },
+      "concentracao": true,
+      "ritual": false,
+      "resolucao": {
+        "tipo": "ataque",
+        "alcance": "distancia"
+      },
+      "dano": [],
+      "condicoes": [],
+      "escola": "Necromancia",
+      "resumo": "O alvo causa metade do dano com armas de Força.",
+      "id": "raio-do-enfraquecimento",
+      "nome": "Raio do Enfraquecimento",
+      "nomeOriginal": "Ray of Enfeeblement",
+      "nomeFicha": "Raio do Enfraquecimento",
+      "ciclo": 2,
+      "tags": [
+        "controle"
+      ],
+      "fonte": "PHB 2024 / Domínio da Morte (DMG 2014)",
+      "listaClerigo": false,
+      "status2024": "mudou",
+      "itemValidacao": "M24",
+      "origens": [
+        "dominio"
+      ],
+      "perdida": false,
+      "descricaoCompleta": "Um raio preto de energia enervante brota do seu dedo em direção a uma criatura dentro do alcance. Faça um ataque mágico à distância. Ao acertar, o alvo passa a causar apenas metade do dano com ataques de arma que usam Força até o fim do feitiço.\n\nNo final de cada um dos turnos do alvo, ele pode repetir o teste de resistência de Constituição; em sucesso, o feitiço termina.",
+      "relacionadas": [],
+      "v2024": {
+        "ritual": false,
+        "resolucao": {
+          "tipo": "salvaguarda",
+          "atributo": "con",
+          "metadeNoSucesso": false
+        },
+        "dano": [],
+        "condicoes": [],
+        "resumo": "CON ou desvantagem em FOR e −1d8 em cada dano que causar.",
+        "texto": "Salvaguarda de CON em vez de ataque. Na falha: desvantagem em testes d20 de FOR e −1d8 em toda rolagem de dano; repete no fim de cada turno. No sucesso: desvantagem no próximo ataque."
+      }
+    },
+    {
+      "tempo": {
+        "tipo": "acao",
+        "texto": "1 ação"
+      },
+      "alcance": {
+        "tipo": "toque",
+        "texto": "Toque"
+      },
+      "componentes": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "material": "2 pc, colocadas nos olhos do corpo",
+      "duracao": {
+        "texto": "10 dias",
+        "rodadas": null
+      },
+      "concentracao": false,
+      "ritual": false,
+      "resolucao": {
+        "tipo": "automatico"
+      },
+      "dano": [],
+      "condicoes": [],
+      "escola": "Necromancia",
+      "resumo": "Protege um cadáver de decomposição e reanimação por 10 dias.",
+      "id": "repouso-gentil",
+      "nome": "Repouso Gentil",
+      "nomeOriginal": "Gentle Repose",
+      "nomeFicha": "Repouso Gentil",
+      "ciclo": 2,
+      "tags": [
+        "utilidade",
+        "mortos-vivos"
+      ],
+      "fonte": "PHB 2024",
+      "listaClerigo": true,
+      "status2024": "mudou",
+      "itemValidacao": "M25",
+      "origens": [
+        "ceifadora"
+      ],
+      "perdida": false,
+      "descricaoCompleta": "Você protege um cadáver ou outro corpo morto contra decomposição e evita que seja reanimado por meios não naturais. O corpo não envelhece e não pode ser alvo de *Animar Morto* ou magias similares enquanto sob este efeito.\n\nAlém disso, mantém a alma presa no corpo por até 10 dias, permitindo que magias como *Falar com os Mortos* funcionem normalmente.",
+      "relacionadas": [
+        "falar-com-os-mortos",
+        "animar-morto"
+      ],
+      "v2024": {
+        "ritual": true,
+        "dano": [],
+        "condicoes": [],
+        "texto": "Ritual. Não prende a alma nem é pré-requisito de Falar com os Mortos: só impede o corpo de virar morto-vivo e pausa o prazo de ressurreição."
+      }
+    },
+    {
+      "tempo": {
+        "tipo": "longo",
+        "texto": "não registrado"
+      },
+      "alcance": {
+        "tipo": "especial",
+        "texto": "não registrado"
+      },
+      "componentes": {
+        "v": false,
+        "s": false,
+        "m": false
+      },
+      "duracao": {
+        "texto": "não registrada",
+        "rodadas": null
+      },
+      "concentracao": false,
+      "ritual": false,
+      "dano": [],
+      "condicoes": [],
+      "escola": "Necromancia",
+      "resumo": "Sem anotação no grimório.",
+      "id": "taxidermia-de-ehzra",
+      "nome": "Taxidermia de Ehzra",
+      "nomeFicha": "Taxidermia de Ehzra",
+      "ciclo": 2,
+      "tags": [
+        "utilidade",
+        "mortos-vivos"
+      ],
+      "fonte": "Homebrew",
+      "listaClerigo": false,
+      "status2024": "homebrew",
+      "itemValidacao": "M26",
+      "origens": [
+        "classe"
+      ],
+      "perdida": true,
+      "descricaoCompleta": null,
+      "relacionadas": []
+    },
+    {
+      "tempo": {
+        "tipo": "longo",
+        "texto": "1 minuto"
+      },
+      "alcance": {
+        "tipo": "distancia",
+        "metros": 3,
+        "pes": 10,
+        "texto": "3 m"
+      },
+      "componentes": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "material": "uma gota de sangue, um pedaço de carne e uma pitada de pó de osso",
+      "duracao": {
+        "texto": "Instantânea",
+        "rodadas": null
+      },
+      "concentracao": false,
+      "ritual": false,
+      "resolucao": {
+        "tipo": "automatico"
+      },
+      "dano": [],
+      "alvosPorCiclo": 2,
+      "condicoes": [],
+      "escola": "Necromancia",
+      "resumo": "Ergue um esqueleto ou zumbi sob seu controle por 24 h.",
+      "id": "animar-morto",
+      "nome": "Animar Morto",
+      "nomeOriginal": "Animate Dead",
+      "nomeFicha": "Animar Morto",
+      "ciclo": 3,
+      "tags": [
+        "invocacao",
+        "mortos-vivos"
+      ],
+      "fonte": "PHB 2024",
+      "listaClerigo": true,
+      "status2024": "ok",
+      "itemValidacao": "M27",
+      "origens": [
+        "dominio",
+        "ceifadora"
+      ],
+      "perdida": false,
+      "descricaoCompleta": "Este feitiço cria um servo morto-vivo. Escolha uma pilha de ossos ou um cadáver de um humanoide Médio ou Pequeno dentro do alcance: o alvo se torna um **esqueleto** (se ossos) ou um **zumbi** (se cadáver).\n\nEm cada um dos seus turnos, você pode usar uma ação bônus para comandar mentalmente qualquer criatura criada por esta magia dentro de 18 m. A criatura fica sob seu controle por 24 horas; conjurar o feitiço novamente antes desse prazo reafirma o controle sobre até quatro criaturas já animadas, em vez de animar uma nova.\n\n**Em níveis mais altos:** com um espaço de 4º nível ou superior, anima ou reafirma controle sobre duas criaturas adicionais por nível acima do 3º.",
+      "relacionadas": [
+        "fio-da-obediencia",
+        "batedores-de-sarcofagos",
+        "campeao-do-tumulo",
+        "despelar"
+      ]
+    },
+    {
+      "tempo": {
+        "tipo": "acao",
+        "texto": "1 ação"
+      },
+      "alcance": {
+        "tipo": "pessoal",
+        "texto": "Pessoal (raio de 9 m)"
+      },
+      "area": "emanação de 9 m",
+      "componentes": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duracao": {
+        "texto": "Concentração, até 1 minuto",
+        "rodadas": 10
+      },
+      "concentracao": true,
+      "ritual": false,
+      "resolucao": {
+        "tipo": "automatico"
+      },
+      "dano": [],
+      "cura": {
+        "dados": "2d6",
+        "pvTemporario": false
+      },
+      "condicoes": [],
+      "escola": "Evocação",
+      "resumo": "Aura de 9 m: ação bônus por turno para curar 2d6.",
+      "id": "aura-de-vitalidade",
+      "nome": "Aura de Vitalidade",
+      "nomeOriginal": "Aura of Vitality",
+      "nomeFicha": "Aura de Vitalidade",
+      "ciclo": 3,
+      "tags": [
+        "cura"
+      ],
+      "fonte": "PHB 2024",
+      "listaClerigo": true,
+      "status2024": "mudou",
+      "itemValidacao": "M29",
+      "origens": [
+        "classe"
+      ],
+      "perdida": false,
+      "descricaoCompleta": "Uma aura de energia vitalosa irradia de você numa esfera de 9 m. Até o fim da magia, como ação bônus em cada um dos seus turnos, você pode escolher uma criatura dentro da aura para recuperar **2d6 pontos de vida**.",
+      "relacionadas": [],
+      "v2024": {
+        "componentes": {
+          "v": true,
+          "s": false,
+          "m": false
+        },
+        "ritual": false,
+        "dano": [],
+        "condicoes": [],
+        "escola": "Abjuração",
+        "resumo": "Aura de 9 m: cura 2d6 no início de cada turno seu, sem ação.",
+        "texto": "Só componente V. Cura 2d6 numa criatura na aura ao criá-la e no início de cada turno seu, sem gastar ação bônus. Escola: Abjuração."
+      }
+    },
+    {
+      "tempo": {
+        "tipo": "acao",
+        "texto": "1 ação"
+      },
+      "alcance": {
+        "tipo": "distancia",
+        "metros": 36,
+        "pes": 120,
+        "texto": "36 m"
+      },
+      "componentes": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duracao": {
+        "texto": "Instantânea",
+        "rodadas": null
+      },
+      "concentracao": false,
+      "ritual": false,
+      "resolucao": {
+        "tipo": "automatico"
+      },
+      "dano": [],
+      "condicoes": [],
+      "escola": "Abjuração",
+      "resumo": "Encerra magias de 3º ciclo ou menor; acima, teste de SAB.",
+      "id": "dissipar-magia",
+      "nome": "Dissipar Magia",
+      "nomeOriginal": "Dispel Magic",
+      "nomeFicha": "Dispel Magic",
+      "ciclo": 3,
+      "tags": [
+        "utilidade"
+      ],
+      "fonte": "PHB 2024",
+      "listaClerigo": true,
+      "status2024": "ok",
+      "itemValidacao": "M30",
+      "origens": [
+        "classe"
+      ],
+      "perdida": false,
+      "descricaoCompleta": "Magia padrão de D&D 5e, sem anotação própria no grimório. Encerra um efeito mágico ativo em uma criatura, objeto ou efeito visado dentro do alcance.",
+      "relacionadas": []
+    },
+    {
+      "tempo": {
+        "tipo": "acaoBonus",
+        "texto": "1 ação bônus"
+      },
+      "alcance": {
+        "tipo": "distancia",
+        "metros": 18,
+        "pes": 60,
+        "texto": "18 m"
+      },
+      "alvo": "até 6 criaturas",
+      "componentes": {
+        "v": true,
+        "s": false,
+        "m": false
+      },
+      "duracao": {
+        "texto": "Instantânea",
+        "rodadas": null
+      },
+      "concentracao": false,
+      "ritual": false,
+      "resolucao": {
+        "tipo": "automatico"
+      },
+      "dano": [],
+      "cura": {
+        "porCiclo": "1d4",
+        "dados": "1d4",
+        "somaMod": "sab",
+        "pvTemporario": false
+      },
+      "condicoes": [],
+      "escola": "Evocação",
+      "resumo": "Cura até seis aliados com ação bônus.",
+      "id": "palavra-curativa-em-massa",
+      "nome": "Palavra Curativa em Massa",
+      "nomeOriginal": "Mass Healing Word",
+      "nomeFicha": "Mass Healing Word",
+      "ciclo": 3,
+      "tags": [
+        "cura"
+      ],
+      "fonte": "PHB 2024",
+      "listaClerigo": true,
+      "status2024": "mudou",
+      "itemValidacao": "M33",
+      "origens": [
+        "classe"
+      ],
+      "perdida": false,
+      "descricaoCompleta": "Magia padrão de D&D 5e, sem anotação própria no grimório. Cura, à distância e com uma única palavra, até seis criaturas à sua escolha que você possa ver.",
+      "relacionadas": [],
+      "v2024": {
+        "ritual": false,
+        "dano": [],
+        "cura": {
+          "porCiclo": "1d4",
+          "dados": "2d4",
+          "somaMod": "sab",
+          "pvTemporario": false
+        },
+        "condicoes": [],
+        "escola": "Abjuração",
+        "texto": "Cura 2d4 + SAB, +1d4 por ciclo. Escola: Abjuração."
+      }
+    },
+    {
+      "tempo": {
+        "tipo": "acao",
+        "texto": "1 ação"
+      },
+      "alcance": {
+        "tipo": "distancia",
+        "metros": 3,
+        "pes": 10,
+        "texto": "3 m"
+      },
+      "componentes": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "material": "incenso aceso",
+      "duracao": {
+        "texto": "10 minutos",
+        "rodadas": 100
+      },
+      "concentracao": false,
+      "ritual": false,
+      "resolucao": {
+        "tipo": "automatico"
+      },
+      "dano": [],
+      "condicoes": [],
+      "escola": "Necromancia",
+      "resumo": "Cinco perguntas a um cadáver.",
+      "id": "falar-com-os-mortos",
+      "nome": "Falar com os Mortos",
+      "nomeOriginal": "Speak with Dead",
+      "nomeFicha": "Falar com os Mortos",
+      "ciclo": 3,
+      "tags": [
+        "utilidade"
+      ],
+      "fonte": "PHB 2024",
+      "listaClerigo": true,
+      "status2024": "ok",
+      "itemValidacao": "M28",
+      "origens": [
+        "classe"
+      ],
+      "perdida": false,
+      "descricaoCompleta": "Você concede a aparência de vida a um cadáver de sua escolha dentro do alcance, permitindo que responda a perguntas. O cadáver deve ter uma boca; o feitiço falha se a criatura era morta-viva quando morreu, ou se já foi alvo deste feitiço nos últimos 10 dias.\n\nVocê pode fazer até **cinco perguntas**. O cadáver sabe apenas o que sabia em vida; as respostas costumam ser breves, enigmáticas ou repetitivas, e não há obrigação de sinceridade se ele o reconhecer como inimigo.",
+      "relacionadas": [
+        "repouso-gentil"
+      ]
+    },
+    {
+      "tempo": {
+        "tipo": "acao",
+        "texto": "1 ação"
+      },
+      "alcance": {
+        "tipo": "pessoal",
+        "texto": "Pessoal (raio de 4,5 m)"
+      },
+      "area": "emanação de 4,5 m",
+      "componentes": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "material": "um pergaminho de oração",
+      "duracao": {
+        "texto": "Concentração, até 10 minutos",
+        "rodadas": 100
+      },
+      "concentracao": true,
+      "ritual": false,
+      "resolucao": {
+        "tipo": "salvaguarda",
+        "atributo": "sab",
+        "metadeNoSucesso": true
+      },
+      "dano": [
+        {
+          "porCiclo": "1d8",
+          "dados": "3d8",
+          "tipo": "radiante",
+          "condicao": "radiante para bom ou neutro, necrótico para mau"
+        }
+      ],
+      "condicoes": [],
+      "escola": "Necromancia",
+      "resumo": "Espíritos em volta de você ferem e atrasam inimigos.",
+      "id": "guardioes-espirituais",
+      "nome": "Guardiões Espirituais",
+      "nomeOriginal": "Spirit Guardians",
+      "nomeFicha": "Spirit Guardians",
+      "ciclo": 3,
+      "tags": [
+        "dano",
+        "controle"
+      ],
+      "fonte": "PHB 2024",
+      "listaClerigo": true,
+      "status2024": "mudou",
+      "itemValidacao": "M31",
+      "origens": [
+        "classe"
+      ],
+      "perdida": false,
+      "descricaoCompleta": "Magia padrão de D&D 5e, sem anotação própria no grimório. Convoca espíritos protetores ao redor do conjurador; inimigos que entrem ou comecem o turno na área sofrem dano e têm o deslocamento reduzido.",
+      "relacionadas": [],
+      "v2024": {
+        "ritual": false,
+        "dano": [],
+        "condicoes": [],
+        "escola": "Conjuração",
+        "texto": "Deslocamento pela metade. Dano quando a área entra no espaço da criatura, quando ela entra ou quando termina o turno ali; 1 vez por turno. Escola: Conjuração."
+      }
+    },
+    {
+      "tempo": {
+        "tipo": "acaoBonus",
+        "texto": "1 ação bônus"
+      },
+      "alcance": {
+        "tipo": "pessoal",
+        "texto": "Pessoal"
+      },
+      "componentes": {
+        "v": true,
+        "s": false,
+        "m": false
+      },
+      "duracao": {
+        "texto": "Concentração, até 1 minuto",
+        "rodadas": 10
+      },
+      "concentracao": true,
+      "ritual": false,
+      "resolucao": {
+        "tipo": "automatico"
+      },
+      "dano": [
+        {
+          "porNivel": {
+            "5": "2d8",
+            "11": "3d8"
+          },
+          "rotulo": "Por acerto de ataque",
+          "dados": "1d8",
+          "tipo": "escolha",
+          "condicao": "necrótico, radiante ou gélido"
+        }
+      ],
+      "condicoes": [],
+      "escola": "Necromancia",
+      "resumo": "Seus ataques corpo a corpo causam dano extra e bloqueiam cura.",
+      "id": "manto-espiritual",
+      "nome": "Manto Espiritual",
+      "nomeOriginal": "Spirit Shroud",
+      "nomeFicha": "Manto Espiritual",
+      "ciclo": 3,
+      "tags": [
+        "dano",
+        "buff"
+      ],
+      "fonte": "Tasha (2020)",
+      "listaClerigo": false,
+      "status2024": "legado",
+      "itemValidacao": "M32",
+      "origens": [
+        "classe"
+      ],
+      "perdida": false,
+      "descricaoCompleta": "Você chama espíritos do além para pairarem ao seu redor, envolvendo suas ações em um frio sobrenatural. Até o fim da magia: sempre que atingir uma criatura com um ataque, ela sofre **1d8 de dano adicional** (necrótico, radiante ou gélido, à sua escolha); criaturas afetadas não podem recuperar PV a até 3 m de você; e têm o deslocamento reduzido em 3 m até o início do seu próximo turno.\n\n**No 5º nível:** o dano adicional aumenta para 2d8.  \n**No 11º nível:** 3d8.",
+      "relacionadas": [
+        "intencao-mortal",
+        "lamina-necrotica"
+      ],
+      "v2024": {
+        "ritual": false,
+        "dano": [
+          {
+            "porCiclo": "1d8",
+            "porCicloACada": 2,
+            "rotulo": "Por acerto de ataque",
+            "dados": "1d8",
+            "tipo": "escolha",
+            "condicao": "necrótico, radiante ou gélido"
+          }
+        ],
+        "condicoes": [],
+        "texto": "Texto oficial (Tasha): o dano cresce por ciclo, +1d8 a cada 2 ciclos acima do 3º (2d8 no 5º, 3d8 no 7º). Não cresce com o nível do personagem."
+      }
+    },
+    {
+      "tempo": {
+        "tipo": "acao",
+        "texto": "1 ação"
+      },
+      "alcance": {
+        "tipo": "distancia",
+        "metros": 9,
+        "pes": 30,
+        "texto": "9 m"
+      },
+      "componentes": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duracao": {
+        "texto": "Instantânea",
+        "rodadas": null
+      },
+      "concentracao": false,
+      "ritual": false,
+      "resolucao": {
+        "tipo": "automatico"
+      },
+      "dano": [
+        {
+          "porCiclo": "1d8",
+          "rotulo": "Você sofre (não reduzível)",
+          "dados": "4d8",
+          "tipo": "necrotico",
+          "condicao": "o alvo recupera o dobro do dano que você sofreu"
+        }
+      ],
+      "condicoes": [],
+      "escola": "Necromancia",
+      "resumo": "Você sofre dano necrótico e cura o dobro em outra criatura.",
+      "id": "transferencia-de-vida",
+      "nome": "Transferência de Vida",
+      "nomeOriginal": "Life Transference",
+      "nomeFicha": "Life Transference",
+      "ciclo": 3,
+      "tags": [
+        "cura"
+      ],
+      "fonte": "Xanathar (2017)",
+      "listaClerigo": false,
+      "status2024": "legado",
+      "itemValidacao": "M34",
+      "origens": [
+        "ceifadora"
+      ],
+      "perdida": false,
+      "descricaoCompleta": "Magia padrão de D&D 5e, sem anotação própria no grimório. O conjurador sacrifica os próprios pontos de vida para curar outra criatura em dobro.",
+      "relacionadas": []
+    },
+    {
+      "tempo": {
+        "tipo": "acao",
+        "texto": "1 ação"
+      },
+      "alcance": {
+        "tipo": "pessoal",
+        "texto": "Pessoal"
+      },
+      "componentes": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duracao": {
+        "texto": "Concentração, até 1 minuto",
+        "rodadas": 10
+      },
+      "concentracao": true,
+      "ritual": false,
+      "resolucao": {
+        "tipo": "ataque",
+        "alcance": "corpo"
+      },
+      "dano": [
+        {
+          "porCiclo": "1d6",
+          "dados": "3d6",
+          "tipo": "necrotico",
+          "condicao": "você recupera metade do dano causado"
+        }
+      ],
+      "condicoes": [],
+      "escola": "Necromancia",
+      "resumo": "Toque que drena vida; repete como ação enquanto durar.",
+      "id": "toque-vampirico",
+      "nome": "Toque Vampírico",
+      "nomeOriginal": "Vampiric Touch",
+      "nomeFicha": "Toque Vampírico",
+      "ciclo": 3,
+      "tags": [
+        "dano",
+        "cura"
+      ],
+      "fonte": "PHB 2024 / Domínio da Morte (DMG 2014)",
+      "listaClerigo": false,
+      "status2024": "ok",
+      "itemValidacao": "M35",
+      "origens": [
+        "dominio"
+      ],
+      "perdida": false,
+      "descricaoCompleta": "O toque da sua mão envolta em sombras desvia força vital de outras pessoas para curar suas feridas. Faça um ataque mágico corpo a corpo; ao acertar, o alvo sofre **3d6 de dano necrótico**, e você recupera pontos de vida iguais à metade do dano causado. Até o feitiço terminar, você pode repetir o ataque em cada um dos seus turnos como uma ação.\n\n**Em níveis mais altos:** com um espaço de 4º nível ou superior, o dano aumenta em 1d6 para cada nível acima do 3º.",
+      "relacionadas": []
+    },
+    {
+      "tempo": {
+        "tipo": "acao",
+        "texto": "1 ação"
+      },
+      "alcance": {
+        "tipo": "toque",
+        "texto": "Toque"
+      },
+      "componentes": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duracao": {
+        "texto": "Concentração, até 1 minuto",
+        "rodadas": 10
+      },
+      "concentracao": true,
+      "ritual": false,
+      "resolucao": {
+        "tipo": "salvaguarda",
+        "atributo": "sab",
+        "metadeNoSucesso": false
+      },
+      "dano": [
+        {
+          "rotulo": "Opção 4: extra por acerto",
+          "dados": "1d8",
+          "tipo": "necrotico",
+          "condicao": "só se escolheu a quarta maldição"
+        }
+      ],
+      "condicoes": [],
+      "escola": "Necromancia",
+      "resumo": "SAB ou fica amaldiçoado com um de quatro efeitos.",
+      "id": "impor-maldicao",
+      "nome": "Impor Maldição",
+      "nomeOriginal": "Bestow Curse",
+      "nomeFicha": "Impor Maldição",
+      "ciclo": 3,
+      "tags": [
+        "controle",
+        "dano"
+      ],
+      "fonte": "PHB 2024",
+      "listaClerigo": true,
+      "status2024": "mudou",
+      "itemValidacao": "M36",
+      "origens": [
+        "classe"
+      ],
+      "perdida": false,
+      "descricaoCompleta": "Você toca uma criatura e a envolve com uma maldição debilitante; teste de resistência de Sabedoria ou fica amaldiçoada durante a duração. Ao conjurar, escolha um efeito:\n\n-   Desvantagem em testes de uma habilidade à sua escolha.\n-   Desvantagem em jogadas de ataque contra você.\n-   Teste de resistência de Sabedoria no início de cada turno, ou perde a ação.\n-   Seus ataques e magias causam +1d8 de dano necrótico adicional ao alvo.\n\n**No 5º nível ou superior:** dura 8 horas (concentração). **No 7º ou superior:** 24 horas. **No 9º:** não exige mais concentração.",
+      "relacionadas": [],
+      "v2024": {
+        "ritual": false,
+        "dano": [],
+        "condicoes": [],
+        "texto": "Opção 1: desvantagem em testes e salvaguardas do atributo. Opção 3: SAB no início do turno ou é forçado a usar Esquivar. 4º ciclo: 10 min com concentração; 5º e 6º: 8 h sem concentração; 7º e 8º: 24 h; 9º: até ser dissipada."
+      }
+    },
+    {
+      "tempo": {
+        "tipo": "acaoBonus",
+        "texto": "1 ação bônus"
+      },
+      "alcance": {
+        "tipo": "pessoal",
+        "texto": "Pessoal"
+      },
+      "componentes": {
+        "v": true,
+        "s": false,
+        "m": false
+      },
+      "duracao": {
+        "texto": "Concentração, até 1 minuto",
+        "rodadas": 10
+      },
+      "concentracao": true,
+      "ritual": false,
+      "resolucao": {
+        "tipo": "automatico"
+      },
+      "dano": [
+        {
+          "porNivel": {
+            "5": "2d8",
+            "11": "3d8"
+          },
+          "rotulo": "Por acerto de ataque à distância",
+          "dados": "1d8",
+          "tipo": "escolha",
+          "condicao": "necrótico, radiante ou gélido"
+        }
+      ],
+      "condicoes": [],
+      "escola": "Necromancia",
+      "resumo": "Seus ataques à distância causam dano extra e bloqueiam cura.",
+      "id": "intencao-mortal",
+      "nome": "Intenção Mortal",
+      "nomeFicha": "Intenção Mortal",
+      "ciclo": 3,
+      "tags": [
+        "dano",
+        "buff"
+      ],
+      "fonte": "Homebrew (variante à distância de Spirit Shroud)",
+      "listaClerigo": false,
+      "status2024": "homebrew",
+      "itemValidacao": "M37",
+      "origens": [
+        "classe"
+      ],
+      "perdida": false,
+      "descricaoCompleta": "Você canaliza seus sentimentos negativos, envolvendo suas ações em um frio sobrenatural. Até o fim da magia: sempre que atingir uma criatura com um **ataque à distância**, ela sofre **1d8 de dano adicional** (necrótico, radiante ou gélido, à sua escolha); criaturas afetadas não podem recuperar PV a até 9 m de você; e têm deslocamento reduzido em 3 m até o início do seu próximo turno.\n\n**No 5º nível:** o dano adicional aumenta para 2d8.  \n**No 11º nível:** 3d8.",
+      "relacionadas": [
+        "manto-espiritual",
+        "soar-os-mortos"
+      ]
+    },
+    {
+      "tempo": {
+        "tipo": "acao",
+        "texto": "1 ação"
+      },
+      "alcance": {
+        "tipo": "distancia",
+        "metros": 9,
+        "pes": 30,
+        "texto": "9 m"
+      },
+      "componentes": {
+        "v": true,
+        "s": false,
+        "m": false
+      },
+      "duracao": {
+        "texto": "8 horas",
+        "rodadas": 4800
+      },
+      "concentracao": false,
+      "ritual": false,
+      "resolucao": {
+        "tipo": "salvaguarda",
+        "atributo": "des",
+        "metadeNoSucesso": true
+      },
+      "dano": [
+        {
+          "dados": "20",
+          "tipo": "radiante",
+          "condicao": "inimigo a até 3 m; some após causar 60 de dano no total"
+        }
+      ],
+      "condicoes": [],
+      "escola": "Conjuração",
+      "resumo": "Guardião espectral fere inimigos que se aproximam.",
+      "id": "guardiao-da-fe",
+      "nome": "Guardião da Fé",
+      "nomeOriginal": "Guardian of Faith",
+      "nomeFicha": "Guardian of Faith",
+      "ciclo": 4,
+      "tags": [
+        "dano",
+        "defesa"
+      ],
+      "fonte": "PHB 2024",
+      "listaClerigo": true,
+      "status2024": "ok",
+      "itemValidacao": "M38",
+      "origens": [
+        "classe"
+      ],
+      "perdida": false,
+      "descricaoCompleta": "Magia padrão de D&D 5e, sem anotação própria no grimório. Invoca um guardião espectral que permanece numa área, atacando inimigos que ali entrem.",
+      "relacionadas": []
+    },
+    {
+      "tempo": {
+        "tipo": "acao",
+        "texto": "1 ação"
+      },
+      "alcance": {
+        "tipo": "distancia",
+        "metros": 18,
+        "pes": 60,
+        "texto": "18 m"
+      },
+      "componentes": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "material": "um pentagrama",
+      "duracao": {
+        "texto": "Concentração, até 1 minuto",
+        "rodadas": 10
+      },
+      "concentracao": true,
+      "ritual": false,
+      "resolucao": {
+        "tipo": "salvaguarda",
+        "atributo": "car",
+        "metadeNoSucesso": false
+      },
+      "dano": [],
+      "alvosPorCiclo": 1,
+      "condicoes": [],
+      "escola": "Abjuração",
+      "resumo": "CAR ou a criatura some para outro plano enquanto durar.",
+      "id": "banimento",
+      "nome": "Banimento",
+      "nomeOriginal": "Banishment",
+      "nomeFicha": "Banishment",
+      "ciclo": 4,
+      "tags": [
+        "controle"
+      ],
+      "fonte": "PHB 2024",
+      "listaClerigo": true,
+      "status2024": "ok",
+      "itemValidacao": "M39",
+      "origens": [
+        "classe"
+      ],
+      "perdida": false,
+      "descricaoCompleta": "Magia padrão de D&D 5e, sem anotação própria no grimório. Banha uma criatura para outro plano de existência, removendo-a temporariamente do combate.",
+      "relacionadas": []
+    },
+    {
+      "tempo": {
+        "tipo": "acao",
+        "texto": "1 ação"
+      },
+      "alcance": {
+        "tipo": "distancia",
+        "metros": 9,
+        "pes": 30,
+        "texto": "9 m"
+      },
+      "componentes": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duracao": {
+        "texto": "Instantânea",
+        "rodadas": null
+      },
+      "concentracao": false,
+      "ritual": false,
+      "resolucao": {
+        "tipo": "salvaguarda",
+        "atributo": "con",
+        "metadeNoSucesso": true
+      },
+      "dano": [
+        {
+          "porCiclo": "1d8",
+          "dados": "8d8",
+          "tipo": "necrotico"
+        }
+      ],
+      "condicoes": [],
+      "escola": "Necromancia",
+      "resumo": "Drena a vida de um alvo: 8d8 necrótico.",
+      "id": "praga",
+      "nome": "Praga",
+      "nomeOriginal": "Blight",
+      "nomeFicha": "Praga",
+      "ciclo": 4,
+      "tags": [
+        "dano"
+      ],
+      "fonte": "PHB 2024 / Domínio da Morte (DMG 2014)",
+      "listaClerigo": false,
+      "status2024": "mudou",
+      "itemValidacao": "M40",
+      "origens": [
+        "dominio"
+      ],
+      "perdida": false,
+      "descricaoCompleta": "A energia necromântica lava uma criatura de sua escolha, drenando umidade e vitalidade. Teste de resistência de Constituição; falha causa **8d8 de dano necrótico** (metade em sucesso). Não tem efeito sobre mortos-vivos ou construtos.\n\nContra criaturas ou plantas mágicas, o teste é feito com desvantagem e o dano é máximo. Uma planta não mágica simplesmente murcha e morre, sem teste.\n\n**Em níveis mais altos:** com um espaço de 5º nível ou superior, o dano aumenta em 1d8 para cada nível acima do 4º.",
+      "relacionadas": [],
+      "v2024": {
+        "ritual": false,
+        "dano": [],
+        "condicoes": [],
+        "texto": "Sem exceção para mortos-vivos e constructos. Criatura Planta falha automaticamente (sem dano máximo)."
+      }
+    },
+    {
+      "tempo": {
+        "tipo": "acao",
+        "texto": "1 ação"
+      },
+      "alcance": {
+        "tipo": "toque",
+        "texto": "Toque"
+      },
+      "componentes": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duracao": {
+        "texto": "8 horas",
+        "rodadas": 4800
+      },
+      "concentracao": false,
+      "ritual": false,
+      "resolucao": {
+        "tipo": "automatico"
+      },
+      "dano": [],
+      "condicoes": [],
+      "escola": "Necromancia",
+      "resumo": "A primeira queda a 0 PV vira 1 PV.",
+      "id": "ala-da-morte",
+      "nome": "Ala da Morte",
+      "nomeOriginal": "Death Ward",
+      "nomeFicha": "Ala da Morte",
+      "ciclo": 4,
+      "tags": [
+        "defesa"
+      ],
+      "fonte": "PHB 2024",
+      "listaClerigo": true,
+      "status2024": "ok",
+      "itemValidacao": "M41",
+      "origens": [
+        "dominio",
+        "ceifadora"
+      ],
+      "perdida": false,
+      "descricaoCompleta": "Você toca uma criatura e lhe concede proteção contra a morte. Na primeira vez que o alvo cair a 0 PV por dano, ele cai a **1 ponto de vida** em vez disso, e a magia termina.\n\nSe o feitiço ainda estiver ativo quando o alvo sofrer um efeito de morte instantânea sem dano, esse efeito é negado e a magia termina.",
+      "relacionadas": []
+    },
+    {
+      "tempo": {
+        "tipo": "acao",
+        "texto": "1 ação"
+      },
+      "alcance": {
+        "tipo": "toque",
+        "texto": "Toque"
+      },
+      "alvo": "Um morto-vivo sob seu controle",
+      "componentes": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duracao": {
+        "texto": "Concentração, até 10 minutos",
+        "rodadas": 100
+      },
+      "concentracao": true,
+      "ritual": false,
+      "resolucao": {
+        "tipo": "automatico"
+      },
+      "dano": [
+        {
+          "rotulo": "Ataques do campeão",
+          "dados": "2d8",
+          "tipo": "necrotico"
+        },
+        {
+          "rotulo": "Explosão ao cair a 0 PV",
+          "dados": "4d10",
+          "tipo": "necrotico",
+          "condicao": "CON, raio de 3 m, 1 vez por combate"
+        }
+      ],
+      "condicoes": [],
+      "escola": "Necromancia",
+      "resumo": "Um morto-vivo vira campeão: PV ×3, +3 CA, +2d8 necrótico.",
+      "id": "campeao-do-tumulo",
+      "nome": "Campeão do Túmulo",
+      "nomeFicha": "Campeão do Túmulo",
+      "ciclo": 5,
+      "tags": [
+        "buff",
+        "mortos-vivos"
+      ],
+      "fonte": "Homebrew",
+      "listaClerigo": false,
+      "status2024": "homebrew",
+      "itemValidacao": "M42",
+      "origens": [
+        "classe"
+      ],
+      "perdida": false,
+      "cicloNota": "5º ciclo: só pode ser conjurada a partir do nível 9.",
+      "descricaoCompleta": "Você canaliza a essência do poder sombrio que jaz além do véu da vida e ergue um de seus servos à forma de um verdadeiro campeão da morte: um **Campeão do Túmulo**, portador de ruína.\n\nO morto-vivo escolhido recebe: **Pontos de Vida triplicados**; **CA +3**; ataques causam **+2d8 de dano necrótico**; imunidade a medo, encantamento e paralisia; e, uma vez por combate, ao chegar a 0 PV, pode explodir em vísceras sombrias — criaturas num raio de 3 m fazem teste de Constituição, sofrendo **4d10 de dano necrótico** em falha.\n\nVocê só pode manter um Campeão do Túmulo ativo por vez; conjurar novamente dissolve o anterior imediatamente.",
+      "relacionadas": [
+        "animar-morto",
+        "fio-da-obediencia"
+      ]
+    },
+    {
+      "tempo": {
+        "tipo": "acao",
+        "texto": "1 ação"
+      },
+      "alcance": {
+        "tipo": "toque",
+        "texto": "Toque"
+      },
+      "componentes": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duracao": {
+        "texto": "Instantânea",
+        "rodadas": null
+      },
+      "concentracao": false,
+      "ritual": false,
+      "resolucao": {
+        "tipo": "automatico"
+      },
+      "dano": [],
+      "condicoes": [],
+      "escola": "Necromancia",
+      "resumo": "Deixa um cadáver só nos ossos, pronto para animar.",
+      "id": "despelar",
+      "nome": "Despelar",
+      "nomeFicha": "Despelar",
+      "ciclo": 0,
+      "tags": [
+        "utilidade",
+        "mortos-vivos"
+      ],
+      "fonte": "Homebrew",
+      "listaClerigo": false,
+      "status2024": "homebrew",
+      "itemValidacao": "M43",
+      "origens": [
+        "grimorio"
+      ],
+      "perdida": false,
+      "descricaoCompleta": "Você toca um cadáver Pequeno ou Médio. Vapor necrótico consome carne, gordura e vísceras, deixando apenas os ossos limpos — objetos não são afetados. Não cria uma criatura morta-viva, apenas prepara o material para animação futura. Um cadáver só pode ser afetado uma vez por este truque.",
+      "relacionadas": [
+        "animar-morto"
+      ]
+    },
+    {
+      "tempo": {
+        "tipo": "acao",
+        "texto": "1 ação"
+      },
+      "alcance": {
+        "tipo": "toque",
+        "texto": "Toque"
+      },
+      "componentes": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duracao": {
+        "texto": "Até desfazer",
+        "rodadas": null
+      },
+      "concentracao": false,
+      "ritual": false,
+      "resolucao": {
+        "tipo": "automatico"
+      },
+      "dano": [],
+      "condicoes": [],
+      "escola": "Necromancia",
+      "resumo": "Encolhe um cadáver ou morto-vivo para 1/5 do tamanho.",
+      "id": "minguar-ossos",
+      "nome": "Minguar Ossos",
+      "nomeFicha": "Minguar Ossos",
+      "ciclo": 2,
+      "tags": [
+        "utilidade",
+        "mortos-vivos"
+      ],
+      "fonte": "Homebrew",
+      "listaClerigo": false,
+      "status2024": "homebrew",
+      "itemValidacao": "M45",
+      "origens": [
+        "grimorio"
+      ],
+      "perdida": false,
+      "descricaoCompleta": "Você toca o cadáver ou morto-vivo de tamanho Pequeno ou Médio. Os ossos encolhem para 1/5 do tamanho original, tornando-o compacto e fácil de transportar.\n\nSe for um cadáver, permanece reduzido até você desfazer a magia. Se for um morto-vivo sob seu controle (nível 2), a criatura fica incapacitada e inerte enquanto reduzida, só podendo ser usada após ser restaurada ao tamanho normal.",
+      "relacionadas": [
+        "bolsa-de-ossos"
+      ]
+    },
+    {
+      "tempo": {
+        "tipo": "acao",
+        "texto": "1 ação"
+      },
+      "alcance": {
+        "tipo": "distancia",
+        "metros": 3,
+        "pes": 10,
+        "texto": "3 m"
+      },
+      "componentes": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duracao": {
+        "texto": "Até ser liberado",
+        "rodadas": null
+      },
+      "concentracao": false,
+      "ritual": false,
+      "resolucao": {
+        "tipo": "automatico"
+      },
+      "dano": [],
+      "condicoes": [],
+      "escola": "Necromancia",
+      "resumo": "Guarda um morto-vivo desmontado num saco de até 2 kg.",
+      "id": "bolsa-de-ossos",
+      "nome": "Bolsa de Ossos",
+      "nomeFicha": "Bolsa de Ossos",
+      "ciclo": 1,
+      "tags": [
+        "utilidade",
+        "mortos-vivos"
+      ],
+      "fonte": "Homebrew",
+      "listaClerigo": false,
+      "status2024": "homebrew",
+      "itemValidacao": "M44",
+      "origens": [
+        "grimorio"
+      ],
+      "perdida": false,
+      "descricaoCompleta": "Você desfaz magicamente a estrutura corporal de um morto-vivo sob seu controle (zumbi, esqueleto ou similar) dentro do alcance. A criatura se desmonta e é sugada para dentro do saco material da magia, ficando inativa, incapacitada e sem exigir controle.\n\nO peso do saco não excede 2 kg enquanto contiver um morto-vivo desmontado. Conjurar a magia novamente direcionada ao saco libera a criatura, que se remonta com os mesmos PV que tinha ao ser guardada. Apenas uma criatura pode ser armazenada por conjuração.",
+      "relacionadas": [
+        "minguar-ossos",
+        "animar-morto"
+      ]
+    }
+  ]
+}

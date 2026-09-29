@@ -13,7 +13,9 @@
     "test:watch": "vitest",
     "e2e": "playwright test",
     "extract": "tsx scripts/extract.ts",
-    "validate-data": "tsx scripts/validate-data.ts"
+    "validate-data": "tsx scripts/validate-data.ts",
+    "build-data": "tsx scripts/build-data.ts",
+    "data": "npm run extract && npm run build-data"
   },
   "dependencies": {
     "@fontsource/cinzel": "^5.3.0",

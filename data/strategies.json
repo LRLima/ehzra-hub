@@ -1,0 +1,420 @@
+{
+  "schemaVersion": 1,
+  "playbooks": [
+    {
+      "id": "manipulador-de-almas",
+      "nome": "Manipulador de Almas",
+      "resumo": "Os mortos-vivos seguram a linha de frente; você controla o inimigo mais perigoso e dá suporte de longe.",
+      "quandoUsar": [
+        "Você já tem mortos-vivos animados (Animar Morto leva 1 minuto, então se prepara antes do combate).",
+        "Há um inimigo de elite que pode desmontar os esqueletos."
+      ],
+      "quandoNaoUsar": [
+        "Sem cadáveres nem mortos-vivos à mão.",
+        "Área de luz sagrada ou contra muitos inimigos com dano em área."
+      ],
+      "preCombate": {
+        "acao": "Fio da Obediência em cada morto-vivo (8 horas).",
+        "magias": [
+          {
+            "id": "fio-da-obediencia",
+            "ciclo": 1
+          }
+        ]
+      },
+      "turnos": [
+        {
+          "acao": "Impor Maldição no inimigo de elite (opção 2: desvantagem nos ataques contra você, ou opção 4 para dano).",
+          "bonus": "Comandar os mortos-vivos (Animar Morto).",
+          "movimento": "Fique a até 3 m de dois mortos-vivos para ativar o +2 de CA do Fio.",
+          "magias": [
+            {
+              "id": "impor-maldicao",
+              "ciclo": 3
+            }
+          ],
+          "rotulo": "Turno 1"
+        },
+        {
+          "acao": "Soar os Mortos no alvo ferido (1d12 vira 2d12 + 5), ou Lâmina Necrótica se estiver colado.",
+          "bonus": "Comandar os mortos-vivos.",
+          "reacao": "Conjurador de Guerra se alguém sair do seu alcance.",
+          "magias": [],
+          "rotulo": "Turno 2 em diante"
+        }
+      ],
+      "conflitosConcentracao": [
+        "Impor Maldição ocupa a concentração até o 4º ciclo."
+      ],
+      "dependeDeHomebrew": [
+        "Fio da Obediência",
+        "Pavor da Tumba (citada na estratégia original, mas não existe no grimório)"
+      ],
+      "original": true
+    },
+    {
+      "id": "combatente-corpo-a-corpo",
+      "nome": "Combatente Solitário: corpo a corpo",
+      "resumo": "Tanque com PV temporário, dano extra no corte e Toque da Morte nos acertos.",
+      "quandoUsar": [
+        "Você está sozinho na linha de frente.",
+        "Um inimigo de elite está ao alcance da foice."
+      ],
+      "quandoNaoUsar": [
+        "Inimigos voadores ou à distância.",
+        "Mana abaixo de 10: guarde para cura."
+      ],
+      "preCombate": {
+        "acao": "Vitalidade Falsa no 4º ciclo: 2d4 + 19 PV temporários (6 mana).",
+        "magias": [
+          {
+            "id": "vitalidade-falsa",
+            "ciclo": 4
+          }
+        ]
+      },
+      "turnos": [
+        {
+          "acao": "Lâmina Necrótica: ataque com a foice. Se acertar, use Toque da Morte (+21 necrótico, 1 Canalizar Divindade).",
+          "bonus": "Manto Espiritual no 3º ciclo (5 mana). Pela ficha o dano cresce com o nível, então subir o ciclo não aumenta o dano.",
+          "movimento": "Cole no alvo; se ele se afastar, a Lâmina pune.",
+          "magias": [
+            {
+              "id": "manto-espiritual",
+              "ciclo": 3
+            }
+          ],
+          "rotulo": "Turno 1"
+        },
+        {
+          "acao": "Lâmina Necrótica todo turno.",
+          "reacao": "Conjurador de Guerra: se o alvo sair do seu alcance, conjure Soar os Mortos nele.",
+          "magias": [],
+          "rotulo": "Turno 2 em diante"
+        },
+        {
+          "acao": "Infligir Ferimentos (texto da ficha, ataque corpo a corpo) + Toque da Morte. Se você aprovar o Infligir 2024 (salvaguarda), o Toque não dispara com ele; use a Lâmina.",
+          "magias": [
+            {
+              "id": "infligir-ferimentos",
+              "ciclo": 1
+            }
+          ],
+          "rotulo": "Descarga de dano"
+        }
+      ],
+      "conflitosConcentracao": [
+        "Manto Espiritual é concentração."
+      ],
+      "dependeDeHomebrew": [
+        "Lâmina Necrótica",
+        "Toque da Morte (legado 2014)"
+      ],
+      "original": true
+    },
+    {
+      "id": "combatente-distancia",
+      "nome": "Combatente Solitário: à distância",
+      "resumo": "Dano de longe com Soar os Mortos. Atenção: a Intenção Mortal não combina com ele.",
+      "quandoUsar": [
+        "O inimigo está longe ou você precisa ficar fora do corpo a corpo."
+      ],
+      "quandoNaoUsar": [
+        "Se o plano for Intenção Mortal + Soar os Mortos: a Intenção só dispara em ataque à distância, e Soar os Mortos é salvaguarda."
+      ],
+      "turnos": [
+        {
+          "acao": "Soar os Mortos (2d8 ou 2d12, + 5 do Conjurador Potente). Com o Ceifador, mira 2 inimigos a até 1,5 m um do outro.",
+          "movimento": "Fique a 18 m ou menos, atrás de cobertura.",
+          "magias": [],
+          "rotulo": "Turno 1"
+        },
+        {
+          "acao": "Soar os Mortos continuamente.",
+          "bonus": "Palavra Curativa em aliado caído, se preciso.",
+          "magias": [],
+          "rotulo": "Turno 2 em diante"
+        },
+        {
+          "acao": "Raio da Doença (2 mana por turno).",
+          "bonus": "Intenção Mortal (5 mana), só se você for usar Raio da Doença, que é ataque à distância.",
+          "magias": [
+            {
+              "id": "intencao-mortal",
+              "ciclo": 3
+            }
+          ],
+          "rotulo": "Variante com Intenção Mortal"
+        }
+      ],
+      "conflitosConcentracao": [
+        "Intenção Mortal é concentração."
+      ],
+      "dependeDeHomebrew": [
+        "Intenção Mortal"
+      ],
+      "original": true
+    },
+    {
+      "id": "abertura",
+      "nome": "Abertura de combate",
+      "resumo": "Guardiões Espirituais no primeiro turno e dano de truque dentro da aura.",
+      "quandoUsar": [
+        "Vários inimigos vão se aproximar de você.",
+        "Aliados conseguem ficar fora da aura ou você os exclui."
+      ],
+      "quandoNaoUsar": [
+        "Inimigos ficam à distância e não entram na área."
+      ],
+      "preCombate": {
+        "acao": "Ala da Morte em você (Ceifadora: 3 mana, 8 horas).",
+        "magias": [
+          {
+            "id": "ala-da-morte",
+            "ciclo": 4
+          }
+        ]
+      },
+      "turnos": [
+        {
+          "acao": "Guardiões Espirituais (5 mana). Inimigos a até 4,5 m: SAB ou 3d8.",
+          "movimento": "Ande até os inimigos para a aura alcançá-los.",
+          "magias": [
+            {
+              "id": "guardioes-espirituais",
+              "ciclo": 3
+            }
+          ],
+          "rotulo": "Turno 1"
+        },
+        {
+          "acao": "Soar os Mortos ou Lâmina Necrótica.",
+          "reacao": "Conjurador de Guerra.",
+          "movimento": "Mantenha o máximo de inimigos na aura.",
+          "magias": [],
+          "rotulo": "Turno 2 em diante"
+        }
+      ],
+      "conflitosConcentracao": [
+        "Guardiões Espirituais é concentração: não use junto com Manto Espiritual."
+      ],
+      "dependeDeHomebrew": [],
+      "original": false
+    },
+    {
+      "id": "controle-de-grupo",
+      "nome": "Controle de grupo",
+      "resumo": "Tira inimigos de jogo sem gastar concentração.",
+      "quandoUsar": [
+        "Muitos inimigos fortes de uma vez.",
+        "O grupo precisa de tempo."
+      ],
+      "quandoNaoUsar": [
+        "Inimigos com CON alta (use Comando, que é SAB)."
+      ],
+      "turnos": [
+        {
+          "acao": "Cegueira e Surdez no 4º ciclo (6 mana): 3 alvos, sem concentração.",
+          "magias": [
+            {
+              "id": "cegueira-e-surdez",
+              "ciclo": 4
+            }
+          ],
+          "rotulo": "Turno 1"
+        },
+        {
+          "acao": "Banimento no mais perigoso (6 mana, concentração), ou Silêncio contra conjuradores.",
+          "magias": [
+            {
+              "id": "banimento",
+              "ciclo": 4
+            }
+          ],
+          "rotulo": "Turno 2"
+        },
+        {
+          "acao": "Comando (Fuja ou Caia) nos que sobraram, ou Soar os Mortos.",
+          "magias": [],
+          "rotulo": "Turno 3 em diante"
+        }
+      ],
+      "conflitosConcentracao": [
+        "Banimento e Silêncio são concentração: escolha um."
+      ],
+      "dependeDeHomebrew": [],
+      "original": false
+    },
+    {
+      "id": "emergencia",
+      "nome": "Emergência com pouca vida",
+      "resumo": "Sobreviver primeiro, sem desperdiçar a ação.",
+      "quandoUsar": [
+        "PV abaixo de 20.",
+        "Você está cercado."
+      ],
+      "quandoNaoUsar": [
+        "Um aliado está caído: cure ele primeiro (Palavra Curativa)."
+      ],
+      "preCombate": {
+        "acao": "Ala da Morte já ativa (Ceifadora, 3 mana).",
+        "magias": [
+          {
+            "id": "ala-da-morte",
+            "ciclo": 4
+          }
+        ]
+      },
+      "turnos": [
+        {
+          "acao": "Soar os Mortos no mais ferido, ou a ação Desengajar para sair do cerco.",
+          "bonus": "Palavra Curativa em você (2 mana, ou mais ciclos se sobrar mana).",
+          "movimento": "Recue para trás dos mortos-vivos ou aliados.",
+          "magias": [
+            {
+              "id": "palavra-curativa",
+              "ciclo": 1
+            }
+          ],
+          "rotulo": "Turno de crise"
+        },
+        {
+          "bonus": "Avatar dos Quatro Túmulos (1 Inspiração). Bhaal cura metade do dano necrótico causado; Rainha Corvo dá voo de 9 m para fugir.",
+          "magias": [],
+          "rotulo": "Último recurso"
+        }
+      ],
+      "conflitosConcentracao": [],
+      "dependeDeHomebrew": [
+        "Avatar dos Quatro Túmulos"
+      ],
+      "original": false
+    },
+    {
+      "id": "suporte",
+      "nome": "Suporte ao grupo",
+      "resumo": "Mantém o grupo de pé enquanto os aliados causam o dano.",
+      "quandoUsar": [
+        "Aliados de dano fortes na mesa.",
+        "Luta longa."
+      ],
+      "quandoNaoUsar": [
+        "Você é o único na frente (use o corpo a corpo)."
+      ],
+      "preCombate": {
+        "acao": "Ala da Morte no tanque do grupo (Ceifadora, 3 mana).",
+        "magias": [
+          {
+            "id": "ala-da-morte",
+            "ciclo": 4
+          }
+        ]
+      },
+      "turnos": [
+        {
+          "acao": "Soar os Mortos.",
+          "bonus": "Escudo da Fé no tanque (2 mana, concentração).",
+          "magias": [
+            {
+              "id": "escudo-da-fe",
+              "ciclo": 1
+            }
+          ],
+          "rotulo": "Turno 1"
+        },
+        {
+          "acao": "Aura de Vitalidade (5 mana, concentração; troca o Escudo da Fé).",
+          "bonus": "Cure 2d6 por turno com a aura.",
+          "magias": [
+            {
+              "id": "aura-de-vitalidade",
+              "ciclo": 3
+            }
+          ],
+          "rotulo": "Quando o grupo sangrar"
+        },
+        {
+          "bonus": "Palavra Curativa em Massa (5 mana).",
+          "magias": [
+            {
+              "id": "palavra-curativa-em-massa",
+              "ciclo": 3
+            }
+          ],
+          "rotulo": "Vários caídos"
+        }
+      ],
+      "conflitosConcentracao": [
+        "Escudo da Fé e Aura de Vitalidade: só um de cada vez."
+      ],
+      "dependeDeHomebrew": [],
+      "original": false
+    }
+  ],
+  "textoOriginal": [
+    {
+      "tipo": "titulo",
+      "md": "Manipulador de Almas"
+    },
+    {
+      "tipo": "paragrafo",
+      "md": "**Passo 1:** Matar um ou mais humanoides para levantá-los como esqueleto."
+    },
+    {
+      "tipo": "paragrafo",
+      "md": "**Passo 2:** Utilizar [Fio da Obediência](#/magia/fio-da-obediencia) para proporcionar-lhes mais autonomia e +2 de CA."
+    },
+    {
+      "tipo": "subtitulo",
+      "md": "Caminho Alternativo — Dano centralizado em um único inimigo"
+    },
+    {
+      "tipo": "paragrafo",
+      "md": "**Passo 1:** Utilizar Pavor da Tumba contra o inimigo para mantê-lo incapaz de neutralizar a infantaria de esqueletos."
+    },
+    {
+      "tipo": "paragrafo",
+      "md": "**Passo 2:** Dar suporte aos esqueletos com uma opção de longa distância, [Soar os Mortos](#/magia/soar-os-mortos), ou de curta distância, [Lâmina Necrótica](#/magia/lamina-necrotica)."
+    },
+    {
+      "tipo": "paragrafo",
+      "md": "**Opção Extra:** Utilizar [Campeão do Túmulo](#/magia/campeao-do-tumulo) para intensificar a resistência e o dano de um dos esqueletos."
+    },
+    {
+      "tipo": "titulo",
+      "md": "Combatente Solitário"
+    },
+    {
+      "tipo": "subtitulo",
+      "md": "Estilo Corpo a Corpo"
+    },
+    {
+      "tipo": "paragrafo",
+      "md": "**Passo 1:** Utilizar [Vitalidade Falsa](#/magia/vitalidade-falsa) em si mesmo no último ciclo possível, para ter vida adicional e resistir a ataques inimigos."
+    },
+    {
+      "tipo": "paragrafo",
+      "md": "**Passo 2:** Utilizar [Manto Espiritual](#/magia/manto-espiritual) em si mesmo no último ciclo possível, para adicionar mais dano ao ataque corpo a corpo."
+    },
+    {
+      "tipo": "paragrafo",
+      "md": "**Uso contínuo:** Utilizar o truque [Lâmina Necrótica](#/magia/lamina-necrotica) continuamente, impossibilitando o inimigo de se mover sem tomar dano."
+    },
+    {
+      "tipo": "paragrafo",
+      "md": "**Descarga de dano:** Utilizar [Infligir Ferimentos](#/magia/infligir-ferimentos) com Canalizar Divindade, para dano concentrado em um inimigo de elite."
+    },
+    {
+      "tipo": "subtitulo",
+      "md": "Estilo à Distância"
+    },
+    {
+      "tipo": "paragrafo",
+      "md": "**Passo 1:** Utilizar Intenção Mortal em si mesmo no último ciclo possível, para adicionar mais dano ao ataque à distância."
+    },
+    {
+      "tipo": "paragrafo",
+      "md": "**Passo 2:** Utilizar o truque [Soar os Mortos](#/magia/soar-os-mortos) continuamente."
+    }
+  ]
+}
