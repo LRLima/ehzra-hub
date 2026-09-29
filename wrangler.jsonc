@@ -14,7 +14,7 @@
     {
       "binding": "DB",
       "database_name": "ehzra-hub",
-      "database_id": "PREENCHER_COM_O_ID_DO_D1",
+      "database_id": "4f2187d2-4726-47af-b0d3-98993d549330",
       "migrations_dir": "worker/migrations"
     }
   ],
