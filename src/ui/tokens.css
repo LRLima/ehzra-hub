@@ -6,7 +6,7 @@
 :root {
   color-scheme: dark;
 
-  --void: #141019;
+  --void: #0c090f; /* mais escuro que os painéis, para os cartões destacarem */
   --void-2: #1c1420;
   --panel: #241a26;
   --panel-2: #2c1f2c;
@@ -51,7 +51,7 @@
   --tap: 44px;
   --gutter: 16px;
   --topbar-h: 76px; /* atualizado em tempo real pelo TopBar */
-  --nav-h: 64px;
+  --nav-h: 50px;
   --safe-bottom: env(safe-area-inset-bottom, 0px);
 
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);

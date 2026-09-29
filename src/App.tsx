@@ -114,6 +114,7 @@ export function App() {
 
   return (
     <div className="app">
+      <div className="lava" aria-hidden="true"><i /><i /><i /><i /></div>
       {!telaCheia && <TopBar />}
       <main className={`main page-in${telaCheia ? ' sem-topbar' : ''}`} key={rota.join('/')}>
         {!pronto ? <p className="faint">Abrindo o grimório...</p>
@@ -124,14 +125,14 @@ export function App() {
           : <Mais rota={rota.slice(1)} />}
       </main>
       <button className="fab" onClick={() => abrir({ tipo: 'busca' })} aria-label="Buscar (Ctrl+K)" data-testid="busca">
-        <MagnifyingGlassIcon size={26} weight="bold" />
+        <MagnifyingGlassIcon size={22} weight="bold" />
       </button>
       <nav className="nav" aria-label="Seções">
         <ul>
           {ABAS.map(({ id, rotulo, Icone }) => (
             <li key={id}>
               <a href={`#/${id}`} aria-current={aba === id ? 'page' : undefined}>
-                <Icone size={24} weight={aba === id ? 'fill' : 'regular'} />{rotulo}
+                <Icone size={20} weight={aba === id ? 'fill' : 'regular'} />{rotulo}
               </a>
             </li>
           ))}

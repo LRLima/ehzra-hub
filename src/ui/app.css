@@ -27,6 +27,8 @@ button, input, select, textarea { font: inherit; color: inherit; }
 button { cursor: pointer; }
 :focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
 a { color: var(--gold); }
+a.card, a.btn, a.card-btn, .menu a { text-decoration: none; color: inherit; }
+a.btn.ouro { color: var(--gold); }
 h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; letter-spacing: 0.02em; margin: 0; text-wrap: balance; }
 p { margin: 0 0 12px; }
 .num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
@@ -35,7 +37,9 @@ p { margin: 0 0 12px; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
 /* ---------- casca ---------- */
-.app { position: relative; z-index: 2; min-height: 100dvh; }
+.app { position: relative; min-height: 100dvh; }
+.main, .topbar, .nav, .fab { isolation: isolate; }
+.main { position: relative; z-index: 2; }
 .main {
   transition: padding-top 0.2s ease-out;
   padding: calc(var(--topbar-h) + 12px) var(--gutter) calc(var(--nav-h) + var(--safe-bottom) + 88px);
@@ -104,14 +108,14 @@ p { margin: 0 0 12px; }
 .nav ul { list-style: none; margin: 0 auto; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); max-width: 760px; }
 .nav a {
   display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
-  height: var(--nav-h); color: var(--bone-faint); text-decoration: none; font-family: var(--font-display); font-size: 11.5px; letter-spacing: 0.06em;
+  height: var(--nav-h); color: var(--bone-faint); text-decoration: none; font-family: var(--font-display); font-size: 10px; letter-spacing: 0.05em; gap: 1px;
 }
 .nav a[aria-current='page'] { color: var(--gold); }
 .nav a[aria-current='page'] svg { filter: drop-shadow(0 0 6px rgba(201, 169, 97, 0.45)); }
 
 .fab {
-  position: fixed; right: var(--gutter); bottom: calc(var(--nav-h) + var(--safe-bottom) + 14px); z-index: var(--z-fab);
-  width: 56px; height: 56px; border-radius: 50%; border: 1px solid var(--gold-dim);
+  position: fixed; right: var(--gutter); bottom: calc(var(--nav-h) + var(--safe-bottom) + 12px); z-index: var(--z-fab);
+  width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--gold-dim);
   background: radial-gradient(circle at 30% 30%, var(--panel-3), var(--panel)); color: var(--gold);
   display: grid; place-items: center; box-shadow: var(--shadow);
 }
@@ -136,26 +140,26 @@ p { margin: 0 0 12px; }
 .icon-btn { width: var(--tap); height: var(--tap); display: grid; place-items: center; border-radius: var(--r); border: 1px solid var(--line); background: var(--panel-2); color: var(--bone); }
 .row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
 .grow { flex: 1; }
-.stack { display: grid; gap: 10px; }
+.stack { display: grid; gap: 8px; }
 
 /* ---------- cartões e chips ---------- */
-.card { background: var(--panel); border: 1px solid var(--line-soft); border-radius: var(--r); padding: 12px 14px; }
+.card { background: var(--panel); border: 1px solid var(--line-soft); border-radius: var(--r); padding: 10px 12px; box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35); }
 .card + .card { margin-top: 8px; }
 .card-btn { display: block; width: 100%; text-align: left; color: inherit; }
 .card-btn:active { background: var(--panel-2); }
-.spell-card { position: relative; padding-left: 16px; }
+.spell-card { position: relative; padding: 8px 11px 9px 14px; }
 .spell-card::before { content: ''; position: absolute; left: 0; top: 10px; bottom: 10px; width: 3px; border-radius: 0 3px 3px 0; background: var(--line); }
 .spell-card[data-origem='homebrew']::before { background: var(--crimson-fg); }
 .spell-card[data-origem='ceifadora']::before { background: var(--gold); }
-.spell-card .nome { font-family: var(--font-display); font-size: 16px; color: var(--bone); }
-.spell-card .sub { font-size: 14px; color: var(--bone-faint); font-style: italic; }
+.spell-card .nome { font-family: var(--font-display); font-size: 14.5px; color: var(--bone); }
+.spell-card .sub { font-size: 13px; line-height: 1.3; color: var(--bone-faint); font-style: italic; }
 .spell-card .topo { display: flex; justify-content: space-between; gap: 8px; align-items: baseline; }
 .spell-card .resumo { font-size: 14.5px; color: var(--bone-dim); margin: 4px 0 0; }
 
-.chips { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px; }
+.chips { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
 .chip {
   display: inline-flex; align-items: center; gap: 4px; border-radius: var(--r-pill); border: 1px solid var(--line);
-  background: var(--void-2); padding: 2px 9px; font-family: var(--font-mono); font-size: 12.5px; color: var(--bone); white-space: nowrap; line-height: 1.6;
+  background: var(--void-2); padding: 1px 8px; font-family: var(--font-mono); font-size: 11.5px; color: var(--bone); white-space: nowrap; line-height: 1.55;
 }
 .chip svg { flex: none; opacity: 0.85; }
 .chip.vazio { color: var(--bone-faint); border-style: dashed; }
@@ -194,7 +198,7 @@ p { margin: 0 0 12px; }
 .segmented button[aria-pressed='true'] { background: var(--panel-3); color: var(--gold); }
 
 .proxima {
-  position: fixed; left: var(--gutter); right: calc(var(--gutter) + 68px); bottom: calc(var(--nav-h) + var(--safe-bottom) + 14px); z-index: var(--z-fab);
+  position: fixed; left: var(--gutter); right: calc(var(--gutter) + 58px); bottom: calc(var(--nav-h) + var(--safe-bottom) + 12px); z-index: var(--z-fab);
   max-width: 600px;
 }
 .efeito { display: flex; align-items: center; gap: 10px; }
@@ -332,3 +336,21 @@ textarea.input { min-height: 160px; resize: vertical; line-height: 1.5; }
   .conc-banner::before { opacity: 0.5; }
   .hpbar .trail { display: none; }
 }
+
+/* ---------- fundo "lava lamp" ----------
+ * Manchas de gradiente atrás de tudo. Só transform anima (leve no celular);
+ * o degradê já nasce desfocado, então não há filtro animado. */
+.lava { position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
+.lava i {
+  position: absolute; width: 70vmax; height: 70vmax; border-radius: 50%;
+  opacity: 0.55; will-change: transform; mix-blend-mode: screen;
+}
+.lava i:nth-child(1) { background: radial-gradient(circle, rgba(170, 38, 60, 0.75), transparent 62%); left: -25vmax; top: -20vmax; animation: lava-a 38s ease-in-out infinite alternate; }
+.lava i:nth-child(2) { background: radial-gradient(circle, rgba(110, 62, 150, 0.7), transparent 62%); right: -30vmax; top: 10vmax; animation: lava-b 46s ease-in-out infinite alternate; }
+.lava i:nth-child(3) { background: radial-gradient(circle, rgba(201, 169, 97, 0.28), transparent 60%); left: 5vmax; bottom: -40vmax; animation: lava-c 52s ease-in-out infinite alternate; }
+.lava i:nth-child(4) { background: radial-gradient(circle, rgba(120, 24, 48, 0.6), transparent 62%); right: -10vmax; bottom: -30vmax; animation: lava-d 41s ease-in-out infinite alternate; }
+@keyframes lava-a { to { transform: translate(35vw, 45vh) scale(1.25); } }
+@keyframes lava-b { to { transform: translate(-40vw, 35vh) scale(0.85); } }
+@keyframes lava-c { to { transform: translate(30vw, -55vh) scale(1.2); } }
+@keyframes lava-d { to { transform: translate(-45vw, -40vh) scale(1.1); } }
+@media (prefers-reduced-motion: reduce) { .lava i { animation: none !important; } }
