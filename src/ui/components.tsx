@@ -73,12 +73,19 @@ export function SpellChips({ spell, ciclo }: { spell: Spell; ciclo?: number }) {
 }
 
 const ROTULO_STATUS: Record<Status2024, string> = { ok: '2024 ok', mudou: 'Mudou em 2024', legado: 'Legado 2014', homebrew: 'Homebrew' };
-export function Selo({ status, aprovado }: { status: Status2024; aprovado?: boolean }) {
+export function Selo({ status, aprovado, recusado }: { status: Status2024; aprovado?: boolean; recusado?: boolean }) {
+  if (recusado) return <span className="selo legado" title="Versão 2024 conferida e recusada: vale o texto da ficha">Ficha mantida</span>;
   return (
-    <span className={`selo ${status}`} title={status === 'mudou' && !aprovado ? 'Vale o texto da ficha até você aprovar a versão 2024' : undefined}>
-      {status === 'mudou' && aprovado ? 'Atualizada 2024' : ROTULO_STATUS[status]}
+    <span className={`selo ${status}${aprovado ? ' ok' : ''}`} title={status === 'mudou' && !aprovado ? 'Vale o texto da ficha até você aprovar a versão 2024' : undefined}>
+      {aprovado ? 'Atualizada 2024' : ROTULO_STATUS[status]}
     </span>
   );
+}
+
+/** Selo com a decisão já aplicada (aprovada, recusada ou pendente). */
+export function SeloDe({ id, status }: { id: string; status: Status2024 }) {
+  const { r } = useJogo();
+  return <Selo status={status} aprovado={r.character.aprovacoes2024.includes(id)} recusado={r.character.recusadas2024.includes(id)} />;
 }
 
 export function Markdown({ md, className = 'desc' }: { md: string; className?: string }) {
@@ -145,7 +152,7 @@ export function SpellCard({ spell, ciclo, mostrarSelo = false }: { spell: Spell;
       <div className="topo">
         <span className="nome">{spell.nome}</span>
         <span className="row" style={{ gap: 6 }}>
-          {mostrarSelo && <Selo status={spell.status2024} aprovado={r.character.aprovacoes2024.includes(spell.id)} />}
+          {mostrarSelo && <SeloDe id={spell.id} status={spell.status2024} />}
           <span className="faint num" style={{ fontSize: 13 }}>{spell.ciclo === 0 ? 'truque' : `${spell.ciclo}º`}</span>
         </span>
       </div>

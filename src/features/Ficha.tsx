@@ -1,6 +1,6 @@
 /** Ficha completa do personagem. */
 import { useJogo, useUI } from '../store';
-import { Selo } from '../ui/components';
+import { SeloDe } from '../ui/components';
 import {
   NOMES_ATRIBUTO, atributo, ataqueMagia, cdMagia, fmtMod, habilidadeEfetiva, habilidadeVisivel, modAtr, pericia, proficiencia,
   salvaguarda, linhaNivel,
@@ -109,7 +109,7 @@ export function Ficha() {
             <button key={f.id} className="card card-btn" onClick={() => abrir({ tipo: 'habilidade', id: f.id })}>
               <div className="row"><span className="grow" style={{ fontFamily: 'var(--font-display)' }}>{f.nome}</span>
                 {rec && f.usos && <span className="chip num">{rec.restante}/{rec.max}</span>}
-                <Selo status={f.status2024} aprovado={ch.aprovacoes2024.includes(f.id)} /></div>
+                <SeloDe id={f.id} status={f.status2024} /></div>
               <p className="muted" style={{ fontSize: 15, margin: '4px 0 0' }}>{f.resumo}</p>
             </button>
           );

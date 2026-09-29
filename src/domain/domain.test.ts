@@ -10,7 +10,10 @@ import { ganhosProximoNivel } from './levelup';
 import { migrar } from './migrations';
 import { descrever } from './log';
 
-const r = carregarRegras();
+// Os testes de mecanismo usam a ficha pura (sem aprovações 2024); o bloco
+// "decisões de 29/09" no fim confere os dados reais, com as aprovações.
+const real = carregarRegras();
+const r: Regras = { ...real, character: { ...real.character, aprovacoes2024: [], recusadas2024: [] } };
 const c8 = { nivel: 8, bonusAtributos: {} };
 const exprs = (s: string, ciclo?: number, rr: Regras = r, c = c8) =>
   danoMagia(rr, c, magia(rr, s), ciclo).map((x) => x.expr);
@@ -243,6 +246,59 @@ describe('subida de nível 8 para 9', () => {
     const s = reduzir(r, [up, env({ t: 'desfazer', alvo: up.id })]);
     expect(s.nivel).toBe(8);
     expect(s.mana).toBe(44);
+  });
+});
+
+describe('decisões de 29/09/2026 aplicadas nos dados reais', () => {
+  const ex = (s: string, ciclo?: number) => danoMagia(real, c8, magia(real, s), ciclo).map((x) => x.expr);
+  const cura = (s: string, ciclo?: number) => curaMagia(real, c8, magia(real, s), ciclo)?.expr;
+
+  it('aprovar uma versão 2024 nunca apaga dano ou condições que ela não mudou', () => {
+    for (const id of real.character.aprovacoes2024) {
+      const bruta = real.magias.find((m) => m.id === id);
+      if (!bruta?.v2024) continue;
+      const ef = magia(real, id);
+      if (!('dano' in bruta.v2024)) expect(ef.dano, id).toEqual(bruta.dano);
+      if (!('condicoes' in bruta.v2024)) expect(ef.condicoes, id).toEqual(bruta.condicoes);
+      if (!('ritual' in bruta.v2024)) expect(ef.ritual, id).toBe(bruta.ritual);
+    }
+    expect(ex('guardioes-espirituais')).toEqual(['3d8']);
+    expect(ex('praga', 5)).toEqual(['9d8']);
+  });
+  it('M8 recusado: Infligir Ferimentos segue como ataque 3d10', () => {
+    expect(magia(real, 'infligir-ferimentos').resolucao?.tipo).toBe('ataque');
+    expect(ex('infligir-ferimentos')).toEqual(['3d10']);
+  });
+  it('curas 2024 (M9, M10, M33) e Aura sem ação bônus (M29)', () => {
+    expect(cura('curar-ferimentos')).toBe('2d8 + 5');
+    expect(cura('palavra-curativa')).toBe('2d4 + 5');
+    expect(cura('palavra-curativa-em-massa')).toBe('2d4 + 5');
+    expect(magia(real, 'aura-de-vitalidade').componentes).toEqual({ v: true, s: false, m: false });
+  });
+  it('tempos e alcances 2024 (M2, M5, M20, M23)', () => {
+    expect(magia(real, 'orientacao').tempo.tipo).toBe('acao');
+    expect(magia(real, 'salve-o-moribundo').alcance.metros).toBe(9);
+    expect(magia(real, 'restauracao-menor').tempo.tipo).toBe('acaoBonus');
+    expect(magia(real, 'cegueira-e-surdez').alcance.metros).toBe(36);
+    expect(magia(real, 'raio-do-enfraquecimento').resolucao).toMatchObject({ tipo: 'salvaguarda', atributo: 'con' });
+  });
+  it('Soar os Mortos com o escalonamento oficial (M1)', () => {
+    expect(danoMagia(real, { nivel: 11, bonusAtributos: {} }, magia(real, 'soar-os-mortos')).map((x) => x.expr)).toEqual(['3d8 + 5', '3d12 + 5']);
+  });
+  it('Manto e Intenção Mortal crescem por ciclo, a cada 2 (M32, M37)', () => {
+    expect(ex('manto-espiritual', 4)).toEqual(['1d8']);
+    expect(ex('manto-espiritual', 5)).toEqual(['2d8']);
+    expect(ex('intencao-mortal', 5)).toEqual(['2d8']);
+  });
+  it('Batedores e Fio no 2º ciclo (M14, M15)', () => {
+    expect(magia(real, 'batedores-de-sarcofagos').ciclo).toBe(2);
+    expect(magia(real, 'fio-da-obediencia').ciclo).toBe(2);
+    expect(custoMana(real, magia(real, 'fio-da-obediencia'))).toBe(3);
+  });
+  it('Canalizar Divindade com 3 usos e Centelha Divina visível (H1, H2)', () => {
+    const s = estadoInicial(real);
+    expect(recursoRestante(real, s, 'canalizar')).toMatchObject({ max: 3, restante: 3 });
+    expect(real.habilidades.find((f) => f.id === 'centelha-divina')).toBeTruthy();
   });
 });
 

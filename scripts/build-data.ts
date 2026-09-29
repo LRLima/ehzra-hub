@@ -76,7 +76,7 @@ const spells = rawSpells.map((raw: any) => {
   return Spell.parse({
     ...rest,
     nomeFicha: raw.nomeFicha,
-    ciclo: raw.ciclo,
+    ciclo: c.ciclo ?? raw.ciclo, // a curadoria pode corrigir o ciclo da ficha
     escola,
     tempo: tempoDe(m.tempo),
     alcance,
@@ -185,6 +185,11 @@ for (const id of homebrew.ceifadora.magias) if (!ids.has(id)) broken.push(`ceifa
 for (const p of strategies.playbooks)
   for (const t of [p.preCombate, ...p.turnos]) for (const m of t?.magias ?? []) if (!ids.has(m.id)) broken.push(`${p.id} -> ${m.id}`);
 for (const id of character.aprovacoes2024) if (!ids.has(id)) broken.push(`aprovacoes2024 -> ${id}`);
+for (const id of character.recusadas2024) if (!ids.has(id)) broken.push(`recusadas2024 -> ${id}`);
+for (const id of character.aprovacoes2024) if (character.recusadas2024.includes(id)) broken.push(`${id} está aprovada e recusada ao mesmo tempo`);
+const semPatch = character.aprovacoes2024.filter((id) =>
+  !spells.some((s: Spell) => s.id === id && s.v2024) && !features.some((f: Feature) => f.id === id && (f.v2024 || f.somenteSeAprovado)));
+if (semPatch.length) broken.push(`aprovadas sem versão 2024 para aplicar: ${semPatch.join(', ')}`);
 if (broken.length) throw new Error(`Referências quebradas:\n  ${broken.join('\n  ')}`);
 
 write('spells.json', { schemaVersion: SCHEMA_VERSION, magias: spells });

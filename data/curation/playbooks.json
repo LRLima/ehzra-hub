@@ -21,9 +21,9 @@
       "quandoNaoUsar": ["Inimigos voadores ou à distância.", "Mana abaixo de 10: guarde para cura."],
       "preCombate": { "acao": "Vitalidade Falsa no 4º ciclo: 2d4 + 19 PV temporários (6 mana).", "magias": [{ "id": "vitalidade-falsa", "ciclo": 4 }] },
       "turnos": [
-        { "rotulo": "Turno 1", "bonus": "Manto Espiritual no 3º ciclo (5 mana). Pela ficha o dano cresce com o nível, então subir o ciclo não aumenta o dano.", "acao": "Lâmina Necrótica: ataque com a foice. Se acertar, use Toque da Morte (+21 necrótico, 1 Canalizar Divindade).", "movimento": "Cole no alvo; se ele se afastar, a Lâmina pune.", "magias": [{ "id": "manto-espiritual", "ciclo": 3 }] },
+        { "rotulo": "Turno 1", "bonus": "Manto Espiritual no 3º ciclo (5 mana, +1d8 por acerto). O dano só sobe no 5º ciclo (2d8), então no nível 8 não vale gastar um 4º.", "acao": "Lâmina Necrótica: ataque com a foice. Se acertar, use Toque da Morte (+21 necrótico, 1 Canalizar Divindade).", "movimento": "Cole no alvo; se ele se afastar, a Lâmina pune.", "magias": [{ "id": "manto-espiritual", "ciclo": 3 }] },
         { "rotulo": "Turno 2 em diante", "acao": "Lâmina Necrótica todo turno.", "reacao": "Conjurador de Guerra: se o alvo sair do seu alcance, conjure Soar os Mortos nele." },
-        { "rotulo": "Descarga de dano", "acao": "Infligir Ferimentos (texto da ficha, ataque corpo a corpo) + Toque da Morte. Se você aprovar o Infligir 2024 (salvaguarda), o Toque não dispara com ele; use a Lâmina.", "magias": [{ "id": "infligir-ferimentos", "ciclo": 1 }] }
+        { "rotulo": "Descarga de dano", "acao": "Infligir Ferimentos (ataque corpo a corpo, mantido da ficha) + Toque da Morte: 3d10 + 21 necrótico. No 4º ciclo (6 mana): 6d10 + 21.", "magias": [{ "id": "infligir-ferimentos", "ciclo": 1 }] }
       ],
       "conflitosConcentracao": ["Manto Espiritual é concentração."],
       "dependeDeHomebrew": ["Lâmina Necrótica", "Toque da Morte (legado 2014)"]

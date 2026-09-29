@@ -76,7 +76,6 @@
         "conjurador-potente"
       ],
       "v2024": {
-        "ritual": false,
         "dano": [
           {
             "porNivel": {
@@ -100,7 +99,6 @@
             "condicao": "se o alvo não estiver com PV máximo"
           }
         ],
-        "condicoes": [],
         "texto": "Escalonamento oficial: 2d8/2d12 no 5º, 3d8/3d12 no 11º, 4d8/4d12 no 17º. Sempre necrótico."
       }
     },
@@ -155,9 +153,6 @@
           "tipo": "acao",
           "texto": "1 ação"
         },
-        "ritual": false,
-        "dano": [],
-        "condicoes": [],
         "resumo": "+1d4 em todos os testes de uma perícia escolhida, por 1 minuto.",
         "texto": "Ação. Toque numa criatura disposta e escolha uma perícia: até o fim, ela soma 1d4 em qualquer teste com essa perícia."
       }
@@ -332,9 +327,6 @@
           "pes": 30,
           "texto": "9 m (nível 5+)"
         },
-        "ritual": false,
-        "dano": [],
-        "condicoes": [],
         "texto": "Alcance de 4,5 m, que dobra no 5º (9 m), 11º (18 m) e 17º (36 m). No nível 8: 9 m. O alvo fica Estável."
       }
     },
@@ -481,7 +473,6 @@
         "canalizar-divindade"
       ],
       "v2024": {
-        "ritual": false,
         "resolucao": {
           "tipo": "salvaguarda",
           "atributo": "con",
@@ -494,7 +485,6 @@
             "tipo": "necrotico"
           }
         ],
-        "condicoes": [],
         "texto": "Salvaguarda de CON: 2d10 necrótico, metade no sucesso, +1d10 por ciclo. Sem ataque, então não dispara o Toque da Morte."
       }
     },
@@ -550,15 +540,12 @@
       "descricaoCompleta": "Uma criatura que você toca recupera uma quantidade de pontos de vida igual a **1d8 + seu modificador de habilidade de conjuração**.\n\n**Níveis superiores:** ao conjurar usando um espaço de 2º nível ou superior, a cura aumenta em 1d8 para cada nível do espaço acima do 1º.",
       "relacionadas": [],
       "v2024": {
-        "ritual": false,
-        "dano": [],
         "cura": {
           "porCiclo": "2d8",
           "dados": "2d8",
           "somaMod": "sab",
           "pvTemporario": false
         },
-        "condicoes": [],
         "escola": "Abjuração",
         "texto": "Cura 2d8 + SAB, +2d8 por ciclo. Escola: Abjuração."
       }
@@ -617,15 +604,12 @@
       "descricaoCompleta": "Uma criatura à sua escolha que você possa ver dentro do alcance recupera **1d4 + seu modificador de habilidade de conjuração** em pontos de vida.\n\n**Níveis superiores:** ao conjurar usando um espaço de 2º nível ou superior, a cura aumenta em 1d4 para cada nível do espaço acima do 1º.",
       "relacionadas": [],
       "v2024": {
-        "ritual": false,
-        "dano": [],
         "cura": {
           "porCiclo": "2d4",
           "dados": "2d4",
           "somaMod": "sab",
           "pvTemporario": false
         },
-        "condicoes": [],
         "escola": "Abjuração",
         "texto": "Cura 2d4 + SAB, +2d4 por ciclo. Escola: Abjuração."
       }
@@ -739,9 +723,7 @@
       "descricaoCompleta": "Um raio de energia esverdeada repugnante ataca uma criatura dentro do alcance. Faça um ataque mágico à distância. Ao acertar, o alvo sofre **2d8 de dano de veneno** e deve fazer um teste de resistência de Constituição; em uma falha, também fica envenenado até o final do seu próximo turno.\n\n**Em níveis mais altos:** ao conjurar usando um espaço de 2º nível ou superior, o dano aumenta em 1d8 para cada nível acima do 1º.",
       "relacionadas": [],
       "v2024": {
-        "ritual": false,
-        "dano": [],
-        "condicoes": [],
+        "resumo": "Raio de veneno: no acerto, 2d8 e Envenenado automático.",
         "texto": "Sem salvaguarda: no acerto, 2d8 veneno e o alvo fica Envenenado até o fim do seu próximo turno."
       }
     },
@@ -834,7 +816,7 @@
       "id": "batedores-de-sarcofagos",
       "nome": "Batedores de Sarcófagos",
       "nomeFicha": "Batedores de Sarcófagos",
-      "ciclo": 1,
+      "ciclo": 2,
       "tags": [
         "buff",
         "mortos-vivos"
@@ -847,7 +829,7 @@
         "classe"
       ],
       "perdida": false,
-      "cicloNota": "Registrada na ficha como 1º ciclo, mas a nota original diz 2º.",
+      "cicloNota": "Corrigida para o 2º ciclo em 29/09/2026 (a ficha listava no 1º; a nota original já dizia 2º).",
       "descricaoCompleta": "Você infunde seus servos com ecos espectrais vindos do além, aguçando seus sentidos com fragmentos de consciência esquecida.\n\nEnquanto a magia estiver ativa, os mortos-vivos escolhidos recebem: **proficiência temporária em Percepção e Furtividade**; e, se estiverem fora da linha de visão de um inimigo, o **primeiro ataque causa +1d8 de dano necrótico**.",
       "relacionadas": [
         "animar-morto",
@@ -885,7 +867,7 @@
       "id": "fio-da-obediencia",
       "nome": "Fio da Obediência",
       "nomeFicha": "Fio da Obediência",
-      "ciclo": 1,
+      "ciclo": 2,
       "tags": [
         "buff",
         "defesa",
@@ -899,7 +881,7 @@
         "classe"
       ],
       "perdida": false,
-      "cicloNota": "Registrada na ficha como 1º ciclo, mas a nota original diz 2º.",
+      "cicloNota": "Corrigida para o 2º ciclo em 29/09/2026 (a ficha listava no 1º; a nota original já dizia 2º).",
       "descricaoCompleta": "Você estende um fio etéreo feito de obediência e vontade entre você e um morto-vivo sob seu controle. Esse vínculo reforça sua lealdade e funcionalidade tática.\n\nO morto-vivo alvo recebe: **vantagem** em testes de resistência contra efeitos que alterem seu comportamento (medo, encantamento, comandos mágicos); pode agir fora da sua linha de visão sem ficar inativo; e, se estiver a até 3 m de outro morto-vivo sob seu controle, sua **CA aumenta em 2**.\n\n**Em níveis superiores:** com um espaço de 3º nível ou superior, você pode afetar um morto-vivo adicional.",
       "relacionadas": [
         "animar-morto",
@@ -961,10 +943,7 @@
           "texto": "Instantânea",
           "rodadas": null
         },
-        "ritual": false,
-        "dano": [],
         "alvosPorCiclo": 1,
-        "condicoes": [],
         "texto": "Só 5 ordens: Aproxime-se, Solte, Fuja, Rasteje, Pare. Duração instantânea. +1 alvo por ciclo acima do 1º."
       }
     },
@@ -1167,9 +1146,6 @@
           "tipo": "acaoBonus",
           "texto": "1 ação bônus"
         },
-        "ritual": false,
-        "dano": [],
-        "condicoes": [],
         "resumo": "Ação bônus: remove Cego, Surdo, Paralisado ou Envenenado.",
         "texto": "Ação bônus. Remove Cego, Surdo, Paralisado ou Envenenado. Não cura mais doença."
       }
@@ -1231,13 +1207,11 @@
       "v2024": {
         "alvo": "até 5 criaturas",
         "ritual": false,
-        "dano": [],
         "cura": {
           "porCiclo": "1d8",
           "dados": "2d8",
           "pvTemporario": false
         },
-        "condicoes": [],
         "escola": "Abjuração",
         "texto": "Até 5 criaturas ganham os benefícios de um descanso curto + 2d8 PV (sem modificador), 1 vez por descanso longo. +1d8 por ciclo. Não é ritual. Escola: Abjuração."
       }
@@ -1351,9 +1325,6 @@
           "pes": 120,
           "texto": "36 m"
         },
-        "ritual": false,
-        "dano": [],
-        "condicoes": [],
         "escola": "Transmutação",
         "texto": "Alcance de 36 m (120 pés). Escola: Transmutação."
       }
@@ -1407,14 +1378,11 @@
       "descricaoCompleta": "Um raio preto de energia enervante brota do seu dedo em direção a uma criatura dentro do alcance. Faça um ataque mágico à distância. Ao acertar, o alvo passa a causar apenas metade do dano com ataques de arma que usam Força até o fim do feitiço.\n\nNo final de cada um dos turnos do alvo, ele pode repetir o teste de resistência de Constituição; em sucesso, o feitiço termina.",
       "relacionadas": [],
       "v2024": {
-        "ritual": false,
         "resolucao": {
           "tipo": "salvaguarda",
           "atributo": "con",
           "metadeNoSucesso": false
         },
-        "dano": [],
-        "condicoes": [],
         "resumo": "CON ou desvantagem em FOR e −1d8 em cada dano que causar.",
         "texto": "Salvaguarda de CON em vez de ataque. Na falha: desvantagem em testes d20 de FOR e −1d8 em toda rolagem de dano; repete no fim de cada turno. No sucesso: desvantagem no próximo ataque."
       }
@@ -1471,8 +1439,6 @@
       ],
       "v2024": {
         "ritual": true,
-        "dano": [],
-        "condicoes": [],
         "texto": "Ritual. Não prende a alma nem é pré-requisito de Falar com os Mortos: só impede o corpo de virar morto-vivo e pausa o prazo de ressurreição."
       }
     },
@@ -1632,9 +1598,6 @@
           "s": false,
           "m": false
         },
-        "ritual": false,
-        "dano": [],
-        "condicoes": [],
         "escola": "Abjuração",
         "resumo": "Aura de 9 m: cura 2d6 no início de cada turno seu, sem ação.",
         "texto": "Só componente V. Cura 2d6 numa criatura na aura ao criá-la e no início de cada turno seu, sem gastar ação bônus. Escola: Abjuração."
@@ -1743,15 +1706,12 @@
       "descricaoCompleta": "Magia padrão de D&D 5e, sem anotação própria no grimório. Cura, à distância e com uma única palavra, até seis criaturas à sua escolha que você possa ver.",
       "relacionadas": [],
       "v2024": {
-        "ritual": false,
-        "dano": [],
         "cura": {
           "porCiclo": "1d4",
           "dados": "2d4",
           "somaMod": "sab",
           "pvTemporario": false
         },
-        "condicoes": [],
         "escola": "Abjuração",
         "texto": "Cura 2d4 + SAB, +1d4 por ciclo. Escola: Abjuração."
       }
@@ -1865,9 +1825,6 @@
       "descricaoCompleta": "Magia padrão de D&D 5e, sem anotação própria no grimório. Convoca espíritos protetores ao redor do conjurador; inimigos que entrem ou comecem o turno na área sofrem dano e têm o deslocamento reduzido.",
       "relacionadas": [],
       "v2024": {
-        "ritual": false,
-        "dano": [],
-        "condicoes": [],
         "escola": "Conjuração",
         "texto": "Deslocamento pela metade. Dano quando a área entra no espaço da criatura, quando ela entra ou quando termina o turno ali; 1 vez por turno. Escola: Conjuração."
       }
@@ -1933,7 +1890,6 @@
         "lamina-necrotica"
       ],
       "v2024": {
-        "ritual": false,
         "dano": [
           {
             "porCiclo": "1d8",
@@ -1944,7 +1900,6 @@
             "condicao": "necrótico, radiante ou gélido"
           }
         ],
-        "condicoes": [],
         "texto": "Texto oficial (Tasha): o dano cresce por ciclo, +1d8 a cada 2 ciclos acima do 3º (2d8 no 5º, 3d8 no 7º). Não cresce com o nível do personagem."
       }
     },
@@ -2115,9 +2070,6 @@
       "descricaoCompleta": "Você toca uma criatura e a envolve com uma maldição debilitante; teste de resistência de Sabedoria ou fica amaldiçoada durante a duração. Ao conjurar, escolha um efeito:\n\n-   Desvantagem em testes de uma habilidade à sua escolha.\n-   Desvantagem em jogadas de ataque contra você.\n-   Teste de resistência de Sabedoria no início de cada turno, ou perde a ação.\n-   Seus ataques e magias causam +1d8 de dano necrótico adicional ao alvo.\n\n**No 5º nível ou superior:** dura 8 horas (concentração). **No 7º ou superior:** 24 horas. **No 9º:** não exige mais concentração.",
       "relacionadas": [],
       "v2024": {
-        "ritual": false,
-        "dano": [],
-        "condicoes": [],
         "texto": "Opção 1: desvantagem em testes e salvaguardas do atributo. Opção 3: SAB no início do turno ou é forçado a usar Esquivar. 4º ciclo: 10 min com concentração; 5º e 6º: 8 h sem concentração; 7º e 8º: 24 h; 9º: até ser dissipada."
       }
     },
@@ -2146,10 +2098,8 @@
       },
       "dano": [
         {
-          "porNivel": {
-            "5": "2d8",
-            "11": "3d8"
-          },
+          "porCiclo": "1d8",
+          "porCicloACada": 2,
           "rotulo": "Por acerto de ataque à distância",
           "dados": "1d8",
           "tipo": "escolha",
@@ -2167,7 +2117,7 @@
         "dano",
         "buff"
       ],
-      "fonte": "Homebrew (variante à distância de Spirit Shroud)",
+      "fonte": "Homebrew (variante à distância de Spirit Shroud; escalonamento alinhado ao Manto em 29/09/2026)",
       "listaClerigo": false,
       "status2024": "homebrew",
       "itemValidacao": "M37",
@@ -2346,9 +2296,6 @@
       "descricaoCompleta": "A energia necromântica lava uma criatura de sua escolha, drenando umidade e vitalidade. Teste de resistência de Constituição; falha causa **8d8 de dano necrótico** (metade em sucesso). Não tem efeito sobre mortos-vivos ou construtos.\n\nContra criaturas ou plantas mágicas, o teste é feito com desvantagem e o dano é máximo. Uma planta não mágica simplesmente murcha e morre, sem teste.\n\n**Em níveis mais altos:** com um espaço de 5º nível ou superior, o dano aumenta em 1d8 para cada nível acima do 4º.",
       "relacionadas": [],
       "v2024": {
-        "ritual": false,
-        "dano": [],
-        "condicoes": [],
         "texto": "Sem exceção para mortos-vivos e constructos. Criatura Planta falha automaticamente (sem dano máximo)."
       }
     },

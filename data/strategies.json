@@ -76,7 +76,7 @@
       "turnos": [
         {
           "acao": "Lâmina Necrótica: ataque com a foice. Se acertar, use Toque da Morte (+21 necrótico, 1 Canalizar Divindade).",
-          "bonus": "Manto Espiritual no 3º ciclo (5 mana). Pela ficha o dano cresce com o nível, então subir o ciclo não aumenta o dano.",
+          "bonus": "Manto Espiritual no 3º ciclo (5 mana, +1d8 por acerto). O dano só sobe no 5º ciclo (2d8), então no nível 8 não vale gastar um 4º.",
           "movimento": "Cole no alvo; se ele se afastar, a Lâmina pune.",
           "magias": [
             {
@@ -93,7 +93,7 @@
           "rotulo": "Turno 2 em diante"
         },
         {
-          "acao": "Infligir Ferimentos (texto da ficha, ataque corpo a corpo) + Toque da Morte. Se você aprovar o Infligir 2024 (salvaguarda), o Toque não dispara com ele; use a Lâmina.",
+          "acao": "Infligir Ferimentos (ataque corpo a corpo, mantido da ficha) + Toque da Morte: 3d10 + 21 necrótico. No 4º ciclo (6 mana): 6d10 + 21.",
           "magias": [
             {
               "id": "infligir-ferimentos",

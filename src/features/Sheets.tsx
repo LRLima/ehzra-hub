@@ -3,7 +3,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import Fuse from 'fuse.js';
 import { BackspaceIcon, SparkleIcon, BedIcon, CoffeeIcon, WarningIcon } from '@phosphor-icons/react';
 import { useJogo, useUI, type Aberto } from '../store';
-import { Sheet, SpellChips, Selo, Markdown, SpellCard, TEMPO_CURTO } from '../ui/components';
+import { Sheet, SpellChips, SeloDe, Markdown, SpellCard, TEMPO_CURTO } from '../ui/components';
 import {
   alvosMagia, cicloMaximo, custoMana, curaMagia, danoMagia, estaPreparada, habilidadeEfetiva, magia as achaMagia,
   manaMaxima, metrosParaPes, podeConjurar, resolucaoTexto, usaCeifadora, toqueDaMorte, dadosQueimarMortos, habilidadeVisivel,
@@ -71,7 +71,7 @@ function MagiaSheet({ id, cicloInicial }: { id: string; cicloInicial?: number })
       label={sp.nome}
       titulo={sp.nome}
       sub={[sp.nomeOriginal, `${sp.ciclo === 0 ? 'Truque' : `${sp.ciclo}º ciclo`} de ${sp.escola}${sp.ritual ? ' (ritual)' : ''}`].filter(Boolean).join(' · ')}
-      extra={<Selo status={sp.status2024} aprovado={aprovado} />}
+      extra={<SeloDe id={id} status={sp.status2024} />}
       onClose={fechar}
     >
       <SpellChips spell={sp} ciclo={ciclo} />
@@ -122,7 +122,7 @@ function MagiaSheet({ id, cicloInicial }: { id: string; cicloInicial?: number })
 
       {bruta.v2024 && (
         <div className="box v2024">
-          <h4>{aprovado ? 'Versão 2024 em uso' : `Versão 2024 (não aplicada${bruta.itemValidacao ? `, item ${bruta.itemValidacao}` : ''})`}</h4>
+          <h4>{aprovado ? 'Versão 2024 em uso' : r.character.recusadas2024.includes(id) ? 'Versão 2024 (recusada: vale a ficha)' : `Versão 2024 (não aplicada${bruta.itemValidacao ? `, item ${bruta.itemValidacao}` : ''})`}</h4>
           <div>{bruta.v2024.texto}</div>
         </div>
       )}
@@ -158,7 +158,7 @@ function HabilidadeSheet({ id }: { id: string }) {
     : id === 'queimar-os-mortos-vivos' ? `Role ${dadosQueimarMortos(r, c)}d8 radiante.`
     : null;
   return (
-    <Sheet label={f.nome} titulo={f.nome} sub={[f.nomeOriginal, f.origem].filter(Boolean).join(' · ')} extra={<Selo status={f.status2024} aprovado={aprovado} />} onClose={fechar}>
+    <Sheet label={f.nome} titulo={f.nome} sub={[f.nomeOriginal, f.origem].filter(Boolean).join(' · ')} extra={<SeloDe id={id} status={f.status2024} />} onClose={fechar}>
       <p className="muted">{f.resumo}</p>
       {extra && <div className="aviso">{extra}</div>}
       {rec && (
@@ -170,7 +170,7 @@ function HabilidadeSheet({ id }: { id: string }) {
       <Markdown md={f.texto} />
       {bruta.v2024 && (
         <div className="box v2024">
-          <h4>{aprovado ? 'Versão 2024 em uso' : `Versão 2024 (não aplicada${bruta.itemValidacao ? `, item ${bruta.itemValidacao}` : ''})`}</h4>
+          <h4>{aprovado ? 'Versão 2024 em uso' : r.character.recusadas2024.includes(id) ? 'Versão 2024 (recusada: vale a ficha)' : `Versão 2024 (não aplicada${bruta.itemValidacao ? `, item ${bruta.itemValidacao}` : ''})`}</h4>
           <div>{bruta.v2024.texto}</div>
         </div>
       )}

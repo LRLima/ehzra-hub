@@ -8,6 +8,20 @@ Legenda: ✅ 2024 ok · ⚠️ mudou em 2024 · 📜 legado 2014 · 🜏 homebre
 
 Fonte principal: [dnd2024.wikidot.com](https://dnd2024.wikidot.com), que reproduz o PHB 2024. Links por item abaixo. Tabela da classe: [Clérigo 2024](https://dnd2024.wikidot.com/cleric:main).
 
+## Decisões (29/09/2026)
+
+| Decisão | Itens |
+|---|---|
+| **Aprovados (versão 2024 em uso)** | M1, M2, M5, M9, M10, M12, M16, M20, M21, M23, M24, M25, M29, M31, M32, M33, M36, M40; H1, H2, H3, H10 |
+| **Recusado (vale a ficha)** | M8 Infligir Ferimentos: segue como ataque corpo a corpo de 3d10, e o combo com Toque da Morte continua |
+| **Ciclo corrigido** | M14 Batedores de Sarcófagos e M15 Fio da Obediência passam para o 2º ciclo |
+| **Alinhado** | M37 Intenção Mortal cresce por ciclo como o Manto (+1d8 a cada 2 ciclos acima do 3º) |
+| **Mantidos como estão** | M3, M4, M7, M11, M13, M17 a M19, M22, M27, M28, M30, M34, M35, M38, M39, M41 a M45; H4, H5, H8, H9 |
+| **Não adicionar** | H12 Golpe Divino do domínio (conflita com Conjurador Potente) |
+| **Pendentes** | M6 e M26 (sem texto no grimório); H6, H7, H11; F1 a F5 |
+
+Para mudar uma decisão: edite `aprovacoes2024` ou `recusadas2024` em `data/character.json` e rode `npm run build-data`.
+
 ## Resumo
 
 | Status | Quantidade |

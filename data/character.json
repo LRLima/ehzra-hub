@@ -12,33 +12,135 @@
   "altura": "1,90 m",
   "alinhamento": "Leal Neutro",
   "retrato": "img/retrato.jpg",
-  "galeria": ["img/galeria-1.jpg", "img/galeria-2.jpg"],
-  "atributos": { "for": 17, "des": 13, "con": 14, "int": 12, "sab": 20, "car": 9 },
-  "salvaguardasProficientes": ["sab", "car"],
-  "pericias": [
-    { "nome": "Acrobacia", "atributo": "des", "proficiente": false },
-    { "nome": "Arcanismo", "atributo": "int", "proficiente": false },
-    { "nome": "Atletismo", "atributo": "for", "proficiente": true },
-    { "nome": "Atuação", "atributo": "car", "proficiente": false, "valorOriginal": "+2" },
-    { "nome": "Enganação", "atributo": "car", "proficiente": false, "valorOriginal": "+1 (Blefar)" },
-    { "nome": "Furtividade", "atributo": "des", "proficiente": false },
-    { "nome": "História", "atributo": "int", "proficiente": true },
-    { "nome": "Intimidação", "atributo": "car", "proficiente": false, "valorOriginal": "ausente" },
-    { "nome": "Intuição", "atributo": "sab", "proficiente": true },
-    { "nome": "Investigação", "atributo": "int", "proficiente": false },
-    { "nome": "Lidar com Animais", "atributo": "sab", "proficiente": false },
-    { "nome": "Medicina", "atributo": "sab", "proficiente": true },
-    { "nome": "Natureza", "atributo": "int", "proficiente": false },
-    { "nome": "Percepção", "atributo": "sab", "proficiente": true },
-    { "nome": "Persuasão", "atributo": "car", "proficiente": false, "valorOriginal": "+2" },
-    { "nome": "Prestidigitação", "atributo": "des", "proficiente": false },
-    { "nome": "Religião", "atributo": "int", "proficiente": true, "valorOriginal": "+7" },
-    { "nome": "Sobrevivência", "atributo": "sab", "proficiente": false }
+  "galeria": [
+    "img/galeria-1.jpg",
+    "img/galeria-2.jpg"
   ],
-  "ca": { "valor": 18, "nota": "Armadura Completa" },
-  "pvMax": { "valor": 70, "nota": "Ajuste do mestre (a média fixa daria 59)" },
-  "iniciativa": { "valor": 4, "nota": "DES +1; o +4 só fecha com o talento Alerta 2024 (ver VALIDACAO F1)" },
-  "deslocamentoMetros": { "valor": 9, "valorOriginal": "30m" },
+  "atributos": {
+    "for": 17,
+    "des": 13,
+    "con": 14,
+    "int": 12,
+    "sab": 20,
+    "car": 9
+  },
+  "salvaguardasProficientes": [
+    "sab",
+    "car"
+  ],
+  "pericias": [
+    {
+      "nome": "Acrobacia",
+      "atributo": "des",
+      "proficiente": false
+    },
+    {
+      "nome": "Arcanismo",
+      "atributo": "int",
+      "proficiente": false
+    },
+    {
+      "nome": "Atletismo",
+      "atributo": "for",
+      "proficiente": true
+    },
+    {
+      "nome": "Atuação",
+      "atributo": "car",
+      "proficiente": false,
+      "valorOriginal": "+2"
+    },
+    {
+      "nome": "Enganação",
+      "atributo": "car",
+      "proficiente": false,
+      "valorOriginal": "+1 (Blefar)"
+    },
+    {
+      "nome": "Furtividade",
+      "atributo": "des",
+      "proficiente": false
+    },
+    {
+      "nome": "História",
+      "atributo": "int",
+      "proficiente": true
+    },
+    {
+      "nome": "Intimidação",
+      "atributo": "car",
+      "proficiente": false,
+      "valorOriginal": "ausente"
+    },
+    {
+      "nome": "Intuição",
+      "atributo": "sab",
+      "proficiente": true
+    },
+    {
+      "nome": "Investigação",
+      "atributo": "int",
+      "proficiente": false
+    },
+    {
+      "nome": "Lidar com Animais",
+      "atributo": "sab",
+      "proficiente": false
+    },
+    {
+      "nome": "Medicina",
+      "atributo": "sab",
+      "proficiente": true
+    },
+    {
+      "nome": "Natureza",
+      "atributo": "int",
+      "proficiente": false
+    },
+    {
+      "nome": "Percepção",
+      "atributo": "sab",
+      "proficiente": true
+    },
+    {
+      "nome": "Persuasão",
+      "atributo": "car",
+      "proficiente": false,
+      "valorOriginal": "+2"
+    },
+    {
+      "nome": "Prestidigitação",
+      "atributo": "des",
+      "proficiente": false
+    },
+    {
+      "nome": "Religião",
+      "atributo": "int",
+      "proficiente": true,
+      "valorOriginal": "+7"
+    },
+    {
+      "nome": "Sobrevivência",
+      "atributo": "sab",
+      "proficiente": false
+    }
+  ],
+  "ca": {
+    "valor": 18,
+    "nota": "Armadura Completa"
+  },
+  "pvMax": {
+    "valor": 70,
+    "nota": "Ajuste do mestre (a média fixa daria 59)"
+  },
+  "iniciativa": {
+    "valor": 4,
+    "nota": "DES +1; o +4 só fecha com o talento Alerta 2024 (ver VALIDACAO F1)"
+  },
+  "deslocamentoMetros": {
+    "valor": 9,
+    "valorOriginal": "30m"
+  },
   "dadoDeVida": "d8",
   "proficiencias": {
     "armas": "Armas Simples, Armas Marciais",
@@ -47,18 +149,73 @@
     "idiomas": "Comum, Abissal"
   },
   "armas": [
-    { "id": "ceifadora-de-myrkul", "nome": "Ceifadora de Myrkul", "atributo": "for", "dano": "3d4", "tipo": "cortante", "alcanceMetros": 1.5, "propriedades": "Foice Longa, relíquia sintonizada" }
+    {
+      "id": "ceifadora-de-myrkul",
+      "nome": "Ceifadora de Myrkul",
+      "atributo": "for",
+      "dano": "3d4",
+      "tipo": "cortante",
+      "alcanceMetros": 1.5,
+      "propriedades": "Foice Longa, relíquia sintonizada"
+    }
   ],
-  "talentos": ["Conjurador de Guerra"],
-  "opcoes": { "golpesAbencoados": "conjuradorPotente", "ordemDivina": "protetor" },
+  "talentos": [
+    "Conjurador de Guerra"
+  ],
+  "opcoes": {
+    "golpesAbencoados": "conjuradorPotente",
+    "ordemDivina": "protetor"
+  },
   "inventarioInicial": [
-    { "nome": "Poção de Vida", "qtd": 1 },
-    { "nome": "Poção de Mana", "qtd": 1 },
-    { "nome": "Poção de Resistência (ácido)", "qtd": 1 },
-    { "nome": "Armadura Completa", "qtd": 1, "nota": "vestida" },
-    { "nome": "Kit de Caligrafia", "qtd": 1 }
+    {
+      "nome": "Poção de Vida",
+      "qtd": 1
+    },
+    {
+      "nome": "Poção de Mana",
+      "qtd": 1
+    },
+    {
+      "nome": "Poção de Resistência (ácido)",
+      "qtd": 1
+    },
+    {
+      "nome": "Armadura Completa",
+      "qtd": 1,
+      "nota": "vestida"
+    },
+    {
+      "nome": "Kit de Caligrafia",
+      "qtd": 1
+    }
   ],
   "ouroInicial": 5,
-  "aprovacoes2024": [],
-  "preparadas": null
+  "aprovacoes2024": [
+    "soar-os-mortos",
+    "orientacao",
+    "salve-o-moribundo",
+    "curar-ferimentos",
+    "palavra-curativa",
+    "raio-da-doenca",
+    "comando",
+    "restauracao-menor",
+    "oracao-de-cura",
+    "cegueira-e-surdez",
+    "raio-do-enfraquecimento",
+    "repouso-gentil",
+    "aura-de-vitalidade",
+    "guardioes-espirituais",
+    "manto-espiritual",
+    "palavra-curativa-em-massa",
+    "impor-maldicao",
+    "praga",
+    "canalizar-divindade",
+    "centelha-divina",
+    "repreender-mortos-vivos",
+    "natureza-imortal"
+  ],
+  "preparadas": null,
+  "recusadas2024": [
+    "infligir-ferimentos"
+  ]
 }

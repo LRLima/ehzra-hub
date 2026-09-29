@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.0 (29/09/2026)
+
+- Aplicadas as decisões da validação 2024 (lista completa no topo do `VALIDACAO-2024.md`): curas dobradas, Aura de Vitalidade sem ação bônus, Orientação como ação, Restauração Menor como ação bônus, Canalizar Divindade com 3 usos, Centelha Divina, Repreender 2024, entre outras.
+- Infligir Ferimentos recusado: mantém o texto da ficha e aparece com o selo "Ficha mantida".
+- Batedores de Sarcófagos e Fio da Obediência no 2º ciclo; Intenção Mortal escalonando por ciclo.
+- Corrigido: aprovar uma versão 2024 apagava o dano e as condições que ela não mudava (Guardiões Espirituais, Praga, Impor Maldição). Teste de regressão incluído.
+- Playbook corpo a corpo atualizado para o novo escalonamento do Manto Espiritual.
+
 ## 0.1.0 (29/09/2026)
 
 ### Fase 0: dados

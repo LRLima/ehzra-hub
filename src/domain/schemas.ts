@@ -107,7 +107,12 @@ export const Spell = SpellMecanica.extend({
   notasPessoais: z.string().optional(),
   relacionadas: z.array(z.string()).default([]),
   /** Versão 2024. Só entra em vigor se o id estiver em character.aprovacoes2024. */
-  v2024: SpellMecanica.partial().extend({ texto: z.string() }).optional(),
+  // Sem .default() aqui: um patch só pode trocar o que ele declara (senão "dano: []" apagaria o dano).
+  v2024: SpellMecanica.extend({
+    ritual: z.boolean(),
+    dano: z.array(Dano),
+    condicoes: z.array(z.string()),
+  }).partial().extend({ texto: z.string() }).optional(),
 });
 export type Spell = z.infer<typeof Spell>;
 
@@ -179,6 +184,7 @@ export const Character = z.object({
   inventarioInicial: z.array(z.object({ nome: z.string(), qtd: z.number(), nota: z.string().optional() })),
   ouroInicial: z.number(),
   aprovacoes2024: z.array(z.string()), // ids de magias/features com v2024 aprovado
+  recusadas2024: z.array(z.string()).default([]), // v2024 conferida e recusada: vale a ficha
   preparadas: z.array(z.string()).nullable(), // null = ainda não escolhidas (todas valem)
 });
 export type Character = z.infer<typeof Character>;
