@@ -19,8 +19,8 @@
     }
   ],
   "vars": {
-    "TEAM_DOMAIN": "PREENCHER_https://SEU-TIME.cloudflareaccess.com",
-    "POLICY_AUD": "PREENCHER_COM_A_AUD_TAG"
+    "TEAM_DOMAIN": "https://billowing-tree-6cb9.cloudflareaccess.com",
+    "POLICY_AUD": "55e75deb6a84b8fc2e2578dfd32f5695d03091ba1a03fdfa689b5e486b9257c7"
   },
   "observability": { "enabled": true }
 }
