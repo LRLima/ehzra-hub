@@ -226,6 +226,16 @@ export const HomebrewRules = z.object({
     arredondamento: z.enum(['baixo', 'cima']),
     ressurreicaoHoras: z.string(),
     perdaSintoniaMinutos: z.number().int(),
+    cartao: z.object({
+      nome: z.string(),
+      sub: z.string(),
+      estrelas: z.number().int(),
+      selo: z.string(),
+      imagem: z.string(),
+      meta: z.record(z.string(), z.string()), // Dano, ATK / DEF, Categoria, Origem
+      titulo: z.string(), // "[Foice]"
+      paragrafos: z.array(z.string()),
+    }),
   }),
   avatar: z.object({
     custo: z.string(),

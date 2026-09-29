@@ -108,7 +108,19 @@ const weaponRaw = extracted('weapon.json');
 const homebrew = HomebrewRules.parse({
   schemaVersion: SCHEMA_VERSION,
   mana: hb.mana,
-  ceifadora: hb.ceifadora,
+  ceifadora: {
+    ...hb.ceifadora,
+    cartao: {
+      nome: weaponRaw.nome,
+      sub: weaponRaw.sub,
+      estrelas: [...weaponRaw.estrelas].length,
+      selo: weaponRaw.selo,
+      imagem: hb.ceifadora.imagem,
+      meta: weaponRaw.meta,
+      titulo: weaponRaw.habilidade.titulo,
+      paragrafos: weaponRaw.habilidade.paragrafos,
+    },
+  },
   avatar: {
     custo: hb.avatar.custo,
     recarga: hb.avatar.recarga,

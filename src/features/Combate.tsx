@@ -109,7 +109,7 @@ function Hud() {
         {parte === 'acao' && (
           <div className="card">
             <div className="row">
-              <span className="grow" style={{ fontFamily: 'var(--font-display)' }}>Atacar com a {arma.nome}</span>
+              <a className="grow" href="#/mais/ceifadora" style={{ fontFamily: 'var(--font-display)', color: 'var(--bone)', textDecoration: 'none' }}>Atacar com a {arma.nome}</a>
               <span className="chip res">Ataque {fmtMod(atk)}</span>
             </div>
             <div className="chips">

@@ -2,8 +2,9 @@
 import { useRef, useState } from 'react';
 import {
   CaretRightIcon, FeatherIcon, SwordIcon, SunIcon, ArrowUpIcon, WarningIcon, ListBulletsIcon, DownloadSimpleIcon, SparkleIcon,
-  CloudIcon, CloudSlashIcon,
+  CloudIcon, CloudSlashIcon, SkullIcon,
 } from '@phosphor-icons/react';
+import { Reliquia } from './Reliquia';
 import { useSync, sincronizar, reentrar, type StatusSync as StatusSyncT } from '../db/sync';
 import { useJogo, useUI, ir } from '../store';
 import { Markdown, SpellCard } from '../ui/components';
@@ -21,6 +22,7 @@ const estrategiasOriginais = carregarEstrategiasOriginais();
 export function Mais({ rota }: { rota: string[] }) {
   const [pagina, id] = rota;
   switch (pagina) {
+    case 'ceifadora': return <Reliquia />;
     case 'lore': return <Lore id={id} />;
     case 'estrategias': return <Estrategias id={id} />;
     case 'avatar': return <Avatar />;
@@ -52,6 +54,7 @@ function Menu() {
       <h1 className="page-title">Mais</h1>
       <StatusSync />
       <div className="stack">
+        {item('#/mais/ceifadora', SkullIcon, 'Ceifadora de Myrkul', 'A relíquia, suas magias e a sintonia')}
         {item('#/mais/estrategias', SwordIcon, 'Estratégias', 'Playbooks por turno com custo de mana')}
         {item('#/mais/avatar', SunIcon, 'Avatar dos Quatro Túmulos', s.avatar ? 'Ativo agora' : 'Role o d4 e descubra quem responde')}
         {item('#/mais/nivel', ArrowUpIcon, 'Subir de nível', `Nível ${s.nivel} para ${s.nivel + 1}`)}

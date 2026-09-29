@@ -8,7 +8,6 @@ import {
 import { pvMaximo, recursoRestante } from '../domain/state';
 import type { Atributo } from '../domain/schemas';
 import { carregarLore } from '../domain/data';
-import { Markdown } from '../ui/components';
 
 const ATR: Atributo[] = ['for', 'des', 'con', 'int', 'sab', 'car'];
 const lore = carregarLore();
@@ -88,17 +87,18 @@ export function Ficha() {
         </dl>
       </div>
 
-      <h2 className="section-h">Relíquia: {reliquia.titulo}</h2>
-      <div className="card">
-        <p className="muted" style={{ fontStyle: 'italic' }}>{reliquia.sub}</p>
-        {reliquia.blocos.map((b, i) => <Markdown key={i} md={b.md} />)}
-        <div className="row">
-          <span className="grow faint" style={{ fontSize: 14.5 }}>
-            {minutosSemTocar === null ? 'Sintonia: sem registro de toque.' : minutosSemTocar >= 60 ? 'Mais de 1 hora sem tocar: a sintonia se perdeu!' : `Tocada há ${minutosSemTocar} min (perde em ${60 - minutosSemTocar}).`}
+      <h2 className="section-h">Relíquia</h2>
+      <a href="#/mais/ceifadora" className="card card-btn reliquia-mini">
+        <img src={r.homebrew.ceifadora.cartao.imagem} alt="" />
+        <span className="grow">
+          <span style={{ fontFamily: 'var(--font-display)', color: 'var(--gold)', fontSize: 16 }}>{reliquia.titulo}</span><br />
+          <span className="muted" style={{ fontSize: 14 }}>{reliquia.sub}</span><br />
+          <span className="faint" style={{ fontSize: 13.5 }}>
+            {minutosSemTocar === null ? 'Sintonia: sem registro de toque.' : minutosSemTocar >= 60 ? 'Mais de 1 hora sem tocar: a sintonia se perdeu!' : `Sintonia: tocada há ${minutosSemTocar} min.`}
           </span>
-          <TocarFoice />
-        </div>
-      </div>
+        </span>
+      </a>
+      <div className="row" style={{ justifyContent: 'flex-end', marginTop: 6 }}><TocarFoice /></div>
 
       <h2 className="section-h">Habilidades</h2>
       <div className="stack">

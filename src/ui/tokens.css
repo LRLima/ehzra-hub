@@ -8,7 +8,7 @@
 
   --void: #0c090f; /* mais escuro que os painéis, para os cartões destacarem */
   --void-2: #1c1420;
-  --panel: #241a26;
+  --panel: #1f1622; /* opaco: os cartões ficam como ilhas escuras sobre o fundo colorido */
   --panel-2: #2c1f2c;
   --panel-3: #362636;
   --line: #4a3540;
