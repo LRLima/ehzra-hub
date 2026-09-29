@@ -343,7 +343,7 @@ textarea.input { min-height: 160px; resize: vertical; line-height: 1.5; }
 .lava { position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
 .lava i {
   position: absolute; width: 70vmax; height: 70vmax; border-radius: 50%;
-  opacity: 0.9; will-change: transform; mix-blend-mode: screen;
+  opacity: 0.9; will-change: transform; /* sem mix-blend-mode: recompor a tela a cada quadro pesa no celular */
 }
 .lava i:nth-child(1) { background: radial-gradient(circle, rgba(196, 44, 70, 0.95), transparent 64%); left: -25vmax; top: -20vmax; animation: lava-a 38s ease-in-out infinite alternate; }
 .lava i:nth-child(2) { background: radial-gradient(circle, rgba(132, 70, 190, 0.9), transparent 64%); right: -30vmax; top: 10vmax; animation: lava-b 46s ease-in-out infinite alternate; }
