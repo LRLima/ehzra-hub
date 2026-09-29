@@ -1,0 +1,185 @@
+{
+  "fonte": "source/grimorio-ehzra-original.html",
+  "data": {
+    "atributos": [
+      {
+        "nome": "Força",
+        "valor": 17,
+        "mod": "+3"
+      },
+      {
+        "nome": "Destreza",
+        "valor": 13,
+        "mod": "+1"
+      },
+      {
+        "nome": "Constituição",
+        "valor": 14,
+        "mod": "+2"
+      },
+      {
+        "nome": "Inteligência",
+        "valor": 12,
+        "mod": "+1"
+      },
+      {
+        "nome": "Sabedoria",
+        "valor": 20,
+        "mod": "+5"
+      },
+      {
+        "nome": "Carisma",
+        "valor": 9,
+        "mod": "-1"
+      }
+    ],
+    "salvaguardas": [
+      {
+        "atributo": "Força",
+        "valor": "+3",
+        "proficiente": false
+      },
+      {
+        "atributo": "Destreza",
+        "valor": "+1",
+        "proficiente": false
+      },
+      {
+        "atributo": "Constituição",
+        "valor": "+2",
+        "proficiente": false
+      },
+      {
+        "atributo": "Inteligência",
+        "valor": "+1",
+        "proficiente": false
+      },
+      {
+        "atributo": "Sabedoria",
+        "valor": "+8",
+        "proficiente": true
+      },
+      {
+        "atributo": "Carisma",
+        "valor": "+2",
+        "proficiente": true
+      }
+    ],
+    "pericias": [
+      {
+        "nome": "Prestidigitação",
+        "valor": "+1",
+        "atributo": "Destreza",
+        "proficiente": false
+      },
+      {
+        "nome": "Arcanismo",
+        "valor": "+1",
+        "atributo": "Inteligência",
+        "proficiente": false
+      },
+      {
+        "nome": "História",
+        "valor": "+4",
+        "atributo": "Inteligência",
+        "proficiente": true
+      },
+      {
+        "nome": "Natureza",
+        "valor": "+1",
+        "atributo": "Inteligência",
+        "proficiente": false
+      },
+      {
+        "nome": "Religião",
+        "valor": "+7",
+        "atributo": "Inteligência",
+        "proficiente": true
+      },
+      {
+        "nome": "Blefar",
+        "valor": "+1",
+        "atributo": "Carisma",
+        "proficiente": false
+      },
+      {
+        "nome": "Acrobacia",
+        "valor": "+1",
+        "atributo": "Destreza",
+        "proficiente": false
+      },
+      {
+        "nome": "Furtividade",
+        "valor": "+1",
+        "atributo": "Destreza",
+        "proficiente": false
+      },
+      {
+        "nome": "Persuasão",
+        "valor": "+2",
+        "atributo": "Carisma",
+        "proficiente": false
+      },
+      {
+        "nome": "Atuação",
+        "valor": "+2",
+        "atributo": "Carisma",
+        "proficiente": false
+      },
+      {
+        "nome": "Investigação",
+        "valor": "+1",
+        "atributo": "Inteligência",
+        "proficiente": false
+      },
+      {
+        "nome": "Medicina",
+        "valor": "+8",
+        "atributo": "Sabedoria",
+        "proficiente": true
+      },
+      {
+        "nome": "Percepção",
+        "valor": "+8",
+        "atributo": "Sabedoria",
+        "proficiente": true
+      },
+      {
+        "nome": "Intuição",
+        "valor": "+8",
+        "atributo": "Sabedoria",
+        "proficiente": true
+      },
+      {
+        "nome": "Sobrevivência",
+        "valor": "+5",
+        "atributo": "Sabedoria",
+        "proficiente": false
+      },
+      {
+        "nome": "Lidar com Animais",
+        "valor": "+5",
+        "atributo": "Sabedoria",
+        "proficiente": false
+      },
+      {
+        "nome": "Atletismo",
+        "valor": "+6",
+        "atributo": "Força",
+        "proficiente": true
+      }
+    ],
+    "proficiencias": {
+      "Armas": "Armas Simples, Armas Marciais, Armaduras Pesadas",
+      "Armaduras": "Armaduras Pesadas, Armaduras Médias, Armaduras Leves",
+      "Ferramentas": "Kit de Caligrafia",
+      "Idiomas": "Comum, Abissal"
+    },
+    "equipamentos": {
+      "Armas": "Foice Longa",
+      "Armaduras": "Armadura Completa",
+      "Ouro": "5 PO",
+      "Poções": "Poção de Vida · Poção de Mana · Resistência de Ácido"
+    }
+  }
+}

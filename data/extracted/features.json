@@ -1,0 +1,60 @@
+{
+  "fonte": "source/grimorio-ehzra-original.html",
+  "data": {
+    "features": [
+      {
+        "nome": "Natureza Imortal",
+        "texto": "Vantagem em testes de habilidade contra doenças ou toxinas, e resistência a dano de veneno."
+      },
+      {
+        "nome": "Conjurador de Feitiços Potente",
+        "texto": "Adiciona o modificador de Sabedoria ao dano causado por qualquer truque de Clérigo."
+      },
+      {
+        "nome": "Morte Inescapável",
+        "texto": "Dano necrótico causado pelas magias de clérigo e por Canalizar Divindade ignora resistência a dano necrótico."
+      },
+      {
+        "nome": "Ceifador",
+        "texto": "Ao lançar um truque de dano contra um inimigo, pode causar o mesmo dano a um segundo inimigo até 1,5 m do primeiro alvo."
+      },
+      {
+        "nome": "Conjurador de Guerra",
+        "texto": "Vantagem em testes de resistência de Constituição para manter concentração. Como reação, pode lançar um feitiço de ação única contra uma criatura que provoque ataque de oportunidade, em vez de atacar."
+      },
+      {
+        "nome": "Canalizar Divindade: Toque da Morte",
+        "texto": "Ao acertar um ataque corpo a corpo, pode causar dano necrótico extra igual a 5 + o dobro do nível. Utilizável duas vezes por descanso longo."
+      },
+      {
+        "nome": "Repreender Mortos-Vivos",
+        "texto": "Força mortos-vivos num raio de 9 m a um teste de resistência de Sabedoria (CD da magia de clérigo). Se falharem, são repelidos e não podem se aproximar por 1 minuto ou até serem atacados."
+      },
+      {
+        "nome": "Queimar os Mortos-Vivos",
+        "texto": "Ao usar Repreender Mortos-Vivos, rola um número de d8 igual ao modificador de Sabedoria; todo morto-vivo que falhar no teste sofre dano radiante igual ao total rolado."
+      }
+    ],
+    "spellcasting": {
+      "cd": 16,
+      "ataque": "+8",
+      "rotulos": [
+        "Espaços de Magia",
+        "Mana"
+      ],
+      "espacos": [
+        4,
+        3,
+        3,
+        2
+      ],
+      "mana": [
+        8,
+        9,
+        15,
+        12
+      ],
+      "nota": "Mana total: 44 · Custo por espaço — 1º: 2 · 2º: 3 · 3º: 5 · 4º: 6"
+    }
+  }
+}

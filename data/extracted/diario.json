@@ -1,0 +1,38 @@
+{
+  "fonte": "source/grimorio-ehzra-original.html",
+  "data": {
+    "eyebrow": "Mesa · Diário",
+    "titulo": "Diário de Sessões",
+    "sub": "Vida, mana e treinamento, sessão a sessão.",
+    "treinamento": "Treinamento: Estilo de Combate — 2/15",
+    "sessoes": [
+      {
+        "titulo": "Sessão 13/07 — Combate",
+        "resumo": [
+          "Vida: 60/60",
+          "Mana: 38"
+        ],
+        "notas": []
+      },
+      {
+        "titulo": "Sessão 29/03",
+        "resumo": [
+          "Vida: 50/60",
+          "Mana: 38"
+        ],
+        "notas": [
+          "15:45 — Vida 50/60 · Mana 21/34 · Dois Mortos-Vivos + 2 CA (Fio da Obediência) + armaduras encontradas = 17 CA.",
+          "16:22 — Vida 70/70 · Mana 40/40 · Dois Mortos-Vivos + 2 CA (Fio da Obediência) + armaduras encontradas = 17 CA."
+        ]
+      },
+      {
+        "titulo": "Sessão 29/03 (continuação)",
+        "resumo": [
+          "Vida: 70/70",
+          "Mana: 46"
+        ],
+        "notas": []
+      }
+    ]
+  }
+}

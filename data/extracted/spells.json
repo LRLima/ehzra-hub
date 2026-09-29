@@ -1,0 +1,717 @@
+{
+  "fonte": "source/grimorio-ehzra-original.html",
+  "data": [
+    {
+      "nomeFicha": "Soar os Mortos",
+      "ciclo": 0,
+      "escola": "Necromancia",
+      "tagOriginal": "homebrew",
+      "cicloReal": null,
+      "meta": {
+        "tempo": "1 ação",
+        "alcance": "18 metros",
+        "comp": "V, S",
+        "duracao": "Instantânea"
+      },
+      "descricaoHtml": "<p>Você aponta para uma criatura que pode ver dentro do alcance, e o som doloroso de um sino enche o ar ao seu redor por um momento. O alvo deve ser bem-sucedido em um teste de resistência de Sabedoria ou sofrerá <strong>1d8 de dano necrótico</strong>. Se o alvo não estiver com seu máximo de PV, ele sofre <strong>1d12</strong> de dano necrótico em vez disso.</p>\n <p><strong>No 5º nível:</strong> os danos aumentam para 2d8 e 2d12.<br><strong>No 11º nível:</strong> aumentam para 3d8 e 2d12, e o dano passa a ser psíquico e necrótico.<br><strong>No 17º nível:</strong> aumentam para 4d8 e 4d12.</p>",
+      "descricaoMd": "Você aponta para uma criatura que pode ver dentro do alcance, e o som doloroso de um sino enche o ar ao seu redor por um momento. O alvo deve ser bem-sucedido em um teste de resistência de Sabedoria ou sofrerá **1d8 de dano necrótico**. Se o alvo não estiver com seu máximo de PV, ele sofre **1d12** de dano necrótico em vez disso.\n\n**No 5º nível:** os danos aumentam para 2d8 e 2d12.  \n**No 11º nível:** aumentam para 3d8 e 2d12, e o dano passa a ser psíquico e necrótico.  \n**No 17º nível:** aumentam para 4d8 e 4d12.",
+      "origem": "ficha"
+    },
+    {
+      "nomeFicha": "Orientação",
+      "ciclo": 0,
+      "escola": "Adivinhação",
+      "tagOriginal": "homebrew",
+      "cicloReal": null,
+      "meta": {
+        "tempo": "1 ação bônus",
+        "alcance": "Toque",
+        "comp": "V, S",
+        "duracao": "Concentração, até 1 minuto"
+      },
+      "descricaoHtml": "<p>Você toca uma criatura que recebe um bônus de <strong>d4</strong> para um teste de habilidade à sua escolha. O bônus deve ser usado antes do resultado do teste ser revelado.</p>",
+      "descricaoMd": "Você toca uma criatura que recebe um bônus de **d4** para um teste de habilidade à sua escolha. O bônus deve ser usado antes do resultado do teste ser revelado.",
+      "origem": "ficha"
+    },
+    {
+      "nomeFicha": "Light",
+      "ciclo": 0,
+      "escola": "Evocação",
+      "tagOriginal": "padrao",
+      "cicloReal": null,
+      "meta": {
+        "tempo": "1 ação",
+        "alcance": "Toque",
+        "comp": "V, M",
+        "duracao": "1 hora"
+      },
+      "descricaoHtml": "<p>Magia padrão de D&amp;D 5e, sem anotação própria no grimório. Você toca um objeto que não exceda 3 metros em nenhuma dimensão; ele passa a emitir luz forte num raio de 6 m e luz fraca por mais 6 m, na cor que você escolher.</p>",
+      "descricaoMd": "Magia padrão de D&D 5e, sem anotação própria no grimório. Você toca um objeto que não exceda 3 metros em nenhuma dimensão; ele passa a emitir luz forte num raio de 6 m e luz fraca por mais 6 m, na cor que você escolher.",
+      "origem": "ficha"
+    },
+    {
+      "nomeFicha": "Lâmina Necrótica",
+      "ciclo": 0,
+      "escola": "Necromancia",
+      "tagOriginal": "homebrew",
+      "cicloReal": null,
+      "meta": {
+        "tempo": "1 ação",
+        "alcance": "Pessoal (5 pés de raio)",
+        "comp": "V, S",
+        "duracao": "Instantânea"
+      },
+      "descricaoHtml": "<p>Você canaliza energia necromântica em sua arma corpo a corpo e atinge uma criatura ao seu alcance. O ataque não causa dano imediato adicional além do dano normal da arma.</p>\n <p>Se a criatura se mover voluntariamente antes do início do seu próximo turno, tentáculos sombrios emergem do solo, forçando-a a um teste de resistência de Constituição. Em caso de falha, sofre <strong>1d8 de dano necrótico</strong> e não pode recuperar pontos de vida até o final do seu próximo turno.</p>\n <p><strong>No 5º nível:</strong> +1d8 ao ser atingida inicialmente, +2d8 se sair do lugar antes do próximo turno.<br><strong>No 11º nível:</strong> 2d8 e 3d8.<br><strong>No 17º nível:</strong> 3d8 e 4d8.</p>",
+      "descricaoMd": "Você canaliza energia necromântica em sua arma corpo a corpo e atinge uma criatura ao seu alcance. O ataque não causa dano imediato adicional além do dano normal da arma.\n\nSe a criatura se mover voluntariamente antes do início do seu próximo turno, tentáculos sombrios emergem do solo, forçando-a a um teste de resistência de Constituição. Em caso de falha, sofre **1d8 de dano necrótico** e não pode recuperar pontos de vida até o final do seu próximo turno.\n\n**No 5º nível:** +1d8 ao ser atingida inicialmente, +2d8 se sair do lugar antes do próximo turno.  \n**No 11º nível:** 2d8 e 3d8.  \n**No 17º nível:** 3d8 e 4d8.",
+      "origem": "ficha"
+    },
+    {
+      "nomeFicha": "Salve o Moribundo",
+      "ciclo": 0,
+      "escola": "Necromancia",
+      "tagOriginal": "homebrew",
+      "cicloReal": null,
+      "meta": {
+        "tempo": "1 ação",
+        "alcance": "Toque",
+        "comp": "V, S",
+        "duracao": "Instantânea"
+      },
+      "descricaoHtml": "<p>Você toca uma criatura morrendo, estabilizando-a imediatamente. A criatura fica com 0 pontos de vida e não precisa fazer testes de salvaguarda para estabilização.</p>",
+      "descricaoMd": "Você toca uma criatura morrendo, estabilizando-a imediatamente. A criatura fica com 0 pontos de vida e não precisa fazer testes de salvaguarda para estabilização.",
+      "origem": "ficha"
+    },
+    {
+      "nomeFicha": "Necropsia",
+      "ciclo": 0,
+      "escola": "Necromancia",
+      "tagOriginal": "perdida",
+      "cicloReal": null,
+      "meta": null,
+      "descricaoHtml": null,
+      "descricaoMd": "",
+      "origem": "ficha"
+    },
+    {
+      "nomeFicha": "Ceremony",
+      "ciclo": 1,
+      "escola": "Abjuração (ritual)",
+      "tagOriginal": "padrao",
+      "cicloReal": null,
+      "meta": {
+        "tempo": "1 hora (ritual)",
+        "alcance": "Toque",
+        "comp": "V, S, M",
+        "duracao": "Instantânea"
+      },
+      "descricaoHtml": "<p>Magia padrão de D&amp;D 5e, sem anotação própria no grimório. Celebra um rito religioso (batismo, casamento, funeral, entre outros), concedendo uma bênção temporária a quem participa, como pontos de vida temporários ou vantagem em um tipo de teste de resistência, conforme o rito escolhido.</p>",
+      "descricaoMd": "Magia padrão de D&D 5e, sem anotação própria no grimório. Celebra um rito religioso (batismo, casamento, funeral, entre outros), concedendo uma bênção temporária a quem participa, como pontos de vida temporários ou vantagem em um tipo de teste de resistência, conforme o rito escolhido.",
+      "origem": "ficha"
+    },
+    {
+      "nomeFicha": "Infligir Ferimentos",
+      "ciclo": 1,
+      "escola": "Necromancia",
+      "tagOriginal": "homebrew",
+      "cicloReal": null,
+      "meta": {
+        "tempo": "1 ação",
+        "alcance": "Toque",
+        "comp": "V, S",
+        "duracao": "Instantânea"
+      },
+      "descricaoHtml": "<p>Faça um ataque mágico corpo a corpo contra uma criatura que você pode alcançar. Em um acerto, o alvo sofre <strong>3d10 de dano necrótico</strong>.</p>\n <p><strong>Em níveis superiores:</strong> ao conjurar usando um espaço de 2º nível ou superior, o dano aumenta em 1d10 para cada nível acima do 1º.</p>",
+      "descricaoMd": "Faça um ataque mágico corpo a corpo contra uma criatura que você pode alcançar. Em um acerto, o alvo sofre **3d10 de dano necrótico**.\n\n**Em níveis superiores:** ao conjurar usando um espaço de 2º nível ou superior, o dano aumenta em 1d10 para cada nível acima do 1º.",
+      "origem": "ficha"
+    },
+    {
+      "nomeFicha": "Curar Ferimentos",
+      "ciclo": 1,
+      "escola": "Evocação",
+      "tagOriginal": "homebrew",
+      "cicloReal": null,
+      "meta": {
+        "tempo": "1 ação",
+        "alcance": "Toque",
+        "comp": "V, S",
+        "duracao": "Instantânea"
+      },
+      "descricaoHtml": "<p>Uma criatura que você toca recupera uma quantidade de pontos de vida igual a <strong>1d8 + seu modificador de habilidade de conjuração</strong>.</p>\n <p><strong>Níveis superiores:</strong> ao conjurar usando um espaço de 2º nível ou superior, a cura aumenta em 1d8 para cada nível do espaço acima do 1º.</p>",
+      "descricaoMd": "Uma criatura que você toca recupera uma quantidade de pontos de vida igual a **1d8 + seu modificador de habilidade de conjuração**.\n\n**Níveis superiores:** ao conjurar usando um espaço de 2º nível ou superior, a cura aumenta em 1d8 para cada nível do espaço acima do 1º.",
+      "origem": "ficha"
+    },
+    {
+      "nomeFicha": "Palavra Curativa",
+      "ciclo": 1,
+      "escola": "Evocação",
+      "tagOriginal": "homebrew",
+      "cicloReal": null,
+      "meta": {
+        "tempo": "1 ação bônus",
+        "alcance": "60 pés",
+        "comp": "V",
+        "duracao": "Instantânea"
+      },
+      "descricaoHtml": "<p>Uma criatura à sua escolha que você possa ver dentro do alcance recupera <strong>1d4 + seu modificador de habilidade de conjuração</strong> em pontos de vida.</p>\n <p><strong>Níveis superiores:</strong> ao conjurar usando um espaço de 2º nível ou superior, a cura aumenta em 1d4 para cada nível do espaço acima do 1º.</p>",
+      "descricaoMd": "Uma criatura à sua escolha que você possa ver dentro do alcance recupera **1d4 + seu modificador de habilidade de conjuração** em pontos de vida.\n\n**Níveis superiores:** ao conjurar usando um espaço de 2º nível ou superior, a cura aumenta em 1d4 para cada nível do espaço acima do 1º.",
+      "origem": "ficha"
+    },
+    {
+      "nomeFicha": "Sanctuary",
+      "ciclo": 1,
+      "escola": "Abjuração",
+      "tagOriginal": "padrao",
+      "cicloReal": null,
+      "meta": {
+        "tempo": "1 ação bônus",
+        "alcance": "30 pés",
+        "comp": "V, S, M",
+        "duracao": "1 minuto"
+      },
+      "descricaoHtml": "<p>Magia padrão de D&amp;D 5e, sem anotação própria no grimório. Protege uma criatura voluntária: qualquer inimigo que tente atacá-la diretamente deve primeiro ser bem-sucedido em um teste de Sabedoria, ou escolher outro alvo.</p>",
+      "descricaoMd": "Magia padrão de D&D 5e, sem anotação própria no grimório. Protege uma criatura voluntária: qualquer inimigo que tente atacá-la diretamente deve primeiro ser bem-sucedido em um teste de Sabedoria, ou escolher outro alvo.",
+      "origem": "ficha"
+    },
+    {
+      "nomeFicha": "Raio da Doença",
+      "ciclo": 1,
+      "escola": "Necromancia",
+      "tagOriginal": "homebrew",
+      "cicloReal": null,
+      "meta": {
+        "tempo": "1 ação",
+        "alcance": "60 pés",
+        "comp": "V, S",
+        "duracao": "Instantânea"
+      },
+      "descricaoHtml": "<p>Um raio de energia esverdeada repugnante ataca uma criatura dentro do alcance. Faça um ataque mágico à distância. Ao acertar, o alvo sofre <strong>2d8 de dano de veneno</strong> e deve fazer um teste de resistência de Constituição; em uma falha, também fica envenenado até o final do seu próximo turno.</p>\n <p><strong>Em níveis mais altos:</strong> ao conjurar usando um espaço de 2º nível ou superior, o dano aumenta em 1d8 para cada nível acima do 1º.</p>",
+      "descricaoMd": "Um raio de energia esverdeada repugnante ataca uma criatura dentro do alcance. Faça um ataque mágico à distância. Ao acertar, o alvo sofre **2d8 de dano de veneno** e deve fazer um teste de resistência de Constituição; em uma falha, também fica envenenado até o final do seu próximo turno.\n\n**Em níveis mais altos:** ao conjurar usando um espaço de 2º nível ou superior, o dano aumenta em 1d8 para cada nível acima do 1º.",
+      "origem": "ficha"
+    },
+    {
+      "nomeFicha": "Vitalidade Falsa",
+      "ciclo": 1,
+      "escola": "Necromancia",
+      "tagOriginal": "homebrew",
+      "cicloReal": null,
+      "meta": {
+        "tempo": "1 ação",
+        "alcance": "Pessoal",
+        "comp": "V, S, M",
+        "duracao": "Instantânea"
+      },
+      "descricaoHtml": "<p>Reforçando-se com uma vitalidade necromântica ilusória, você ganha <strong>2d4 + 4 pontos de vida temporários</strong>.</p>\n <p><strong>Em níveis superiores:</strong> ganha 5 pontos de vida temporários adicionais para cada nível do espaço de magia acima do 1º.</p>",
+      "descricaoMd": "Reforçando-se com uma vitalidade necromântica ilusória, você ganha **2d4 + 4 pontos de vida temporários**.\n\n**Em níveis superiores:** ganha 5 pontos de vida temporários adicionais para cada nível do espaço de magia acima do 1º.",
+      "origem": "ficha"
+    },
+    {
+      "nomeFicha": "Batedores de Sarcófagos",
+      "ciclo": 1,
+      "escola": "Necromancia",
+      "tagOriginal": "homebrew",
+      "cicloReal": "2º nível segundo a nota original",
+      "meta": {
+        "tempo": "1 ação",
+        "alcance": "Toque",
+        "comp": "V, S",
+        "duracao": "1 hora",
+        "alvo": "Até 3 mortos-vivos sob seu controle"
+      },
+      "descricaoHtml": "<p>Você infunde seus servos com ecos espectrais vindos do além, aguçando seus sentidos com fragmentos de consciência esquecida.</p>\n <p>Enquanto a magia estiver ativa, os mortos-vivos escolhidos recebem: <strong>proficiência temporária em Percepção e Furtividade</strong>; e, se estiverem fora da linha de visão de um inimigo, o <strong>primeiro ataque causa +1d8 de dano necrótico</strong>.</p>",
+      "descricaoMd": "Você infunde seus servos com ecos espectrais vindos do além, aguçando seus sentidos com fragmentos de consciência esquecida.\n\nEnquanto a magia estiver ativa, os mortos-vivos escolhidos recebem: **proficiência temporária em Percepção e Furtividade**; e, se estiverem fora da linha de visão de um inimigo, o **primeiro ataque causa +1d8 de dano necrótico**.",
+      "origem": "ficha"
+    },
+    {
+      "nomeFicha": "Fio da Obediência",
+      "ciclo": 1,
+      "escola": "Necromancia",
+      "tagOriginal": "homebrew",
+      "cicloReal": "2º nível segundo a nota original",
+      "meta": {
+        "tempo": "1 ação",
+        "alcance": "Toque",
+        "comp": "V, S",
+        "duracao": "8 horas"
+      },
+      "descricaoHtml": "<p>Você estende um fio etéreo feito de obediência e vontade entre você e um morto-vivo sob seu controle. Esse vínculo reforça sua lealdade e funcionalidade tática.</p>\n <p>O morto-vivo alvo recebe: <strong>vantagem</strong> em testes de resistência contra efeitos que alterem seu comportamento (medo, encantamento, comandos mágicos); pode agir fora da sua linha de visão sem ficar inativo; e, se estiver a até 3 m de outro morto-vivo sob seu controle, sua <strong>CA aumenta em 2</strong>.</p>\n <p><strong>Em níveis superiores:</strong> com um espaço de 3º nível ou superior, você pode afetar um morto-vivo adicional.</p>",
+      "descricaoMd": "Você estende um fio etéreo feito de obediência e vontade entre você e um morto-vivo sob seu controle. Esse vínculo reforça sua lealdade e funcionalidade tática.\n\nO morto-vivo alvo recebe: **vantagem** em testes de resistência contra efeitos que alterem seu comportamento (medo, encantamento, comandos mágicos); pode agir fora da sua linha de visão sem ficar inativo; e, se estiver a até 3 m de outro morto-vivo sob seu controle, sua **CA aumenta em 2**.\n\n**Em níveis superiores:** com um espaço de 3º nível ou superior, você pode afetar um morto-vivo adicional.",
+      "origem": "ficha"
+    },
+    {
+      "nomeFicha": "Comando",
+      "ciclo": 1,
+      "escola": "Encantamento",
+      "tagOriginal": "homebrew",
+      "cicloReal": null,
+      "meta": {
+        "tempo": "1 ação",
+        "alcance": "60 pés",
+        "comp": "V",
+        "duracao": "1 rodada"
+      },
+      "descricaoHtml": "<p>Você fala uma ordem curta e firme a uma criatura que possa ver dentro do alcance. O alvo deve fazer um teste de resistência de Sabedoria; se falhar, deve seguir a ordem na próxima rodada de seu turno. A ordem deve ser uma palavra única e clara, como \"Ajoelhe\", \"Fuja\", \"Caia\", \"Pare\" ou \"Corra\".</p>\n <p>Se a ordem for contraditória ou impossível, o alvo perde sua ação.</p>",
+      "descricaoMd": "Você fala uma ordem curta e firme a uma criatura que possa ver dentro do alcance. O alvo deve fazer um teste de resistência de Sabedoria; se falhar, deve seguir a ordem na próxima rodada de seu turno. A ordem deve ser uma palavra única e clara, como \"Ajoelhe\", \"Fuja\", \"Caia\", \"Pare\" ou \"Corra\".\n\nSe a ordem for contraditória ou impossível, o alvo perde sua ação.",
+      "origem": "ficha"
+    },
+    {
+      "nomeFicha": "Escudo da Fé",
+      "ciclo": 1,
+      "escola": "Abjuração",
+      "tagOriginal": "homebrew",
+      "cicloReal": null,
+      "meta": {
+        "tempo": "1 ação bônus",
+        "alcance": "60 pés",
+        "comp": "V, S, M",
+        "duracao": "Concentração, até 10 minutos"
+      },
+      "descricaoHtml": "<p>Uma criatura à sua escolha que você possa ver dentro do alcance ganha um escudo mágico que aumenta sua Classe de Armadura em <strong>+2</strong> até o final da magia.</p>",
+      "descricaoMd": "Uma criatura à sua escolha que você possa ver dentro do alcance ganha um escudo mágico que aumenta sua Classe de Armadura em **+2** até o final da magia.",
+      "origem": "ficha"
+    },
+    {
+      "nomeFicha": "Proteção Contra o Bem e o Mal",
+      "ciclo": 1,
+      "escola": "Abjuração",
+      "tagOriginal": "homebrew",
+      "cicloReal": null,
+      "meta": {
+        "tempo": "1 ação",
+        "alcance": "Toque",
+        "comp": "V, S, M",
+        "duracao": "Concentração, até 10 minutos"
+      },
+      "descricaoHtml": "<p>Você toca uma criatura voluntária e a protege de aberrações, celestiais, elementais, fadas, demônios e mortos-vivos.</p>\n <p>Enquanto durar: essas criaturas têm <strong>desvantagem</strong> em ataques contra o alvo; o alvo não pode ser enfeitiçado, amedrontado ou possuído por elas; e se já estiver sob um desses efeitos, faz um novo teste de resistência com vantagem para encerrá-lo.</p>",
+      "descricaoMd": "Você toca uma criatura voluntária e a protege de aberrações, celestiais, elementais, fadas, demônios e mortos-vivos.\n\nEnquanto durar: essas criaturas têm **desvantagem** em ataques contra o alvo; o alvo não pode ser enfeitiçado, amedrontado ou possuído por elas; e se já estiver sob um desses efeitos, faz um novo teste de resistência com vantagem para encerrá-lo.",
+      "origem": "ficha"
+    },
+    {
+      "nomeFicha": "Calm Emotions",
+      "ciclo": 2,
+      "escola": "Encantamento",
+      "tagOriginal": "padrao",
+      "cicloReal": null,
+      "meta": {
+        "tempo": "1 ação",
+        "alcance": "60 pés",
+        "comp": "V, S",
+        "duracao": "Concentração, até 1 minuto"
+      },
+      "descricaoHtml": "<p>Magia padrão de D&amp;D 5e, sem anotação própria no grimório. Suprime emoções fortes numa área, podendo neutralizar hostilidade (evitando um combate) ou suprimir encantamentos e efeitos de medo sobre os alvos.</p>",
+      "descricaoMd": "Magia padrão de D&D 5e, sem anotação própria no grimório. Suprime emoções fortes numa área, podendo neutralizar hostilidade (evitando um combate) ou suprimir encantamentos e efeitos de medo sobre os alvos.",
+      "origem": "ficha"
+    },
+    {
+      "nomeFicha": "Lesser Restoration",
+      "ciclo": 2,
+      "escola": "Abjuração",
+      "tagOriginal": "padrao",
+      "cicloReal": null,
+      "meta": {
+        "tempo": "1 ação",
+        "alcance": "Toque",
+        "comp": "V, S",
+        "duracao": "Instantânea"
+      },
+      "descricaoHtml": "<p>Magia padrão de D&amp;D 5e, sem anotação própria no grimório. Remove uma doença ou uma condição debilitante (cego, surdo, paralisado, envenenado, entre outras) de uma criatura tocada.</p>",
+      "descricaoMd": "Magia padrão de D&D 5e, sem anotação própria no grimório. Remove uma doença ou uma condição debilitante (cego, surdo, paralisado, envenenado, entre outras) de uma criatura tocada.",
+      "origem": "ficha"
+    },
+    {
+      "nomeFicha": "Prayer of Healing",
+      "ciclo": 2,
+      "escola": "Evocação (ritual)",
+      "tagOriginal": "padrao",
+      "cicloReal": null,
+      "meta": {
+        "tempo": "10 minutos (ritual)",
+        "alcance": "30 pés",
+        "comp": "V",
+        "duracao": "Instantânea"
+      },
+      "descricaoHtml": "<p>Magia padrão de D&amp;D 5e, sem anotação própria no grimório. Cura pontos de vida de até seis criaturas ao final de um descanso curto.</p>",
+      "descricaoMd": "Magia padrão de D&D 5e, sem anotação própria no grimório. Cura pontos de vida de até seis criaturas ao final de um descanso curto.",
+      "origem": "ficha"
+    },
+    {
+      "nomeFicha": "Silence",
+      "ciclo": 2,
+      "escola": "Ilusão (ritual)",
+      "tagOriginal": "padrao",
+      "cicloReal": null,
+      "meta": {
+        "tempo": "1 ação",
+        "alcance": "120 pés",
+        "comp": "S",
+        "duracao": "Concentração, até 10 minutos"
+      },
+      "descricaoHtml": "<p>Magia padrão de D&amp;D 5e, sem anotação própria no grimório. Cria uma esfera de silêncio absoluto numa área; impede sons e a conjuração de magias com componente verbal ali dentro.</p>",
+      "descricaoMd": "Magia padrão de D&D 5e, sem anotação própria no grimório. Cria uma esfera de silêncio absoluto numa área; impede sons e a conjuração de magias com componente verbal ali dentro.",
+      "origem": "ficha"
+    },
+    {
+      "nomeFicha": "Cegueira e Surdez",
+      "ciclo": 2,
+      "escola": "Necromancia",
+      "tagOriginal": "homebrew",
+      "cicloReal": null,
+      "meta": {
+        "tempo": "1 ação",
+        "alcance": "30 pés",
+        "comp": "V",
+        "duracao": "1 minuto"
+      },
+      "descricaoHtml": "<p>Você pode cegar ou ensurdecer um inimigo. Escolha uma criatura que possa ver dentro do alcance para um teste de resistência de Constituição. Se falhar, o alvo fica cego ou ensurdecido (sua escolha) durante a duração. No final de cada um dos turnos do alvo, ele pode repetir o teste; em sucesso, o feitiço termina.</p>\n <p><strong>Em níveis mais altos:</strong> com um espaço de 3º nível ou superior, você pode mirar em uma criatura adicional para cada nível acima do 2º.</p>",
+      "descricaoMd": "Você pode cegar ou ensurdecer um inimigo. Escolha uma criatura que possa ver dentro do alcance para um teste de resistência de Constituição. Se falhar, o alvo fica cego ou ensurdecido (sua escolha) durante a duração. No final de cada um dos turnos do alvo, ele pode repetir o teste; em sucesso, o feitiço termina.\n\n**Em níveis mais altos:** com um espaço de 3º nível ou superior, você pode mirar em uma criatura adicional para cada nível acima do 2º.",
+      "origem": "ficha"
+    },
+    {
+      "nomeFicha": "Raio do Enfraquecimento",
+      "ciclo": 2,
+      "escola": "Necromancia",
+      "tagOriginal": "homebrew",
+      "cicloReal": null,
+      "meta": {
+        "tempo": "1 ação",
+        "alcance": "60 pés",
+        "comp": "V, S",
+        "duracao": "Concentração, até 1 minuto"
+      },
+      "descricaoHtml": "<p>Um raio preto de energia enervante brota do seu dedo em direção a uma criatura dentro do alcance. Faça um ataque mágico à distância. Ao acertar, o alvo passa a causar apenas metade do dano com ataques de arma que usam Força até o fim do feitiço.</p>\n <p>No final de cada um dos turnos do alvo, ele pode repetir o teste de resistência de Constituição; em sucesso, o feitiço termina.</p>",
+      "descricaoMd": "Um raio preto de energia enervante brota do seu dedo em direção a uma criatura dentro do alcance. Faça um ataque mágico à distância. Ao acertar, o alvo passa a causar apenas metade do dano com ataques de arma que usam Força até o fim do feitiço.\n\nNo final de cada um dos turnos do alvo, ele pode repetir o teste de resistência de Constituição; em sucesso, o feitiço termina.",
+      "origem": "ficha"
+    },
+    {
+      "nomeFicha": "Repouso Gentil",
+      "ciclo": 2,
+      "escola": "Necromancia",
+      "tagOriginal": "homebrew",
+      "cicloReal": null,
+      "meta": {
+        "tempo": "1 ação",
+        "alcance": "Toque",
+        "comp": "V, S, M",
+        "duracao": "10 dias"
+      },
+      "descricaoHtml": "<p>Você protege um cadáver ou outro corpo morto contra decomposição e evita que seja reanimado por meios não naturais. O corpo não envelhece e não pode ser alvo de <em>Animar Morto</em> ou magias similares enquanto sob este efeito.</p>\n <p>Além disso, mantém a alma presa no corpo por até 10 dias, permitindo que magias como <em>Falar com os Mortos</em> funcionem normalmente.</p>",
+      "descricaoMd": "Você protege um cadáver ou outro corpo morto contra decomposição e evita que seja reanimado por meios não naturais. O corpo não envelhece e não pode ser alvo de *Animar Morto* ou magias similares enquanto sob este efeito.\n\nAlém disso, mantém a alma presa no corpo por até 10 dias, permitindo que magias como *Falar com os Mortos* funcionem normalmente.",
+      "origem": "ficha"
+    },
+    {
+      "nomeFicha": "Taxidermia de Ehzra",
+      "ciclo": 2,
+      "escola": "Necromancia",
+      "tagOriginal": "perdida",
+      "cicloReal": null,
+      "meta": null,
+      "descricaoHtml": null,
+      "descricaoMd": "",
+      "origem": "ficha"
+    },
+    {
+      "nomeFicha": "Animar Morto",
+      "ciclo": 3,
+      "escola": "Necromancia",
+      "tagOriginal": "homebrew",
+      "cicloReal": null,
+      "meta": {
+        "tempo": "1 minuto",
+        "alcance": "10 pés",
+        "comp": "V, S, M",
+        "duracao": "Instantânea"
+      },
+      "descricaoHtml": "<p>Este feitiço cria um servo morto-vivo. Escolha uma pilha de ossos ou um cadáver de um humanoide Médio ou Pequeno dentro do alcance: o alvo se torna um <strong>esqueleto</strong> (se ossos) ou um <strong>zumbi</strong> (se cadáver).</p>\n <p>Em cada um dos seus turnos, você pode usar uma ação bônus para comandar mentalmente qualquer criatura criada por esta magia dentro de 18 m. A criatura fica sob seu controle por 24 horas; conjurar o feitiço novamente antes desse prazo reafirma o controle sobre até quatro criaturas já animadas, em vez de animar uma nova.</p>\n <p><strong>Em níveis mais altos:</strong> com um espaço de 4º nível ou superior, anima ou reafirma controle sobre duas criaturas adicionais por nível acima do 3º.</p>",
+      "descricaoMd": "Este feitiço cria um servo morto-vivo. Escolha uma pilha de ossos ou um cadáver de um humanoide Médio ou Pequeno dentro do alcance: o alvo se torna um **esqueleto** (se ossos) ou um **zumbi** (se cadáver).\n\nEm cada um dos seus turnos, você pode usar uma ação bônus para comandar mentalmente qualquer criatura criada por esta magia dentro de 18 m. A criatura fica sob seu controle por 24 horas; conjurar o feitiço novamente antes desse prazo reafirma o controle sobre até quatro criaturas já animadas, em vez de animar uma nova.\n\n**Em níveis mais altos:** com um espaço de 4º nível ou superior, anima ou reafirma controle sobre duas criaturas adicionais por nível acima do 3º.",
+      "origem": "ficha"
+    },
+    {
+      "nomeFicha": "Aura de Vitalidade",
+      "ciclo": 3,
+      "escola": "Evocação",
+      "tagOriginal": "homebrew",
+      "cicloReal": null,
+      "meta": {
+        "tempo": "1 ação",
+        "alcance": "Pessoal (raio de 30 pés)",
+        "comp": "V, S",
+        "duracao": "Concentração, até 1 minuto"
+      },
+      "descricaoHtml": "<p>Uma aura de energia vitalosa irradia de você numa esfera de 9 m. Até o fim da magia, como ação bônus em cada um dos seus turnos, você pode escolher uma criatura dentro da aura para recuperar <strong>2d6 pontos de vida</strong>.</p>",
+      "descricaoMd": "Uma aura de energia vitalosa irradia de você numa esfera de 9 m. Até o fim da magia, como ação bônus em cada um dos seus turnos, você pode escolher uma criatura dentro da aura para recuperar **2d6 pontos de vida**.",
+      "origem": "ficha"
+    },
+    {
+      "nomeFicha": "Dispel Magic",
+      "ciclo": 3,
+      "escola": "Abjuração",
+      "tagOriginal": "padrao",
+      "cicloReal": null,
+      "meta": {
+        "tempo": "1 ação",
+        "alcance": "120 pés",
+        "comp": "V, S",
+        "duracao": "Instantânea"
+      },
+      "descricaoHtml": "<p>Magia padrão de D&amp;D 5e, sem anotação própria no grimório. Encerra um efeito mágico ativo em uma criatura, objeto ou efeito visado dentro do alcance.</p>",
+      "descricaoMd": "Magia padrão de D&D 5e, sem anotação própria no grimório. Encerra um efeito mágico ativo em uma criatura, objeto ou efeito visado dentro do alcance.",
+      "origem": "ficha"
+    },
+    {
+      "nomeFicha": "Mass Healing Word",
+      "ciclo": 3,
+      "escola": "Evocação",
+      "tagOriginal": "padrao",
+      "cicloReal": null,
+      "meta": {
+        "tempo": "1 ação bônus",
+        "alcance": "60 pés",
+        "comp": "V",
+        "duracao": "Instantânea"
+      },
+      "descricaoHtml": "<p>Magia padrão de D&amp;D 5e, sem anotação própria no grimório. Cura, à distância e com uma única palavra, até seis criaturas à sua escolha que você possa ver.</p>",
+      "descricaoMd": "Magia padrão de D&D 5e, sem anotação própria no grimório. Cura, à distância e com uma única palavra, até seis criaturas à sua escolha que você possa ver.",
+      "origem": "ficha"
+    },
+    {
+      "nomeFicha": "Falar com os Mortos",
+      "ciclo": 3,
+      "escola": "Necromancia",
+      "tagOriginal": "homebrew",
+      "cicloReal": null,
+      "meta": {
+        "tempo": "1 ação",
+        "alcance": "10 pés",
+        "comp": "V, S, M",
+        "duracao": "10 minutos"
+      },
+      "descricaoHtml": "<p>Você concede a aparência de vida a um cadáver de sua escolha dentro do alcance, permitindo que responda a perguntas. O cadáver deve ter uma boca; o feitiço falha se a criatura era morta-viva quando morreu, ou se já foi alvo deste feitiço nos últimos 10 dias.</p>\n <p>Você pode fazer até <strong>cinco perguntas</strong>. O cadáver sabe apenas o que sabia em vida; as respostas costumam ser breves, enigmáticas ou repetitivas, e não há obrigação de sinceridade se ele o reconhecer como inimigo.</p>",
+      "descricaoMd": "Você concede a aparência de vida a um cadáver de sua escolha dentro do alcance, permitindo que responda a perguntas. O cadáver deve ter uma boca; o feitiço falha se a criatura era morta-viva quando morreu, ou se já foi alvo deste feitiço nos últimos 10 dias.\n\nVocê pode fazer até **cinco perguntas**. O cadáver sabe apenas o que sabia em vida; as respostas costumam ser breves, enigmáticas ou repetitivas, e não há obrigação de sinceridade se ele o reconhecer como inimigo.",
+      "origem": "ficha"
+    },
+    {
+      "nomeFicha": "Spirit Guardians",
+      "ciclo": 3,
+      "escola": "Necromancia",
+      "tagOriginal": "padrao",
+      "cicloReal": null,
+      "meta": {
+        "tempo": "1 ação",
+        "alcance": "Pessoal (raio de 15 pés)",
+        "comp": "V, S, M",
+        "duracao": "Concentração, até 10 minutos"
+      },
+      "descricaoHtml": "<p>Magia padrão de D&amp;D 5e, sem anotação própria no grimório. Convoca espíritos protetores ao redor do conjurador; inimigos que entrem ou comecem o turno na área sofrem dano e têm o deslocamento reduzido.</p>",
+      "descricaoMd": "Magia padrão de D&D 5e, sem anotação própria no grimório. Convoca espíritos protetores ao redor do conjurador; inimigos que entrem ou comecem o turno na área sofrem dano e têm o deslocamento reduzido.",
+      "origem": "ficha"
+    },
+    {
+      "nomeFicha": "Manto Espiritual",
+      "ciclo": 3,
+      "escola": "Necromancia",
+      "tagOriginal": "homebrew",
+      "cicloReal": null,
+      "meta": {
+        "tempo": "1 ação bônus",
+        "alcance": "Pessoal",
+        "comp": "V",
+        "duracao": "Concentração, até 1 minuto"
+      },
+      "descricaoHtml": "<p>Você chama espíritos do além para pairarem ao seu redor, envolvendo suas ações em um frio sobrenatural. Até o fim da magia: sempre que atingir uma criatura com um ataque, ela sofre <strong>1d8 de dano adicional</strong> (necrótico, radiante ou gélido, à sua escolha); criaturas afetadas não podem recuperar PV a até 3 m de você; e têm o deslocamento reduzido em 3 m até o início do seu próximo turno.</p>\n <p><strong>No 5º nível:</strong> o dano adicional aumenta para 2d8.<br><strong>No 11º nível:</strong> 3d8.</p>",
+      "descricaoMd": "Você chama espíritos do além para pairarem ao seu redor, envolvendo suas ações em um frio sobrenatural. Até o fim da magia: sempre que atingir uma criatura com um ataque, ela sofre **1d8 de dano adicional** (necrótico, radiante ou gélido, à sua escolha); criaturas afetadas não podem recuperar PV a até 3 m de você; e têm o deslocamento reduzido em 3 m até o início do seu próximo turno.\n\n**No 5º nível:** o dano adicional aumenta para 2d8.  \n**No 11º nível:** 3d8.",
+      "origem": "ficha"
+    },
+    {
+      "nomeFicha": "Life Transference",
+      "ciclo": 3,
+      "escola": "Necromancia",
+      "tagOriginal": "padrao",
+      "cicloReal": null,
+      "meta": {
+        "tempo": "1 ação",
+        "alcance": "30 pés",
+        "comp": "V, S",
+        "duracao": "Instantânea"
+      },
+      "descricaoHtml": "<p>Magia padrão de D&amp;D 5e, sem anotação própria no grimório. O conjurador sacrifica os próprios pontos de vida para curar outra criatura em dobro.</p>",
+      "descricaoMd": "Magia padrão de D&D 5e, sem anotação própria no grimório. O conjurador sacrifica os próprios pontos de vida para curar outra criatura em dobro.",
+      "origem": "ficha"
+    },
+    {
+      "nomeFicha": "Toque Vampírico",
+      "ciclo": 3,
+      "escola": "Necromancia",
+      "tagOriginal": "homebrew",
+      "cicloReal": null,
+      "meta": {
+        "tempo": "1 ação",
+        "alcance": "Eu",
+        "comp": "V, S",
+        "duracao": "Concentração, até 1 minuto"
+      },
+      "descricaoHtml": "<p>O toque da sua mão envolta em sombras desvia força vital de outras pessoas para curar suas feridas. Faça um ataque mágico corpo a corpo; ao acertar, o alvo sofre <strong>3d6 de dano necrótico</strong>, e você recupera pontos de vida iguais à metade do dano causado. Até o feitiço terminar, você pode repetir o ataque em cada um dos seus turnos como uma ação.</p>\n <p><strong>Em níveis mais altos:</strong> com um espaço de 4º nível ou superior, o dano aumenta em 1d6 para cada nível acima do 3º.</p>",
+      "descricaoMd": "O toque da sua mão envolta em sombras desvia força vital de outras pessoas para curar suas feridas. Faça um ataque mágico corpo a corpo; ao acertar, o alvo sofre **3d6 de dano necrótico**, e você recupera pontos de vida iguais à metade do dano causado. Até o feitiço terminar, você pode repetir o ataque em cada um dos seus turnos como uma ação.\n\n**Em níveis mais altos:** com um espaço de 4º nível ou superior, o dano aumenta em 1d6 para cada nível acima do 3º.",
+      "origem": "ficha"
+    },
+    {
+      "nomeFicha": "Impor Maldição",
+      "ciclo": 3,
+      "escola": "Necromancia",
+      "tagOriginal": "homebrew",
+      "cicloReal": null,
+      "meta": {
+        "tempo": "1 ação",
+        "alcance": "Toque",
+        "comp": "V, S",
+        "duracao": "Concentração, até 1 minuto"
+      },
+      "descricaoHtml": "<p>Você toca uma criatura e a envolve com uma maldição debilitante; teste de resistência de Sabedoria ou fica amaldiçoada durante a duração. Ao conjurar, escolha um efeito:</p>\n <ul style=\"margin:0 0 14px;padding-left:20px;color:var(--bone);\">\n <li>Desvantagem em testes de uma habilidade à sua escolha.</li>\n <li>Desvantagem em jogadas de ataque contra você.</li>\n <li>Teste de resistência de Sabedoria no início de cada turno, ou perde a ação.</li>\n <li>Seus ataques e magias causam +1d8 de dano necrótico adicional ao alvo.</li>\n </ul>\n <p><strong>No 5º nível ou superior:</strong> dura 8 horas (concentração). <strong>No 7º ou superior:</strong> 24 horas. <strong>No 9º:</strong> não exige mais concentração.</p>",
+      "descricaoMd": "Você toca uma criatura e a envolve com uma maldição debilitante; teste de resistência de Sabedoria ou fica amaldiçoada durante a duração. Ao conjurar, escolha um efeito:\n\n-   Desvantagem em testes de uma habilidade à sua escolha.\n-   Desvantagem em jogadas de ataque contra você.\n-   Teste de resistência de Sabedoria no início de cada turno, ou perde a ação.\n-   Seus ataques e magias causam +1d8 de dano necrótico adicional ao alvo.\n\n**No 5º nível ou superior:** dura 8 horas (concentração). **No 7º ou superior:** 24 horas. **No 9º:** não exige mais concentração.",
+      "origem": "ficha"
+    },
+    {
+      "nomeFicha": "Intenção Mortal",
+      "ciclo": 3,
+      "escola": "Necromancia",
+      "tagOriginal": "homebrew",
+      "cicloReal": null,
+      "meta": {
+        "tempo": "1 ação bônus",
+        "alcance": "Pessoal",
+        "comp": "V",
+        "duracao": "Concentração, até 1 minuto"
+      },
+      "descricaoHtml": "<p>Você canaliza seus sentimentos negativos, envolvendo suas ações em um frio sobrenatural. Até o fim da magia: sempre que atingir uma criatura com um <strong>ataque à distância</strong>, ela sofre <strong>1d8 de dano adicional</strong> (necrótico, radiante ou gélido, à sua escolha); criaturas afetadas não podem recuperar PV a até 9 m de você; e têm deslocamento reduzido em 3 m até o início do seu próximo turno.</p>\n <p><strong>No 5º nível:</strong> o dano adicional aumenta para 2d8.<br><strong>No 11º nível:</strong> 3d8.</p>",
+      "descricaoMd": "Você canaliza seus sentimentos negativos, envolvendo suas ações em um frio sobrenatural. Até o fim da magia: sempre que atingir uma criatura com um **ataque à distância**, ela sofre **1d8 de dano adicional** (necrótico, radiante ou gélido, à sua escolha); criaturas afetadas não podem recuperar PV a até 9 m de você; e têm deslocamento reduzido em 3 m até o início do seu próximo turno.\n\n**No 5º nível:** o dano adicional aumenta para 2d8.  \n**No 11º nível:** 3d8.",
+      "origem": "ficha"
+    },
+    {
+      "nomeFicha": "Guardian of Faith",
+      "ciclo": 4,
+      "escola": "Conjuração",
+      "tagOriginal": "padrao",
+      "cicloReal": null,
+      "meta": {
+        "tempo": "1 ação",
+        "alcance": "30 pés",
+        "comp": "V",
+        "duracao": "8 horas"
+      },
+      "descricaoHtml": "<p>Magia padrão de D&amp;D 5e, sem anotação própria no grimório. Invoca um guardião espectral que permanece numa área, atacando inimigos que ali entrem.</p>",
+      "descricaoMd": "Magia padrão de D&D 5e, sem anotação própria no grimório. Invoca um guardião espectral que permanece numa área, atacando inimigos que ali entrem.",
+      "origem": "ficha"
+    },
+    {
+      "nomeFicha": "Banishment",
+      "ciclo": 4,
+      "escola": "Abjuração",
+      "tagOriginal": "padrao",
+      "cicloReal": null,
+      "meta": {
+        "tempo": "1 ação",
+        "alcance": "60 pés",
+        "comp": "V, S, M",
+        "duracao": "Concentração, até 1 minuto"
+      },
+      "descricaoHtml": "<p>Magia padrão de D&amp;D 5e, sem anotação própria no grimório. Banha uma criatura para outro plano de existência, removendo-a temporariamente do combate.</p>",
+      "descricaoMd": "Magia padrão de D&D 5e, sem anotação própria no grimório. Banha uma criatura para outro plano de existência, removendo-a temporariamente do combate.",
+      "origem": "ficha"
+    },
+    {
+      "nomeFicha": "Praga",
+      "ciclo": 4,
+      "escola": "Necromancia",
+      "tagOriginal": "homebrew",
+      "cicloReal": null,
+      "meta": {
+        "tempo": "1 ação",
+        "alcance": "30 pés",
+        "comp": "V, S",
+        "duracao": "Instantânea"
+      },
+      "descricaoHtml": "<p>A energia necromântica lava uma criatura de sua escolha, drenando umidade e vitalidade. Teste de resistência de Constituição; falha causa <strong>8d8 de dano necrótico</strong> (metade em sucesso). Não tem efeito sobre mortos-vivos ou construtos.</p>\n <p>Contra criaturas ou plantas mágicas, o teste é feito com desvantagem e o dano é máximo. Uma planta não mágica simplesmente murcha e morre, sem teste.</p>\n <p><strong>Em níveis mais altos:</strong> com um espaço de 5º nível ou superior, o dano aumenta em 1d8 para cada nível acima do 4º.</p>",
+      "descricaoMd": "A energia necromântica lava uma criatura de sua escolha, drenando umidade e vitalidade. Teste de resistência de Constituição; falha causa **8d8 de dano necrótico** (metade em sucesso). Não tem efeito sobre mortos-vivos ou construtos.\n\nContra criaturas ou plantas mágicas, o teste é feito com desvantagem e o dano é máximo. Uma planta não mágica simplesmente murcha e morre, sem teste.\n\n**Em níveis mais altos:** com um espaço de 5º nível ou superior, o dano aumenta em 1d8 para cada nível acima do 4º.",
+      "origem": "ficha"
+    },
+    {
+      "nomeFicha": "Ala da Morte",
+      "ciclo": 4,
+      "escola": "Necromancia",
+      "tagOriginal": "homebrew",
+      "cicloReal": null,
+      "meta": {
+        "tempo": "1 ação",
+        "alcance": "Toque",
+        "comp": "V, S",
+        "duracao": "8 horas"
+      },
+      "descricaoHtml": "<p>Você toca uma criatura e lhe concede proteção contra a morte. Na primeira vez que o alvo cair a 0 PV por dano, ele cai a <strong>1 ponto de vida</strong> em vez disso, e a magia termina.</p>\n <p>Se o feitiço ainda estiver ativo quando o alvo sofrer um efeito de morte instantânea sem dano, esse efeito é negado e a magia termina.</p>",
+      "descricaoMd": "Você toca uma criatura e lhe concede proteção contra a morte. Na primeira vez que o alvo cair a 0 PV por dano, ele cai a **1 ponto de vida** em vez disso, e a magia termina.\n\nSe o feitiço ainda estiver ativo quando o alvo sofrer um efeito de morte instantânea sem dano, esse efeito é negado e a magia termina.",
+      "origem": "ficha"
+    },
+    {
+      "nomeFicha": "Campeão do Túmulo",
+      "ciclo": 5,
+      "escola": "Necromancia",
+      "tagOriginal": "homebrew",
+      "cicloReal": null,
+      "meta": {
+        "tempo": "1 ação",
+        "alcance": "Toque",
+        "comp": "V, S",
+        "duracao": "Concentração, até 10 minutos",
+        "alvo": "Um morto-vivo sob seu controle"
+      },
+      "descricaoHtml": "<p>Você canaliza a essência do poder sombrio que jaz além do véu da vida e ergue um de seus servos à forma de um verdadeiro campeão da morte: um <strong>Campeão do Túmulo</strong>, portador de ruína.</p>\n <p>O morto-vivo escolhido recebe: <strong>Pontos de Vida triplicados</strong>; <strong>CA +3</strong>; ataques causam <strong>+2d8 de dano necrótico</strong>; imunidade a medo, encantamento e paralisia; e, uma vez por combate, ao chegar a 0 PV, pode explodir em vísceras sombrias — criaturas num raio de 3 m fazem teste de Constituição, sofrendo <strong>4d10 de dano necrótico</strong> em falha.</p>\n <p>Você só pode manter um Campeão do Túmulo ativo por vez; conjurar novamente dissolve o anterior imediatamente.</p>",
+      "descricaoMd": "Você canaliza a essência do poder sombrio que jaz além do véu da vida e ergue um de seus servos à forma de um verdadeiro campeão da morte: um **Campeão do Túmulo**, portador de ruína.\n\nO morto-vivo escolhido recebe: **Pontos de Vida triplicados**; **CA +3**; ataques causam **+2d8 de dano necrótico**; imunidade a medo, encantamento e paralisia; e, uma vez por combate, ao chegar a 0 PV, pode explodir em vísceras sombrias — criaturas num raio de 3 m fazem teste de Constituição, sofrendo **4d10 de dano necrótico** em falha.\n\nVocê só pode manter um Campeão do Túmulo ativo por vez; conjurar novamente dissolve o anterior imediatamente.",
+      "origem": "ficha"
+    },
+    {
+      "nomeFicha": "Despelar",
+      "ciclo": 0,
+      "escola": "Necromancia",
+      "tagOriginal": "homebrew",
+      "cicloReal": null,
+      "meta": {
+        "tempo": "1 ação",
+        "alcance": "Toque",
+        "comp": "V, S",
+        "duracao": "Instantânea"
+      },
+      "descricaoHtml": "<p>Você toca um cadáver Pequeno ou Médio. Vapor necrótico consome carne, gordura e vísceras, deixando apenas os ossos limpos — objetos não são afetados. Não cria uma criatura morta-viva, apenas prepara o material para animação futura. Um cadáver só pode ser afetado uma vez por este truque.</p>",
+      "descricaoMd": "Você toca um cadáver Pequeno ou Médio. Vapor necrótico consome carne, gordura e vísceras, deixando apenas os ossos limpos — objetos não são afetados. Não cria uma criatura morta-viva, apenas prepara o material para animação futura. Um cadáver só pode ser afetado uma vez por este truque.",
+      "origem": "grimorio"
+    },
+    {
+      "nomeFicha": "Minguar Ossos",
+      "ciclo": 2,
+      "escola": "Necromancia",
+      "tagOriginal": "homebrew",
+      "cicloReal": null,
+      "meta": {
+        "tempo": "1 ação",
+        "alcance": "Toque",
+        "comp": "V, S, M",
+        "duracao": "Até desfazer"
+      },
+      "descricaoHtml": "<p>Você toca o cadáver ou morto-vivo de tamanho Pequeno ou Médio. Os ossos encolhem para 1/5 do tamanho original, tornando-o compacto e fácil de transportar.</p>\n <p>Se for um cadáver, permanece reduzido até você desfazer a magia. Se for um morto-vivo sob seu controle (nível 2), a criatura fica incapacitada e inerte enquanto reduzida, só podendo ser usada após ser restaurada ao tamanho normal.</p>",
+      "descricaoMd": "Você toca o cadáver ou morto-vivo de tamanho Pequeno ou Médio. Os ossos encolhem para 1/5 do tamanho original, tornando-o compacto e fácil de transportar.\n\nSe for um cadáver, permanece reduzido até você desfazer a magia. Se for um morto-vivo sob seu controle (nível 2), a criatura fica incapacitada e inerte enquanto reduzida, só podendo ser usada após ser restaurada ao tamanho normal.",
+      "origem": "grimorio"
+    },
+    {
+      "nomeFicha": "Bolsa de Ossos",
+      "ciclo": 1,
+      "escola": "Necromancia",
+      "tagOriginal": "homebrew",
+      "cicloReal": null,
+      "meta": {
+        "tempo": "1 ação",
+        "alcance": "3 m",
+        "comp": "V, S, M",
+        "duracao": "Até ser liberado"
+      },
+      "descricaoHtml": "<p>Você desfaz magicamente a estrutura corporal de um morto-vivo sob seu controle (zumbi, esqueleto ou similar) dentro do alcance. A criatura se desmonta e é sugada para dentro do saco material da magia, ficando inativa, incapacitada e sem exigir controle.</p>\n <p>O peso do saco não excede 2 kg enquanto contiver um morto-vivo desmontado. Conjurar a magia novamente direcionada ao saco libera a criatura, que se remonta com os mesmos PV que tinha ao ser guardada. Apenas uma criatura pode ser armazenada por conjuração.</p>",
+      "descricaoMd": "Você desfaz magicamente a estrutura corporal de um morto-vivo sob seu controle (zumbi, esqueleto ou similar) dentro do alcance. A criatura se desmonta e é sugada para dentro do saco material da magia, ficando inativa, incapacitada e sem exigir controle.\n\nO peso do saco não excede 2 kg enquanto contiver um morto-vivo desmontado. Conjurar a magia novamente direcionada ao saco libera a criatura, que se remonta com os mesmos PV que tinha ao ser guardada. Apenas uma criatura pode ser armazenada por conjuração.",
+      "origem": "grimorio"
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "fonte": "source/grimorio-ehzra-original.html",
+  "data": {
+    "/perfil": {
+      "eyebrow": "Personas · D&D 2024",
+      "titulo": "",
+      "sub": "",
+      "secoes": [
+        "Alinhamento — Leal Neutro"
+      ],
+      "legenda": [],
+      "lede": [
+        "Nascido em Fervora, cidade de fontes termais e devoção a Apolo, filho do Sacerdote do Sol Altharion. Morto na noite em que um dragão vermelho reduziu sua cidade a cinzas, e devolvido à vida pela vontade de Myrkul, o Senhor dos Ossos, para caminhar entre o crepúsculo da vida e o silêncio da morte."
+      ]
+    },
+    "/ficha": {
+      "eyebrow": "Dados do Personagem",
+      "titulo": "Ficha de Personagem",
+      "sub": "Atributos, salvaguardas, perícias e o que resta em seus bolsos.",
+      "secoes": [
+        "Atributos",
+        "Salvaguardas",
+        "Perícias",
+        "Proficiências",
+        "Equipamentos"
+      ],
+      "legenda": [],
+      "lede": []
+    },
+    "/habilidades": {
+      "eyebrow": "Traços de Classe",
+      "titulo": "Habilidades",
+      "sub": "Os dons que a morte concedeu a Ehzra ao devolvê-lo à carne.",
+      "secoes": [
+        "Conjuração"
+      ],
+      "legenda": [],
+      "lede": []
+    },
+    "/armas": {
+      "eyebrow": "Relíquia",
+      "titulo": "Armas",
+      "sub": "O instrumento de julgamento que Myrkul colocou nas mãos de Ehzra.",
+      "secoes": [
+        "Ceifadora de Myrkul"
+      ],
+      "legenda": [],
+      "lede": []
+    },
+    "/magias": {
+      "eyebrow": "Grimório",
+      "titulo": "Magias de Ehzra",
+      "sub": "Clique em qualquer magia para abrir sua página — descrição, tempo de conjuração e alcance.",
+      "secoes": [
+        "Outras páginas do grimório"
+      ],
+      "legenda": [
+        "Anotada por Ehzra (homebrew / reflavor)",
+        "Magia padrão de D&D 5e",
+        "Perdida — sem anotação no grimório"
+      ],
+      "lede": [
+        "Magias necromânticas de utilidade que Ehzra desenvolveu, mas que não constam entre as preparadas atualmente na ficha."
+      ]
+    },
+    "/avatar": {
+      "eyebrow": "Habilidade Suprema · Custo: 1 Inspiração",
+      "titulo": "Avatar dos Quatro Túmulos",
+      "sub": "Ao ativar, Ehzra sente sua alma ser \"escolhida\" por uma entidade — a escolha é caótica, mesmo que ele possua todas as relíquias.",
+      "secoes": [],
+      "legenda": [],
+      "lede": []
+    },
+    "/historia": {
+      "eyebrow": "Lore",
+      "titulo": "A Queda de Fervora",
+      "sub": "A história de Ehzra Thanaris, tal como anotada em seu grimório.",
+      "secoes": [],
+      "legenda": [],
+      "lede": []
+    },
+    "/personalidade": {
+      "eyebrow": "Psique",
+      "titulo": "Personalidade",
+      "sub": "As três camadas de Ehzra: o que se vê, o que se sente e o que se esconde.",
+      "secoes": [
+        "Externo",
+        "Interno",
+        "Subconsciente"
+      ],
+      "legenda": [],
+      "lede": []
+    },
+    "/estrategias": {
+      "eyebrow": "Mesa · Combate",
+      "titulo": "Estratégias",
+      "sub": "Roteiros de combate anotados para diferentes cenários.",
+      "secoes": [
+        "Manipulador de Almas",
+        "Caminho Alternativo — Dano centralizado em um único inimigo",
+        "Combatente Solitário",
+        "Estilo Corpo a Corpo",
+        "Estilo à Distância"
+      ],
+      "legenda": [],
+      "lede": []
+    },
+    "/sessoes": {
+      "eyebrow": "Mesa · Diário",
+      "titulo": "Diário de Sessões",
+      "sub": "Vida, mana e treinamento, sessão a sessão.",
+      "secoes": [],
+      "legenda": [],
+      "lede": [
+        "**Treinamento:** Estilo de Combate — 2/15"
+      ]
+    },
+    "/apendice": {
+      "eyebrow": "Apêndice",
+      "titulo": "Ezrah Thanaris — versão alternativa",
+      "sub": "Um rascunho da mesma origem, registrado como NPC na campanha \"Flamméria em Chamas\".",
+      "secoes": [],
+      "legenda": [],
+      "lede": []
+    }
+  }
+}

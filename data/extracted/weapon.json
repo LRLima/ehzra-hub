@@ -1,0 +1,48 @@
+{
+  "fonte": "source/grimorio-ehzra-original.html",
+  "data": {
+    "estrelas": "★★★★★★★",
+    "nome": "Ceifadora de Myrkul",
+    "sub": "Foice Longa · Relíquia Sintonizada",
+    "selo": "Trevas",
+    "meta": {
+      "Dano": "3d4 cortante",
+      "ATK / DEF": "1100 / 9999",
+      "Categoria": "Foice",
+      "Origem": "Tirania dos Dragões"
+    },
+    "habilidade": {
+      "titulo": "[Foice]",
+      "paragrafos": [
+        "A sintonia com essa foice é extremamente sensível: caso fique 1 hora sem tocá-la, você perde a sintonização. Enquanto está sintonizado a esta foice, você volta à vida mesmo que morra — isso leva 1d4 horas, e você não perde a sintonia nesse período.",
+        "Além disso, as seguintes magias estão sempre preparadas, e você pode conjurá-las gastando somente metade da mana:"
+      ],
+      "magiasSempre": [
+        {
+          "nome": "Animate dead",
+          "slug": "animar-morto",
+          "ciclo": "3º ciclo",
+          "textoOriginal": "Animate dead3º ciclo"
+        },
+        {
+          "nome": "Life transference",
+          "slug": "life-transference",
+          "ciclo": "3º ciclo",
+          "textoOriginal": "Life transference3º ciclo"
+        },
+        {
+          "nome": "Gentle repose",
+          "slug": "repouso-gentil",
+          "ciclo": "2º ciclo",
+          "textoOriginal": "Gentle repose2º ciclo"
+        },
+        {
+          "nome": "Death ward",
+          "slug": "ala-da-morte",
+          "ciclo": "4º ciclo",
+          "textoOriginal": "Death ward4º ciclo"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "fonte": "source/grimorio-ehzra-original.html",
+  "data": {
+    "eyebrow": "Mesa · Combate",
+    "titulo": "Estratégias",
+    "sub": "Roteiros de combate anotados para diferentes cenários.",
+    "blocos": [
+      {
+        "tipo": "titulo",
+        "md": "Manipulador de Almas"
+      },
+      {
+        "tipo": "paragrafo",
+        "md": "**Passo 1:** Matar um ou mais humanoides para levantá-los como esqueleto."
+      },
+      {
+        "tipo": "paragrafo",
+        "md": "**Passo 2:** Utilizar [Fio da Obediência](#/magia/fio-da-obediencia) para proporcionar-lhes mais autonomia e +2 de CA."
+      },
+      {
+        "tipo": "subtitulo",
+        "md": "Caminho Alternativo — Dano centralizado em um único inimigo"
+      },
+      {
+        "tipo": "paragrafo",
+        "md": "**Passo 1:** Utilizar Pavor da Tumba contra o inimigo para mantê-lo incapaz de neutralizar a infantaria de esqueletos."
+      },
+      {
+        "tipo": "paragrafo",
+        "md": "**Passo 2:** Dar suporte aos esqueletos com uma opção de longa distância, [Soar os Mortos](#/magia/soar-os-mortos), ou de curta distância, [Lâmina Necrótica](#/magia/lamina-necrotica)."
+      },
+      {
+        "tipo": "paragrafo",
+        "md": "**Opção Extra:** Utilizar [Campeão do Túmulo](#/magia/campeao-do-tumulo) para intensificar a resistência e o dano de um dos esqueletos."
+      },
+      {
+        "tipo": "titulo",
+        "md": "Combatente Solitário"
+      },
+      {
+        "tipo": "subtitulo",
+        "md": "Estilo Corpo a Corpo"
+      },
+      {
+        "tipo": "paragrafo",
+        "md": "**Passo 1:** Utilizar [Vitalidade Falsa](#/magia/vitalidade-falsa) em si mesmo no último ciclo possível, para ter vida adicional e resistir a ataques inimigos."
+      },
+      {
+        "tipo": "paragrafo",
+        "md": "**Passo 2:** Utilizar [Manto Espiritual](#/magia/manto-espiritual) em si mesmo no último ciclo possível, para adicionar mais dano ao ataque corpo a corpo."
+      },
+      {
+        "tipo": "paragrafo",
+        "md": "**Uso contínuo:** Utilizar o truque [Lâmina Necrótica](#/magia/lamina-necrotica) continuamente, impossibilitando o inimigo de se mover sem tomar dano."
+      },
+      {
+        "tipo": "paragrafo",
+        "md": "**Descarga de dano:** Utilizar [Infligir Ferimentos](#/magia/infligir-ferimentos) com Canalizar Divindade, para dano concentrado em um inimigo de elite."
+      },
+      {
+        "tipo": "subtitulo",
+        "md": "Estilo à Distância"
+      },
+      {
+        "tipo": "paragrafo",
+        "md": "**Passo 1:** Utilizar Intenção Mortal em si mesmo no último ciclo possível, para adicionar mais dano ao ataque à distância."
+      },
+      {
+        "tipo": "paragrafo",
+        "md": "**Passo 2:** Utilizar o truque [Soar os Mortos](#/magia/soar-os-mortos) continuamente."
+      }
+    ]
+  }
+}

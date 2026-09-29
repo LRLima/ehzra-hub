@@ -1,0 +1,38 @@
+{
+  "fonte": "source/grimorio-ehzra-original.html",
+  "data": {
+    "eyebrow": "Personas · D&D 2024",
+    "nome": "Ehzra Thanaris",
+    "titulo": "Portador da Foice do Crepúsculo Eterno",
+    "chips": {
+      "Raça": "Humano Variante, Revivido",
+      "Classe": "Clérigo da Morte",
+      "Idade": "17 anos",
+      "Tamanho": "1,90 m",
+      "Antepassado": "Acólito"
+    },
+    "resumo": "Nascido em Fervora, cidade de fontes termais e devoção a Apolo, filho do Sacerdote do Sol Altharion. Morto na noite em que um dragão vermelho reduziu sua cidade a cinzas, e devolvido à vida pela vontade de Myrkul, o Senhor dos Ossos, para caminhar entre o crepúsculo da vida e o silêncio da morte.",
+    "statStrip": {
+      "CA": "18",
+      "PV Máx.": "70",
+      "Iniciativa": "+4",
+      "Proficiência": "+3",
+      "Deslocamento": "30m",
+      "Inspiração": "+1"
+    },
+    "alinhamento": {
+      "titulo": "Alinhamento — Leal Neutro",
+      "texto": "Ehzra segue rigorosamente as leis da morte impostas por seu deus, encarando-a como passagem natural e inevitável. Não hesita em matar quando necessário, mas o faz de forma impessoal, buscando causar o mínimo de dor possível. Sua moralidade é pragmática e orientada pela ordem — não pela bondade ou pela maldade — e ele age segundo um código estruturado, cumprindo sua missão sem impulsos caóticos ou egoístas."
+    },
+    "retrato": "img/retrato.jpg",
+    "galeria": [
+      "img/galeria-1.jpg",
+      "img/galeria-2.jpg"
+    ],
+    "sidebar": {
+      "sigilo": "Ϟ",
+      "epiteto": "Arauto do Crepúsculo",
+      "rodape": "Grimório pessoal · reconstruído a partir do cofre Obsidian de Fervora."
+    }
+  }
+}

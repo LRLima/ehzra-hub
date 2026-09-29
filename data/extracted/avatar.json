@@ -1,0 +1,79 @@
+{
+  "fonte": "source/grimorio-ehzra-original.html",
+  "data": {
+    "eyebrow": "Habilidade Suprema · Custo: 1 Inspiração",
+    "titulo": "Avatar dos Quatro Túmulos",
+    "sub": "Ao ativar, Ehzra sente sua alma ser \"escolhida\" por uma entidade — a escolha é caótica, mesmo que ele possua todas as relíquias.",
+    "meta": {
+      "Tempo de Conjuração": "1 ação bônus",
+      "Duração": "1 minuto",
+      "Concentração": "Não requer",
+      "Limite": "1x por amanhecer"
+    },
+    "introTabela": "O aspecto manifestado é determinado por uma rolagem de 1d4:",
+    "tabela": [
+      {
+        "d4": 1,
+        "aspecto": "Myrkul — O Senhor dos Ossos"
+      },
+      {
+        "d4": 2,
+        "aspecto": "Bhaal — O Senhor do Assassinato"
+      },
+      {
+        "d4": 3,
+        "aspecto": "A Rainha Corvo — A Senhora dos Espíritos"
+      },
+      {
+        "d4": 4,
+        "aspecto": "Jergal — O Escriba do Fim"
+      }
+    ],
+    "aspectos": [
+      {
+        "nome": "Myrkul, o Senhor dos Ossos",
+        "rolagem": "Resultado 1",
+        "citacao": "\"No fim, tudo se desfaz em pó, e o pó obedece a mim.\"",
+        "visual": "**Visual:** os ossos de Ehzra atravessam a pele, formando uma armadura espinhenta.",
+        "efeitos": [
+          "**Mestre das Marionetes:** sempre que você reduzir uma criatura a 0 pontos de vida a até 18 m de você, ela se ergue automaticamente como um esqueleto ou zumbi sob seu controle, até um número de criaturas igual ao seu modificador de Sabedoria + bônus de proficiência.",
+          "**Reino da Morte:** enquanto durar o Avatar, criaturas mortas-vivas dentro de um raio igual ao seu modificador de Sabedoria + bônus de proficiência ganham resistência a dano cortante, perfurante e contundente, e recebem +1d6 de dano necrótico em seus ataques."
+        ]
+      },
+      {
+        "nome": "Bhaal, o Senhor do Assassinato",
+        "rolagem": "Resultado 2",
+        "citacao": "\"A oferenda do sangue é o único idioma que os deuses escutam.\"",
+        "visual": "**Visual:** sangue escurecido escorre de todas as aberturas do corpo, formando glifos tribais sob a pele.",
+        "efeitos": [
+          "+3 m de velocidade e vantagem no primeiro ataque de cada turno.",
+          "Ao atacar, recupera metade do dano necrótico infligido em PV.",
+          "Não pode ser amedrontado enquanto durar a forma."
+        ]
+      },
+      {
+        "nome": "A Rainha Corvo, Senhora dos Espíritos",
+        "rolagem": "Resultado 3",
+        "citacao": "\"As almas não partem, orbitam, em silêncio, até que eu as libere.\"",
+        "visual": "**Visual:** a capa transmuta em penas negras e arroxeadas, cercada por orbes espirituais azulados.",
+        "efeitos": [
+          "Voo de 9 m (asas de sombra e pena) e visão/ataque contra criaturas invisíveis ou etéreas.",
+          "Ao reduzir uma criatura a 0 PV, ganha 1 Alma Espiritual (máx. igual ao mod. de Sabedoria, mín. 1).",
+          "Com ao menos 1 Alma: ataques corpo a corpo recebidos causam 1d8 de dano necrótico ao agressor; se cortante, perfurante ou de impacto, teste de Sabedoria CD 15 ou fica assombrado (desvantagem no próximo ataque).",
+          "Ação bônus — Explosão Espiritual: libera todas as almas; inimigos a até 4,5 m fazem teste de Constituição CD 16, sofrendo 2d8 de dano necrótico por alma liberada (metade em sucesso)."
+        ]
+      },
+      {
+        "nome": "Jergal, o Escriba do Fim",
+        "rolagem": "Resultado 4",
+        "citacao": "\"Nem luz, nem trevas: apenas o registro.\"",
+        "visual": "**Visual:** Ehzra conjura um papiro e uma pena; sua voz ecoa como três vozes em uníssono.",
+        "efeitos": [
+          "Resistência a dano necrótico e psíquico.",
+          "Uma vez por ativação — Julgamento Final: escolhe uma criatura a até 9 m, que faz teste de Constituição CD 16, sofrendo 5d12 de dano necrótico (metade em sucesso).",
+          "Criaturas mortas por esse dano não podem ser ressuscitadas por meios comuns até o próximo amanhecer."
+        ]
+      }
+    ]
+  }
+}
