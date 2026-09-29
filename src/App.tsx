@@ -1,0 +1,145 @@
+import { useEffect, useRef, useState } from 'react';
+import {
+  SwordIcon, BookOpenIcon, UserIcon, NotebookIcon, DotsThreeIcon, MagnifyingGlassIcon, EyeIcon,
+} from '@phosphor-icons/react';
+import { useJogo, useRota, useUI } from './store';
+import { Toasts } from './ui/components';
+import { Sheets } from './features/Sheets';
+import { Combate } from './features/Combate';
+import { Grimorio } from './features/Grimorio';
+import { Ficha } from './features/Ficha';
+import { Sessao } from './features/Sessao';
+import { Mais } from './features/Mais';
+import { magia, manaMaxima } from './domain/rules';
+import { pvMaximo } from './domain/state';
+import { AtualizarApp } from './features/Pwa';
+
+function TopBar() {
+  const { r, s, dispatch } = useJogo();
+  const abrir = useUI((u) => u.abrir);
+  const max = pvMaximo(r, s);
+  const manaMax = manaMaxima(r, s.nivel);
+  const [trail, setTrail] = useState(s.pv);
+  const [curou, setCurou] = useState(false);
+  const antes = useRef(s.pv);
+  const [quebrando, setQuebrando] = useState<string | null>(null);
+  const header = useRef<HTMLElement>(null);
+
+  // O topo cresce com a faixa de concentração; o conteúdo acompanha para nada ficar escondido embaixo.
+  useEffect(() => {
+    const el = header.current;
+    if (!el) return;
+    const ro = new ResizeObserver(() => document.documentElement.style.setProperty('--topbar-h', `${el.offsetHeight}px`));
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
+
+  // A barra muda na hora; o rastro claro "sangra" atrás dela.
+  useEffect(() => {
+    if (s.pv > antes.current) { setCurou(true); setTimeout(() => setCurou(false), 650); }
+    antes.current = s.pv;
+    const t = setTimeout(() => setTrail(s.pv), 30);
+    return () => clearTimeout(t);
+  }, [s.pv]);
+
+  const pct = (n: number) => `${Math.max(0, Math.min(100, (n / (max + s.pvTemp)) * 100))}%`;
+  const conc = s.concentracao ? magia(r, s.concentracao.magia) : null;
+  const efeito = s.concentracao ? s.efeitos.find((e) => e.origem === s.concentracao!.magia) : null;
+
+  return (
+    <header className="topbar" ref={header}>
+      <div className="topbar-inner">
+        <button className={`vital${s.pv <= max / 4 ? ' hp-baixo' : ''}`} onClick={() => abrir({ tipo: 'pv' })} aria-label={`PV ${s.pv} de ${max}. Tocar para dano ou cura`}>
+          <div className="vital-row">
+            <span className="vital-label">PV</span>
+            <span className="vital-val" data-testid="pv">{s.pv}</span>
+            <span className="vital-max">/{max}</span>
+            {s.pvTemp > 0 && <span className="badge-temp">+{s.pvTemp}</span>}
+          </div>
+          <div className={`hpbar${curou ? ' cura' : ''}`}>
+            <span className="trail" style={{ width: pct(Math.max(trail, s.pv)) }} />
+            <span className="fill" style={{ width: pct(s.pv) }} />
+            {s.pvTemp > 0 && <span className="temp" style={{ left: pct(s.pv), width: pct(s.pvTemp) }} />}
+          </div>
+        </button>
+        <button className="vital" onClick={() => abrir({ tipo: 'mana' })} aria-label={`Mana ${s.mana} de ${manaMax}`}>
+          <div className="vital-row">
+            <span className="vital-label">MANA</span>
+            <span className="vital-val mana-val" data-testid="mana">{s.mana}</span>
+            <span className="vital-max">/{manaMax}</span>
+          </div>
+          <div className="manabar" style={{ gridTemplateColumns: `repeat(${Math.ceil(manaMax / 2)}, 1fr)` }}>
+            {Array.from({ length: Math.ceil(manaMax / 2) }, (_, i) => <i key={i} className={i * 2 < s.mana ? '' : 'off'} />)}
+          </div>
+        </button>
+      </div>
+      {(conc || quebrando) && (
+        <div className={`conc-banner${quebrando ? ' quebra' : ''}`} role="status" data-testid="concentracao">
+          <EyeIcon size={18} color="var(--conc)" />
+          <span className="t">Concentrado em <b>{conc?.nome ?? quebrando}</b>{efeito?.rodadas != null ? ` · ${efeito.rodadas > 10 ? `${Math.ceil(efeito.rodadas / 10)} min` : `${efeito.rodadas} rod.`}` : ''}</span>
+          <button className="btn mini" onClick={() => {
+            setQuebrando(conc?.nome ?? null);
+            setTimeout(() => setQuebrando(null), 300);
+            dispatch({ t: 'quebrarConcentracao' });
+          }}>Quebrar</button>
+        </div>
+      )}
+    </header>
+  );
+}
+
+const ABAS = [
+  { id: 'combate', rotulo: 'Combate', Icone: SwordIcon },
+  { id: 'magias', rotulo: 'Magias', Icone: BookOpenIcon },
+  { id: 'ficha', rotulo: 'Ficha', Icone: UserIcon },
+  { id: 'sessao', rotulo: 'Sessão', Icone: NotebookIcon },
+  { id: 'mais', rotulo: 'Mais', Icone: DotsThreeIcon },
+];
+
+export function App() {
+  const rota = useRota();
+  const { pronto } = useJogo();
+  const abrir = useUI((u) => u.abrir);
+  const aba = rota[0];
+
+  useEffect(() => {
+    const k = (e: KeyboardEvent) => {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); abrir({ tipo: 'busca' }); }
+    };
+    window.addEventListener('keydown', k);
+    return () => window.removeEventListener('keydown', k);
+  }, [abrir]);
+
+  const telaCheia = aba === 'mais' && rota[1] === 'lore';
+
+  return (
+    <div className="app">
+      {!telaCheia && <TopBar />}
+      <main className={`main page-in${telaCheia ? ' sem-topbar' : ''}`} key={rota.join('/')}>
+        {!pronto ? <p className="faint">Abrindo o grimório...</p>
+          : aba === 'combate' ? <Combate />
+          : aba === 'magias' ? <Grimorio />
+          : aba === 'ficha' ? <Ficha />
+          : aba === 'sessao' ? <Sessao />
+          : <Mais rota={rota.slice(1)} />}
+      </main>
+      <button className="fab" onClick={() => abrir({ tipo: 'busca' })} aria-label="Buscar (Ctrl+K)" data-testid="busca">
+        <MagnifyingGlassIcon size={26} weight="bold" />
+      </button>
+      <nav className="nav" aria-label="Seções">
+        <ul>
+          {ABAS.map(({ id, rotulo, Icone }) => (
+            <li key={id}>
+              <a href={`#/${id}`} aria-current={aba === id ? 'page' : undefined}>
+                <Icone size={24} weight={aba === id ? 'fill' : 'regular'} />{rotulo}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+      <Sheets />
+      <Toasts />
+      <AtualizarApp />
+    </div>
+  );
+}

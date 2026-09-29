@@ -1,0 +1,66 @@
+/*
+ * Tokens do Hub. Evolução da paleta do grimório original com contraste AA:
+ * "-fg" é cor de texto (≥ 4,5:1 sobre --panel), "-fill" é preenchimento/borda.
+ * Tema escuro é o padrão e o único por enquanto (decisão registrada no DECISIONS.md).
+ */
+:root {
+  color-scheme: dark;
+
+  --void: #141019;
+  --void-2: #1c1420;
+  --panel: #241a26;
+  --panel-2: #2c1f2c;
+  --panel-3: #362636;
+  --line: #4a3540;
+  --line-soft: #3a2b34;
+
+  --bone: #e9dcc0;
+  --bone-dim: #b3a08a;
+  --bone-faint: #9a8a7e; /* era #7d6f66 (3,5:1) */
+
+  --gold: #c9a961;
+  --gold-dim: #a88d55; /* era #8a7442 (3,5:1) */
+  --crimson-fill: #8c2233;
+  --crimson-fg: #e0576a; /* texto; o #b8394a original dava 3,0:1 */
+  --violet-fill: #6b4a80;
+  --violet-fg: #a585c0; /* texto; o #6b4a80 original dava 2,3:1 */
+
+  /* semânticos */
+  --hp-fill: #8c2233;
+  --hp-fg: #e0576a;
+  --hp-trail: #f0c9a0;
+  --heal: #7fc98a;
+  --temp-hp: #8fb3d9;
+  --mana: #6fc3b8;
+  --mana-empty: #26393a;
+  --conc: #b58ae0;
+  --src-ok: #8fc79a;
+  --src-mudou: #e5b567;
+  --src-legado: #a585c0;
+  --src-homebrew: #e0576a;
+
+  --font-display: 'Cinzel', Georgia, serif;
+  --font-deco: 'Cinzel Decorative', 'Cinzel', Georgia, serif;
+  --font-body: 'EB Garamond', Georgia, 'Times New Roman', serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  /* um sistema de cantos: cartões 10px, botões 10px, chips e pílulas redondos */
+  --r: 10px;
+  --r-pill: 999px;
+
+  --tap: 44px;
+  --gutter: 16px;
+  --topbar-h: 76px; /* atualizado em tempo real pelo TopBar */
+  --nav-h: 64px;
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --shadow: 0 10px 30px rgba(10, 4, 12, 0.55);
+
+  /* camadas */
+  --z-topbar: 20;
+  --z-nav: 30;
+  --z-fab: 35;
+  --z-sheet: 50;
+  --z-toast: 60;
+}
