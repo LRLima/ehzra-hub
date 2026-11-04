@@ -38,7 +38,7 @@ export function Reliquia() {
           {Array.from({ length: cartao.estrelas }, (_, i) => <StarIcon key={i} size={18} weight="fill" />)}
         </div>
         <figure className="reliquia-arte">
-          <img src={cartao.imagem} alt="A Ceifadora de Myrkul: foice longa negra com runas na lâmina" />
+          <img src={cartao.imagem} alt="A Ceifadora de Myrkul: foice de ossos negros e gelo, com crânios de olhos azuis brilhantes e o cabo envolto em tecido vermelho" />
         </figure>
         <p className="reliquia-sub">{cartao.sub}</p>
 

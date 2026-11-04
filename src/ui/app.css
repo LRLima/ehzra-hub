@@ -371,7 +371,7 @@ textarea.input { min-height: 160px; resize: vertical; line-height: 1.5; }
 .reliquia-estrelas { display: flex; gap: 3px; color: var(--gold); margin: 8px 2px; filter: drop-shadow(0 0 4px rgba(201, 169, 97, 0.5)); }
 .reliquia-arte {
   margin: 0; border: 3px solid #5d7a9a; border-radius: 6px; overflow: hidden; aspect-ratio: 1;
-  box-shadow: 0 0 0 1px #2c3a4a, 0 14px 36px rgba(0, 0, 0, 0.6); background: #cfd8d6;
+  box-shadow: 0 0 0 1px #2c3a4a, 0 14px 36px rgba(0, 0, 0, 0.6); background: #fff;
 }
 .reliquia-arte img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .reliquia-sub { text-align: right; font-style: italic; color: var(--bone-dim); margin: 6px 2px 12px; }
