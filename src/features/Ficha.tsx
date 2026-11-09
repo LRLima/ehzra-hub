@@ -118,7 +118,7 @@ export function Ficha() {
 
       <h2 className="section-h">Galeria</h2>
       <div className="row" style={{ flexWrap: 'nowrap' }}>
-        {ch.galeria.map((g) => <img key={g} src={g} alt="Ilustração de Ehzra" loading="lazy" style={{ width: '50%', borderRadius: 'var(--r)', border: '1px solid var(--line-soft)', objectFit: 'cover', aspectRatio: '3 / 4' }} />)}
+        {ch.galeria.map((g) => <img key={g} src={g} alt="Ehzra de corpo inteiro, de armadura negra e capa vinho, com a Ceifadora no ombro" loading="lazy" style={{ width: ch.galeria.length === 1 ? '100%' : '50%', borderRadius: 'var(--r)', border: '1px solid var(--line-soft)', objectFit: 'contain', aspectRatio: '3 / 4', background: '#f4f2ef' }} />)}
       </div>
     </>
   );

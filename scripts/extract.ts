@@ -17,7 +17,8 @@ import TurndownService from 'turndown';
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const SOURCE = join(root, 'source', 'grimorio-ehzra-original.html');
 const OUT = join(root, 'data', 'extracted');
-const IMG = join(root, 'public', 'img');
+// Imagens do grimório original. Ficam fora de public/ para não sobrescrever as ilustrações novas.
+const IMG = join(root, 'source', 'img-original');
 
 const html = readFileSync(SOURCE, 'utf8');
 const $ = cheerio.load(html);
