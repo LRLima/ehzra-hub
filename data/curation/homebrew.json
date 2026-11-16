@@ -70,7 +70,7 @@
     "arredondamento": "baixo",
     "ressurreicaoHoras": "1d4",
     "perdaSintoniaMinutos": 60,
-    "imagem": "img/ceifadora.webp"
+    "imagem": "img/ceifadora-recorte.webp"
   },
   "avatar": {
     "custo": "1 Inspiração",

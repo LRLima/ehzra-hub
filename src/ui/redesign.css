@@ -218,10 +218,17 @@ a.btn.ouro { color: var(--bone); }
 /* ---------- relíquia sem moldura de carta ---------- */
 .reliquia-topo { border: 0; background: none; padding: 0; }
 .reliquia-nome { font-size: 34px; color: var(--bone); text-transform: uppercase; letter-spacing: 0.03em; text-shadow: none; }
-.reliquia-arte { border: 0; border-radius: var(--r); box-shadow: none; margin-top: 12px; }
+.reliquia-arte { border: 0; border-radius: 0; box-shadow: none; margin-top: 12px; background: none; overflow: visible; position: relative; }
+.reliquia-arte::before { /* névoa ciano atrás da foice */
+  content: ''; position: absolute; inset: 6% 0; pointer-events: none;
+  background: radial-gradient(ellipse 55% 50% at 50% 50%, rgba(64, 224, 240, 0.22), transparent 70%);
+  animation: aura-foice 4s ease-in-out infinite;
+}
+.reliquia-arte img { position: relative; filter: drop-shadow(0 0 3px rgba(120, 240, 255, 0.9)) drop-shadow(0 0 16px rgba(64, 224, 240, 0.65)) drop-shadow(0 0 42px rgba(64, 224, 240, 0.35)); }
+@keyframes aura-foice { 50% { opacity: 0.45; transform: scale(1.06); } }
 .reliquia-sub { text-align: left; font-family: var(--font-mono); font-style: normal; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--bone-faint); }
 .sintonia { border-color: var(--line); }
-.reliquia-mini img { border: 0; }
+.reliquia-mini img { border: 0; object-fit: contain; filter: drop-shadow(0 0 6px rgba(64, 224, 240, 0.8)); }
 
 /* fundo: manchas nas cores da capa e dos olhos, mais contidas */
 .lava i { opacity: 0.75; }
