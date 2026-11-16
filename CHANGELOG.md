@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.0 (16/11/2026)
+
+- Tela inicial com o Ehzra de corpo inteiro, frasco de vida e cristais de mana animados (dano, cura, gasto e recuperação).
+- Paleta nas cores do personagem: preto, vinho, osso e o azul dos olhos para a mana.
+- Opções separadas por categoria, cada uma com cor e cabeçalho: ataque físico, habilidades, truques e cada ciclo.
+- Animação de uso ao atacar (corte) e ao conjurar (clarão na cor do ciclo).
+- Relíquia sem estrelas, selo e ATK/DEF; novas ilustrações.
+
 ## 0.2.0 (29/09/2026)
 
 - Aplicadas as decisões da validação 2024 (lista completa no topo do `VALIDACAO-2024.md`): curas dobradas, Aura de Vitalidade sem ação bônus, Orientação como ação, Restauração Menor como ação bônus, Canalizar Divindade com 3 usos, Centelha Divina, Repreender 2024, entre outras.

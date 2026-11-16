@@ -1,0 +1,236 @@
+/* =====================================================================
+ * Redesign: minimalista, nas cores do personagem (preto, vinho, osso e o
+ * azul dos olhos). O ouro fica reservado para a categoria "habilidade".
+ * Carregado depois do app.css e sobrescreve o que precisa.
+ * ===================================================================== */
+[data-cat='fisico'] { --cat: var(--cat-fisico); }
+[data-cat='habilidade'] { --cat: var(--cat-habilidade); }
+[data-cat='truque'] { --cat: var(--cat-truque); }
+[data-cat='c1'] { --cat: var(--cat-c1); }
+[data-cat='c2'] { --cat: var(--cat-c2); }
+[data-cat='c3'] { --cat: var(--cat-c3); }
+[data-cat='c4'] { --cat: var(--cat-c4); }
+[data-cat='c5'] { --cat: var(--cat-c5); }
+[data-cat='c6'] { --cat: var(--cat-c6); }
+
+/* ---------- base mais limpa ---------- */
+body { background: var(--void); }
+.card { box-shadow: none; border-color: var(--line-soft); }
+.page-title { font-size: 32px; letter-spacing: 0.06em; text-transform: uppercase; line-height: 1.05; margin: 10px 0 6px; }
+.section-h { font-family: var(--font-mono); font-size: 11.5px; font-weight: 500; letter-spacing: 0.2em; color: var(--bone-dim); margin: 30px 0 10px; display: flex; align-items: center; gap: 10px; }
+.section-h::after { content: ''; flex: 1; height: 1px; background: var(--line-soft); }
+.page-in { animation: page-in 0.42s var(--ease-out); }
+@keyframes page-in { from { opacity: 0; transform: translateY(14px); filter: blur(4px); } to { opacity: 1; transform: none; filter: none; } }
+:focus-visible { outline-color: var(--bone); }
+a { color: var(--bone); }
+
+.topbar { background: rgba(7, 5, 10, 0.94); border-bottom-color: var(--line-soft); }
+.nav { background: rgba(7, 5, 10, 0.96); border-top-color: var(--line-soft); }
+.nav a { font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 0.12em; text-transform: uppercase; position: relative; transition: color 0.2s; }
+.nav a[aria-current='page'] { color: var(--bone); }
+.nav a[aria-current='page'] svg { filter: none; color: var(--crimson-fg); }
+.nav a[aria-current='page']::after { content: ''; position: absolute; top: 0; left: 30%; right: 30%; height: 2px; background: var(--crimson-fg); border-radius: 0 0 2px 2px; }
+.fab { border-color: var(--line); background: var(--panel-2); color: var(--bone); }
+
+.btn { border-radius: var(--r-pill); font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; background: transparent; }
+.btn.primario { background: var(--crimson-fill); border-color: var(--crimson-fill); color: #fff4e6; }
+.btn.primario:active { background: #a52a3e; }
+.btn.ouro { border-color: var(--bone-faint); color: var(--bone); }
+a.btn.ouro { color: var(--bone); }
+.btn.grande { font-size: 13.5px; }
+.btn.aco { border-color: var(--cat-fisico); color: var(--cat-fisico); }
+.icon-btn { background: transparent; border-radius: 50%; }
+
+.status-strip { background: none; border: 0; border-top: 1px solid var(--line-soft); border-bottom: 1px solid var(--line-soft); border-radius: 0; gap: 0; }
+.status-strip > * { background: none; border-right: 1px solid var(--line-soft); padding: 10px 4px; }
+.status-strip > *:last-child { border-right: 0; }
+.status-strip .v, .status-strip .on .v { color: var(--bone); font-size: 20px; }
+.status-strip .on .v { color: var(--cat-habilidade); }
+.status-strip .k { font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 0.14em; }
+
+.segmented { background: transparent; border-color: var(--line-soft); }
+.segmented button { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; transition: background 0.2s, color 0.2s; }
+.segmented button[aria-pressed='true'] { background: var(--bone); color: var(--void); }
+.turno button { background: transparent; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; transition: background 0.2s, color 0.2s, border-color 0.2s; }
+.turno button[aria-pressed='true'] { border-color: var(--bone); color: var(--void); background: var(--bone); }
+.ciclos button[aria-pressed='true'] { border-color: var(--bone); color: var(--void); background: var(--bone); }
+.grade .v, .attr .m, .mudanca .depois { color: var(--bone); }
+.grade .card.prof .n::after { color: var(--crimson-fg); }
+.desc strong { color: var(--bone); font-weight: 600; }
+.chip.res { border-color: var(--line); color: var(--bone); }
+.search-input { border-color: var(--line); border-radius: var(--r-pill); padding: 0 20px; }
+.titulo-deco { font-size: 30px; text-transform: uppercase; letter-spacing: 0.04em; }
+.retrato { border-color: var(--line); }
+
+/* ---------- palco: o personagem, a vida e a mana ---------- */
+.palco {
+  position: relative; display: grid; grid-template-columns: 72px 1fr 72px; grid-template-rows: minmax(0, 1fr); align-items: stretch;
+  height: clamp(330px, 54dvh, 480px);
+  margin: -12px calc(var(--gutter) * -1) 8px; padding: calc(12px + env(safe-area-inset-top, 0px)) 8px 0;
+  overflow: hidden;
+}
+.palco::before { /* luar atrás da figura */
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse 62% 52% at 50% 56%, rgba(233, 220, 192, 0.2), rgba(140, 34, 51, 0.2) 48%, transparent 74%);
+}
+.palco::after { /* a figura some no chão */
+  content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 16%; pointer-events: none; z-index: 2;
+  background: linear-gradient(180deg, transparent, var(--void));
+}
+.palco-nome {
+  position: absolute; top: calc(8px + env(safe-area-inset-top, 0px)); left: 0; right: 0; text-align: center; pointer-events: none;
+  font-family: var(--font-deco); font-size: clamp(38px, 12.5vw, 92px); line-height: 0.95; text-transform: uppercase;
+  color: transparent; -webkit-text-stroke: 1px rgba(233, 220, 192, 0.26);
+}
+.palco-figura { position: relative; z-index: 1; min-width: 0; min-height: 0; display: flex; justify-content: center; align-items: flex-end; }
+.palco-figura img {
+  height: 100%; max-width: 140%; object-fit: contain; object-position: bottom; transform-origin: 50% 100%;
+  filter: drop-shadow(0 16px 26px rgba(0, 0, 0, 0.75)); animation: respira 6s ease-in-out infinite;
+}
+@keyframes respira { 50% { transform: scale(1.014) translateY(-2px); } }
+
+.frasco {
+  position: relative; z-index: 3; display: flex; flex-direction: column; align-items: center; gap: 8px;
+  padding: 10px 0 16px; background: none; border: 0; color: inherit; min-width: 0; min-height: 0;
+}
+.frasco-num { display: flex; flex-direction: column; align-items: center; line-height: 1; }
+.frasco-num b { font-family: var(--font-mono); font-size: 32px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.frasco-num small { font-family: var(--font-mono); font-size: 12px; color: var(--bone-faint); margin-top: 3px; }
+.frasco.mana .frasco-num b { color: var(--mana); }
+.frasco .badge-temp { font-size: 11px; }
+.frasco-rot { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--bone-faint); }
+.frasco-tubo {
+  position: relative; flex: 1; width: 16px; border-radius: var(--r-pill); overflow: hidden;
+  background: rgba(233, 220, 192, 0.05); box-shadow: inset 0 0 0 1px rgba(233, 220, 192, 0.16);
+  transition: transform 0.15s;
+}
+.frasco:active .frasco-tubo, .frasco:active .cristais { transform: scale(0.94); }
+.frasco-tubo > span { position: absolute; left: 0; right: 0; bottom: 0; }
+.frasco-tubo .rastro { background: var(--hp-trail); opacity: 0.8; transition: height 0.7s var(--ease-out); }
+.frasco-tubo .liquido {
+  background: linear-gradient(180deg, #ee6a7d, var(--crimson-fill) 55%, #4f101c);
+  box-shadow: 0 0 16px rgba(224, 87, 106, 0.6); transition: height 0.28s ease-out;
+}
+.frasco-tubo .liquido::before { /* ondinha na superfície */
+  content: ''; position: absolute; top: -3px; left: -12px; right: -12px; height: 6px;
+  background: radial-gradient(ellipse at 50% 100%, #ff9aa8 42%, transparent 44%) 0 0 / 12px 6px repeat-x;
+  animation: onda 1.8s linear infinite;
+}
+@keyframes onda { to { transform: translateX(12px); } }
+.cristais { flex: 1; width: 16px; display: flex; flex-direction: column-reverse; gap: 3px; transition: transform 0.15s; }
+.cristais i {
+  flex: 1; min-height: 5px; clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+  background: linear-gradient(180deg, #e3f1ff, var(--mana) 45%, #2c62a3);
+  transition: opacity 0.4s, transform 0.4s var(--ease-out), background 0.4s;
+}
+.cristais i.off { background: var(--mana-empty); transform: scale(0.55) rotate(90deg); }
+
+.delta {
+  position: absolute; top: 34%; left: 50%; z-index: 4; pointer-events: none; white-space: nowrap;
+  font-family: var(--font-mono); font-size: 24px; font-weight: 600; text-shadow: 0 2px 12px #000;
+  animation: delta 1.05s var(--ease-out) forwards;
+}
+.frasco.pv .delta { left: 118%; }
+.frasco.mana .delta { left: -18%; }
+.delta.neg { color: #ff9aa8; }
+.frasco.mana .delta.neg { color: #b7d9ff; }
+.delta.pos { color: var(--heal); }
+.frasco.mana .delta.pos { color: #e3f1ff; }
+@keyframes delta {
+  0% { opacity: 0; transform: translate(-50%, 14px) scale(0.6); }
+  18% { opacity: 1; transform: translate(-50%, 0) scale(1.2); }
+  100% { opacity: 0; transform: translate(-50%, -52px) scale(1); }
+}
+
+/* reações da figura */
+.palco.fx-dano .palco-figura img { animation: golpe 0.5s ease-out; }
+@keyframes golpe {
+  0% { transform: none; filter: brightness(1); }
+  15% { transform: translateX(-9px) rotate(-1.2deg); filter: brightness(1.7) sepia(1) saturate(7) hue-rotate(-35deg); }
+  35% { transform: translateX(7px) rotate(0.8deg); }
+  55% { transform: translateX(-4px); filter: brightness(1.2) sepia(0.6) saturate(4) hue-rotate(-35deg); }
+  100% { transform: none; filter: drop-shadow(0 16px 26px rgba(0, 0, 0, 0.75)); }
+}
+.palco.fx-dano::before { animation: luar-dano 0.6s ease-out; }
+@keyframes luar-dano { 20% { background: radial-gradient(ellipse 70% 60% at 50% 56%, rgba(224, 87, 106, 0.6), transparent 74%); } }
+.palco.fx-cura .palco-figura img { animation: bencao 0.9s ease-out; }
+@keyframes bencao { 30% { filter: brightness(1.25) drop-shadow(0 0 26px var(--heal)); transform: translateY(-4px); } }
+.palco.fx-mana .palco-figura img { animation: arcano 0.8s ease-out; }
+@keyframes arcano { 30% { filter: brightness(1.2) drop-shadow(0 0 28px var(--mana)); } }
+.palco.fx-mana-sobe .cristais i:not(.off) { animation: cintila 0.7s ease-out; }
+@keyframes cintila { 40% { filter: brightness(1.8); transform: scale(1.15); } }
+.palco.pv-baixo .frasco.pv .frasco-tubo { animation: pulso 1.1s ease-in-out infinite; }
+.palco.pv-baixo .frasco.pv .frasco-num b { color: var(--hp-fg); }
+@keyframes pulso { 50% { box-shadow: inset 0 0 0 1px var(--hp-fg), 0 0 18px rgba(224, 87, 106, 0.7); } }
+.palco.caido .palco-figura img { animation: none; filter: grayscale(1) brightness(0.45); transform: rotate(-3deg); transition: filter 0.6s, transform 0.6s; }
+
+/* ---------- categorias ---------- */
+.grupos { display: grid; gap: 24px; margin-top: 14px; }
+:root { --cat: var(--bone-dim); }
+.grupo { margin-top: 20px; }
+.grupos .grupo { margin-top: 0; }
+.cat-h { display: flex; align-items: center; gap: 10px; margin: 0 0 10px; padding-bottom: 8px; border-bottom: 1px solid color-mix(in srgb, var(--cat) 38%, transparent); }
+.cat-marca { width: 9px; height: 9px; flex: none; transform: rotate(45deg); background: var(--cat); box-shadow: 0 0 12px var(--cat); }
+.cat-h h3 { font-size: 15px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--cat); }
+.cat-nota { flex: 1; font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.06em; color: var(--bone-faint); }
+.cat-n { font-size: 12px; color: var(--cat); }
+.grupo .card {
+  position: relative; padding-left: 15px; border-color: color-mix(in srgb, var(--cat) 24%, var(--line-soft));
+  background: linear-gradient(100deg, color-mix(in srgb, var(--cat) 10%, var(--panel)), var(--panel) 60%);
+  transition: transform 0.15s var(--ease-out), border-color 0.2s;
+}
+.grupo .card::before { content: ''; position: absolute; left: 0; top: 9px; bottom: 9px; width: 3px; border-radius: 0 3px 3px 0; background: var(--cat); }
+.grupo .card-btn:active { transform: scale(0.985); border-color: var(--cat); }
+.card .nome { font-family: var(--font-display); font-size: 14.5px; color: var(--bone); text-decoration: none; }
+.spell-card::before { background: var(--cat, var(--line)); }
+.grupo .stack > * { animation: surge 0.4s var(--ease-out) both; }
+.grupo .stack > *:nth-child(2) { animation-delay: 0.04s; }
+.grupo .stack > *:nth-child(3) { animation-delay: 0.08s; }
+.grupo .stack > *:nth-child(4) { animation-delay: 0.12s; }
+.grupo .stack > *:nth-child(n + 5) { animation-delay: 0.16s; }
+@keyframes surge { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+
+/* ataque físico: cantos retos e aço, para não se confundir com magia */
+.atk-card { border-radius: 2px; }
+.grupo .atk-card { background: repeating-linear-gradient(135deg, rgba(195, 206, 219, 0.045) 0 2px, transparent 2px 9px), var(--panel); }
+.atk-card .btn { margin-top: 10px; }
+
+/* ---------- animação de uso ---------- */
+.cast {
+  position: fixed; inset: 0; z-index: 70; pointer-events: none; display: grid; place-items: center; overflow: hidden;
+  background: radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--cat) 30%, transparent), transparent 62%);
+  animation: cast-fundo 0.9s ease-out forwards;
+}
+.cast i { position: absolute; width: 38vmin; height: 38vmin; border-radius: 50%; border: 2px solid var(--cat); animation: cast-anel 0.8s var(--ease-out) forwards; }
+.cast i + i { border-width: 1px; animation-delay: 0.12s; }
+.cast span {
+  position: relative; padding: 0 24px; text-align: center; font-family: var(--font-deco); font-size: clamp(26px, 8.5vw, 58px); line-height: 1.05;
+  color: var(--cat); text-shadow: 0 0 34px var(--cat), 0 4px 22px #000; animation: cast-nome 0.9s var(--ease-out) forwards;
+}
+/* físico: um corte atravessa a tela em vez dos anéis */
+.cast[data-cat='fisico'] i { width: 160vmax; height: 3px; border: 0; border-radius: 0; background: linear-gradient(90deg, transparent, var(--cat) 40%, #fff 50%, var(--cat) 60%, transparent); animation: corte 0.45s var(--ease-out) forwards; }
+.cast[data-cat='fisico'] i + i { height: 1px; animation-delay: 0.08s; margin-top: 26px; }
+@keyframes cast-fundo { 0% { opacity: 0; } 18% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes cast-anel { from { transform: scale(0.15); opacity: 1; } to { transform: scale(3.4); opacity: 0; } }
+@keyframes cast-nome { 0% { opacity: 0; transform: scale(0.82); letter-spacing: 0.3em; } 25% { opacity: 1; transform: none; letter-spacing: 0.04em; } 70% { opacity: 1; } 100% { opacity: 0; transform: translateY(-18px); } }
+@keyframes corte { from { transform: rotate(-24deg) translateX(-110%); opacity: 1; } to { transform: rotate(-24deg) translateX(110%); opacity: 0.2; } }
+
+/* ---------- relíquia sem moldura de carta ---------- */
+.reliquia-topo { border: 0; background: none; padding: 0; }
+.reliquia-nome { font-size: 34px; color: var(--bone); text-transform: uppercase; letter-spacing: 0.03em; text-shadow: none; }
+.reliquia-arte { border: 0; border-radius: var(--r); box-shadow: none; margin-top: 12px; }
+.reliquia-sub { text-align: left; font-family: var(--font-mono); font-style: normal; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--bone-faint); }
+.sintonia { border-color: var(--line); }
+.reliquia-mini img { border: 0; }
+
+/* fundo: manchas nas cores da capa e dos olhos, mais contidas */
+.lava i { opacity: 0.75; }
+.lava i:nth-child(1) { background: radial-gradient(circle, rgba(150, 30, 52, 0.85), transparent 64%); }
+.lava i:nth-child(2) { background: radial-gradient(circle, rgba(52, 78, 120, 0.55), transparent 64%); }
+.lava i:nth-child(3) { background: radial-gradient(circle, rgba(90, 20, 38, 0.8), transparent 60%); }
+.lava i:nth-child(4) { background: radial-gradient(circle, rgba(110, 24, 44, 0.7), transparent 64%); }
+
+@media (prefers-reduced-motion: reduce) {
+  .palco-figura img, .frasco-tubo .liquido::before { animation: none !important; }
+  .cast { display: none; }
+}

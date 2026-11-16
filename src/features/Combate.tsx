@@ -1,8 +1,9 @@
 /** Modo Combate (HUD) e Modo Testes/Exploração. */
 import { useEffect, useState } from 'react';
-import { PlusIcon, MinusIcon, TrashIcon, SunIcon, SkullIcon, CampfireIcon, XIcon } from '@phosphor-icons/react';
+import { PlusIcon, MinusIcon, TrashIcon, SunIcon, SkullIcon, CampfireIcon, XIcon, SwordIcon } from '@phosphor-icons/react';
 import { useJogo, useUI } from '../store';
-import { SpellCard } from '../ui/components';
+import { SpellCard, Grupo, catDe } from '../ui/components';
+import { Palco } from './Palco';
 import {
   NOMES_ATRIBUTO, cicloMaximo, estaPreparada, fmtMod, habilidadeEfetiva, habilidadeVisivel, magiaEfetiva, modAtr, pericia,
   percepcaoPassiva, proficiencia, salvaguarda, toqueDaMorte, usaCeifadora,
@@ -20,6 +21,7 @@ export function Combate() {
   const [modo, setModo] = useState<'combate' | 'testes'>('combate');
   return (
     <>
+      <Palco />
       <Status />
       <div className="segmented" style={{ margin: '12px 0' }} role="group" aria-label="Modo">
         <button aria-pressed={modo === 'combate'} onClick={() => setModo('combate')}>Combate</button>
@@ -77,6 +79,12 @@ function Hud() {
   const atk = modAtr(r, c, arma.atributo) + proficiencia(r, c);
   const canal = recursoRestante(r, s, 'canalizar');
   const avatar = recursoRestante(r, s, 'avatar');
+  const ciclos = [...new Set(magias.map((m: Spell) => m.ciclo))].sort((a, b) => a - b);
+  const lancar = useUI((u) => u.lancar);
+  const atacar = () => {
+    lancar(arma.nome, 'fisico');
+    if (s.combate && !s.turno.acao) dispatch({ t: 'usarTurno', parte: 'acao' }, { silencioso: true });
+  };
 
   return (
     <>
@@ -105,43 +113,62 @@ function Hud() {
         </div>
       )}
 
-      <div className="stack" data-testid={`opcoes-${parte}`}>
+      <div className="grupos page-in" key={parte} data-testid={`opcoes-${parte}`}>
         {parte === 'acao' && (
-          <div className="card">
-            <div className="row">
-              <a className="grow" href="#/mais/ceifadora" style={{ fontFamily: 'var(--font-display)', color: 'var(--bone)', textDecoration: 'none' }}>Atacar com a {arma.nome}</a>
-              <span className="chip res">Ataque {fmtMod(atk)}</span>
+          <Grupo cat="fisico" titulo="Ataque físico" nota="só gasta a ação">
+            <div className="card atk-card">
+              <div className="row">
+                <a className="grow nome" href="#/mais/ceifadora">{arma.nome}</a>
+                <span className="chip res">{fmtMod(atk)} para acertar</span>
+              </div>
+              <div className="chips">
+                <span className="chip dano">{arma.dano} + {modAtr(r, c, arma.atributo)} {arma.tipo}</span>
+                <span className="chip">{String(arma.alcanceMetros).replace('.', ',')} m</span>
+                {canal && <span className="chip conc">Toque da Morte +{toqueDaMorte(c)}</span>}
+              </div>
+              <button className="btn mini aco" onClick={atacar}><SwordIcon size={16} />Atacar</button>
             </div>
-            <div className="chips">
-              <span className="chip dano">{arma.dano} + {modAtr(r, c, arma.atributo)} {arma.tipo}</span>
-              <span className="chip">{String(arma.alcanceMetros).replace('.', ',')} m</span>
-              {canal && <span className="chip conc">Toque da Morte +{toqueDaMorte(c)}</span>}
-            </div>
-          </div>
-        )}
-        {parte === 'movimento' && (
-          <div className="card">
-            <div style={{ fontFamily: 'var(--font-display)' }}>Deslocamento {r.character.deslocamentoMetros.valor} m</div>
-            <p className="muted" style={{ fontSize: 15, margin: '6px 0 0' }}>
-              {s.efeitos.some((e) => e.origem === 'guardioes-espirituais') ? 'Guardiões Espirituais ativo: leve a aura até os inimigos. ' : ''}
-              {s.mortosVivos.some((m) => m.fio) ? 'Fique a até 3 m de dois mortos-vivos para o +2 de CA do Fio da Obediência.' : 'Levantar do chão custa metade do deslocamento.'}
-            </p>
-          </div>
-        )}
-        {parte === 'acaoBonus' && s.mortosVivos.length > 0 && (
-          <div className="card"><span style={{ fontFamily: 'var(--font-display)' }}>Comandar mortos-vivos</span><p className="muted" style={{ fontSize: 15, margin: '4px 0 0' }}>Animar Morto: todos a até 18 m recebem a mesma ordem.</p></div>
+          </Grupo>
         )}
         {parte === 'reacao' && (
-          <div className="card"><span style={{ fontFamily: 'var(--font-display)' }}>Ataque de oportunidade</span><p className="muted" style={{ fontSize: 15, margin: '4px 0 0' }}>Quando um inimigo sai do seu alcance. Com Conjurador de Guerra, pode conjurar uma magia de 1 ação nele.</p></div>
+          <Grupo cat="fisico" titulo="Ataque físico" nota="só gasta a reação">
+            <div className="card atk-card"><span className="nome">Ataque de oportunidade</span><p className="muted" style={{ fontSize: 15, margin: '4px 0 0' }}>Quando um inimigo sai do seu alcance. Com Conjurador de Guerra, pode conjurar uma magia de 1 ação nele.</p></div>
+          </Grupo>
         )}
-        {feats.map((f) => (
-          <button key={f.id} className="card card-btn" onClick={() => abrir({ tipo: 'habilidade', id: f.id })}>
-            <div className="topo row"><span className="grow" style={{ fontFamily: 'var(--font-display)' }}>{f.nome}</span>
-              {f.recurso && <span className="chip">{recursoRestante(r, s, f.recurso)?.restante ?? '?'} usos</span>}</div>
-            <p className="muted" style={{ fontSize: 15, margin: '4px 0 0' }}>{f.resumo}</p>
-          </button>
-        ))}
-        {magias.map((m: Spell) => <SpellCard key={m.id} spell={m} />)}
+        {parte === 'movimento' && (
+          <Grupo cat="fisico" titulo="Movimento" nota="sem custo">
+            <div className="card atk-card">
+              <span className="nome">Deslocamento {r.character.deslocamentoMetros.valor} m</span>
+              <p className="muted" style={{ fontSize: 15, margin: '6px 0 0' }}>
+                {s.efeitos.some((e) => e.origem === 'guardioes-espirituais') ? 'Guardiões Espirituais ativo: leve a aura até os inimigos. ' : ''}
+                {s.mortosVivos.some((m) => m.fio) ? 'Fique a até 3 m de dois mortos-vivos para o +2 de CA do Fio da Obediência.' : 'Levantar do chão custa metade do deslocamento.'}
+              </p>
+            </div>
+          </Grupo>
+        )}
+        {(feats.length > 0 || (parte === 'acaoBonus' && s.mortosVivos.length > 0)) && (
+          <Grupo cat="habilidade" titulo="Habilidades" nota="usos por descanso" n={feats.length}>
+            {parte === 'acaoBonus' && s.mortosVivos.length > 0 && (
+              <div className="card"><span className="nome">Comandar mortos-vivos</span><p className="muted" style={{ fontSize: 15, margin: '4px 0 0' }}>Animar Morto: todos a até 18 m recebem a mesma ordem.</p></div>
+            )}
+            {feats.map((f) => (
+              <button key={f.id} className="card card-btn" onClick={() => abrir({ tipo: 'habilidade', id: f.id })}>
+                <div className="topo row"><span className="grow nome">{f.nome}</span>
+                  {f.recurso && <span className="chip">{recursoRestante(r, s, f.recurso)?.restante ?? '?'} usos</span>}</div>
+                <p className="muted" style={{ fontSize: 15, margin: '4px 0 0' }}>{f.resumo}</p>
+              </button>
+            ))}
+          </Grupo>
+        )}
+        {ciclos.map((ciclo) => {
+          const ms = magias.filter((m: Spell) => m.ciclo === ciclo);
+          return (
+            <Grupo key={ciclo} cat={catDe(ciclo)} titulo={ciclo === 0 ? 'Truques' : `${ciclo}º ciclo`} n={ms.length}
+              nota={ciclo === 0 ? 'sem custo de mana' : `${r.homebrew.mana.custoPorCiclo[ciclo - 1]} de mana`}>
+              {ms.map((m: Spell) => <SpellCard key={m.id} spell={m} />)}
+            </Grupo>
+          );
+        })}
         {magias.length === 0 && feats.length === 0 && parte !== 'acao' && parte !== 'movimento' && <p className="faint">Nada preparado para este tempo.</p>}
       </div>
 

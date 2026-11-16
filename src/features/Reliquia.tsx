@@ -1,6 +1,6 @@
 /** Ficha da Ceifadora de Myrkul: a relíquia, suas magias e a sintonia. */
 import { useEffect, useState } from 'react';
-import { StarIcon, HandIcon } from '@phosphor-icons/react';
+import { HandIcon } from '@phosphor-icons/react';
 import { useJogo } from '../store';
 import { Markdown, SpellCard } from '../ui/components';
 import { fmtMod, magia, modAtr, proficiencia, toqueDaMorte } from '../domain/rules';
@@ -32,11 +32,7 @@ export function Reliquia() {
       <article className="reliquia">
         <header className="reliquia-topo">
           <h1 className="reliquia-nome">{cartao.nome}</h1>
-          <span className="reliquia-selo" title="Atributo">{cartao.selo}</span>
         </header>
-        <div className="reliquia-estrelas" aria-label={`${cartao.estrelas} estrelas`}>
-          {Array.from({ length: cartao.estrelas }, (_, i) => <StarIcon key={i} size={18} weight="fill" />)}
-        </div>
         <figure className="reliquia-arte">
           <img src={cartao.imagem} alt="A Ceifadora de Myrkul: foice negra de lâmina curva, com crânios junto à lâmina e cabo retorcido" />
         </figure>
@@ -46,7 +42,7 @@ export function Reliquia() {
           <div><div className="v">{fmtMod(atk)}</div><div className="k">Ataque</div></div>
           <div><div className="v" style={{ fontSize: 16 }}>{arma.dano} + {modAtr(r, c, arma.atributo)}</div><div className="k">{arma.tipo}</div></div>
           <div><div className="v" style={{ fontSize: 16 }}>+{toqueDaMorte(c)}</div><div className="k">Toque da Morte</div></div>
-          <div><div className="v" style={{ fontSize: 16 }}>{cartao.meta['ATK / DEF'] ?? '?'}</div><div className="k">ATK / DEF</div></div>
+          <div><div className="v" style={{ fontSize: 16 }}>{String(arma.alcanceMetros).replace('.', ',')} m</div><div className="k">Alcance</div></div>
         </div>
         <div className="chips" style={{ marginTop: 8 }}>
           {Object.entries(cartao.meta).filter(([k]) => k !== 'ATK / DEF' && k !== 'Dano').map(([k, v]) => <span key={k} className="chip">{k}: {v}</span>)}

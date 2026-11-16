@@ -59,4 +59,6 @@ Pontos que continuam em aberto (não mudei, só registrei): Iniciativa +4 com DE
 | Playwright local | Usa o Edge instalado (`channel: 'msedge'`); no CI usa o Chromium do Playwright | Evita baixar 170 MB de navegador no PC da empresa |
 | Tamanho do JS | ~236 KB gzip num pacote só | Aceitável para PWA que baixa uma vez; dividir o código é melhoria futura |
 | Fontes | Self-host via @fontsource | Google Fonts quebra offline e vaza dados |
+| Categorias | Cor por tipo: aço (físico), ouro (habilidade), jade (truque) e uma cor por ciclo. O ouro saiu do resto da interface | Separar de relance o que custa mana do que não custa |
+| Palco | Na tela inicial, vida e mana ficam ao lado da figura; a barra compacta do topo só aparece quando o palco sai da tela ou em outras abas | Pedido do Lucas em 16/11/2026 |
 | Tema | Só escuro por enquanto | Pedido do prompt ("escuro como padrão"); tema claro fica para depois |

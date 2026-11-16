@@ -3,7 +3,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import Fuse from 'fuse.js';
 import { BackspaceIcon, SparkleIcon, BedIcon, CoffeeIcon, WarningIcon } from '@phosphor-icons/react';
 import { useJogo, useUI, type Aberto } from '../store';
-import { Sheet, SpellChips, SeloDe, Markdown, SpellCard, TEMPO_CURTO } from '../ui/components';
+import { catDe, Sheet, SpellChips, SeloDe, Markdown, SpellCard, TEMPO_CURTO } from '../ui/components';
 import {
   alvosMagia, cicloMaximo, custoMana, curaMagia, danoMagia, estaPreparada, habilidadeEfetiva, magia as achaMagia,
   manaMaxima, metrosParaPes, podeConjurar, resolucaoTexto, usaCeifadora, toqueDaMorte, dadosQueimarMortos, habilidadeVisivel,
@@ -59,6 +59,7 @@ function MagiaSheet({ id, cicloInicial }: { id: string; cicloInicial?: number })
   const fixa = sp.ciclo === 0 || sp.origens.some((o) => o === 'dominio' || o === 'ceifadora');
 
   async function conjurar() {
+    useUI.getState().lancar(sp.nome, catDe(ciclo));
     await dispatch({
       t: 'conjurar', magia: id, ciclo, custo: custoMana(r, sp, ciclo), viaCeifadora: usaCeifadora(r, sp),
       concentracao: sp.concentracao, rodadas: sp.duracao.rodadas, tempo: sp.tempo.tipo,

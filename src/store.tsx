@@ -40,6 +40,12 @@ interface UI {
   toasts: Toast[];
   toast: (t: Omit<Toast, 'id'>) => void;
   tirarToast: (id: string) => void;
+  /** O palco da tela inicial está visível? Enquanto estiver, a barra compacta do topo fica oculta. */
+  palcoVisivel: boolean;
+  setPalco: (v: boolean) => void;
+  /** Animação de uso (ataque ou conjuração) em andamento. */
+  flash: { id: string; nome: string; cat: string } | null;
+  lancar: (nome: string, cat: string) => void;
 }
 
 export const useUI = create<UI>((set, get) => ({
@@ -56,6 +62,14 @@ export const useUI = create<UI>((set, get) => ({
     setTimeout(() => get().tirarToast(id), t.ms ?? 5000);
   },
   tirarToast: (id) => set({ toasts: get().toasts.filter((x) => x.id !== id) }),
+  palcoVisivel: true,
+  setPalco: (v) => get().palcoVisivel !== v && set({ palcoVisivel: v }),
+  flash: null,
+  lancar: (nome, cat) => {
+    const id = novoId();
+    set({ flash: { id, nome, cat } });
+    setTimeout(() => get().flash?.id === id && set({ flash: null }), 950);
+  },
 }));
 
 // ---------- jogo ----------

@@ -6,13 +6,13 @@
 :root {
   color-scheme: dark;
 
-  --void: #0c090f; /* mais escuro que os painéis, para os cartões destacarem */
-  --void-2: #1c1420;
-  --panel: #1f1622; /* opaco: os cartões ficam como ilhas escuras sobre o fundo colorido */
-  --panel-2: #2c1f2c;
-  --panel-3: #362636;
-  --line: #4a3540;
-  --line-soft: #3a2b34;
+  --void: #07050a; /* preto da armadura */
+  --void-2: #120e15;
+  --panel: #141017; /* opaco: os cartões ficam como ilhas escuras sobre o fundo */
+  --panel-2: #1d1720;
+  --panel-3: #2a202c;
+  --line: #3d2f38;
+  --line-soft: #2a2029;
 
   --bone: #e9dcc0;
   --bone-dim: #b3a08a;
@@ -30,14 +30,25 @@
   --hp-fg: #e0576a;
   --hp-trail: #f0c9a0;
   --heal: #7fc98a;
-  --temp-hp: #8fb3d9;
-  --mana: #6fc3b8;
-  --mana-empty: #26393a;
+  --temp-hp: #c3cedb;
+  --mana: #7fb6ee; /* azul dos olhos do Ehzra */
+  --mana-empty: #1b2634;
   --conc: #b58ae0;
   --src-ok: #8fc79a;
   --src-mudou: #e5b567;
   --src-legado: #a585c0;
   --src-homebrew: #e0576a;
+
+  /* categorias: cada tipo de opção tem uma cor só dela */
+  --cat-fisico: #c3cedb;     /* aço: ataque com a foice, sem custo */
+  --cat-habilidade: #c9a961; /* ouro: habilidades de classe e relíquia */
+  --cat-truque: #8fd4b4;     /* jade: truques, sem mana */
+  --cat-c1: #7fb6ee;
+  --cat-c2: #9d92f5;
+  --cat-c3: #cc84e0;
+  --cat-c4: #ee6f93;
+  --cat-c5: #f29455;
+  --cat-c6: #f2c14e;
 
   --font-display: 'Cinzel', Georgia, serif;
   --font-deco: 'Cinzel Decorative', 'Cinzel', Georgia, serif;

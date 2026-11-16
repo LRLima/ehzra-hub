@@ -144,11 +144,9 @@ export function Toasts() {
 
 /** Cartão compacto de magia usado em listas, busca e HUD. */
 export function SpellCard({ spell, ciclo, mostrarSelo = false }: { spell: Spell; ciclo?: number; mostrarSelo?: boolean }) {
-  const { r } = useJogo();
   const abrir = useUI((u) => u.abrir);
-  const origem = usaCeifadora(r, spell) ? 'ceifadora' : spell.status2024 === 'homebrew' ? 'homebrew' : 'padrao';
   return (
-    <button className="card card-btn spell-card" data-origem={origem} onClick={() => abrir({ tipo: 'magia', id: spell.id, ciclo })}>
+    <button className="card card-btn spell-card" data-cat={catDe(spell.ciclo)} onClick={() => abrir({ tipo: 'magia', id: spell.id, ciclo })}>
       <div className="topo">
         <span className="nome">{spell.nome}</span>
         <span className="row" style={{ gap: 6 }}>
@@ -159,5 +157,35 @@ export function SpellCard({ spell, ciclo, mostrarSelo = false }: { spell: Spell;
       {spell.nomeOriginal && <div className="sub">{spell.nomeOriginal}</div>}
       <SpellChips spell={spell} ciclo={ciclo} />
     </button>
+  );
+}
+
+/** Categoria visual: ataque físico, habilidade, truque ou ciclo da magia. Cada uma tem cor própria (tokens --cat-*). */
+export const catDe = (ciclo: number) => (ciclo === 0 ? 'truque' : `c${Math.min(ciclo, 6)}`);
+
+/** Grupo de opções de uma mesma categoria, com cabeçalho colorido. */
+export function Grupo({ cat, titulo, nota, n, children }: { cat: string; titulo: string; nota?: string; n?: number; children: ReactNode }) {
+  return (
+    <section className="grupo" data-cat={cat}>
+      <header className="cat-h">
+        <i className="cat-marca" aria-hidden="true" />
+        <h3>{titulo}</h3>
+        {nota && <span className="cat-nota">{nota}</span>}
+        {n != null && <span className="cat-n num">{n}</span>}
+      </header>
+      <div className="stack">{children}</div>
+    </section>
+  );
+}
+
+/** Animação de uso: um clarão na cor da categoria com o nome do que foi usado. */
+export function CastFlash() {
+  const f = useUI((u) => u.flash);
+  if (!f) return null;
+  return (
+    <div key={f.id} className="cast" data-cat={f.cat} aria-hidden="true">
+      <i /><i />
+      <span>{f.nome}</span>
+    </div>
   );
 }

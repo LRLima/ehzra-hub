@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import {
-  SwordIcon, BookOpenIcon, UserIcon, NotebookIcon, DotsThreeIcon, MagnifyingGlassIcon, EyeIcon,
+  SwordIcon, BookOpenIcon, UserIcon, NotebookIcon, DotsThreeIcon, MagnifyingGlassIcon,
 } from '@phosphor-icons/react';
 import { useJogo, useRota, useUI } from './store';
 import { Toasts } from './ui/components';
@@ -10,19 +10,20 @@ import { Grimorio } from './features/Grimorio';
 import { Ficha } from './features/Ficha';
 import { Sessao } from './features/Sessao';
 import { Mais } from './features/Mais';
-import { magia, manaMaxima } from './domain/rules';
+import { manaMaxima } from './domain/rules';
+import { ConcBanner } from './features/Palco';
+import { CastFlash } from './ui/components';
 import { pvMaximo } from './domain/state';
 import { AtualizarApp } from './features/Pwa';
 
 function TopBar() {
-  const { r, s, dispatch } = useJogo();
+  const { r, s } = useJogo();
   const abrir = useUI((u) => u.abrir);
   const max = pvMaximo(r, s);
   const manaMax = manaMaxima(r, s.nivel);
   const [trail, setTrail] = useState(s.pv);
   const [curou, setCurou] = useState(false);
   const antes = useRef(s.pv);
-  const [quebrando, setQuebrando] = useState<string | null>(null);
   const header = useRef<HTMLElement>(null);
 
   // O topo cresce com a faixa de concentração; o conteúdo acompanha para nada ficar escondido embaixo.
@@ -31,7 +32,7 @@ function TopBar() {
     if (!el) return;
     const ro = new ResizeObserver(() => document.documentElement.style.setProperty('--topbar-h', `${el.offsetHeight}px`));
     ro.observe(el);
-    return () => ro.disconnect();
+    return () => { ro.disconnect(); document.documentElement.style.setProperty('--topbar-h', '0px'); };
   }, []);
 
   // A barra muda na hora; o rastro claro "sangra" atrás dela.
@@ -43,8 +44,6 @@ function TopBar() {
   }, [s.pv]);
 
   const pct = (n: number) => `${Math.max(0, Math.min(100, (n / (max + s.pvTemp)) * 100))}%`;
-  const conc = s.concentracao ? magia(r, s.concentracao.magia) : null;
-  const efeito = s.concentracao ? s.efeitos.find((e) => e.origem === s.concentracao!.magia) : null;
 
   return (
     <header className="topbar" ref={header}>
@@ -73,17 +72,7 @@ function TopBar() {
           </div>
         </button>
       </div>
-      {(conc || quebrando) && (
-        <div className={`conc-banner${quebrando ? ' quebra' : ''}`} role="status" data-testid="concentracao">
-          <EyeIcon size={18} color="var(--conc)" />
-          <span className="t">Concentrado em <b>{conc?.nome ?? quebrando}</b>{efeito?.rodadas != null ? ` · ${efeito.rodadas > 10 ? `${Math.ceil(efeito.rodadas / 10)} min` : `${efeito.rodadas} rod.`}` : ''}</span>
-          <button className="btn mini" onClick={() => {
-            setQuebrando(conc?.nome ?? null);
-            setTimeout(() => setQuebrando(null), 300);
-            dispatch({ t: 'quebrarConcentracao' });
-          }}>Quebrar</button>
-        </div>
-      )}
+      <ConcBanner />
     </header>
   );
 }
@@ -100,6 +89,7 @@ export function App() {
   const rota = useRota();
   const { pronto } = useJogo();
   const abrir = useUI((u) => u.abrir);
+  const palcoVisivel = useUI((u) => u.palcoVisivel);
   const aba = rota[0];
 
   useEffect(() => {
@@ -115,7 +105,7 @@ export function App() {
   return (
     <div className="app">
       <div className="lava" aria-hidden="true"><i /><i /><i /><i /></div>
-      {!telaCheia && <TopBar />}
+      {!telaCheia && !(aba === 'combate' && pronto && palcoVisivel) && <TopBar />}
       <main className={`main page-in${telaCheia ? ' sem-topbar' : ''}`} key={rota.join('/')}>
         {!pronto ? <p className="faint">Abrindo o grimório...</p>
           : aba === 'combate' ? <Combate />
@@ -140,6 +130,7 @@ export function App() {
       </nav>
       <Sheets />
       <Toasts />
+      <CastFlash />
       <AtualizarApp />
     </div>
   );

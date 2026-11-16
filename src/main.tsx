@@ -8,6 +8,7 @@ import '@fontsource/eb-garamond/600.css';
 import '@fontsource/jetbrains-mono/500.css';
 import '@fontsource/jetbrains-mono/600.css';
 import './ui/app.css';
+import './ui/redesign.css';
 import { JogoProvider } from './store';
 import { App } from './App';
 

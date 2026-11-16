@@ -1,7 +1,7 @@
 /** Grimório: todas as magias, com filtros. */
 import { useMemo, useState } from 'react';
 import { useJogo } from '../store';
-import { SpellCard } from '../ui/components';
+import { SpellCard, Grupo, catDe } from '../ui/components';
 import { contagemPreparadas, estaPreparada, magiaEfetiva, NOMES_DANO } from '../domain/rules';
 import type { Spell } from '../domain/schemas';
 
@@ -84,10 +84,10 @@ export function Grimorio() {
 
       <div key={JSON.stringify(f)} className="page-in">
         {[...porCiclo.entries()].sort(([a], [b]) => a - b).map(([ciclo, ms]) => (
-          <section key={ciclo}>
-            <h2 className="section-h">{ciclo === 0 ? 'Truques' : `${ciclo}º ciclo`} <span className="faint num">{ms.length}</span></h2>
-            <div className="stack">{ms.map((m) => <SpellCard key={m.id} spell={m} mostrarSelo />)}</div>
-          </section>
+          <Grupo key={ciclo} cat={catDe(ciclo)} titulo={ciclo === 0 ? 'Truques' : `${ciclo}º ciclo`} n={ms.length}
+            nota={ciclo === 0 ? 'sem custo de mana' : `${r.homebrew.mana.custoPorCiclo[ciclo - 1]} de mana`}>
+            {ms.map((m) => <SpellCard key={m.id} spell={m} mostrarSelo />)}
+          </Grupo>
         ))}
         {lista.length === 0 && <p className="faint">Nenhuma magia com esses filtros.</p>}
       </div>
