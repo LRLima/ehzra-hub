@@ -134,6 +134,8 @@ export const Feature = z.object({
   relacionadas: z.array(z.string()).default([]),
   /** Habilidade que não estava na ficha: só aparece depois de aprovada. */
   somenteSeAprovado: z.boolean().default(false),
+  /** Gasta 1 Inspiração ao usar (o Epitáfio). */
+  custoInspiracao: z.boolean().default(false),
   v2024: z.object({
     texto: z.string(),
     resumo: z.string().optional(),

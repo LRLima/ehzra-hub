@@ -241,3 +241,26 @@ a.btn.ouro { color: var(--bone); }
   .palco-figura img, .frasco-tubo .liquido::before { animation: none !important; }
   .cast { display: none; }
 }
+
+/* ---------- barra compacta: retrato que reage e barra flutuante no Combate ---------- */
+.main.com-palco { padding-top: 12px; transition: none; }
+.topbar.flutuante { animation: desce 0.28s var(--ease-out); box-shadow: 0 10px 24px rgba(0, 0, 0, 0.55); }
+@keyframes desce { from { transform: translateY(-100%); } to { transform: none; } }
+.topbar-inner { grid-template-columns: 40px 1.3fr 1fr; }
+.topbar-retrato { width: 40px; height: 40px; border-radius: 50%; overflow: hidden; border: 1px solid var(--line); align-self: center; }
+.topbar-retrato img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; display: block; }
+.topbar.fx-dano .topbar-retrato { animation: retrato-dano 0.5s ease-out; }
+.topbar.fx-dano .topbar-retrato img { animation: golpe 0.5s ease-out; }
+.topbar.fx-cura .topbar-retrato { animation: retrato-cura 0.8s ease-out; }
+.topbar.fx-mana .topbar-retrato { animation: retrato-mana 0.8s ease-out; }
+@keyframes retrato-dano { 20% { border-color: var(--hp-fg); box-shadow: 0 0 14px var(--hp-fg); } }
+@keyframes retrato-cura { 30% { border-color: var(--heal); box-shadow: 0 0 14px var(--heal); } }
+@keyframes retrato-mana { 30% { border-color: var(--mana); box-shadow: 0 0 16px var(--mana); transform: scale(1.08); } }
+.vital-row { position: relative; }
+.delta-mini { position: absolute; right: 0; top: -15px; pointer-events: none; font-family: var(--font-mono); font-size: 15px; font-weight: 600; text-shadow: 0 2px 8px #000; animation: delta-mini 1s var(--ease-out) forwards; }
+.delta-mini.neg { color: #ff9aa8; }
+.delta-mini.pos { color: var(--heal); }
+.delta-mini.mana.neg { color: #b7d9ff; }
+.delta-mini.mana.pos { color: #e3f1ff; }
+@keyframes delta-mini { 0% { opacity: 0; transform: translateY(6px); } 20% { opacity: 1; transform: none; } 100% { opacity: 0; transform: translateY(-18px); } }
+@media (prefers-reduced-motion: reduce) { .topbar.flutuante, .delta-mini { animation: none; } }

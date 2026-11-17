@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.3.1 (17/11/2026)
+
+- Epitáfio substitui o Avatar como habilidade de Inspiração, com botão que gasta a Inspiração e marca o alvo por uma rodada.
+- Corrigido: a tela tremia no Combate ao rolar entre o personagem e a lista (a barra do topo empurrava o conteúdo). Agora ela flutua por cima.
+- A barra compacta ganhou um retrato do Ehzra que reage a dano, cura e mana quando o palco está fora da tela.
+
 ## 0.3.0 (16/11/2026)
 
 - Tela inicial com o Ehzra de corpo inteiro, frasco de vida e cristais de mana animados (dano, cura, gasto e recuperação).

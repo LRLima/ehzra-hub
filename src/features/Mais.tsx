@@ -1,7 +1,7 @@
 /** Menu "Mais": lore, estratégias, avatar, subir de nível, condições, preparar magias, backup. */
 import { useRef, useState } from 'react';
 import {
-  CaretRightIcon, FeatherIcon, SwordIcon, SunIcon, ArrowUpIcon, WarningIcon, ListBulletsIcon, DownloadSimpleIcon, SparkleIcon,
+  CaretRightIcon, FeatherIcon, SwordIcon, ArrowUpIcon, WarningIcon, ListBulletsIcon, DownloadSimpleIcon, SparkleIcon,
   CloudIcon, CloudSlashIcon, SkullIcon,
 } from '@phosphor-icons/react';
 import { Reliquia } from './Reliquia';
@@ -56,7 +56,6 @@ function Menu() {
       <div className="stack">
         {item('#/mais/ceifadora', SkullIcon, 'Ceifadora de Myrkul', 'A relíquia, suas magias e a sintonia')}
         {item('#/mais/estrategias', SwordIcon, 'Estratégias', 'Playbooks por turno com custo de mana')}
-        {item('#/mais/avatar', SunIcon, 'Avatar dos Quatro Túmulos', s.avatar ? 'Ativo agora' : 'Role o d4 e descubra quem responde')}
         {item('#/mais/nivel', ArrowUpIcon, 'Subir de nível', `Nível ${s.nivel} para ${s.nivel + 1}`)}
         {item('#/mais/preparar', SparkleIcon, 'Preparar magias', 'Escolha as preparadas do dia')}
         {item('#/mais/condicoes', WarningIcon, 'Condições 2024', 'Glossário rápido')}

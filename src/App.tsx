@@ -11,12 +11,12 @@ import { Ficha } from './features/Ficha';
 import { Sessao } from './features/Sessao';
 import { Mais } from './features/Mais';
 import { manaMaxima } from './domain/rules';
-import { ConcBanner } from './features/Palco';
+import { ConcBanner, useDelta } from './features/Palco';
 import { CastFlash } from './ui/components';
 import { pvMaximo } from './domain/state';
 import { AtualizarApp } from './features/Pwa';
 
-function TopBar() {
+function TopBar({ flutuante = false }: { flutuante?: boolean }) {
   const { r, s } = useJogo();
   const abrir = useUI((u) => u.abrir);
   const max = pvMaximo(r, s);
@@ -26,14 +26,18 @@ function TopBar() {
   const antes = useRef(s.pv);
   const header = useRef<HTMLElement>(null);
 
+  const fxPv = useDelta(s.pv);
+  const fxMana = useDelta(s.mana);
+
   // O topo cresce com a faixa de concentração; o conteúdo acompanha para nada ficar escondido embaixo.
+  // No Combate a barra flutua por cima do palco e não mexe no espaçamento (senão a tela "pula").
   useEffect(() => {
     const el = header.current;
-    if (!el) return;
+    if (!el || flutuante) return;
     const ro = new ResizeObserver(() => document.documentElement.style.setProperty('--topbar-h', `${el.offsetHeight}px`));
     ro.observe(el);
     return () => { ro.disconnect(); document.documentElement.style.setProperty('--topbar-h', '0px'); };
-  }, []);
+  }, [flutuante]);
 
   // A barra muda na hora; o rastro claro "sangra" atrás dela.
   useEffect(() => {
@@ -46,14 +50,16 @@ function TopBar() {
   const pct = (n: number) => `${Math.max(0, Math.min(100, (n / (max + s.pvTemp)) * 100))}%`;
 
   return (
-    <header className="topbar" ref={header}>
+    <header className={`topbar${flutuante ? ' flutuante' : ''} ${fxPv ? (fxPv.d < 0 ? 'fx-dano' : 'fx-cura') : ''} ${fxMana ? (fxMana.d < 0 ? 'fx-mana' : 'fx-mana-sobe') : ''}`} ref={header}>
       <div className="topbar-inner">
+        <span className="topbar-retrato" aria-hidden="true"><img src={r.character.retrato} alt="" /></span>
         <button className={`vital${s.pv <= max / 4 ? ' hp-baixo' : ''}`} onClick={() => abrir({ tipo: 'pv' })} aria-label={`PV ${s.pv} de ${max}. Tocar para dano ou cura`}>
           <div className="vital-row">
             <span className="vital-label">PV</span>
             <span className="vital-val" data-testid="pv">{s.pv}</span>
             <span className="vital-max">/{max}</span>
             {s.pvTemp > 0 && <span className="badge-temp">+{s.pvTemp}</span>}
+            {fxPv && <span key={fxPv.k} className={`delta-mini ${fxPv.d < 0 ? 'neg' : 'pos'}`}>{fxPv.d > 0 ? `+${fxPv.d}` : `−${-fxPv.d}`}</span>}
           </div>
           <div className={`hpbar${curou ? ' cura' : ''}`}>
             <span className="trail" style={{ width: pct(Math.max(trail, s.pv)) }} />
@@ -66,13 +72,14 @@ function TopBar() {
             <span className="vital-label">MANA</span>
             <span className="vital-val mana-val" data-testid="mana">{s.mana}</span>
             <span className="vital-max">/{manaMax}</span>
+            {fxMana && <span key={fxMana.k} className={`delta-mini mana ${fxMana.d < 0 ? 'neg' : 'pos'}`}>{fxMana.d > 0 ? `+${fxMana.d}` : `−${-fxMana.d}`}</span>}
           </div>
           <div className="manabar" style={{ gridTemplateColumns: `repeat(${Math.ceil(manaMax / 2)}, 1fr)` }}>
             {Array.from({ length: Math.ceil(manaMax / 2) }, (_, i) => <i key={i} className={i * 2 < s.mana ? '' : 'off'} />)}
           </div>
         </button>
       </div>
-      <ConcBanner />
+      <ConcBanner semTestId={flutuante} />
     </header>
   );
 }
@@ -105,8 +112,9 @@ export function App() {
   return (
     <div className="app">
       <div className="lava" aria-hidden="true"><i /><i /><i /><i /></div>
-      {!telaCheia && !(aba === 'combate' && pronto && palcoVisivel) && <TopBar />}
-      <main className={`main page-in${telaCheia ? ' sem-topbar' : ''}`} key={rota.join('/')}>
+      {!telaCheia && aba !== 'combate' && <TopBar />}
+      {aba === 'combate' && pronto && !palcoVisivel && <TopBar flutuante />}
+      <main className={`main page-in${telaCheia ? ' sem-topbar' : ''}${aba === 'combate' ? ' com-palco' : ''}`} key={rota.join('/')}>
         {!pronto ? <p className="faint">Abrindo o grimório...</p>
           : aba === 'combate' ? <Combate />
           : aba === 'magias' ? <Grimorio />

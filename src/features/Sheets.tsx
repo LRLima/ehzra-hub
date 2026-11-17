@@ -168,6 +168,17 @@ function HabilidadeSheet({ id }: { id: string }) {
           <button className="btn ouro" disabled={rec.restante <= 0} onClick={() => dispatch({ t: 'usarRecurso', recurso: f.recurso!, qtd: 1 })}>Usar</button>
         </div>
       )}
+      {f.custoInspiracao && (
+        <div className="row" style={{ margin: '10px 0' }}>
+          <span className="grow">Inspiração: <b className="num">{s.inspiracao}</b></span>
+          <button className="btn primario" disabled={s.inspiracao < 1} onClick={async () => {
+            useUI.getState().lancar(f.nome, 'habilidade');
+            await dispatch({ t: 'inspiracao', delta: -1 }, { silencioso: true });
+            await dispatch({ t: 'efeitoAdd', efeito: { id: f.id, nome: `${f.nome}: alvo marcado`, rodadas: 1 } });
+            fechar();
+          }}>{s.inspiracao < 1 ? 'Sem Inspiração' : 'Usar (1 Inspiração)'}</button>
+        </div>
+      )}
       <Markdown md={f.texto} />
       {bruta.v2024 && (
         <div className="box v2024">

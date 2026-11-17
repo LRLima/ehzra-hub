@@ -23,6 +23,7 @@
         "centelha-divina"
       ],
       "somenteSeAprovado": false,
+      "custoInspiracao": false,
       "v2024": {
         "texto": "No nível 8 são 3 usos. Você recupera 1 uso ao terminar um descanso curto e todos no descanso longo.",
         "usos": {
@@ -49,7 +50,8 @@
         "infligir-ferimentos",
         "ceifadora-de-myrkul"
       ],
-      "somenteSeAprovado": false
+      "somenteSeAprovado": false,
+      "custoInspiracao": false
     },
     {
       "id": "repreender-mortos-vivos",
@@ -68,6 +70,7 @@
         "canalizar-divindade"
       ],
       "somenteSeAprovado": false,
+      "custoInspiracao": false,
       "v2024": {
         "texto": "Cada morto-vivo à sua escolha a até 9 m faz salvaguarda de SAB. Na falha, fica Amedrontado e Incapacitado por 1 minuto, tentando se afastar de você. O efeito acaba se ele sofrer dano.",
         "resumo": "Mortos-vivos a até 9 m: SAB ou Amedrontados e Incapacitados por 1 min."
@@ -87,7 +90,8 @@
       "relacionadas": [
         "repreender-mortos-vivos"
       ],
-      "somenteSeAprovado": false
+      "somenteSeAprovado": false,
+      "custoInspiracao": false
     },
     {
       "id": "conjurador-potente",
@@ -103,7 +107,8 @@
       "relacionadas": [
         "soar-os-mortos"
       ],
-      "somenteSeAprovado": false
+      "somenteSeAprovado": false,
+      "custoInspiracao": false
     },
     {
       "id": "conjurador-de-guerra",
@@ -117,6 +122,7 @@
       "texto": "Vantagem em testes de resistência de Constituição para manter concentração. Como reação, pode lançar um feitiço de ação única contra uma criatura que provoque ataque de oportunidade, em vez de atacar.",
       "relacionadas": [],
       "somenteSeAprovado": false,
+      "custoInspiracao": false,
       "v2024": {
         "texto": "+1 em INT, SAB ou CAR. Vantagem em salvaguardas de CON para manter concentração. Quando uma criatura sai do seu alcance, você pode usar a reação para conjurar nela uma magia de 1 ação que tenha só ela como alvo, em vez de um ataque de oportunidade. Você faz componentes somáticos mesmo com armas ou escudo nas mãos.",
         "resumo": "Vantagem em CON para concentração; reação quando alguém sai do alcance."
@@ -138,6 +144,7 @@
         "lamina-necrotica"
       ],
       "somenteSeAprovado": false,
+      "custoInspiracao": false,
       "v2024": {
         "texto": "Texto oficial 2014: quando você conjura um truque de necromancia que mira uma única criatura, ele pode mirar duas criaturas a até 1,5 m uma da outra, cada uma com sua própria salvaguarda ou ataque.",
         "resumo": "Truque de necromancia de alvo único mira 2 criaturas a até 1,5 m uma da outra."
@@ -155,7 +162,8 @@
       "resumo": "Seu dano necrótico de clérigo ignora resistência a necrótico.",
       "texto": "Dano necrótico causado pelas magias de clérigo e por Canalizar Divindade ignora resistência a dano necrótico.",
       "relacionadas": [],
-      "somenteSeAprovado": false
+      "somenteSeAprovado": false,
+      "custoInspiracao": false
     },
     {
       "id": "natureza-imortal",
@@ -169,6 +177,7 @@
       "texto": "Vantagem em testes de habilidade contra doenças ou toxinas, e resistência a dano de veneno.",
       "relacionadas": [],
       "somenteSeAprovado": false,
+      "custoInspiracao": false,
       "v2024": {
         "texto": "Texto oficial (Reborn): vantagem em salvaguardas contra doença e contra ficar Envenenado, resistência a dano de veneno, vantagem em salvaguardas contra morte, e você não precisa comer, beber, respirar nem dormir.",
         "resumo": "Resistência a veneno; vantagem contra doença, veneno e morte; não come nem dorme."
@@ -189,7 +198,8 @@
       "relacionadas": [
         "canalizar-divindade"
       ],
-      "somenteSeAprovado": true
+      "somenteSeAprovado": true,
+      "custoInspiracao": false
     },
     {
       "id": "ordem-divina-protetor",
@@ -203,7 +213,8 @@
       "resumo": "Proficiência com armas marciais e armadura pesada.",
       "texto": "Treinado para o combate: você ganha proficiência com armas marciais e treino com armadura pesada.",
       "relacionadas": [],
-      "somenteSeAprovado": true
+      "somenteSeAprovado": true,
+      "custoInspiracao": false
     },
     {
       "id": "ceifadora-sintonia",
@@ -216,25 +227,20 @@
       "relacionadas": [
         "ceifadora-de-myrkul"
       ],
-      "somenteSeAprovado": false
+      "somenteSeAprovado": false,
+      "custoInspiracao": false
     },
     {
-      "id": "avatar-dos-quatro-tumulos",
-      "nome": "Avatar dos Quatro Túmulos",
-      "origem": "Habilidade suprema (homebrew)",
+      "id": "epitafio",
+      "nome": "Epitáfio",
+      "origem": "Habilidade de Inspiração (homebrew)",
       "status2024": "homebrew",
       "gatilho": "acaoBonus",
-      "recurso": "avatar",
-      "usos": {
-        "max": 1,
-        "recarga": "amanhecer"
-      },
-      "resumo": "Custa 1 Inspiração. 1d4 decide o deus: Myrkul, Bhaal, Rainha Corvo ou Jergal. 1 minuto.",
-      "texto": "Ver a página do Avatar.",
-      "relacionadas": [
-        "inspiracao"
-      ],
-      "somenteSeAprovado": false
+      "resumo": "1 Inspiração. Marca uma criatura a até 9 m: o próximo acerto contra ela causa o dobro de dano, e ela não se cura.",
+      "texto": "**Tempo:** 1 ação bônus. **Duração:** instantâneo.\n\nEhzra aponta para uma criatura que possa ver a até 30 ft (9 m). A criatura fica marcada pelo epitáfio. Na próxima vez que Ehzra ou um aliado a atingir com uma jogada de ataque, ela fica vulnerável a todo o dano desse ataque (exceto caso seja imune a esse tipo de dano), e a Sentença se encerra. Enquanto estiver marcada, a criatura não recupera PV. Caso o alvo não seja atingido até o final do próximo turno de Ehzra, a sentença se encerra.",
+      "relacionadas": [],
+      "somenteSeAprovado": false,
+      "custoInspiracao": true
     }
   ]
 }

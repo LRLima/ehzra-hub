@@ -1,6 +1,6 @@
 /** Modo Combate (HUD) e Modo Testes/Exploração. */
 import { useEffect, useState } from 'react';
-import { PlusIcon, MinusIcon, TrashIcon, SunIcon, SkullIcon, CampfireIcon, XIcon, SwordIcon } from '@phosphor-icons/react';
+import { PlusIcon, MinusIcon, TrashIcon, SkullIcon, CampfireIcon, XIcon, SwordIcon } from '@phosphor-icons/react';
 import { useJogo, useUI } from '../store';
 import { SpellCard, Grupo, catDe } from '../ui/components';
 import { Palco } from './Palco';
@@ -78,7 +78,6 @@ function Hud() {
   const arma = r.character.armas[0];
   const atk = modAtr(r, c, arma.atributo) + proficiencia(r, c);
   const canal = recursoRestante(r, s, 'canalizar');
-  const avatar = recursoRestante(r, s, 'avatar');
   const ciclos = [...new Set(magias.map((m: Spell) => m.ciclo))].sort((a, b) => a - b);
   const lancar = useUI((u) => u.lancar);
   const atacar = () => {
@@ -154,7 +153,8 @@ function Hud() {
             {feats.map((f) => (
               <button key={f.id} className="card card-btn" onClick={() => abrir({ tipo: 'habilidade', id: f.id })}>
                 <div className="topo row"><span className="grow nome">{f.nome}</span>
-                  {f.recurso && <span className="chip">{recursoRestante(r, s, f.recurso)?.restante ?? '?'} usos</span>}</div>
+                  {f.recurso && <span className="chip">{recursoRestante(r, s, f.recurso)?.restante ?? '?'} usos</span>}
+                  {f.custoInspiracao && <span className="chip">1 Inspiração</span>}</div>
                 <p className="muted" style={{ fontSize: 15, margin: '4px 0 0' }}>{f.resumo}</p>
               </button>
             ))}
@@ -182,9 +182,9 @@ function Hud() {
           </div>
         )}
         <div className="card recurso">
-          <SunIcon size={18} color="var(--gold)" />
-          <span className="grow">Avatar dos Quatro Túmulos {s.avatar ? <b style={{ color: 'var(--gold)' }}>· {r.homebrew.avatar.aspectos[s.avatar.aspecto - 1].nome}, {s.avatar.rodadas} rod.</b> : avatar && !avatar.restante ? <span className="faint">· usado</span> : null}</span>
-          <a className="btn mini ouro" href="#/mais/avatar">Abrir</a>
+          <SkullIcon size={18} color="var(--cat-habilidade)" />
+          <span className="grow">Epitáfio {s.efeitos.some((e) => e.id === 'epitafio') ? <b style={{ color: 'var(--cat-habilidade)' }}>· alvo marcado</b> : <span className="faint">· 1 Inspiração</span>}</span>
+          <button className="btn mini ouro" onClick={() => abrir({ tipo: 'habilidade', id: 'epitafio' })}>Abrir</button>
         </div>
       </div>
 

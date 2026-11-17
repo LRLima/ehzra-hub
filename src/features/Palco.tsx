@@ -35,7 +35,7 @@ function useContagem(alvo: number) {
 }
 
 /** Diferença da última mudança ("−18", "+7"), visível por um instante. */
-function useDelta(valor: number) {
+export function useDelta(valor: number) {
   const antes = useRef(valor);
   const [fx, setFx] = useState<{ d: number; k: number } | null>(null);
   useEffect(() => {
@@ -51,14 +51,14 @@ function useDelta(valor: number) {
 
 const sinal = (d: number) => (d > 0 ? `+${d}` : `−${-d}`);
 
-export function ConcBanner() {
+export function ConcBanner({ semTestId = false }: { semTestId?: boolean }) {
   const { r, s, dispatch } = useJogo();
   const [quebrando, setQuebrando] = useState<string | null>(null);
   const conc = s.concentracao ? magia(r, s.concentracao.magia) : null;
   const efeito = s.concentracao ? s.efeitos.find((e) => e.origem === s.concentracao!.magia) : null;
   if (!conc && !quebrando) return null;
   return (
-    <div className={`conc-banner${quebrando ? ' quebra' : ''}`} role="status" data-testid="concentracao">
+    <div className={`conc-banner${quebrando ? ' quebra' : ''}`} role="status" data-testid={semTestId ? undefined : 'concentracao'}>
       <EyeIcon size={18} color="var(--conc)" />
       <span className="t">Concentrado em <b>{conc?.nome ?? quebrando}</b>{efeito?.rodadas != null ? ` · ${efeito.rodadas > 10 ? `${Math.ceil(efeito.rodadas / 10)} min` : `${efeito.rodadas} rod.`}` : ''}</span>
       <button className="btn mini" onClick={() => {
@@ -87,7 +87,11 @@ export function Palco() {
     const el = ref.current;
     if (!el) return;
     setPalco(true);
-    const io = new IntersectionObserver(([e]) => setPalco(e.intersectionRatio > 0.35), { threshold: [0, 0.35, 1] });
+    // Histerese: some abaixo de 25% visível e só volta acima de 40%, para não ficar piscando no meio-termo.
+    const io = new IntersectionObserver(([e]) => {
+      if (e.intersectionRatio <= 0.25) setPalco(false);
+      else if (e.intersectionRatio >= 0.4) setPalco(true);
+    }, { threshold: [0, 0.25, 0.4, 1] });
     io.observe(el);
     return () => { io.disconnect(); setPalco(false); };
   }, [setPalco]);
@@ -140,7 +144,7 @@ export function Palco() {
           {fxMana && <span key={fxMana.k} className={`delta ${fxMana.d < 0 ? 'neg' : 'pos'}`}>{sinal(fxMana.d)}</span>}
         </button>
       </section>
-      {palcoVisivel && <ConcBanner />}
+      <ConcBanner />
     </>
   );
 }
