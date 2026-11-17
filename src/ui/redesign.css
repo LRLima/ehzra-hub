@@ -272,3 +272,29 @@ a.btn.ouro { color: var(--bone); }
 
 /* pílulas e seletores sobre a textura: fundo escuro translúcido para o texto não brigar com o desenho */
 .segmented, .turno button:not([aria-pressed='true']), .status-strip, .btn.fantasma, .btn.ouro, .btn.aco, .ciclos button:not([aria-pressed='true']) { background-color: rgba(4, 11, 12, 0.6); }
+
+/* ---------- fumaça negra nas margens ----------
+ * Textura procedural (scripts/gerar-fumaca.ts) que se repete sem emenda.
+ * Duas camadas sobem em velocidades diferentes; só transform anima. */
+.fumaca {
+  position: fixed; top: 0; bottom: 0; z-index: 1; pointer-events: none; overflow: hidden;
+  width: max(64px, calc((100vw - 760px) / 2 + 150px));
+}
+.fumaca.esq { left: 0; -webkit-mask-image: linear-gradient(90deg, #000 30%, transparent); mask-image: linear-gradient(90deg, #000 30%, transparent); }
+.fumaca.dir { right: 0; -webkit-mask-image: linear-gradient(270deg, #000 30%, transparent); mask-image: linear-gradient(270deg, #000 30%, transparent); }
+.fumaca i {
+  position: absolute; left: 0; right: 0; top: 0; bottom: -520px;
+  background: url('/img/fumaca.webp') 0 0 / 520px 520px repeat;
+  will-change: transform; animation: fumaca-a 64s linear infinite;
+}
+.fumaca i + i { bottom: -760px; background-size: 760px 760px; opacity: 0.75; animation: fumaca-b 41s linear infinite; }
+.fumaca.dir i { background-position: 230px 140px; }
+.fumaca.dir i + i { background-position: 410px 300px; animation-duration: 47s; }
+@keyframes fumaca-a { to { transform: translate3d(0, -520px, 0); } }
+@keyframes fumaca-b { to { transform: translate3d(0, -760px, 0); } }
+@media (max-width: 899px) {
+  .fumaca { width: 58px; opacity: 0.9; }
+  .fumaca.esq { -webkit-mask-image: linear-gradient(90deg, #000 15%, transparent); mask-image: linear-gradient(90deg, #000 15%, transparent); }
+  .fumaca.dir { -webkit-mask-image: linear-gradient(270deg, #000 15%, transparent); mask-image: linear-gradient(270deg, #000 15%, transparent); }
+}
+@media (prefers-reduced-motion: reduce) { .fumaca i { animation: none !important; } }

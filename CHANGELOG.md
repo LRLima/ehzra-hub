@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.2 (17/11/2026)
+
+- Fumaça negra animada nas laterais, no desktop e no celular (mais estreita).
+
 ## 0.3.1 (17/11/2026)
 
 - Epitáfio substitui o Avatar como habilidade de Inspiração, com botão que gasta a Inspiração e marca o alvo por uma rodada.
