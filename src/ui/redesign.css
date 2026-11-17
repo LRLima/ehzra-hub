@@ -73,10 +73,7 @@ a.btn.ouro { color: var(--bone); }
   content: ''; position: absolute; inset: 0; pointer-events: none;
   background: radial-gradient(ellipse 62% 52% at 50% 56%, rgba(233, 220, 192, 0.16), rgba(64, 200, 190, 0.18) 46%, transparent 74%);
 }
-.palco::after { /* a figura some no chão */
-  content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 16%; pointer-events: none; z-index: 2;
-  background: linear-gradient(180deg, transparent, var(--void));
-}
+/* a figura some no chão sem desenhar uma caixa sobre a textura (o esmaecimento é só na imagem) */
 .palco-nome {
   position: absolute; top: calc(8px + env(safe-area-inset-top, 0px)); left: 0; right: 0; text-align: center; pointer-events: none;
   font-family: var(--font-deco); font-size: clamp(38px, 12.5vw, 92px); line-height: 0.95; text-transform: uppercase;
@@ -86,6 +83,7 @@ a.btn.ouro { color: var(--bone); }
 .palco-figura img {
   height: 100%; max-width: 140%; object-fit: contain; object-position: bottom; transform-origin: 50% 100%;
   filter: drop-shadow(0 16px 26px rgba(0, 0, 0, 0.75)); animation: respira 6s ease-in-out infinite;
+  -webkit-mask-image: linear-gradient(180deg, #000 82%, transparent); mask-image: linear-gradient(180deg, #000 82%, transparent);
 }
 @keyframes respira { 50% { transform: scale(1.014) translateY(-2px); } }
 
