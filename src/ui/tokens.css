@@ -6,13 +6,13 @@
 :root {
   color-scheme: dark;
 
-  --void: #07050a; /* preto da armadura */
-  --void-2: #120e15;
-  --panel: #141017; /* opaco: os cartões ficam como ilhas escuras sobre o fundo */
-  --panel-2: #1d1720;
-  --panel-3: #2a202c;
-  --line: #3d2f38;
-  --line-soft: #2a2029;
+  --void: #040b0c; /* fundo: verde-azulado quase preto, da textura */
+  --void-2: #0b1517;
+  --panel: #0e1819; /* opaco: os cartões ficam como ilhas escuras sobre a textura */
+  --panel-2: #152224;
+  --panel-3: #1e2f31;
+  --line: #2f4547;
+  --line-soft: #1f3133;
 
   --bone: #e9dcc0;
   --bone-dim: #b3a08a;
@@ -42,7 +42,7 @@
   /* categorias: cada tipo de opção tem uma cor só dela */
   --cat-fisico: #c3cedb;     /* aço: ataque com a foice, sem custo */
   --cat-habilidade: #c9a961; /* ouro: habilidades de classe e relíquia */
-  --cat-truque: #8fd4b4;     /* jade: truques, sem mana */
+  --cat-truque: #c8e38a;     /* lima: truques, sem mana */
   --cat-c1: #7fb6ee;
   --cat-c2: #9d92f5;
   --cat-c3: #cc84e0;

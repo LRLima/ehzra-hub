@@ -24,8 +24,8 @@ body { background: var(--void); }
 :focus-visible { outline-color: var(--bone); }
 a { color: var(--bone); }
 
-.topbar { background: rgba(7, 5, 10, 0.94); border-bottom-color: var(--line-soft); }
-.nav { background: rgba(7, 5, 10, 0.96); border-top-color: var(--line-soft); }
+.topbar { background: rgba(4, 11, 12, 0.985); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); border-bottom-color: var(--line-soft); }
+.nav { background: rgba(4, 11, 12, 0.96); border-top-color: var(--line-soft); }
 .nav a { font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 0.12em; text-transform: uppercase; position: relative; transition: color 0.2s; }
 .nav a[aria-current='page'] { color: var(--bone); }
 .nav a[aria-current='page'] svg { filter: none; color: var(--crimson-fg); }
@@ -33,7 +33,7 @@ a { color: var(--bone); }
 .fab { border-color: var(--line); background: var(--panel-2); color: var(--bone); }
 
 .btn { border-radius: var(--r-pill); font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; background: transparent; }
-.btn.primario { background: var(--crimson-fill); border-color: var(--crimson-fill); color: #fff4e6; }
+.btn.primario { background: var(--crimson-fill); border-color: var(--crimson-fg); color: #fff4e6; }
 .btn.primario:active { background: #a52a3e; }
 .btn.ouro { border-color: var(--bone-faint); color: var(--bone); }
 a.btn.ouro { color: var(--bone); }
@@ -71,7 +71,7 @@ a.btn.ouro { color: var(--bone); }
 }
 .palco::before { /* luar atrás da figura */
   content: ''; position: absolute; inset: 0; pointer-events: none;
-  background: radial-gradient(ellipse 62% 52% at 50% 56%, rgba(233, 220, 192, 0.2), rgba(140, 34, 51, 0.2) 48%, transparent 74%);
+  background: radial-gradient(ellipse 62% 52% at 50% 56%, rgba(233, 220, 192, 0.16), rgba(64, 200, 190, 0.18) 46%, transparent 74%);
 }
 .palco::after { /* a figura some no chão */
   content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 16%; pointer-events: none; z-index: 2;
@@ -95,10 +95,10 @@ a.btn.ouro { color: var(--bone); }
 }
 .frasco-num { display: flex; flex-direction: column; align-items: center; line-height: 1; }
 .frasco-num b { font-family: var(--font-mono); font-size: 32px; font-weight: 600; font-variant-numeric: tabular-nums; }
-.frasco-num small { font-family: var(--font-mono); font-size: 12px; color: var(--bone-faint); margin-top: 3px; }
+.frasco-num small { font-family: var(--font-mono); font-size: 12px; color: var(--bone-dim); margin-top: 3px; }
 .frasco.mana .frasco-num b { color: var(--mana); }
 .frasco .badge-temp { font-size: 11px; }
-.frasco-rot { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--bone-faint); }
+.frasco-rot { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--bone); text-shadow: 0 1px 6px #000; }
 .frasco-tubo {
   position: relative; flex: 1; width: 16px; border-radius: var(--r-pill); overflow: hidden;
   background: rgba(233, 220, 192, 0.05); box-shadow: inset 0 0 0 1px rgba(233, 220, 192, 0.16);
@@ -231,11 +231,18 @@ a.btn.ouro { color: var(--bone); }
 .reliquia-mini img { border: 0; object-fit: contain; filter: drop-shadow(0 0 6px rgba(64, 224, 240, 0.8)); }
 
 /* fundo: manchas nas cores da capa e dos olhos, mais contidas */
-.lava i { opacity: 0.75; }
-.lava i:nth-child(1) { background: radial-gradient(circle, rgba(150, 30, 52, 0.85), transparent 64%); }
-.lava i:nth-child(2) { background: radial-gradient(circle, rgba(52, 78, 120, 0.55), transparent 64%); }
-.lava i:nth-child(3) { background: radial-gradient(circle, rgba(90, 20, 38, 0.8), transparent 60%); }
-.lava i:nth-child(4) { background: radial-gradient(circle, rgba(110, 24, 44, 0.7), transparent 64%); }
+/* fundo: a textura verde-azulada, escurecida para o texto ler bem, com luzes lentas por cima */
+.lava {
+  background:
+    linear-gradient(180deg, rgba(3, 9, 10, 0.62), rgba(3, 9, 10, 0.8)),
+    url('/img/fundo.webp') center / cover no-repeat,
+    var(--void);
+}
+.lava i { opacity: 0.55; }
+.lava i:nth-child(1) { background: radial-gradient(circle, rgba(64, 200, 190, 0.35), transparent 62%); }
+.lava i:nth-child(2) { background: radial-gradient(circle, rgba(10, 30, 32, 0.9), transparent 64%); }
+.lava i:nth-child(3) { background: radial-gradient(circle, rgba(40, 150, 145, 0.3), transparent 60%); }
+.lava i:nth-child(4) { background: radial-gradient(circle, rgba(4, 14, 16, 0.85), transparent 64%); }
 
 @media (prefers-reduced-motion: reduce) {
   .palco-figura img, .frasco-tubo .liquido::before { animation: none !important; }
@@ -264,3 +271,6 @@ a.btn.ouro { color: var(--bone); }
 .delta-mini.mana.pos { color: #e3f1ff; }
 @keyframes delta-mini { 0% { opacity: 0; transform: translateY(6px); } 20% { opacity: 1; transform: none; } 100% { opacity: 0; transform: translateY(-18px); } }
 @media (prefers-reduced-motion: reduce) { .topbar.flutuante, .delta-mini { animation: none; } }
+
+/* pílulas e seletores sobre a textura: fundo escuro translúcido para o texto não brigar com o desenho */
+.segmented, .turno button:not([aria-pressed='true']), .status-strip, .btn.fantasma, .btn.ouro, .btn.aco, .ciclos button:not([aria-pressed='true']) { background-color: rgba(4, 11, 12, 0.6); }

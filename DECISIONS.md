@@ -61,4 +61,5 @@ Pontos que continuam em aberto (não mudei, só registrei): Iniciativa +4 com DE
 | Fontes | Self-host via @fontsource | Google Fonts quebra offline e vaza dados |
 | Categorias | Cor por tipo: aço (físico), ouro (habilidade), jade (truque) e uma cor por ciclo. O ouro saiu do resto da interface | Separar de relance o que custa mana do que não custa |
 | Palco | Na tela inicial, vida e mana ficam ao lado da figura; a barra compacta do topo só aparece quando o palco sai da tela ou em outras abas | Pedido do Lucas em 16/11/2026 |
+| Fundo | Textura verde-azulada (img/fundo.webp) sob um véu de 62% a 80% de preto; neutros puxados para o verde-azulado. Truque passou de jade para lima, para não se confundir com o fundo | Pedido do Lucas em 17/11/2026. Contraste conferido com scripts/contraste.mjs |
 | Tema | Só escuro por enquanto | Pedido do prompt ("escuro como padrão"); tema claro fica para depois |
