@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.3 (17/11/2026)
+
+- Fumaça 50% mais rápida e mais densa perto das bordas, chegando ao preto na linha da tela.
+
 ## 0.3.2 (17/11/2026)
 
 - Fumaça negra animada nas laterais, no desktop e no celular (mais estreita).

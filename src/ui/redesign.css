@@ -285,11 +285,19 @@ a.btn.ouro { color: var(--bone); }
 .fumaca i {
   position: absolute; left: 0; right: 0; top: 0; bottom: -520px;
   background: url('/img/fumaca.webp') 0 0 / 520px 520px repeat;
-  will-change: transform; animation: fumaca-a 64s linear infinite;
+  will-change: transform; animation: fumaca-a 43s linear infinite;
 }
-.fumaca i + i { bottom: -760px; background-size: 760px 760px; opacity: 0.75; animation: fumaca-b 41s linear infinite; }
+.fumaca i + i { bottom: -760px; background-size: 760px 760px; opacity: 0.75; animation: fumaca-b 27s linear infinite; }
 .fumaca.dir i { background-position: 230px 140px; }
-.fumaca.dir i + i { background-position: 410px 300px; animation-duration: 47s; }
+.fumaca.dir i + i { background-position: 410px 300px; animation-duration: 31s; }
+/* Escurece em direção à borda: grudado na linha da tela é preto puro. */
+.fumaca::after { content: ''; position: absolute; inset: 0; }
+.fumaca.esq::after { background: linear-gradient(90deg, #000 0, rgba(0,0,0,.9) 6%, rgba(0,0,0,.6) 18%, rgba(0,0,0,.25) 38%, transparent 65%); }
+.fumaca.dir::after { background: linear-gradient(270deg, #000 0, rgba(0,0,0,.9) 6%, rgba(0,0,0,.6) 18%, rgba(0,0,0,.25) 38%, transparent 65%); }
+/* Terceira camada só perto da borda: mais fumaça onde já é escuro. */
+.fumaca i + i + i { bottom: -520px; background-size: 520px 520px; opacity: 1; animation: fumaca-a 35s linear infinite; }
+.fumaca.esq i + i + i { right: 45%; background-position: 300px 60px; -webkit-mask-image: linear-gradient(90deg, #000, transparent); mask-image: linear-gradient(90deg, #000, transparent); }
+.fumaca.dir i + i + i { left: 45%; background-position: 120px 380px; -webkit-mask-image: linear-gradient(270deg, #000, transparent); mask-image: linear-gradient(270deg, #000, transparent); }
 @keyframes fumaca-a { to { transform: translate3d(0, -520px, 0); } }
 @keyframes fumaca-b { to { transform: translate3d(0, -760px, 0); } }
 @media (max-width: 899px) {

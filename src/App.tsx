@@ -112,8 +112,8 @@ export function App() {
   return (
     <div className="app">
       <div className="lava" aria-hidden="true"><i /><i /><i /><i /></div>
-      <div className="fumaca esq" aria-hidden="true"><i /><i /></div>
-      <div className="fumaca dir" aria-hidden="true"><i /><i /></div>
+      <div className="fumaca esq" aria-hidden="true"><i /><i /><i /></div>
+      <div className="fumaca dir" aria-hidden="true"><i /><i /><i /></div>
       {!telaCheia && aba !== 'combate' && <TopBar />}
       {aba === 'combate' && pronto && !palcoVisivel && <TopBar flutuante />}
       <main className={`main page-in${telaCheia ? ' sem-topbar' : ''}${aba === 'combate' ? ' com-palco' : ''}`} key={rota.join('/')}>
