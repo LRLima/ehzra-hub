@@ -73,9 +73,9 @@
       "preCombate": { "acao": "Ala da Morte já ativa (Ceifadora, 3 mana).", "magias": [{ "id": "ala-da-morte", "ciclo": 4 }] },
       "turnos": [
         { "rotulo": "Turno de crise", "bonus": "Palavra Curativa em você (2 mana, ou mais ciclos se sobrar mana).", "acao": "Soar os Mortos no mais ferido, ou a ação Desengajar para sair do cerco.", "movimento": "Recue para trás dos mortos-vivos ou aliados.", "magias": [{ "id": "palavra-curativa", "ciclo": 1 }] },
-        { "rotulo": "Último recurso", "bonus": "Avatar dos Quatro Túmulos (1 Inspiração). Bhaal cura metade do dano necrótico causado; Rainha Corvo dá voo de 9 m para fugir." }
+        { "rotulo": "Último recurso", "bonus": "Epitáfio (1 Inspiração) no inimigo que mais ameaça, e o grupo foca nele: o golpe com dano dobrado tende a derrubá-lo antes que ele derrube você." }
       ],
-      "dependeDeHomebrew": ["Avatar dos Quatro Túmulos"]
+      "dependeDeHomebrew": ["Epitáfio"]
     },
     {
       "id": "suporte", "nome": "Suporte ao grupo",

@@ -1,7 +1,7 @@
 /** Folhas que sobem de baixo: magia, habilidade, condição, busca, PV, mana, descanso. */
 import { useEffect, useMemo, useRef, useState } from 'react';
 import Fuse from 'fuse.js';
-import { BackspaceIcon, SparkleIcon, BedIcon, CoffeeIcon, WarningIcon } from '@phosphor-icons/react';
+import { BackspaceIcon, SparkleIcon, BedIcon, CoffeeIcon } from '@phosphor-icons/react';
 import { useJogo, useUI, type Aberto } from '../store';
 import { catDe, Sheet, SpellChips, SeloDe, Markdown, SpellCard, TEMPO_CURTO } from '../ui/components';
 import {
@@ -331,7 +331,6 @@ function DescansoSheet() {
     s.pv < max && `PV ${s.pv} → ${max}`,
     s.mana < manaMaxima(r, s.nivel) && `Mana ${s.mana} → ${manaMaxima(r, s.nivel)}`,
     canal && canal.restante < canal.max && `Canalizar Divindade ${canal.restante} → ${canal.max}`,
-    s.usos.avatar && 'Avatar disponível de novo',
     s.ciclosAltosUsados.length > 0 && 'Ciclos 6+ liberados',
     s.concentracao && 'Concentração encerrada',
     s.exaustao > 0 && `Exaustão ${s.exaustao} → ${s.exaustao - 1}`,
@@ -352,7 +351,6 @@ function DescansoSheet() {
 
       <h3 className="section-h"><BedIcon size={16} /> Descanso longo</h3>
       {resumoLongo.length ? <ul className="desc" style={{ fontSize: 15.5 }}>{resumoLongo.map((x) => <li key={x}>{x}</li>)}</ul> : <p className="faint">Você já está com tudo cheio.</p>}
-      <p className="faint" style={{ fontSize: 14 }}><WarningIcon size={14} /> O Avatar recarrega ao amanhecer; o app trata isso junto com o descanso longo.</p>
       <button className="btn primario largo grande" onClick={async () => { await dispatch({ t: 'descanso', tipo: 'longo', pvDadosDeVida: 0 }); fechar(); }}>Fazer descanso longo</button>
     </Sheet>
   );

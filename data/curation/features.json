@@ -2,93 +2,217 @@
   "_leia": "Curadoria das habilidades. Quando 'nomeFicha' existe, o texto vem do original (data/extracted). Habilidades novas trazem 'texto' próprio. usos.max pode ser número ou uma fórmula: 'canalizar' (tabela da classe), 'sab' (mod. de SAB), 'prof'.",
   "features": [
     {
-      "id": "canalizar-divindade", "nome": "Canalizar Divindade", "nomeOriginal": "Channel Divinity",
-      "origem": "Clérigo 2024, nível 2", "status2024": "mudou", "itemValidacao": "H1", "nivel": 2, "gatilho": "livre",
+      "id": "canalizar-divindade",
+      "nome": "Canalizar Divindade",
+      "nomeOriginal": "Channel Divinity",
+      "origem": "Clérigo 2024, nível 2",
+      "status2024": "mudou",
+      "itemValidacao": "H1",
+      "nivel": 2,
+      "gatilho": "livre",
       "recurso": "canalizar",
-      "usos": { "max": 2, "recarga": "longo" },
+      "usos": {
+        "max": 2,
+        "recarga": "longo"
+      },
       "resumo": "Recurso que alimenta Toque da Morte e Repreender Mortos-Vivos.",
       "texto": "A ficha registra 2 usos por descanso longo.",
-      "relacionadas": ["toque-da-morte", "repreender-mortos-vivos", "centelha-divina"],
-      "v2024": { "texto": "No nível 8 são 3 usos. Você recupera 1 uso ao terminar um descanso curto e todos no descanso longo.", "usos": { "max": "canalizar", "recarga": "longo", "recuperaNoCurto": 1 } }
+      "relacionadas": [
+        "toque-da-morte",
+        "repreender-mortos-vivos",
+        "centelha-divina"
+      ],
+      "v2024": {
+        "texto": "No nível 8 são 3 usos. Você recupera 1 uso ao terminar um descanso curto e todos no descanso longo.",
+        "usos": {
+          "max": "canalizar",
+          "recarga": "longo",
+          "recuperaNoCurto": 1
+        }
+      }
     },
     {
-      "id": "toque-da-morte", "nomeFicha": "Canalizar Divindade: Toque da Morte", "nome": "Toque da Morte", "nomeOriginal": "Touch of Death",
-      "origem": "Domínio da Morte (DMG 2014), nível 2", "status2024": "legado", "itemValidacao": "H8", "nivel": 2, "gatilho": "aoAcertar",
+      "id": "toque-da-morte",
+      "nomeFicha": "Canalizar Divindade: Toque da Morte",
+      "nome": "Toque da Morte",
+      "nomeOriginal": "Touch of Death",
+      "origem": "Domínio da Morte (DMG 2014), nível 2",
+      "status2024": "legado",
+      "itemValidacao": "H8",
+      "nivel": 2,
+      "gatilho": "aoAcertar",
       "recurso": "canalizar",
       "resumo": "Ao acertar corpo a corpo: +5 + 2 × nível de dano necrótico (21 no nível 8).",
-      "relacionadas": ["canalizar-divindade", "infligir-ferimentos", "ceifadora-de-myrkul"]
+      "relacionadas": [
+        "canalizar-divindade",
+        "infligir-ferimentos",
+        "ceifadora-de-myrkul"
+      ]
     },
     {
-      "id": "repreender-mortos-vivos", "nomeFicha": "Repreender Mortos-Vivos", "nome": "Repreender Mortos-Vivos", "nomeOriginal": "Turn Undead",
-      "origem": "Clérigo 2024, nível 2", "status2024": "mudou", "itemValidacao": "H3", "nivel": 2, "gatilho": "acao",
+      "id": "repreender-mortos-vivos",
+      "nomeFicha": "Repreender Mortos-Vivos",
+      "nome": "Repreender Mortos-Vivos",
+      "nomeOriginal": "Turn Undead",
+      "origem": "Clérigo 2024, nível 2",
+      "status2024": "mudou",
+      "itemValidacao": "H3",
+      "nivel": 2,
+      "gatilho": "acao",
       "recurso": "canalizar",
       "resumo": "Mortos-vivos a até 9 m: SAB ou fogem por 1 minuto.",
-      "relacionadas": ["queimar-os-mortos-vivos", "canalizar-divindade"],
-      "v2024": { "texto": "Cada morto-vivo à sua escolha a até 9 m faz salvaguarda de SAB. Na falha, fica Amedrontado e Incapacitado por 1 minuto, tentando se afastar de você. O efeito acaba se ele sofrer dano.", "resumo": "Mortos-vivos a até 9 m: SAB ou Amedrontados e Incapacitados por 1 min." }
+      "relacionadas": [
+        "queimar-os-mortos-vivos",
+        "canalizar-divindade"
+      ],
+      "v2024": {
+        "texto": "Cada morto-vivo à sua escolha a até 9 m faz salvaguarda de SAB. Na falha, fica Amedrontado e Incapacitado por 1 minuto, tentando se afastar de você. O efeito acaba se ele sofrer dano.",
+        "resumo": "Mortos-vivos a até 9 m: SAB ou Amedrontados e Incapacitados por 1 min."
+      }
     },
     {
-      "id": "queimar-os-mortos-vivos", "nomeFicha": "Queimar os Mortos-Vivos", "nome": "Queimar os Mortos-Vivos", "nomeOriginal": "Sear Undead",
-      "origem": "Clérigo 2024, nível 5", "status2024": "ok", "itemValidacao": "H4", "nivel": 5, "gatilho": "passiva",
+      "id": "queimar-os-mortos-vivos",
+      "nomeFicha": "Queimar os Mortos-Vivos",
+      "nome": "Queimar os Mortos-Vivos",
+      "nomeOriginal": "Sear Undead",
+      "origem": "Clérigo 2024, nível 5",
+      "status2024": "ok",
+      "itemValidacao": "H4",
+      "nivel": 5,
+      "gatilho": "passiva",
       "resumo": "No Repreender: quem falhar sofre 5d8 radiante (d8 igual ao mod. de SAB).",
-      "relacionadas": ["repreender-mortos-vivos"]
+      "relacionadas": [
+        "repreender-mortos-vivos"
+      ]
     },
     {
-      "id": "conjurador-potente", "nomeFicha": "Conjurador de Feitiços Potente", "nome": "Conjurador Potente", "nomeOriginal": "Blessed Strikes: Potent Spellcasting",
-      "origem": "Clérigo 2024, nível 7 (Golpes Abençoados)", "status2024": "ok", "itemValidacao": "H5", "nivel": 7, "gatilho": "passiva",
+      "id": "conjurador-potente",
+      "nomeFicha": "Conjurador de Feitiços Potente",
+      "nome": "Conjurador Potente",
+      "nomeOriginal": "Blessed Strikes: Potent Spellcasting",
+      "origem": "Clérigo 2024, nível 7 (Golpes Abençoados)",
+      "status2024": "ok",
+      "itemValidacao": "H5",
+      "nivel": 7,
+      "gatilho": "passiva",
       "resumo": "+5 (mod. de SAB) no dano de truques de Clérigo.",
-      "relacionadas": ["soar-os-mortos"]
+      "relacionadas": [
+        "soar-os-mortos"
+      ]
     },
     {
-      "id": "conjurador-de-guerra", "nomeFicha": "Conjurador de Guerra", "nome": "Conjurador de Guerra", "nomeOriginal": "War Caster",
-      "origem": "Talento", "status2024": "mudou", "itemValidacao": "H6", "gatilho": "reacao",
+      "id": "conjurador-de-guerra",
+      "nomeFicha": "Conjurador de Guerra",
+      "nome": "Conjurador de Guerra",
+      "nomeOriginal": "War Caster",
+      "origem": "Talento",
+      "status2024": "mudou",
+      "itemValidacao": "H6",
+      "gatilho": "reacao",
       "resumo": "Vantagem em CON para concentração; reação para conjurar em quem foge.",
-      "v2024": { "texto": "+1 em INT, SAB ou CAR. Vantagem em salvaguardas de CON para manter concentração. Quando uma criatura sai do seu alcance, você pode usar a reação para conjurar nela uma magia de 1 ação que tenha só ela como alvo, em vez de um ataque de oportunidade. Você faz componentes somáticos mesmo com armas ou escudo nas mãos.", "resumo": "Vantagem em CON para concentração; reação quando alguém sai do alcance." }
+      "v2024": {
+        "texto": "+1 em INT, SAB ou CAR. Vantagem em salvaguardas de CON para manter concentração. Quando uma criatura sai do seu alcance, você pode usar a reação para conjurar nela uma magia de 1 ação que tenha só ela como alvo, em vez de um ataque de oportunidade. Você faz componentes somáticos mesmo com armas ou escudo nas mãos.",
+        "resumo": "Vantagem em CON para concentração; reação quando alguém sai do alcance."
+      }
     },
     {
-      "id": "ceifador", "nomeFicha": "Ceifador", "nome": "Ceifador", "nomeOriginal": "Reaper",
-      "origem": "Domínio da Morte (DMG 2014), nível 1", "status2024": "legado", "itemValidacao": "H7", "nivel": 1, "gatilho": "passiva",
+      "id": "ceifador",
+      "nomeFicha": "Ceifador",
+      "nome": "Ceifador",
+      "nomeOriginal": "Reaper",
+      "origem": "Domínio da Morte (DMG 2014), nível 1",
+      "status2024": "legado",
+      "itemValidacao": "H7",
+      "nivel": 1,
+      "gatilho": "passiva",
       "resumo": "Truque de dano pode acertar um segundo inimigo a até 1,5 m do primeiro.",
-      "relacionadas": ["soar-os-mortos", "lamina-necrotica"],
-      "v2024": { "texto": "Texto oficial 2014: quando você conjura um truque de necromancia que mira uma única criatura, ele pode mirar duas criaturas a até 1,5 m uma da outra, cada uma com sua própria salvaguarda ou ataque.", "resumo": "Truque de necromancia de alvo único mira 2 criaturas a até 1,5 m uma da outra." }
+      "relacionadas": [
+        "soar-os-mortos",
+        "lamina-necrotica"
+      ],
+      "v2024": {
+        "texto": "Texto oficial 2014: quando você conjura um truque de necromancia que mira uma única criatura, ele pode mirar duas criaturas a até 1,5 m uma da outra, cada uma com sua própria salvaguarda ou ataque.",
+        "resumo": "Truque de necromancia de alvo único mira 2 criaturas a até 1,5 m uma da outra."
+      }
     },
     {
-      "id": "morte-inescapavel", "nomeFicha": "Morte Inescapável", "nome": "Morte Inescapável", "nomeOriginal": "Inescapable Destruction",
-      "origem": "Domínio da Morte (DMG 2014), nível 6", "status2024": "legado", "itemValidacao": "H9", "nivel": 6, "gatilho": "passiva",
+      "id": "morte-inescapavel",
+      "nomeFicha": "Morte Inescapável",
+      "nome": "Morte Inescapável",
+      "nomeOriginal": "Inescapable Destruction",
+      "origem": "Domínio da Morte (DMG 2014), nível 6",
+      "status2024": "legado",
+      "itemValidacao": "H9",
+      "nivel": 6,
+      "gatilho": "passiva",
       "resumo": "Seu dano necrótico de clérigo ignora resistência a necrótico."
     },
     {
-      "id": "natureza-imortal", "nomeFicha": "Natureza Imortal", "nome": "Natureza Imortal", "nomeOriginal": "Deathless Nature (Reborn)",
-      "origem": "Linhagem Revivido (Van Richten)", "status2024": "legado", "itemValidacao": "H10", "gatilho": "passiva",
+      "id": "natureza-imortal",
+      "nomeFicha": "Natureza Imortal",
+      "nome": "Natureza Imortal",
+      "nomeOriginal": "Deathless Nature (Reborn)",
+      "origem": "Linhagem Revivido (Van Richten)",
+      "status2024": "legado",
+      "itemValidacao": "H10",
+      "gatilho": "passiva",
       "resumo": "Resistência a veneno; vantagem contra doenças e toxinas.",
-      "v2024": { "texto": "Texto oficial (Reborn): vantagem em salvaguardas contra doença e contra ficar Envenenado, resistência a dano de veneno, vantagem em salvaguardas contra morte, e você não precisa comer, beber, respirar nem dormir.", "resumo": "Resistência a veneno; vantagem contra doença, veneno e morte; não come nem dorme." }
+      "v2024": {
+        "texto": "Texto oficial (Reborn): vantagem em salvaguardas contra doença e contra ficar Envenenado, resistência a dano de veneno, vantagem em salvaguardas contra morte, e você não precisa comer, beber, respirar nem dormir.",
+        "resumo": "Resistência a veneno; vantagem contra doença, veneno e morte; não come nem dorme."
+      }
     },
     {
-      "id": "centelha-divina", "nome": "Centelha Divina", "nomeOriginal": "Divine Spark",
-      "origem": "Clérigo 2024, nível 2", "status2024": "mudou", "itemValidacao": "H2", "nivel": 2, "gatilho": "acao", "somenteSeAprovado": true,
+      "id": "centelha-divina",
+      "nome": "Centelha Divina",
+      "nomeOriginal": "Divine Spark",
+      "origem": "Clérigo 2024, nível 2",
+      "status2024": "mudou",
+      "itemValidacao": "H2",
+      "nivel": 2,
+      "gatilho": "acao",
+      "somenteSeAprovado": true,
       "recurso": "canalizar",
       "resumo": "9 m: cura 2d8 + SAB ou CON contra 2d8 + SAB necrótico/radiante.",
       "texto": "Como ação, escolha uma criatura que você veja a até 9 m. Role 2d8 (nível 7+) e some seu mod. de SAB: ela recupera esse tanto de PV, ou faz salvaguarda de CON e sofre esse dano necrótico ou radiante (metade no sucesso).",
-      "relacionadas": ["canalizar-divindade"]
+      "relacionadas": [
+        "canalizar-divindade"
+      ]
     },
     {
-      "id": "ordem-divina-protetor", "nome": "Ordem Divina: Protetor", "nomeOriginal": "Divine Order: Protector",
-      "origem": "Clérigo 2024, nível 1", "status2024": "mudou", "itemValidacao": "H11", "nivel": 1, "gatilho": "passiva", "somenteSeAprovado": true,
+      "id": "ordem-divina-protetor",
+      "nome": "Ordem Divina: Protetor",
+      "nomeOriginal": "Divine Order: Protector",
+      "origem": "Clérigo 2024, nível 1",
+      "status2024": "mudou",
+      "itemValidacao": "H11",
+      "nivel": 1,
+      "gatilho": "passiva",
+      "somenteSeAprovado": true,
       "resumo": "Proficiência com armas marciais e armadura pesada.",
       "texto": "Treinado para o combate: você ganha proficiência com armas marciais e treino com armadura pesada."
     },
     {
-      "id": "ceifadora-sintonia", "nome": "Sintonia da Ceifadora",
-      "origem": "Relíquia: Ceifadora de Myrkul", "status2024": "homebrew", "gatilho": "passiva",
+      "id": "ceifadora-sintonia",
+      "nome": "Sintonia da Ceifadora",
+      "origem": "Relíquia: Ceifadora de Myrkul",
+      "status2024": "homebrew",
+      "gatilho": "passiva",
       "resumo": "Perde a sintonia após 1 hora sem tocar a foice; enquanto sintonizado, volta à vida em 1d4 horas.",
       "texto": "Ver a página da relíquia.",
-      "relacionadas": ["ceifadora-de-myrkul"]
+      "relacionadas": [
+        "ceifadora-de-myrkul"
+      ]
     },
     {
-      "id": "epitafio", "nome": "Epitáfio",
-      "origem": "Habilidade de Inspiração (homebrew)", "status2024": "homebrew", "gatilho": "acaoBonus",
+      "id": "epitafio",
+      "nome": "Epitáfio",
+      "origem": "Habilidade de Inspiração (homebrew, substitui o Avatar dos Quatro Túmulos)",
+      "status2024": "homebrew",
+      "gatilho": "acaoBonus",
       "custoInspiracao": true,
-      "resumo": "1 Inspiração. Marca uma criatura a até 9 m: o próximo acerto contra ela causa o dobro de dano, e ela não se cura.",
-      "texto": "**Tempo:** 1 ação bônus. **Duração:** instantâneo.\n\nEhzra aponta para uma criatura que possa ver a até 30 ft (9 m). A criatura fica marcada pelo epitáfio. Na próxima vez que Ehzra ou um aliado a atingir com uma jogada de ataque, ela fica vulnerável a todo o dano desse ataque (exceto caso seja imune a esse tipo de dano), e a Sentença se encerra. Enquanto estiver marcada, a criatura não recupera PV. Caso o alvo não seja atingido até o final do próximo turno de Ehzra, a sentença se encerra.",
+      "resumo": "1 Inspiração. Marca uma criatura a até 9 m: o próximo acerto contra ela causa dano dobrado, e até lá ela não se cura.",
+      "texto": "**Custo:** 1 Inspiração. **Tempo:** 1 ação bônus. **Alcance:** 9 m (30 ft). **Duração:** até o fim do próximo turno de Ehzra.\n\nEhzra aponta para uma criatura que possa ver e pronuncia o epitáfio dela. Enquanto estiver marcada, a criatura não recupera PV.\n\nNa próxima vez que Ehzra ou um aliado a atingir com uma jogada de ataque, ela fica vulnerável a todo o dano desse ataque, exceto aos tipos de dano aos quais é imune. Depois desse ataque, o epitáfio se encerra.\n\nSe a criatura não for atingida até o fim do próximo turno de Ehzra, o epitáfio se encerra sem efeito.",
       "relacionadas": []
     }
   ]

@@ -233,11 +233,11 @@
     {
       "id": "epitafio",
       "nome": "Epitáfio",
-      "origem": "Habilidade de Inspiração (homebrew)",
+      "origem": "Habilidade de Inspiração (homebrew, substitui o Avatar dos Quatro Túmulos)",
       "status2024": "homebrew",
       "gatilho": "acaoBonus",
-      "resumo": "1 Inspiração. Marca uma criatura a até 9 m: o próximo acerto contra ela causa o dobro de dano, e ela não se cura.",
-      "texto": "**Tempo:** 1 ação bônus. **Duração:** instantâneo.\n\nEhzra aponta para uma criatura que possa ver a até 30 ft (9 m). A criatura fica marcada pelo epitáfio. Na próxima vez que Ehzra ou um aliado a atingir com uma jogada de ataque, ela fica vulnerável a todo o dano desse ataque (exceto caso seja imune a esse tipo de dano), e a Sentença se encerra. Enquanto estiver marcada, a criatura não recupera PV. Caso o alvo não seja atingido até o final do próximo turno de Ehzra, a sentença se encerra.",
+      "resumo": "1 Inspiração. Marca uma criatura a até 9 m: o próximo acerto contra ela causa dano dobrado, e até lá ela não se cura.",
+      "texto": "**Custo:** 1 Inspiração. **Tempo:** 1 ação bônus. **Alcance:** 9 m (30 ft). **Duração:** até o fim do próximo turno de Ehzra.\n\nEhzra aponta para uma criatura que possa ver e pronuncia o epitáfio dela. Enquanto estiver marcada, a criatura não recupera PV.\n\nNa próxima vez que Ehzra ou um aliado a atingir com uma jogada de ataque, ela fica vulnerável a todo o dano desse ataque, exceto aos tipos de dano aos quais é imune. Depois desse ataque, o epitáfio se encerra.\n\nSe a criatura não for atingida até o fim do próximo turno de Ehzra, o epitáfio se encerra sem efeito.",
       "relacionadas": [],
       "somenteSeAprovado": false,
       "custoInspiracao": true
