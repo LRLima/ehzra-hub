@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.5.1 (19/11/2026)
+
+- A mana do palco virou almas verde-água que flutuam; as gastas se apagam. O número da mana e o brilho de conjuração acompanham a cor.
+
 ## 0.5.0 (19/11/2026)
 
 - Combos guiados na tela de Combate: fórmula colorida (A + B = dano), custo em selos, e uma barra que conduz passo a passo, perguntando se acertou antes de gastar o próximo recurso. Só aparecem os combos que existem no nível.
