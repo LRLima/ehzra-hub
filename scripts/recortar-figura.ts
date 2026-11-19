@@ -1,66 +1,76 @@
 /**
  * Recorta o fundo branco de public/img/corpo-inteiro.webp e grava
  * public/img/ehzra-figura.webp (com transparência), usada no palco da tela inicial.
+ *
+ * Como funciona:
+ * 1. Fundo: regiões claras ligadas à borda da imagem, ou buracos claros entre os fios
+ *    de cabelo e a capa (regiões claras que têm um miolo branco puro).
+ * 2. Borda: nos poucos pixels em volta do fundo, "tira o branco" da cor (cor para alfa),
+ *    para não sobrar o halo claro do antisserrilhado quando a figura fica sobre fundo escuro.
  * Uso: npx tsx scripts/recortar-figura.ts
  */
-import { chromium } from '@playwright/test';
-import { readFileSync, writeFileSync } from 'node:fs';
+import sharp from 'sharp';
 import { join } from 'node:path';
 
 const root = join(import.meta.dirname, '..');
-const src = readFileSync(join(root, 'public', 'img', 'corpo-inteiro.webp')).toString('base64');
+const { data, info } = await sharp(join(root, 'public', 'img', 'corpo-inteiro.webp')).ensureAlpha().raw().toBuffer({ resolveWithObject: true });
+const w = info.width, h = info.height, N = w * h;
+const d = data;
+const minc = (i: number) => Math.min(d[i * 4], d[i * 4 + 1], d[i * 4 + 2]);
 
-const browser = await chromium.launch({ channel: process.env.CI ? undefined : 'msedge' });
-const page = await browser.newPage();
-// O tsx marca funções nomeadas com __name; a página precisa conhecer esse auxiliar.
-await page.evaluate('globalThis.__name = (f) => f');
-const dataUrl = await page.evaluate(async (b64) => {
-  const img = new Image();
-  img.src = 'data:image/webp;base64,' + b64;
-  await img.decode();
-  const w = img.width, h = img.height;
-  const c = document.createElement('canvas');
-  c.width = w; c.height = h;
-  const ctx = c.getContext('2d')!;
-  ctx.drawImage(img, 0, 0);
-  const im = ctx.getImageData(0, 0, w, h);
-  const d = im.data;
-  const claro = (i: number, lim: number) => d[i * 4] > lim && d[i * 4 + 1] > lim && d[i * 4 + 2] > lim;
+const CLARO = 200;     // pixel que pode ser fundo ou halo
+const BRANCO = 248;    // miolo de fundo de verdade
+const MIOLO_MIN = 20;  // um buraco precisa de ao menos isso de branco puro
+const FAIXA = 3;       // pixels de borda tratados com cor para alfa
 
-  // Rotula regiões quase brancas; some com as que tocam a borda ou são grandes (vãos entre capa e cabo).
-  const rotulo = new Int32Array(w * h).fill(-1);
-  const fila = new Int32Array(w * h);
-  let n = 0;
-  for (let s = 0; s < w * h; s++) {
-    if (rotulo[s] !== -1 || !claro(s, 238)) continue;
-    let ini = 0, fim = 0, borda = false;
-    fila[fim++] = s; rotulo[s] = n;
-    while (ini < fim) {
-      const p = fila[ini++], x = p % w, y = (p / w) | 0;
-      if (x === 0 || y === 0 || x === w - 1 || y === h - 1) borda = true;
-      for (const q of [p - 1, p + 1, p - w, p + w]) {
-        if (q < 0 || q >= w * h || rotulo[q] !== -1) continue;
-        if (Math.abs((q % w) - x) > 1) continue;
-        if (claro(q, 238)) { rotulo[q] = n; fila[fim++] = q; }
-      }
+const fundo = new Uint8Array(N);
+const visto = new Uint8Array(N);
+const fila = new Int32Array(N);
+for (let s = 0; s < N; s++) {
+  if (visto[s] || minc(s) <= CLARO) continue;
+  let ini = 0, fim = 0, borda = false, miolo = 0;
+  fila[fim++] = s; visto[s] = 1;
+  while (ini < fim) {
+    const p = fila[ini++], x = p % w, y = (p / w) | 0;
+    if (x === 0 || y === 0 || x === w - 1 || y === h - 1) borda = true;
+    if (minc(p) >= BRANCO) miolo++;
+    const viz = [x > 0 ? p - 1 : -1, x < w - 1 ? p + 1 : -1, y > 0 ? p - w : -1, y < h - 1 ? p + w : -1];
+    for (const q of viz) {
+      if (q < 0 || visto[q] || minc(q) <= CLARO) continue;
+      visto[q] = 1; fila[fim++] = q;
     }
-    if (borda || fim > 250) for (let k = 0; k < fim; k++) d[fila[k] * 4 + 3] = 0;
-    n++;
   }
-  // Suaviza a borda: pixel claro vizinho de transparente fica semitransparente.
-  const alfa = new Uint8ClampedArray(w * h);
-  for (let i = 0; i < w * h; i++) alfa[i] = d[i * 4 + 3];
-  for (let y = 1; y < h - 1; y++) for (let x = 1; x < w - 1; x++) {
-    const i = y * w + x;
-    if (!alfa[i]) continue;
-    if (alfa[i - 1] && alfa[i + 1] && alfa[i - w] && alfa[i + w]) continue;
-    const escuro = 255 - Math.min(d[i * 4], d[i * 4 + 1], d[i * 4 + 2]);
-    d[i * 4 + 3] = Math.min(255, escuro * 3);
+  if (borda || miolo >= MIOLO_MIN) for (let k = 0; k < fim; k++) fundo[fila[k]] = 1;
+}
+
+// Distância (em passos) até o fundo, só até FAIXA.
+const dist = new Uint8Array(N).fill(255);
+let atual: number[] = [];
+for (let i = 0; i < N; i++) if (fundo[i]) { dist[i] = 0; atual.push(i); }
+for (let passo = 1; passo <= FAIXA; passo++) {
+  const prox: number[] = [];
+  for (const p of atual) {
+    const x = p % w;
+    for (const q of [x > 0 ? p - 1 : -1, x < w - 1 ? p + 1 : -1, p - w, p + w]) {
+      if (q < 0 || q >= N || dist[q] !== 255) continue;
+      dist[q] = passo; prox.push(q);
+    }
   }
-  ctx.putImageData(im, 0, 0);
-  return c.toDataURL('image/webp', 0.9);
-}, src);
-await browser.close();
+  atual = prox;
+}
+
+for (let i = 0; i < N; i++) {
+  if (fundo[i]) { d[i * 4 + 3] = 0; continue; }
+  if (dist[i] === 255) continue;
+  // Cor para alfa contra o branco: quanto mais claro, mais transparente; a cor que sobra é a "tinta" sem o branco.
+  const r = d[i * 4], g = d[i * 4 + 1], b = d[i * 4 + 2];
+  const a = Math.max(255 - r, 255 - g, 255 - b) / 255;
+  if (a <= 0.02) { d[i * 4 + 3] = 0; continue; }
+  const un = (c: number) => Math.max(0, Math.min(255, Math.round(255 - (255 - c) / a)));
+  d[i * 4] = un(r); d[i * 4 + 1] = un(g); d[i * 4 + 2] = un(b);
+  d[i * 4 + 3] = Math.round(Math.min(1, a) * 255);
+}
+
 const out = join(root, 'public', 'img', 'ehzra-figura.webp');
-writeFileSync(out, Buffer.from(dataUrl.split(',')[1], 'base64'));
+await sharp(d, { raw: { width: w, height: h, channels: 4 } }).webp({ quality: 90, alphaQuality: 100 }).toFile(out);
 console.log(`Gravado ${out}`);
