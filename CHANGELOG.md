@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.6.1 (19/11/2026)
+
+- Combos Canhão de Perto (Guardiões dançando, Palavra Radiante, Lanterna e Ferida) e Canhão de Longe (Dor, Soar os Mortos, Lanterna e Ferida), usando todas as partes do turno sem gastar Canalizar.
+
 ## 0.6.0 (19/11/2026)
 
 - Ceifadora nova: Ala da Morte, Transferência de Vida, Lanterna Espiritual e Palavra Sombria: Dor, pela metade da mana. Saem Animar Mortos (do grimório) e Repouso Gentil (vira magia comum).

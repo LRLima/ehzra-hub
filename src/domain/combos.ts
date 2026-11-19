@@ -43,6 +43,52 @@ export interface Combo {
 export const COMBOS: Combo[] = [
   // ---------- rotina: toda luta, quase de graça ----------
   {
+    id: 'canhao-de-perto',
+    nome: 'Canhão de Perto',
+    camada: 'rotina',
+    parte: 'acao',
+    quando: 'No meio dos inimigos. Usa as cinco partes do turno sem gastar Canalizar.',
+    formula: [
+      { rotulo: 'Guardiões', cat: 'c3' },
+      { rotulo: 'atravessar', cat: 'fisico' },
+      { rotulo: 'Palavra Radiante', cat: 'truque' },
+      { rotulo: 'Lanterna', cat: 'c5' },
+      { rotulo: 'Ferida Aberta', cat: 'c2' },
+    ],
+    resultado: '~120 por rodada em três inimigos, ~65 num chefe',
+    economia: 'concentração + movimento + ação + bônus + reação',
+    requer: { magias: ['guardioes-espirituais', 'palavra-radiante', 'lanterna-espiritual', 'ferida-aberta'] },
+    passos: [
+      { tipo: 'magia', id: 'guardioes-espirituais', ciclo: 3, rotulo: 'Guardiões Espirituais (antes da luta; pule se já estiver ativo)' },
+      { tipo: 'magia', id: 'lanterna-espiritual', ciclo: 5, rotulo: 'Lanterna Espiritual (antes da luta; dura 10 minutos)' },
+      { tipo: 'lembrete', texto: 'Movimento: atravesse o grupo inimigo. Cada um que a aura tocar faz a salvaguarda agora e de novo no fim do turno dele.' },
+      { tipo: 'magia', id: 'palavra-radiante', ciclo: 0, rotulo: 'Ação: Palavra Radiante em todos a 1,5 m' },
+      { tipo: 'lembrete', texto: 'Ação bônus: se a Lanterna tiver alma, Drenar Vida no mais perigoso (4d8 + 5). Reação: Ferida Aberta quando um aliado acertar o chefe.' },
+    ],
+  },
+  {
+    id: 'canhao-de-longe',
+    nome: 'Canhão de Longe',
+    camada: 'rotina',
+    parte: 'acao',
+    quando: 'Alvo longe ou voando. Deixa a concentração livre para outra magia.',
+    formula: [
+      { rotulo: 'Palavra Sombria: Dor', cat: 'c1' },
+      { rotulo: 'Soar os Mortos', cat: 'truque' },
+      { rotulo: 'Lanterna', cat: 'c5' },
+      { rotulo: 'Ferida Aberta', cat: 'c2' },
+    ],
+    resultado: '~52 por rodada num alvo',
+    economia: 'ação + bônus + reação, sem concentração',
+    requer: { magias: ['palavra-sombria-dor', 'soar-os-mortos', 'lanterna-espiritual', 'ferida-aberta'] },
+    passos: [
+      { tipo: 'magia', id: 'lanterna-espiritual', ciclo: 5, rotulo: 'Lanterna Espiritual (antes da luta; dura 10 minutos)' },
+      { tipo: 'magia', id: 'palavra-sombria-dor', ciclo: 1, rotulo: 'Ação, 1ª rodada: Palavra Sombria: Dor no alvo (1 de mana)' },
+      { tipo: 'magia', id: 'soar-os-mortos', ciclo: 0, rotulo: 'Ação, rodadas seguintes: Soar os Mortos (sempre no d12)' },
+      { tipo: 'lembrete', texto: 'Ação bônus: Drenar Vida quando houver alma na Lanterna. Reação: Ferida Aberta quando um aliado acertar. A concentração fica livre.' },
+    ],
+  },
+  {
     id: 'danca-dos-guardioes',
     nome: 'Dança dos Guardiões',
     camada: 'rotina',
