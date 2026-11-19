@@ -1,0 +1,14 @@
+// Vitrine pública: o mesmo build (dist), sem Access, sem D1. Deploy: npm run deploy:vitrine
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "ehzra-vitrine",
+  "main": "worker/vitrine.ts",
+  "compatibility_date": "2026-09-01",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": ["/api/*"]
+  },
+  "observability": { "enabled": true }
+}

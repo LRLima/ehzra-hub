@@ -182,3 +182,7 @@ O `DEV_DONO` pula a checagem do Access só no `wrangler dev` local. Nunca coloqu
 ## Custos e limites (plano gratuito)
 
 Confira os números atuais em https://developers.cloudflare.com/workers/platform/pricing/ e https://developers.cloudflare.com/d1/platform/pricing/. Na ordem de grandeza: Workers com 100 mil requisições por dia, D1 com 5 GB e milhões de leituras por dia, Zero Trust com até 50 usuários. Uma sessão de jogo gera algumas centenas de eventos: o Hub fica muito abaixo de qualquer limite.
+
+## Vitrine pública (para mostrar aos amigos)
+
+`https://ehzra-vitrine.ehzra-hub.workers.dev` serve o mesmo `dist`, sem Access e sem D1 (`wrangler.vitrine.jsonc` e `worker/vitrine.ts`). A API responde 404 e o app desliga a sincronização; o que o visitante fizer fica só no navegador dele. Depois de cada deploy do site principal, rode também `npm run deploy:vitrine`.

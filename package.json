@@ -17,7 +17,8 @@
     "build-data": "tsx scripts/build-data.ts",
     "data": "npm run extract && npm run build-data",
     "e2e:sync": "playwright test sync --project=desktop",
-    "deploy": "npm run build && wrangler deploy"
+    "deploy": "npm run build && wrangler deploy",
+    "deploy:vitrine": "wrangler deploy -c wrangler.vitrine.jsonc"
   },
   "dependencies": {
     "@fontsource/cinzel": "^5.3.0",
