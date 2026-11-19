@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.6.4 (19/11/2026)
+
+- Todo combo é clicável. Se faltar recurso ou magia preparada, o cartão fica apagado e a barra do combo mostra o que falta, mas os passos abrem normalmente.
+
 ## 0.6.3 (19/11/2026)
 
 - Combos enxutos: saem os que eram uma magia só ou preparação (Sol dos Kobolds, Vida pela Vida, Colheita de Almas, Ferida no Chefe, Chão e Corte). A Vigília da Manhã fica, como preparação do dia. São 13 combos.

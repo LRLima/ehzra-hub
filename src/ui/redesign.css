@@ -356,7 +356,8 @@ a.btn.ouro { color: var(--bone); }
 .camada[data-camada="rotina"] { color: var(--mana); }
 .camada[data-camada="medio"] { color: var(--cat-habilidade); }
 .camada[data-camada="feito"] { color: var(--crimson-fg); }
-.combo-card:disabled { opacity: 0.55; }
+.combo-card.faltando { opacity: 0.6; }
+.combo-bar .falta-bar { margin: 0 0 6px; font-size: 13.5px; color: var(--hp-fg); }
 .formula { display: flex; flex-wrap: wrap; align-items: center; gap: 5px; margin: 6px 0 4px; }
 .peca { font-family: var(--font-mono); font-size: 12px; padding: 2px 8px; border-radius: 6px; color: var(--cat); border: 1px solid var(--cat); background: color-mix(in srgb, var(--cat) 14%, transparent); }
 .formula .op { font-family: var(--font-mono); font-size: 16px; color: var(--bone); font-weight: 600; }

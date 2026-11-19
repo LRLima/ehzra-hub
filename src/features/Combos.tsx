@@ -46,7 +46,7 @@ export function CombosDoTurno({ parte }: { parte: ParteTurno }) {
       </header>
       <div className="stack">
         {lista.map(({ combo, mana, falta }) => (
-          <button key={combo.id} className="card card-btn combo-card" disabled={falta.length > 0}
+          <button key={combo.id} className={`card card-btn combo-card${falta.length > 0 ? " faltando" : ""}`}
             onClick={() => setCombo({ id: combo.id, passo: 0 })} data-testid={`combo-${combo.id}`}>
             <div className="row combo-topo"><span className="nome grow">{combo.nome}</span><span className="camada" data-camada={combo.camada}>{NOME_CAMADA[combo.camada]}</span></div>
             <Formula combo={combo} />
@@ -61,6 +61,7 @@ export function CombosDoTurno({ parte }: { parte: ParteTurno }) {
 
 /** Barra do combo em andamento: mostra o passo atual e guia até o fim. */
 export function ComboBar() {
+  const { r, s } = useJogo();
   const combo = useUI((u) => u.combo);
   const setCombo = useUI((u) => u.setCombo);
   const abrir = useUI((u) => u.abrir);
@@ -74,6 +75,7 @@ export function ComboBar() {
 
   return (
     <div className="combo-bar" role="status" data-testid="combo-bar">
+      {(() => { const f = combosDisponiveis(r, s).find((x) => x.combo.id === combo.id)?.falta ?? []; return f.length > 0 && !fim && !combo.aviso ? <p className="falta-bar">Falta agora: {f.join(", ")}</p> : null; })()}
       <div className="row">
         <b className="grow">{cb.nome}</b>
         <span className="faint num">{fim || combo.aviso ? 'fim' : `passo ${combo.passo + 1} de ${cb.passos.length}`}</span>
