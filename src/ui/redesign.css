@@ -348,8 +348,8 @@ a.btn.ouro { color: var(--bone); }
 .btn.gema:active span { filter: brightness(1.15); transform: scale(0.985); }
 
 /* ---------- combos ---------- */
-[data-cat='combo'] { --cat: var(--crimson-fg); }
-.combo-card { text-align: left; padding: 0; border-left: 3px solid var(--crimson-fg); border-radius: 0; }
+[data-cat='combo'] { --cat: #f3ead2; } /* osso claro: nenhuma categoria usa, e destoa do rosa do 4º ciclo */
+.combo-card { text-align: left; padding: 0; border-left: 3px solid var(--cat); border-radius: 0; }
 .combo-resumo { display: block; width: 100%; text-align: left; background: none; border: 0; color: inherit; padding: 8px 11px 9px 13px; cursor: pointer; }
 .combo-desc { display: block; font-size: 14px; line-height: 1.35; color: var(--bone-dim); margin-top: 2px; }
 .combo-detalhe { padding: 0 11px 10px 13px; border-top: 1px solid var(--line-soft); }
@@ -374,7 +374,7 @@ a.btn.ouro { color: var(--bone); }
 .custo .economia { color: var(--bone-faint); }
 .combo-card .quando { font-size: 13.5px; color: var(--bone-faint); font-style: italic; margin-top: 2px; }
 .combo-card .falta { font-size: 13px; color: var(--hp-fg); margin-top: 2px; }
-.combo-bar { position: sticky; top: calc(var(--topbar-h, 0px) + 6px); z-index: 5; margin: 0 0 10px; padding: 10px 12px; background: var(--panel); border: 1px solid var(--crimson-fg); border-radius: var(--r); }
+.combo-bar { position: sticky; top: calc(var(--topbar-h, 0px) + 6px); z-index: 5; margin: 0 0 10px; padding: 10px 12px; background: var(--panel); border: 1px solid #f3ead2; border-radius: var(--r); }
 .combo-bar .combo-texto { margin: 6px 0 8px; font-size: 15px; color: var(--bone); }
 .combo-bar .combo-cancelar { margin-top: 6px; }
 
@@ -396,3 +396,7 @@ a.btn.ouro { color: var(--bone); }
   .spell-card .chip { border: 0; background: none; padding: 0; min-height: 0; font-size: 12px; gap: 3px; }
   .spell-card .chip .t, .spell-card .chip.dur, .spell-card .chip.vazio { display: none; }
 }
+
+/* títulos de ciclo na tela de preparar */
+.ciclo-titulo { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--cat); margin: 12px 2px 2px; }
+.ciclo-titulo:first-child { margin-top: 0; }

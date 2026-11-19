@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.6.9 (19/11/2026)
+
+- Preparar magias ordenado por ciclo e por nome, com um título colorido para cada ciclo.
+- Combos em osso claro, para não se confundir com o rosa do 4º ciclo.
+
 ## 0.6.8 (19/11/2026)
 
 - O peso dos combos virou bolinhas: ● leve (toda luta), ●● médio (uma vez por luta), ●●● pesado (momento decisivo).

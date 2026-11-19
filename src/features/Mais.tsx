@@ -1,5 +1,5 @@
 /** Menu "Mais": lore, estratégias, avatar, subir de nível, condições, preparar magias, backup. */
-import { useRef, useState } from 'react';
+import { Fragment, useRef, useState } from 'react';
 import {
   CaretRightIcon, FeatherIcon, SwordIcon, ArrowUpIcon, WarningIcon, ListBulletsIcon, DownloadSimpleIcon, SparkleIcon,
   CloudIcon, CloudSlashIcon, SkullIcon,
@@ -7,7 +7,7 @@ import {
 import { Reliquia } from './Reliquia';
 import { useSync, sincronizar, reentrar, type StatusSync as StatusSyncT } from '../db/sync';
 import { useJogo, useUI, ir } from '../store';
-import { Markdown, SpellCard } from '../ui/components';
+import { Markdown, SpellCard, catDe } from '../ui/components';
 import { carregarLore, carregarEstrategiasOriginais } from '../domain/data';
 import { ganhosProximoNivel } from '../domain/levelup';
 import { contagemPreparadas, estaPreparada, magiaEfetiva, custoMana, magia as achaMagia, NOMES_ATRIBUTO, linhaNivel } from '../domain/rules';
@@ -379,8 +379,10 @@ function Preparar() {
   const { r, c, s, dispatch } = useJogo();
   const cont = contagemPreparadas(r, c, s.preparadas);
   const escolhiveis = r.magias.map((m) => magiaEfetiva(r, m))
-    .filter((m) => m.ciclo > 0 && !m.origens.some((o) => o === 'dominio' || o === 'ceifadora'));
-  const fixas = r.magias.map((m) => magiaEfetiva(r, m)).filter((m) => m.ciclo > 0 && m.origens.some((o) => o === 'dominio' || o === 'ceifadora'));
+    .filter((m) => m.ciclo > 0 && !m.origens.some((o) => o === 'dominio' || o === 'ceifadora'))
+    .sort((a, b) => a.ciclo - b.ciclo || a.nome.localeCompare(b.nome, 'pt'));
+  const fixas = r.magias.map((m) => magiaEfetiva(r, m)).filter((m) => m.ciclo > 0 && m.origens.some((o) => o === 'dominio' || o === 'ceifadora'))
+    .sort((a, b) => a.ciclo - b.ciclo || a.nome.localeCompare(b.nome, 'pt'));
   return (
     <>
       <Voltar />
@@ -391,13 +393,17 @@ function Preparar() {
       </p>
       <ListaSugerida />
       <div className="stack">
-        {escolhiveis.map((m) => {
+        {escolhiveis.map((m, i) => {
           const on = estaPreparada(m, s.preparadas);
+          const novoCiclo = i === 0 || escolhiveis[i - 1].ciclo !== m.ciclo;
           return (
-            <label key={m.id} className="card row" style={{ flexWrap: 'nowrap' }}>
+            <Fragment key={m.id}>
+            {novoCiclo && <div className="ciclo-titulo" data-cat={catDe(m.ciclo)}>{m.ciclo}º ciclo</div>}
+            <label className="card row" style={{ flexWrap: 'nowrap' }}>
               <input type="checkbox" checked={on} onChange={() => dispatch({ t: 'preparar', magia: m.id, preparada: !on }, { silencioso: true })} />
-              <span className="grow">{m.nome} <span className="faint num">{m.ciclo}º</span></span>
+              <span className="grow">{m.nome}</span>
             </label>
+            </Fragment>
           );
         })}
       </div>
