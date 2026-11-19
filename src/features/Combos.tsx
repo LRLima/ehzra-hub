@@ -1,7 +1,7 @@
 /** Combos guiados passo a passo e a faixa de ações básicas da tela de Combate. */
 import { Fragment, useState } from 'react';
 import { useJogo, useUI } from '../store';
-import { COMBOS, combosDisponiveis, type Combo, type ParteTurno } from '../domain/combos';
+import { COMBOS, NOME_CAMADA, combosDisponiveis, type Combo, type ParteTurno } from '../domain/combos';
 import { modAtr, proficiencia } from '../domain/rules';
 
 function Formula({ combo }: { combo: Combo }) {
@@ -41,14 +41,14 @@ export function CombosDoTurno({ parte }: { parte: ParteTurno }) {
       <header className="cat-h">
         <i className="cat-marca" aria-hidden="true" />
         <h3>Combos</h3>
-        <span className="cat-nota">passo a passo</span>
+        <span className="cat-nota">da rotina ao feito</span>
         <span className="cat-n num">{lista.length}</span>
       </header>
       <div className="stack">
         {lista.map(({ combo, mana, falta }) => (
           <button key={combo.id} className="card card-btn combo-card" disabled={falta.length > 0}
             onClick={() => setCombo({ id: combo.id, passo: 0 })} data-testid={`combo-${combo.id}`}>
-            <div className="nome">{combo.nome}</div>
+            <div className="row combo-topo"><span className="nome grow">{combo.nome}</span><span className="camada" data-camada={combo.camada}>{NOME_CAMADA[combo.camada]}</span></div>
             <Formula combo={combo} />
             <Custo combo={combo} mana={mana} />
             {falta.length > 0 ? <div className="falta">Falta: {falta.join(', ')}</div> : <div className="quando">{combo.quando}</div>}

@@ -59,10 +59,12 @@ describe('ficha no nível 8', () => {
 describe('mana', () => {
   it('custos do DMG e Ceifadora arredondando para baixo', () => {
     expect(custoMana(r, magia(r, 'guardioes-espirituais'), 3)).toBe(5);
-    expect(custoMana(r, magia(r, 'animar-morto'), 3)).toBe(2);
-    expect(custoMana(r, magia(r, 'animar-morto'), 4)).toBe(3);
+    expect(custoMana(r, magia(r, 'transferencia-de-vida'), 3)).toBe(2);
+    expect(custoMana(r, magia(r, 'transferencia-de-vida'), 4)).toBe(3);
     expect(custoMana(r, magia(r, 'ala-da-morte'), 4)).toBe(3);
-    expect(custoMana(r, magia(r, 'repouso-gentil'), 2)).toBe(1);
+    expect(custoMana(r, magia(r, 'lanterna-espiritual'), 5)).toBe(3);
+    expect(custoMana(r, magia(r, 'palavra-sombria-dor'), 1)).toBe(1);
+    expect(custoMana(r, magia(r, 'repouso-gentil'), 2)).toBe(3); // saiu da Ceifadora
     expect(custoMana(r, magia(r, 'soar-os-mortos'), 0)).toBe(0);
   });
   it('bloqueia ciclo acima do nível e mana insuficiente', () => {
@@ -204,8 +206,8 @@ describe('estado de jogo', () => {
   });
 
   it('o log descreve em português', () => {
-    const e = env(conjurar('animar-morto'));
-    expect(descrever(r, e)).toBe('Conjurou Animar Morto (3º, 2 mana pela Ceifadora)');
+    const e = env(conjurar('transferencia-de-vida'));
+    expect(descrever(r, e)).toBe(`Conjurou ${magia(r, 'transferencia-de-vida').nome} (3º, 2 mana pela Ceifadora)`);
   });
 });
 
@@ -350,7 +352,8 @@ describe('combos', () => {
     const n8 = regrasNoNivel(r, 8);
     const lista = combosDisponiveis(n8, s0);
     const ids = lista.map((x) => x.combo.id);
-    expect(ids).toEqual(expect.arrayContaining(['golpe-do-epitafio', 'carrasco-do-paralisado', 'ferida-no-chefe']));
+    expect(ids).toEqual(expect.arrayContaining(['golpe-do-epitafio', 'danca-dos-guardioes', 'ferida-no-chefe', 'dor-e-sino']));
+    expect(lista[0].combo.camada).toBe('rotina'); // da rotina ao feito
     expect(ids).not.toContain('nova-e-barreira'); // Barreira Luminosa só no 9
     const golpe = lista.find((x) => x.combo.id === 'golpe-do-epitafio')!;
     expect(golpe.mana).toBe(6);
@@ -361,5 +364,7 @@ describe('combos', () => {
     const ids = combosDisponiveis(regrasNoNivel(r, 9), { ...estadoInicial(r), nivel: 9 }).map((x) => x.combo.id);
     expect(ids).toContain('nova-e-barreira');
     expect(ids).not.toContain('golpe-do-epitafio'); // sem Toque da Morte
+    expect(ids).toContain('colheita-de-almas');
+    expect(ids).toContain('cura-que-abencoa');
   });
 });

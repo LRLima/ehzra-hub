@@ -61,10 +61,10 @@
   },
   "ceifadora": {
     "magias": [
-      "animar-morto",
+      "ala-da-morte",
       "transferencia-de-vida",
-      "repouso-gentil",
-      "ala-da-morte"
+      "lanterna-espiritual",
+      "palavra-sombria-dor"
     ],
     "fatorCusto": 0.5,
     "arredondamento": "baixo",

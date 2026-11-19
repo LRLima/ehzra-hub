@@ -907,6 +907,250 @@
       ],
       "resumo": "Emanação de 9 m: CON ou 5d6 trovejante + 5d6 radiante ou necrótico e Caído; metade no sucesso.",
       "descricaoCompleta": "Você golpeia o chão e solta uma onda de energia divina numa emanação de 9 m. Cada criatura à sua escolha na área faz uma salvaguarda de Constituição. Na falha, sofre **5d6 de dano trovejante e 5d6 de dano radiante ou necrótico** (à sua escolha) e fica **Caída**. No sucesso, sofre metade do dano e não cai."
+    },
+    {
+      "id": "palavra-sombria-dor",
+      "nome": "Palavra Sombria: Dor",
+      "nomeOriginal": "Shadow Word: Pain",
+      "ciclo": 1,
+      "escola": "Necromancia",
+      "fonte": "World of Warcraft",
+      "listaClerigo": true,
+      "status2024": "ok",
+      "origens": [
+        "ceifadora"
+      ],
+      "tags": [
+        "dano"
+      ],
+      "tempo": {
+        "tipo": "acao",
+        "texto": "1 ação"
+      },
+      "alcance": {
+        "tipo": "distancia",
+        "metros": 18,
+        "pes": 60,
+        "texto": "18 m"
+      },
+      "componentes": {
+        "v": true,
+        "s": false,
+        "m": false
+      },
+      "duracao": {
+        "texto": "1 minuto",
+        "rodadas": 10
+      },
+      "concentracao": false,
+      "resolucao": {
+        "tipo": "salvaguarda",
+        "atributo": "sab",
+        "metadeNoSucesso": true
+      },
+      "dano": [
+        {
+          "rotulo": "Na conjuração",
+          "dados": "1d10",
+          "somaMod": "sab",
+          "tipo": "psiquico",
+          "porCiclo": "1d10"
+        },
+        {
+          "rotulo": "No início de cada turno dele",
+          "dados": "1d10",
+          "tipo": "psiquico",
+          "condicao": "enquanto estiver amaldiçoado"
+        }
+      ],
+      "condicoes": [
+        "Amaldiçoado"
+      ],
+      "resumo": "SAB ou 1d10 + mod. psíquico e uma maldição de 1d10 a cada turno dele, até passar na salvaguarda.",
+      "descricaoCompleta": "Você fala uma palavra do Vazio, e uma criatura ao alcance sofre uma dor agonizante. Ela faz uma salvaguarda de Sabedoria. Na falha, sofre **1d10 + seu modificador de atributo de conjuração** de dano psíquico e fica amaldiçoada pela duração. No sucesso, sofre metade do dano e nada mais.\n\nEnquanto a maldição durar, o alvo sofre **1d10 de dano psíquico** no início de cada um dos turnos dele. No fim de cada um dos turnos dele, ele repete a salvaguarda e, no sucesso, a maldição termina.\n\n**Em Ciclos Mais Altos.** O dano inicial aumenta em 1d10 para cada ciclo acima do 1º."
+    },
+    {
+      "id": "lanterna-espiritual",
+      "nome": "Lanterna Espiritual",
+      "nomeOriginal": "Spirit Lantern",
+      "ciclo": 5,
+      "escola": "Necromancia",
+      "fonte": "Arcana Unleashed",
+      "listaClerigo": true,
+      "status2024": "ok",
+      "origens": [
+        "ceifadora"
+      ],
+      "tags": [
+        "dano",
+        "defesa"
+      ],
+      "tempo": {
+        "tipo": "acao",
+        "texto": "1 ação"
+      },
+      "alcance": {
+        "tipo": "pessoal",
+        "texto": "Pessoal (luz fraca de 18 m)"
+      },
+      "componentes": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "material": "uma lanterna negra",
+      "duracao": {
+        "texto": "10 minutos",
+        "rodadas": 100
+      },
+      "concentracao": false,
+      "resolucao": {
+        "tipo": "automatico"
+      },
+      "dano": [
+        {
+          "rotulo": "Drenar Vida (ação bônus, 1 fragmento)",
+          "dados": "4d8",
+          "somaMod": "sab",
+          "tipo": "necrotico",
+          "condicao": "salvaguarda de CON para metade"
+        }
+      ],
+      "resumo": "Inimigos que morrem na luz dela viram fragmentos de alma; com a ação bônus, um fragmento drena 4d8 + mod. ou protege um aliado.",
+      "descricaoCompleta": "Uma lanterna negra e fantasmagórica flutua acima de você e lança **luz fraca num raio de 18 m**. Quando um inimigo morre dentro dessa luz, um fragmento da alma dele entra na lanterna. Ela guarda fragmentos até o seu modificador de atributo de conjuração, que se dissipam quando a magia termina.\n\nComo uma **ação bônus**, você gasta um fragmento para um destes efeitos:\n\n- **Drenar Vida.** O fragmento voa até uma criatura que você veja a até 18 m. Ela faz uma salvaguarda de Constituição e sofre **4d8 + seu modificador de atributo de conjuração** de dano necrótico na falha, ou metade no sucesso.\n- **Proteger Aliado.** O fragmento gira em volta de uma criatura que você veja a até 18 m. As outras criaturas têm **desvantagem nas jogadas de ataque contra ela** até o início do seu próximo turno.\n- **Restaurar Morto-Vivo.** Um morto-vivo que você veja a até 18 m recupera 4d8 + seu modificador de atributo de conjuração."
+    },
+    {
+      "id": "vinculo-protetor",
+      "nome": "Vínculo Protetor",
+      "nomeOriginal": "Warding Bond",
+      "ciclo": 2,
+      "escola": "Abjuração",
+      "fonte": "PHB 2024",
+      "listaClerigo": true,
+      "status2024": "ok",
+      "origens": [
+        "classe"
+      ],
+      "tags": [
+        "defesa"
+      ],
+      "tempo": {
+        "tipo": "acao",
+        "texto": "1 ação"
+      },
+      "alcance": {
+        "tipo": "toque",
+        "texto": "Toque"
+      },
+      "componentes": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "material": "um par de anéis de platina de 50 PO cada, que você e o alvo usam",
+      "duracao": {
+        "texto": "1 hora",
+        "rodadas": 600
+      },
+      "concentracao": false,
+      "resolucao": {
+        "tipo": "automatico"
+      },
+      "resumo": "Um aliado ganha +1 de CA e salvaguardas e resistência a todo dano; você sofre o mesmo dano que ele.",
+      "descricaoCompleta": "Você cria um vínculo místico com uma criatura voluntária que tocar. Enquanto ela estiver a até 18 m de você, ganha **+1 de CA e nas salvaguardas** e tem **resistência a todo dano**. Cada vez que ela sofrer dano, você sofre a mesma quantidade.\n\nA magia termina se você cair a 0 PV, se vocês ficarem a mais de 18 m um do outro, ou se ela for conjurada de novo em qualquer um dos dois."
+    },
+    {
+      "id": "luz-do-dia",
+      "nome": "Luz do Dia",
+      "nomeOriginal": "Daylight",
+      "ciclo": 3,
+      "escola": "Evocação",
+      "fonte": "PHB 2024",
+      "listaClerigo": true,
+      "status2024": "ok",
+      "origens": [
+        "classe"
+      ],
+      "tags": [
+        "utilidade",
+        "controle"
+      ],
+      "tempo": {
+        "tipo": "acao",
+        "texto": "1 ação"
+      },
+      "alcance": {
+        "tipo": "distancia",
+        "metros": 18,
+        "pes": 60,
+        "texto": "18 m"
+      },
+      "componentes": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duracao": {
+        "texto": "1 hora",
+        "rodadas": 600
+      },
+      "concentracao": false,
+      "area": "Esfera de 18 m de raio",
+      "resolucao": {
+        "tipo": "automatico"
+      },
+      "resumo": "Esfera de luz forte de 18 m (e fraca por mais 18 m) por 1 hora; dissipa escuridão mágica de 3º ciclo ou menos.",
+      "descricaoCompleta": "Uma esfera de **luz forte de 18 m de raio** surge num ponto ao alcance, com luz fraca por mais 18 m. Se você escolher um objeto que esteja segurando ou vestindo, a luz acompanha o objeto. Cobrir o objeto com algo opaco bloqueia a luz.\n\nSe a área da magia tocar uma área de escuridão criada por magia de 3º ciclo ou menor, a magia que criou a escuridão é dissipada."
+    },
+    {
+      "id": "contagio",
+      "nome": "Contágio",
+      "nomeOriginal": "Contagion",
+      "ciclo": 5,
+      "escola": "Necromancia",
+      "fonte": "PHB 2024",
+      "listaClerigo": true,
+      "status2024": "ok",
+      "origens": [
+        "classe"
+      ],
+      "tags": [
+        "dano",
+        "controle"
+      ],
+      "tempo": {
+        "tipo": "acao",
+        "texto": "1 ação"
+      },
+      "alcance": {
+        "tipo": "toque",
+        "texto": "Toque"
+      },
+      "componentes": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duracao": {
+        "texto": "7 dias",
+        "rodadas": null
+      },
+      "concentracao": false,
+      "resolucao": {
+        "tipo": "salvaguarda",
+        "atributo": "con"
+      },
+      "dano": [
+        {
+          "dados": "11d8",
+          "tipo": "necrotico"
+        }
+      ],
+      "condicoes": [
+        "Envenenado"
+      ],
+      "resumo": "Toque: CON ou 11d8 necrótico, Envenenado e desvantagem nas salvaguardas de um atributo; três falhas e dura 7 dias.",
+      "descricaoCompleta": "Você toca uma criatura, que faz uma salvaguarda de Constituição. Na falha, sofre **11d8 de dano necrótico** e fica **Envenenada**. Escolha também um atributo: enquanto estiver Envenenada por esta magia, ela tem **desvantagem nas salvaguardas desse atributo**.\n\nNo fim de cada um dos turnos dela, o alvo repete a salvaguarda até somar três sucessos ou três falhas. Com três sucessos, a magia termina. Com três falhas, o efeito dura os 7 dias inteiros."
     }
   ]
 }

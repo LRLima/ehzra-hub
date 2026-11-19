@@ -40,6 +40,10 @@
     {
       "nomeFicha": "Light",
       "id": "luz"
+    },
+    {
+      "nomeFicha": "Animar Morto",
+      "id": "animar-morto"
     }
   ],
   "Soar os Mortos": {
@@ -686,7 +690,7 @@
     "status2024": "mudou",
     "itemValidacao": "M25",
     "origens": [
-      "ceifadora"
+      "classe"
     ],
     "resumo": "Protege um cadáver de decomposição e reanimação por 10 dias.",
     "resolucao": {
@@ -694,38 +698,12 @@
     },
     "material": "2 pc, colocadas nos olhos do corpo",
     "relacionadas": [
-      "falar-com-os-mortos",
-      "animar-morto"
+      "falar-com-os-mortos"
     ],
     "v2024": {
       "texto": "Ritual. Não prende a alma nem é pré-requisito de Falar com os Mortos: só impede o corpo de virar morto-vivo e pausa o prazo de ressurreição.",
       "ritual": true
     }
-  },
-  "Animar Morto": {
-    "id": "animar-morto",
-    "nome": "Animar Morto",
-    "nomeOriginal": "Animate Dead",
-    "tags": [
-      "invocacao",
-      "mortos-vivos"
-    ],
-    "fonte": "PHB 2024",
-    "listaClerigo": true,
-    "status2024": "ok",
-    "itemValidacao": "M27",
-    "origens": [
-      "dominio",
-      "ceifadora"
-    ],
-    "resumo": "Ergue um esqueleto ou zumbi sob seu controle por 24 h.",
-    "resolucao": {
-      "tipo": "automatico"
-    },
-    "alvosPorCiclo": 2,
-    "material": "uma gota de sangue, um pedaço de carne e uma pitada de pó de osso",
-    "relacionadas": [],
-    "dominioAte": 8
   },
   "Aura de Vitalidade": {
     "id": "aura-de-vitalidade",

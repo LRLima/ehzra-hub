@@ -1,7 +1,7 @@
 /** Modo Combate (HUD) e Modo Testes/Exploração. */
 import { AcoesBasicas, ComboBar, CombosDoTurno } from './Combos';
 import { useEffect, useState } from 'react';
-import { PlusIcon, MinusIcon, TrashIcon, SkullIcon, CampfireIcon, XIcon, SwordIcon } from '@phosphor-icons/react';
+import { SkullIcon, CampfireIcon, XIcon, SwordIcon } from '@phosphor-icons/react';
 import { useJogo, useUI } from '../store';
 import { SpellCard, Grupo, catDe } from '../ui/components';
 import { Palco } from './Palco';
@@ -11,7 +11,6 @@ import {
 } from '../domain/rules';
 import { recursoRestante } from '../domain/state';
 import type { Atributo, Spell } from '../domain/schemas';
-import { novoId } from '../db/dexie';
 
 type Parte = 'acao' | 'acaoBonus' | 'reacao' | 'movimento';
 const PARTES: { id: Parte; rotulo: string }[] = [
@@ -142,17 +141,14 @@ function Hud() {
             <div className="card atk-card">
               <span className="nome">Deslocamento {r.character.deslocamentoMetros.valor} m</span>
               <p className="muted" style={{ fontSize: 15, margin: '6px 0 0' }}>
-                {s.efeitos.some((e) => e.origem === 'guardioes-espirituais') ? 'Guardiões Espirituais ativo: leve a aura até os inimigos. ' : ''}
-                {s.mortosVivos.some((m) => m.fio) ? 'Fique a até 3 m de dois mortos-vivos para o +2 de CA do Fio da Obediência.' : 'Levantar do chão custa metade do deslocamento.'}
+                {s.efeitos.some((e) => e.origem === 'guardioes-espirituais') ? 'Guardiões ativos: atravesse os inimigos, e a aura os acerta agora e de novo no fim do turno deles. ' : ''}
+                Levantar do chão custa metade do deslocamento.
               </p>
             </div>
           </Grupo>
         )}
-        {(feats.length > 0 || (parte === 'acaoBonus' && s.mortosVivos.length > 0)) && (
+        {feats.length > 0 && (
           <Grupo cat="habilidade" titulo="Habilidades" nota="usos por descanso" n={feats.length}>
-            {parte === 'acaoBonus' && s.mortosVivos.length > 0 && (
-              <div className="card"><span className="nome">Comandar mortos-vivos</span><p className="muted" style={{ fontSize: 15, margin: '4px 0 0' }}>Animar Morto: todos a até 18 m recebem a mesma ordem.</p></div>
-            )}
             {feats.map((f) => (
               <button key={f.id} className="card card-btn" onClick={() => abrir({ tipo: 'habilidade', id: f.id })}>
                 <div className="topo row"><span className="grow nome">{f.nome}</span>
@@ -193,7 +189,6 @@ function Hud() {
       </div>
 
       <Efeitos />
-      <MortosVivos />
 
       {s.combate && (
         <div className="proxima">
@@ -234,54 +229,7 @@ function Efeitos() {
   );
 }
 
-const MODELOS = {
-  esqueleto: { nome: 'Esqueleto', pvMax: 13, ca: 14 },
-  zumbi: { nome: 'Zumbi', pvMax: 15, ca: 8 },
-} as const;
 
-function MortosVivos() {
-  const { s, dispatch } = useJogo();
-  const add = (tipo: keyof typeof MODELOS) => {
-    const m = MODELOS[tipo];
-    const n = s.mortosVivos.filter((x) => x.tipo === tipo).length + 1;
-    dispatch({ t: 'mortoVivoAdd', mv: { id: novoId(), nome: `${m.nome} ${n}`, tipo, pv: m.pvMax, pvMax: m.pvMax, ca: m.ca, fio: false, campeao: false, ordem: '' } });
-  };
-  return (
-    <>
-      <h3 className="section-h"><SkullIcon size={16} /> Mortos-vivos ({s.mortosVivos.length})</h3>
-      <div className="stack">
-        {s.mortosVivos.map((m) => {
-          const ca = m.ca + (m.fio ? 2 : 0) + (m.campeao ? 3 : 0);
-          const max = m.campeao ? m.pvMax * 3 : m.pvMax;
-          return (
-            <div key={m.id} className="card mv">
-              <div>
-                <div style={{ fontFamily: 'var(--font-display)' }}>{m.nome}</div>
-                <div className="faint num" style={{ fontSize: 13.5 }}>CA {ca}{m.fio ? ' (Fio +2 perto de outro)' : ''}{m.campeao ? ' · Campeão' : ''}</div>
-              </div>
-              <div className="pvline">
-                <button className="icon-btn" aria-label="−1 PV" onClick={() => dispatch({ t: 'mortoVivoAtualizar', id: m.id, pv: m.pv - 1 }, { silencioso: true })}><MinusIcon size={16} /></button>
-                <span className="num" style={{ minWidth: 52, textAlign: 'center', color: m.pv === 0 ? 'var(--hp-fg)' : undefined }}>{m.pv}/{max}</span>
-                <button className="icon-btn" aria-label="+1 PV" onClick={() => dispatch({ t: 'mortoVivoAtualizar', id: m.id, pv: m.pv + 1 }, { silencioso: true })}><PlusIcon size={16} /></button>
-              </div>
-              <div className="row" style={{ gridColumn: '1 / -1' }}>
-                <label className="row" style={{ gap: 4, fontSize: 14 }}><input type="checkbox" checked={m.fio} onChange={(e) => dispatch({ t: 'mortoVivoAtualizar', id: m.id, fio: e.target.checked }, { silencioso: true })} /> Fio</label>
-                <label className="row" style={{ gap: 4, fontSize: 14 }}><input type="checkbox" checked={m.campeao} onChange={(e) => dispatch({ t: 'mortoVivoAtualizar', id: m.id, campeao: e.target.checked }, { silencioso: true })} /> Campeão</label>
-                <input className="input grow" style={{ minHeight: 36 }} placeholder="Ordem" aria-label={`Ordem para ${m.nome}`} defaultValue={m.ordem}
-                  onBlur={(e) => e.target.value !== m.ordem && dispatch({ t: 'mortoVivoAtualizar', id: m.id, ordem: e.target.value }, { silencioso: true })} />
-                <button className="icon-btn" aria-label={`Remover ${m.nome}`} onClick={() => dispatch({ t: 'mortoVivoRemover', id: m.id })}><TrashIcon size={16} /></button>
-              </div>
-            </div>
-          );
-        })}
-        <div className="row">
-          <button className="btn grow" onClick={() => add('esqueleto')}><PlusIcon size={16} />Esqueleto</button>
-          <button className="btn grow" onClick={() => add('zumbi')}><PlusIcon size={16} />Zumbi</button>
-        </div>
-      </div>
-    </>
-  );
-}
 
 function Testes() {
   const { r, c, s } = useJogo();

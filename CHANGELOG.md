@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.6.0 (19/11/2026)
+
+- Ceifadora nova: Ala da Morte, Transferência de Vida, Lanterna Espiritual e Palavra Sombria: Dor, pela metade da mana. Saem Animar Mortos (do grimório) e Repouso Gentil (vira magia comum).
+- Sem invocações: a seção de mortos-vivos e o playbook do exército saem da tela.
+- Magias novas: Vínculo Protetor, Luz do Dia, Lanterna Espiritual, Palavra Sombria: Dor e Contágio.
+- Combos refeitos em três camadas, com selo: rotina (Dança dos Guardiões, Dor e Sino, Colheita de Almas, Ferida no Chefe, Cura que Abençoa, Vida pela Vida, Vigília da Manhã), médio (Puxar para a Cova, Chão e Corte, Cego e Aberto, Sol dos Kobolds) e feito (Nova e Barreira, O Tribunal, Sentença Final, Golpe do Epitáfio, Sentença do Paladino). Saem os que brigavam com os Guardiões pela concentração.
+
 ## 0.5.2 (19/11/2026)
 
 - A mana inteira ficou verde-água, igual às almas: barra do topo, números, selos de custo e animações.

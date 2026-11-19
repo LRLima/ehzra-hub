@@ -2,93 +2,288 @@
   "_leia": "Playbooks por turno. 'magias' lista o que o botão Executar passo abre no Conjurar (sempre com confirmação). Custos com a tabela de mana do nível 8 e a Ceifadora arredondando para baixo. Regra 2024: só 1 magia com ciclo por turno.",
   "playbooks": [
     {
-      "id": "manipulador-de-almas", "nome": "Manipulador de Almas", "original": true,
-      "resumo": "Os mortos-vivos seguram a linha de frente; você controla o inimigo mais perigoso e dá suporte de longe.",
-      "quandoUsar": ["Você já tem mortos-vivos animados (Animar Morto leva 1 minuto, então se prepara antes do combate).", "Há um inimigo de elite que pode desmontar os esqueletos."],
-      "quandoNaoUsar": ["Sem cadáveres nem mortos-vivos à mão.", "Área de luz sagrada ou contra muitos inimigos com dano em área."],
-      "preCombate": { "acao": "Animar Morto antes do combate (leva 1 minuto; pela Ceifadora, metade da mana).", "magias": [{ "id": "animar-morto", "ciclo": 3 }] },
-      "turnos": [
-        { "rotulo": "Turno 1", "acao": "Impor Maldição no inimigo de elite (opção 2: desvantagem nos ataques contra você, ou opção 4 para dano).", "bonus": "Comandar os mortos-vivos (Animar Morto).", "movimento": "Fique atrás dos mortos-vivos, que seguram a linha.", "magias": [{ "id": "impor-maldicao", "ciclo": 3 }] },
-        { "rotulo": "Turno 2 em diante", "acao": "Soar os Mortos no alvo ferido (1d12 vira 2d12 + 5), ou Lâmina Necrótica se estiver colado.", "bonus": "Comandar os mortos-vivos.", "reacao": "Conjurador de Guerra se alguém sair do seu alcance." }
-      ],
-      "conflitosConcentracao": ["Impor Maldição ocupa a concentração até o 4º ciclo."],
-      "dependeDeHomebrew": ["Pavor da Tumba (citada na estratégia original, mas não existe no grimório)"]
-    },
-    {
-      "id": "combatente-corpo-a-corpo", "nome": "Combatente Solitário: corpo a corpo", "original": true,
+      "id": "combatente-corpo-a-corpo",
+      "nome": "Combatente Solitário: corpo a corpo",
+      "original": true,
       "resumo": "Tanque com PV temporário, dano extra no corte e Toque da Morte nos acertos.",
-      "quandoUsar": ["Você está sozinho na linha de frente.", "Um inimigo de elite está ao alcance da foice."],
-      "quandoNaoUsar": ["Inimigos voadores ou à distância.", "Mana abaixo de 10: guarde para cura."],
-      "preCombate": { "acao": "Vitalidade Falsa no 4º ciclo: 2d4 + 19 PV temporários (6 mana).", "magias": [{ "id": "vitalidade-falsa", "ciclo": 4 }] },
-      "turnos": [
-        { "rotulo": "Turno 1", "bonus": "Manto Espiritual do Ehzra no 3º ciclo (5 mana, +1d8 por acerto). O dano só sobe no 5º ciclo (2d8), então no nível 8 não vale gastar um 4º.", "acao": "Lâmina Necrótica: ataque com a foice. Se acertar, use Toque da Morte (+21 necrótico, 1 Canalizar Divindade).", "movimento": "Cole no alvo; se ele se afastar, a Lâmina pune.", "magias": [{ "id": "manto-espiritual", "ciclo": 3 }] },
-        { "rotulo": "Turno 2 em diante", "acao": "Lâmina Necrótica todo turno.", "reacao": "Conjurador de Guerra: se o alvo sair do seu alcance, conjure Soar os Mortos nele." },
-        { "rotulo": "Descarga de dano", "acao": "Infligir Ferimentos (ataque corpo a corpo, mantido da ficha) + Toque da Morte: 3d10 + 21 necrótico. No 4º ciclo (6 mana): 6d10 + 21.", "magias": [{ "id": "infligir-ferimentos", "ciclo": 1 }] }
+      "quandoUsar": [
+        "Você está sozinho na linha de frente.",
+        "Um inimigo de elite está ao alcance da foice."
       ],
-      "conflitosConcentracao": ["Manto Espiritual é concentração."],
-      "dependeDeHomebrew": ["Lâmina Necrótica", "Toque da Morte (legado 2014)"]
+      "quandoNaoUsar": [
+        "Inimigos voadores ou à distância.",
+        "Mana abaixo de 10: guarde para cura."
+      ],
+      "preCombate": {
+        "acao": "Vitalidade Falsa no 4º ciclo: 2d4 + 19 PV temporários (6 mana).",
+        "magias": [
+          {
+            "id": "vitalidade-falsa",
+            "ciclo": 4
+          }
+        ]
+      },
+      "turnos": [
+        {
+          "rotulo": "Turno 1",
+          "bonus": "Manto Espiritual do Ehzra no 3º ciclo (5 mana, +1d8 por acerto). O dano só sobe no 5º ciclo (2d8), então no nível 8 não vale gastar um 4º.",
+          "acao": "Lâmina Necrótica: ataque com a foice. Se acertar, use Toque da Morte (+21 necrótico, 1 Canalizar Divindade).",
+          "movimento": "Cole no alvo; se ele se afastar, a Lâmina pune.",
+          "magias": [
+            {
+              "id": "manto-espiritual",
+              "ciclo": 3
+            }
+          ]
+        },
+        {
+          "rotulo": "Turno 2 em diante",
+          "acao": "Lâmina Necrótica todo turno.",
+          "reacao": "Conjurador de Guerra: se o alvo sair do seu alcance, conjure Soar os Mortos nele."
+        },
+        {
+          "rotulo": "Descarga de dano",
+          "acao": "Infligir Ferimentos (ataque corpo a corpo, mantido da ficha) + Toque da Morte: 3d10 + 21 necrótico. No 4º ciclo (6 mana): 6d10 + 21.",
+          "magias": [
+            {
+              "id": "infligir-ferimentos",
+              "ciclo": 1
+            }
+          ]
+        }
+      ],
+      "conflitosConcentracao": [
+        "Manto Espiritual é concentração."
+      ],
+      "dependeDeHomebrew": [
+        "Lâmina Necrótica",
+        "Toque da Morte (legado 2014)"
+      ]
     },
     {
-      "id": "combatente-distancia", "nome": "Combatente Solitário: à distância", "original": true,
+      "id": "combatente-distancia",
+      "nome": "Combatente Solitário: à distância",
+      "original": true,
       "resumo": "Dano de longe com Soar os Mortos. Atenção: a Intenção Mortal não combina com ele.",
-      "quandoUsar": ["O inimigo está longe ou você precisa ficar fora do corpo a corpo."],
-      "quandoNaoUsar": ["Se o plano for Intenção Mortal + Soar os Mortos: a Intenção só dispara em ataque à distância, e Soar os Mortos é salvaguarda."],
-      "turnos": [
-        { "rotulo": "Turno 1", "acao": "Soar os Mortos (2d8 ou 2d12, + 5 do Conjurador Potente). Com o Ceifador, mira 2 inimigos a até 1,5 m um do outro.", "movimento": "Fique a 18 m ou menos, atrás de cobertura." },
-        { "rotulo": "Turno 2 em diante", "acao": "Soar os Mortos continuamente.", "bonus": "Palavra Curativa em aliado caído, se preciso." },
-        { "rotulo": "Variante à distância", "bonus": "O Manto Espiritual do Ehzra também vale para ataques à distância: mantenha-o e troque a foice por Raio da Doença.", "acao": "Raio da Doença (2 mana por turno).", "magias": [{ "id": "raio-da-doenca", "ciclo": 1 }] }
+      "quandoUsar": [
+        "O inimigo está longe ou você precisa ficar fora do corpo a corpo."
       ],
-      "conflitosConcentracao": ["Intenção Mortal é concentração."],
-      "dependeDeHomebrew": ["Intenção Mortal"]
+      "quandoNaoUsar": [
+        "Se o plano for Intenção Mortal + Soar os Mortos: a Intenção só dispara em ataque à distância, e Soar os Mortos é salvaguarda."
+      ],
+      "turnos": [
+        {
+          "rotulo": "Turno 1",
+          "acao": "Soar os Mortos (2d8 ou 2d12, + 5 do Conjurador Potente). Com o Ceifador, mira 2 inimigos a até 1,5 m um do outro.",
+          "movimento": "Fique a 18 m ou menos, atrás de cobertura."
+        },
+        {
+          "rotulo": "Turno 2 em diante",
+          "acao": "Soar os Mortos continuamente.",
+          "bonus": "Palavra Curativa em aliado caído, se preciso."
+        },
+        {
+          "rotulo": "Variante à distância",
+          "bonus": "O Manto Espiritual do Ehzra também vale para ataques à distância: mantenha-o e troque a foice por Raio da Doença.",
+          "acao": "Raio da Doença (2 mana por turno).",
+          "magias": [
+            {
+              "id": "raio-da-doenca",
+              "ciclo": 1
+            }
+          ]
+        }
+      ],
+      "conflitosConcentracao": [
+        "Intenção Mortal é concentração."
+      ],
+      "dependeDeHomebrew": [
+        "Intenção Mortal"
+      ]
     },
     {
-      "id": "abertura", "nome": "Abertura de combate",
+      "id": "abertura",
+      "nome": "Abertura de combate",
       "resumo": "Guardiões Espirituais no primeiro turno e dano de truque dentro da aura.",
-      "quandoUsar": ["Vários inimigos vão se aproximar de você.", "Aliados conseguem ficar fora da aura ou você os exclui."],
-      "quandoNaoUsar": ["Inimigos ficam à distância e não entram na área."],
-      "preCombate": { "acao": "Ala da Morte em você (Ceifadora: 3 mana, 8 horas).", "magias": [{ "id": "ala-da-morte", "ciclo": 4 }] },
-      "turnos": [
-        { "rotulo": "Turno 1", "acao": "Guardiões Espirituais (5 mana). Inimigos a até 4,5 m: SAB ou 3d8.", "movimento": "Ande até os inimigos para a aura alcançá-los.", "magias": [{ "id": "guardioes-espirituais", "ciclo": 3 }] },
-        { "rotulo": "Turno 2 em diante", "acao": "Soar os Mortos ou Lâmina Necrótica.", "movimento": "Mantenha o máximo de inimigos na aura.", "reacao": "Conjurador de Guerra." }
+      "quandoUsar": [
+        "Vários inimigos vão se aproximar de você.",
+        "Aliados conseguem ficar fora da aura ou você os exclui."
       ],
-      "conflitosConcentracao": ["Guardiões Espirituais é concentração: não use junto com Manto Espiritual."]
+      "quandoNaoUsar": [
+        "Inimigos ficam à distância e não entram na área."
+      ],
+      "preCombate": {
+        "acao": "Ala da Morte em você (Ceifadora: 3 mana, 8 horas).",
+        "magias": [
+          {
+            "id": "ala-da-morte",
+            "ciclo": 4
+          }
+        ]
+      },
+      "turnos": [
+        {
+          "rotulo": "Turno 1",
+          "acao": "Guardiões Espirituais (5 mana). Inimigos a até 4,5 m: SAB ou 3d8.",
+          "movimento": "Ande até os inimigos para a aura alcançá-los.",
+          "magias": [
+            {
+              "id": "guardioes-espirituais",
+              "ciclo": 3
+            }
+          ]
+        },
+        {
+          "rotulo": "Turno 2 em diante",
+          "acao": "Soar os Mortos ou Lâmina Necrótica.",
+          "movimento": "Mantenha o máximo de inimigos na aura.",
+          "reacao": "Conjurador de Guerra."
+        }
+      ],
+      "conflitosConcentracao": [
+        "Guardiões Espirituais é concentração: não use junto com Manto Espiritual."
+      ]
     },
     {
-      "id": "controle-de-grupo", "nome": "Controle de grupo",
+      "id": "controle-de-grupo",
+      "nome": "Controle de grupo",
       "resumo": "Tira inimigos de jogo sem gastar concentração.",
-      "quandoUsar": ["Muitos inimigos fortes de uma vez.", "O grupo precisa de tempo."],
-      "quandoNaoUsar": ["Inimigos com CON alta (use Comando, que é SAB)."],
-      "turnos": [
-        { "rotulo": "Turno 1", "acao": "Cegueira e Surdez no 4º ciclo (6 mana): 3 alvos, sem concentração.", "magias": [{ "id": "cegueira-e-surdez", "ciclo": 4 }] },
-        { "rotulo": "Turno 2", "acao": "Banimento no mais perigoso (6 mana, concentração), ou Silêncio contra conjuradores.", "magias": [{ "id": "banimento", "ciclo": 4 }] },
-        { "rotulo": "Turno 3 em diante", "acao": "Comando (Fuja ou Caia) nos que sobraram, ou Soar os Mortos." }
+      "quandoUsar": [
+        "Muitos inimigos fortes de uma vez.",
+        "O grupo precisa de tempo."
       ],
-      "conflitosConcentracao": ["Banimento e Silêncio são concentração: escolha um."]
+      "quandoNaoUsar": [
+        "Inimigos com CON alta (use Comando, que é SAB)."
+      ],
+      "turnos": [
+        {
+          "rotulo": "Turno 1",
+          "acao": "Cegueira e Surdez no 4º ciclo (6 mana): 3 alvos, sem concentração.",
+          "magias": [
+            {
+              "id": "cegueira-e-surdez",
+              "ciclo": 4
+            }
+          ]
+        },
+        {
+          "rotulo": "Turno 2",
+          "acao": "Banimento no mais perigoso (6 mana, concentração), ou Silêncio contra conjuradores.",
+          "magias": [
+            {
+              "id": "banimento",
+              "ciclo": 4
+            }
+          ]
+        },
+        {
+          "rotulo": "Turno 3 em diante",
+          "acao": "Comando (Fuja ou Caia) nos que sobraram, ou Soar os Mortos."
+        }
+      ],
+      "conflitosConcentracao": [
+        "Banimento e Silêncio são concentração: escolha um."
+      ]
     },
     {
-      "id": "emergencia", "nome": "Emergência com pouca vida",
+      "id": "emergencia",
+      "nome": "Emergência com pouca vida",
       "resumo": "Sobreviver primeiro, sem desperdiçar a ação.",
-      "quandoUsar": ["PV abaixo de 20.", "Você está cercado."],
-      "quandoNaoUsar": ["Um aliado está caído: cure ele primeiro (Palavra Curativa)."],
-      "preCombate": { "acao": "Ala da Morte já ativa (Ceifadora, 3 mana).", "magias": [{ "id": "ala-da-morte", "ciclo": 4 }] },
-      "turnos": [
-        { "rotulo": "Turno de crise", "bonus": "Palavra Curativa em você (2 mana, ou mais ciclos se sobrar mana).", "acao": "Soar os Mortos no mais ferido, ou a ação Desengajar para sair do cerco.", "movimento": "Recue para trás dos mortos-vivos ou aliados.", "magias": [{ "id": "palavra-curativa", "ciclo": 1 }] },
-        { "rotulo": "Último recurso", "bonus": "Epitáfio (1 Inspiração) no inimigo que mais ameaça, e o grupo foca nele: o golpe com dano dobrado tende a derrubá-lo antes que ele derrube você." }
+      "quandoUsar": [
+        "PV abaixo de 20.",
+        "Você está cercado."
       ],
-      "dependeDeHomebrew": ["Epitáfio"]
+      "quandoNaoUsar": [
+        "Um aliado está caído: cure ele primeiro (Palavra Curativa)."
+      ],
+      "preCombate": {
+        "acao": "Ala da Morte já ativa (Ceifadora, 3 mana).",
+        "magias": [
+          {
+            "id": "ala-da-morte",
+            "ciclo": 4
+          }
+        ]
+      },
+      "turnos": [
+        {
+          "rotulo": "Turno de crise",
+          "bonus": "Palavra Curativa em você (2 mana, ou mais ciclos se sobrar mana).",
+          "acao": "Soar os Mortos no mais ferido, ou a ação Desengajar para sair do cerco.",
+          "movimento": "Recue para trás dos mortos-vivos ou aliados.",
+          "magias": [
+            {
+              "id": "palavra-curativa",
+              "ciclo": 1
+            }
+          ]
+        },
+        {
+          "rotulo": "Último recurso",
+          "bonus": "Epitáfio (1 Inspiração) no inimigo que mais ameaça, e o grupo foca nele: o golpe com dano dobrado tende a derrubá-lo antes que ele derrube você."
+        }
+      ],
+      "dependeDeHomebrew": [
+        "Epitáfio"
+      ]
     },
     {
-      "id": "suporte", "nome": "Suporte ao grupo",
+      "id": "suporte",
+      "nome": "Suporte ao grupo",
       "resumo": "Mantém o grupo de pé enquanto os aliados causam o dano.",
-      "quandoUsar": ["Aliados de dano fortes na mesa.", "Luta longa."],
-      "quandoNaoUsar": ["Você é o único na frente (use o corpo a corpo)."],
-      "preCombate": { "acao": "Ala da Morte no tanque do grupo (Ceifadora, 3 mana).", "magias": [{ "id": "ala-da-morte", "ciclo": 4 }] },
-      "turnos": [
-        { "rotulo": "Turno 1", "bonus": "Escudo da Fé no tanque (2 mana, concentração).", "acao": "Soar os Mortos.", "magias": [{ "id": "escudo-da-fe", "ciclo": 1 }] },
-        { "rotulo": "Quando o grupo sangrar", "acao": "Aura de Vitalidade (5 mana, concentração; troca o Escudo da Fé).", "bonus": "Cure 2d6 por turno com a aura.", "magias": [{ "id": "aura-de-vitalidade", "ciclo": 3 }] },
-        { "rotulo": "Vários caídos", "bonus": "Palavra Curativa em Massa (5 mana).", "magias": [{ "id": "palavra-curativa-em-massa", "ciclo": 3 }] }
+      "quandoUsar": [
+        "Aliados de dano fortes na mesa.",
+        "Luta longa."
       ],
-      "conflitosConcentracao": ["Escudo da Fé e Aura de Vitalidade: só um de cada vez."]
+      "quandoNaoUsar": [
+        "Você é o único na frente (use o corpo a corpo)."
+      ],
+      "preCombate": {
+        "acao": "Ala da Morte no tanque do grupo (Ceifadora, 3 mana).",
+        "magias": [
+          {
+            "id": "ala-da-morte",
+            "ciclo": 4
+          }
+        ]
+      },
+      "turnos": [
+        {
+          "rotulo": "Turno 1",
+          "bonus": "Escudo da Fé no tanque (2 mana, concentração).",
+          "acao": "Soar os Mortos.",
+          "magias": [
+            {
+              "id": "escudo-da-fe",
+              "ciclo": 1
+            }
+          ]
+        },
+        {
+          "rotulo": "Quando o grupo sangrar",
+          "acao": "Aura de Vitalidade (5 mana, concentração; troca o Escudo da Fé).",
+          "bonus": "Cure 2d6 por turno com a aura.",
+          "magias": [
+            {
+              "id": "aura-de-vitalidade",
+              "ciclo": 3
+            }
+          ]
+        },
+        {
+          "rotulo": "Vários caídos",
+          "bonus": "Palavra Curativa em Massa (5 mana).",
+          "magias": [
+            {
+              "id": "palavra-curativa-em-massa",
+              "ciclo": 3
+            }
+          ]
+        }
+      ],
+      "conflitosConcentracao": [
+        "Escudo da Fé e Aura de Vitalidade: só um de cada vez."
+      ]
     }
   ]
 }
