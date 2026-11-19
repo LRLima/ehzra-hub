@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import {
-  SwordIcon, BookOpenIcon, UserIcon, NotebookIcon, DotsThreeIcon, MagnifyingGlassIcon,
+  SwordIcon, BookOpenIcon, UserIcon, NotebookIcon, GearSixIcon, MagnifyingGlassIcon,
 } from '@phosphor-icons/react';
 import { useJogo, useRota, useUI } from './store';
 import { Toasts } from './ui/components';
@@ -89,7 +89,7 @@ const ABAS = [
   { id: 'magias', rotulo: 'Magias', Icone: BookOpenIcon },
   { id: 'ficha', rotulo: 'Ficha', Icone: UserIcon },
   { id: 'sessao', rotulo: 'Sessão', Icone: NotebookIcon },
-  { id: 'mais', rotulo: 'Mais', Icone: DotsThreeIcon },
+  { id: 'mais', rotulo: 'Mais', Icone: GearSixIcon },
 ];
 
 export function App() {

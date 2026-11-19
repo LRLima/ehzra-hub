@@ -1,7 +1,7 @@
 /** Modo Combate (HUD) e Modo Testes/Exploração. */
 import { AcoesBasicas, ComboBar, CombosDoTurno } from './Combos';
 import { useState } from 'react';
-import { SkullIcon, CampfireIcon, XIcon, SwordIcon } from '@phosphor-icons/react';
+import { SkullIcon, CampfireIcon, XIcon, SwordIcon, StarIcon } from '@phosphor-icons/react';
 import { useJogo, useUI } from '../store';
 import { SpellCard, Grupo, catDe } from '../ui/components';
 import { Palco } from './Palco';
@@ -41,10 +41,10 @@ function Status() {
       <div><div className="v">{ca}</div><div className="k">CA</div></div>
       <div><div className="v">{fmtMod(r.character.iniciativa.valor)}</div><div className="k">Inic.</div></div>
       <button className={s.inspiracao ? 'on' : 'off'} onClick={() => dispatch({ t: 'inspiracao', delta: s.inspiracao ? -1 : 1 })} aria-pressed={s.inspiracao > 0}>
-        <div className="v">{s.inspiracao ? '★' : '☆'}</div><div className="k">Inspiração</div>
+        <div className="v"><StarIcon size={22} weight={s.inspiracao ? 'fill' : 'regular'} /></div><div className="k">Inspiração</div>
       </button>
       <button onClick={() => abrir({ tipo: 'descanso' })}>
-        <div className="v"><CampfireIcon size={20} /></div><div className="k">Descansar</div>
+        <div className="v"><CampfireIcon size={22} /></div><div className="k">Descansar</div>
       </button>
     </div>
   );
