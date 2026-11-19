@@ -39,7 +39,7 @@ test('conjurar atualiza mana, concentração, efeito e log de uma vez', async ({
 });
 
 test('Ceifadora corta o custo pela metade, arredondando para baixo', async ({ page }) => {
-  await abrirMagiaPelaBusca(page, 'Animar Morto');
+  await abrirMagiaPelaBusca(page, 'Transferência de Vida');
   await expect(page.getByRole('dialog').getByRole('button', { name: /^Conjurar/ })).toHaveText(/2 mana/);
   await conjurar(page);
   await expect(mana(page)).toHaveText('42');
