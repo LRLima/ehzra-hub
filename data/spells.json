@@ -2563,52 +2563,6 @@
         "texto": "1 ação"
       },
       "alcance": {
-        "tipo": "toque",
-        "texto": "Toque"
-      },
-      "componentes": {
-        "v": true,
-        "s": true,
-        "m": true
-      },
-      "material": "um diamante de 300 PO, consumido pela magia",
-      "duracao": {
-        "texto": "Instantânea",
-        "rodadas": null
-      },
-      "concentracao": false,
-      "ritual": false,
-      "resolucao": {
-        "tipo": "automatico"
-      },
-      "dano": [],
-      "condicoes": [],
-      "escola": "Necromancia",
-      "resumo": "Traz de volta com 1 PV uma criatura que morreu há até 1 minuto.",
-      "id": "revivificar",
-      "nome": "Revivificar",
-      "nomeOriginal": "Revivify",
-      "nomeFicha": "Revivificar",
-      "ciclo": 3,
-      "tags": [
-        "cura"
-      ],
-      "fonte": "PHB 2024",
-      "listaClerigo": true,
-      "status2024": "ok",
-      "origens": [
-        "classe"
-      ],
-      "perdida": false,
-      "descricaoCompleta": "Você toca uma criatura que morreu há no máximo 1 minuto. Ela volta à vida com **1 ponto de vida**. A magia não funciona em quem morreu de velhice nem restaura partes do corpo perdidas.",
-      "relacionadas": []
-    },
-    {
-      "tempo": {
-        "tipo": "acao",
-        "texto": "1 ação"
-      },
-      "alcance": {
         "tipo": "pessoal",
         "texto": "Pessoal (linha de 36 m)"
       },

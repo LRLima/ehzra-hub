@@ -2,279 +2,856 @@
   "_leia": "Magias que entraram depois da ficha original, escritas inteiras à mão (mesmo formato do Spell). As de domínio da Disciplina só contam como domínio a partir do nível 9 (dominioDesde); antes disso valem como magia comum da lista, se estiverem nela. Textos resumidos com as regras, sem copiar o livro.",
   "magias": [
     {
-      "id": "ferida-aberta", "nome": "Ferida Aberta", "nomeOriginal": "Open Wounds", "ciclo": 2,
-      "escola": "Necromancia", "fonte": "Homebrew", "listaClerigo": false, "status2024": "homebrew", "origens": ["classe"],
-      "tags": ["dano"],
-      "tempo": { "tipo": "reacao", "texto": "1 reação, quando uma criatura que você possa ver a até 18 m é atingida pela jogada de ataque de outra criatura" },
-      "alcance": { "tipo": "distancia", "metros": 18, "pes": 60, "texto": "18 m" },
-      "componentes": { "v": true, "s": true, "m": false },
-      "duracao": { "texto": "Até o início do seu próximo turno", "rodadas": 1 },
+      "id": "ferida-aberta",
+      "nome": "Ferida Aberta",
+      "nomeOriginal": "Open Wounds",
+      "ciclo": 2,
+      "escola": "Necromancia",
+      "fonte": "Homebrew",
+      "listaClerigo": false,
+      "status2024": "homebrew",
+      "origens": [
+        "classe"
+      ],
+      "tags": [
+        "dano"
+      ],
+      "tempo": {
+        "tipo": "reacao",
+        "texto": "1 reação, quando uma criatura que você possa ver a até 18 m é atingida pela jogada de ataque de outra criatura"
+      },
+      "alcance": {
+        "tipo": "distancia",
+        "metros": 18,
+        "pes": 60,
+        "texto": "18 m"
+      },
+      "componentes": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duracao": {
+        "texto": "Até o início do seu próximo turno",
+        "rodadas": 1
+      },
       "concentracao": false,
-      "resolucao": { "tipo": "automatico" },
-      "dano": [{ "rotulo": "Uma vez por turno, ao ser atingida", "dados": "2d6", "tipo": "necrotico", "porCiclo": "1d6", "porCicloACada": 2 }],
-      "condicoes": ["Não pode recuperar PV"],
+      "resolucao": {
+        "tipo": "automatico"
+      },
+      "dano": [
+        {
+          "rotulo": "Uma vez por turno, ao ser atingida",
+          "dados": "2d6",
+          "tipo": "necrotico",
+          "porCiclo": "1d6",
+          "porCicloACada": 2
+        }
+      ],
+      "condicoes": [
+        "Não pode recuperar PV"
+      ],
       "resumo": "Reação: até o seu próximo turno, o alvo não se cura e sofre 2d6 necrótico extra, uma vez por turno, ao ser atingido.",
       "descricaoCompleta": "Você mantém aberta a ferida que outra criatura acabou de abrir. Até o início do seu próximo turno, o alvo não pode recuperar pontos de vida e, **uma vez por turno**, quando for atingido por uma jogada de ataque, sofre **2d6 de dano necrótico** adicional.\n\n**Em Ciclos Mais Altos.** O dano aumenta em 1d6 a cada dois ciclos acima do 2º."
     },
     {
-      "id": "ainda-nao", "nome": "Ainda Não", "nomeOriginal": "Not Yet", "ciclo": 3,
-      "escola": "Necromancia", "fonte": "Homebrew", "listaClerigo": false, "status2024": "homebrew", "origens": ["classe"],
-      "tags": ["cura"],
-      "tempo": { "tipo": "reacao", "texto": "1 reação, quando uma criatura que você possa ver a até 18 m cai a 0 PV" },
-      "alcance": { "tipo": "distancia", "metros": 18, "pes": 60, "texto": "18 m" },
-      "componentes": { "v": true, "s": false, "m": false },
-      "duracao": { "texto": "Instantânea", "rodadas": null },
+      "id": "ainda-nao",
+      "nome": "Ainda Não",
+      "nomeOriginal": "Not Yet",
+      "ciclo": 3,
+      "escola": "Necromancia",
+      "fonte": "Homebrew",
+      "listaClerigo": false,
+      "status2024": "homebrew",
+      "origens": [
+        "classe"
+      ],
+      "tags": [
+        "cura"
+      ],
+      "tempo": {
+        "tipo": "reacao",
+        "texto": "1 reação, quando uma criatura que você possa ver a até 18 m cai a 0 PV"
+      },
+      "alcance": {
+        "tipo": "distancia",
+        "metros": 18,
+        "pes": 60,
+        "texto": "18 m"
+      },
+      "componentes": {
+        "v": true,
+        "s": false,
+        "m": false
+      },
+      "duracao": {
+        "texto": "Instantânea",
+        "rodadas": null
+      },
       "concentracao": false,
-      "resolucao": { "tipo": "automatico" },
-      "cura": { "dados": "2d8", "somaMod": "sab", "porCiclo": "1d8" },
+      "resolucao": {
+        "tipo": "automatico"
+      },
+      "cura": {
+        "dados": "2d8",
+        "somaMod": "sab",
+        "porCiclo": "1d8"
+      },
       "resumo": "Reação: quem cai a 0 PV a até 18 m recupera 2d8 + mod. de conjuração e não fica Inconsciente.",
       "descricaoCompleta": "Você nega à morte uma criatura que estava prestes a cair. Ela recupera pontos de vida iguais a **2d8 + seu modificador de atributo de conjuração** e não fica com a condição Inconsciente. Esta magia não tem efeito em você nem em mortos-vivos e constructos.\n\n**Em Ciclos Mais Altos.** A cura aumenta em 1d8 para cada ciclo acima do 3º."
     },
     {
-      "id": "egide-do-ocaso", "nome": "Égide do Ocaso", "nomeOriginal": "Aegis of Dusk", "ciclo": 3,
-      "escola": "Abjuração", "fonte": "Homebrew", "listaClerigo": false, "status2024": "homebrew", "origens": ["classe"],
-      "tags": ["defesa"],
-      "tempo": { "tipo": "acao", "texto": "1 ação" },
-      "alcance": { "tipo": "toque", "texto": "Toque" },
-      "componentes": { "v": true, "s": true, "m": false },
-      "duracao": { "texto": "1 hora", "rodadas": 600 },
+      "id": "egide-do-ocaso",
+      "nome": "Égide do Ocaso",
+      "nomeOriginal": "Aegis of Dusk",
+      "ciclo": 3,
+      "escola": "Abjuração",
+      "fonte": "Homebrew",
+      "listaClerigo": false,
+      "status2024": "homebrew",
+      "origens": [
+        "classe"
+      ],
+      "tags": [
+        "defesa"
+      ],
+      "tempo": {
+        "tipo": "acao",
+        "texto": "1 ação"
+      },
+      "alcance": {
+        "tipo": "toque",
+        "texto": "Toque"
+      },
+      "componentes": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duracao": {
+        "texto": "1 hora",
+        "rodadas": 600
+      },
       "concentracao": false,
       "alvo": "Até duas criaturas voluntárias (você pode ser uma delas)",
-      "resolucao": { "tipo": "automatico" },
-      "cura": { "dados": "2d8", "somaMod": "sab", "pvTemporario": true },
+      "resolucao": {
+        "tipo": "automatico"
+      },
+      "cura": {
+        "dados": "2d8",
+        "somaMod": "sab",
+        "pvTemporario": true
+      },
       "resumo": "Até duas criaturas ganham 2d8 + mod. de conjuração em PV temporários na primeira vez que rolarem iniciativa.",
       "descricaoCompleta": "Você toca até duas criaturas voluntárias, e você pode ser uma delas. Na primeira vez que cada uma rolar iniciativa enquanto a magia durar, ela ganha **2d8 + seu modificador de atributo de conjuração** em pontos de vida temporários, e a magia termina para ela."
     },
     {
-      "id": "palavra-radiante", "nome": "Palavra Radiante", "nomeOriginal": "Word of Radiance", "ciclo": 0,
-      "escola": "Evocação", "fonte": "PHB 2024", "listaClerigo": true, "status2024": "ok", "origens": ["classe"],
-      "tags": ["dano"],
-      "tempo": { "tipo": "acao", "texto": "1 ação" },
-      "alcance": { "tipo": "pessoal", "texto": "Pessoal (emanação de 1,5 m)" },
+      "id": "palavra-radiante",
+      "nome": "Palavra Radiante",
+      "nomeOriginal": "Word of Radiance",
+      "ciclo": 0,
+      "escola": "Evocação",
+      "fonte": "PHB 2024",
+      "listaClerigo": true,
+      "status2024": "ok",
+      "origens": [
+        "classe"
+      ],
+      "tags": [
+        "dano"
+      ],
+      "tempo": {
+        "tipo": "acao",
+        "texto": "1 ação"
+      },
+      "alcance": {
+        "tipo": "pessoal",
+        "texto": "Pessoal (emanação de 1,5 m)"
+      },
       "area": "Emanação de 1,5 m",
-      "componentes": { "v": true, "s": false, "m": true }, "material": "um símbolo sagrado",
-      "duracao": { "texto": "Instantânea", "rodadas": null },
+      "componentes": {
+        "v": true,
+        "s": false,
+        "m": true
+      },
+      "material": "um símbolo sagrado",
+      "duracao": {
+        "texto": "Instantânea",
+        "rodadas": null
+      },
       "concentracao": false,
-      "resolucao": { "tipo": "salvaguarda", "atributo": "con" },
-      "dano": [{ "dados": "1d6", "tipo": "radiante", "porNivel": { "5": "2d6", "11": "3d6", "17": "4d6" } }],
+      "resolucao": {
+        "tipo": "salvaguarda",
+        "atributo": "con"
+      },
+      "dano": [
+        {
+          "dados": "1d6",
+          "tipo": "radiante",
+          "porNivel": {
+            "5": "2d6",
+            "11": "3d6",
+            "17": "4d6"
+          }
+        }
+      ],
       "resumo": "Cada criatura à sua escolha a 1,5 m de você: CON ou dano radiante.",
       "descricaoCompleta": "Luz ardente irrompe de você. Cada criatura à sua escolha que você possa ver a até 1,5 m faz uma salvaguarda de Constituição e, na falha, sofre **1d6 de dano radiante**.\n\n**Truque.** O dano aumenta para 2d6 no 5º nível, 3d6 no 11º e 4d6 no 17º."
     },
     {
-      "id": "raio-guia", "nome": "Raio Guia", "nomeOriginal": "Guiding Bolt", "ciclo": 1,
-      "escola": "Evocação", "fonte": "PHB 2024", "listaClerigo": true, "status2024": "ok", "origens": ["dominio"], "dominioDesde": 9,
-      "tags": ["dano", "buff"],
-      "tempo": { "tipo": "acao", "texto": "1 ação" },
-      "alcance": { "tipo": "distancia", "metros": 36, "pes": 120, "texto": "36 m" },
-      "componentes": { "v": true, "s": true, "m": false },
-      "duracao": { "texto": "1 rodada", "rodadas": 1 },
+      "id": "raio-guia",
+      "nome": "Raio Guia",
+      "nomeOriginal": "Guiding Bolt",
+      "ciclo": 1,
+      "escola": "Evocação",
+      "fonte": "PHB 2024",
+      "listaClerigo": true,
+      "status2024": "ok",
+      "origens": [
+        "dominio"
+      ],
+      "dominioDesde": 9,
+      "tags": [
+        "dano",
+        "buff"
+      ],
+      "tempo": {
+        "tipo": "acao",
+        "texto": "1 ação"
+      },
+      "alcance": {
+        "tipo": "distancia",
+        "metros": 36,
+        "pes": 120,
+        "texto": "36 m"
+      },
+      "componentes": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duracao": {
+        "texto": "1 rodada",
+        "rodadas": 1
+      },
       "concentracao": false,
-      "resolucao": { "tipo": "ataque", "alcance": "distancia" },
-      "dano": [{ "dados": "4d6", "tipo": "radiante", "porCiclo": "1d6" }],
+      "resolucao": {
+        "tipo": "ataque",
+        "alcance": "distancia"
+      },
+      "dano": [
+        {
+          "dados": "4d6",
+          "tipo": "radiante",
+          "porCiclo": "1d6"
+        }
+      ],
       "resumo": "Ataque à distância: 4d6 radiante, e o próximo ataque contra o alvo tem vantagem.",
       "descricaoCompleta": "Faça um ataque mágico à distância. No acerto, o alvo sofre **4d6 de dano radiante**, e a próxima jogada de ataque contra ele antes do fim do seu próximo turno tem vantagem.\n\n**Em Ciclos Mais Altos.** O dano aumenta em 1d6 para cada ciclo acima do 1º."
     },
     {
-      "id": "imobilizar-pessoa", "nome": "Imobilizar Pessoa", "nomeOriginal": "Hold Person", "ciclo": 2,
-      "escola": "Encantamento", "fonte": "PHB 2024", "listaClerigo": true, "status2024": "ok", "origens": ["classe"],
-      "tags": ["controle"],
-      "tempo": { "tipo": "acao", "texto": "1 ação" },
-      "alcance": { "tipo": "distancia", "metros": 18, "pes": 60, "texto": "18 m" },
-      "componentes": { "v": true, "s": true, "m": true }, "material": "um pedaço reto de ferro",
-      "duracao": { "texto": "Concentração, até 1 minuto", "rodadas": 10 },
+      "id": "imobilizar-pessoa",
+      "nome": "Imobilizar Pessoa",
+      "nomeOriginal": "Hold Person",
+      "ciclo": 2,
+      "escola": "Encantamento",
+      "fonte": "PHB 2024",
+      "listaClerigo": true,
+      "status2024": "ok",
+      "origens": [
+        "classe"
+      ],
+      "tags": [
+        "controle"
+      ],
+      "tempo": {
+        "tipo": "acao",
+        "texto": "1 ação"
+      },
+      "alcance": {
+        "tipo": "distancia",
+        "metros": 18,
+        "pes": 60,
+        "texto": "18 m"
+      },
+      "componentes": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "material": "um pedaço reto de ferro",
+      "duracao": {
+        "texto": "Concentração, até 1 minuto",
+        "rodadas": 10
+      },
       "concentracao": true,
       "alvo": "Um humanoide",
       "alvosPorCiclo": 1,
-      "resolucao": { "tipo": "salvaguarda", "atributo": "sab" },
-      "condicoes": ["Paralisado"],
+      "resolucao": {
+        "tipo": "salvaguarda",
+        "atributo": "sab"
+      },
+      "condicoes": [
+        "Paralisado"
+      ],
       "resumo": "Um humanoide: SAB ou fica Paralisado; repete no fim de cada turno.",
       "descricaoCompleta": "Escolha um humanoide que você possa ver. Ele faz uma salvaguarda de Sabedoria e, na falha, fica **Paralisado** enquanto a magia durar. No fim de cada um dos turnos dele, repete a salvaguarda e, no sucesso, a magia termina para ele.\n\n**Em Ciclos Mais Altos.** Você pode escolher um humanoide adicional para cada ciclo acima do 2º."
     },
     {
-      "id": "auxilio", "nome": "Auxílio", "nomeOriginal": "Aid", "ciclo": 2,
-      "escola": "Abjuração", "fonte": "PHB 2024", "listaClerigo": true, "status2024": "ok", "origens": ["classe"],
-      "tags": ["buff", "defesa"],
-      "tempo": { "tipo": "acao", "texto": "1 ação" },
-      "alcance": { "tipo": "distancia", "metros": 9, "pes": 30, "texto": "9 m" },
-      "componentes": { "v": true, "s": true, "m": true }, "material": "uma tira de pano branco",
-      "duracao": { "texto": "8 horas", "rodadas": 4800 },
+      "id": "auxilio",
+      "nome": "Auxílio",
+      "nomeOriginal": "Aid",
+      "ciclo": 2,
+      "escola": "Abjuração",
+      "fonte": "PHB 2024",
+      "listaClerigo": true,
+      "status2024": "ok",
+      "origens": [
+        "classe"
+      ],
+      "tags": [
+        "buff",
+        "defesa"
+      ],
+      "tempo": {
+        "tipo": "acao",
+        "texto": "1 ação"
+      },
+      "alcance": {
+        "tipo": "distancia",
+        "metros": 9,
+        "pes": 30,
+        "texto": "9 m"
+      },
+      "componentes": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "material": "uma tira de pano branco",
+      "duracao": {
+        "texto": "8 horas",
+        "rodadas": 4800
+      },
       "concentracao": false,
       "alvo": "Até três criaturas",
-      "resolucao": { "tipo": "automatico" },
+      "resolucao": {
+        "tipo": "automatico"
+      },
       "resumo": "Até três criaturas: +5 no PV máximo e no PV atual por 8 horas.",
       "descricaoCompleta": "Escolha até três criaturas ao alcance. O máximo de pontos de vida e os pontos de vida atuais de cada uma aumentam em **5** pela duração.\n\n**Em Ciclos Mais Altos.** O aumento sobe em 5 para cada ciclo acima do 2º."
     },
     {
-      "id": "vigor-arcano", "nome": "Vigor Arcano", "nomeOriginal": "Arcane Vigor", "ciclo": 2,
-      "escola": "Abjuração", "fonte": "PHB 2024", "listaClerigo": false, "status2024": "ok", "origens": ["dominio"], "dominioDesde": 9,
-      "tags": ["cura"],
-      "tempo": { "tipo": "acaoBonus", "texto": "1 ação bônus" },
-      "alcance": { "tipo": "pessoal", "texto": "Pessoal" },
-      "componentes": { "v": true, "s": true, "m": false },
-      "duracao": { "texto": "Instantânea", "rodadas": null },
+      "id": "vigor-arcano",
+      "nome": "Vigor Arcano",
+      "nomeOriginal": "Arcane Vigor",
+      "ciclo": 2,
+      "escola": "Abjuração",
+      "fonte": "PHB 2024",
+      "listaClerigo": false,
+      "status2024": "ok",
+      "origens": [
+        "dominio"
+      ],
+      "dominioDesde": 9,
+      "tags": [
+        "cura"
+      ],
+      "tempo": {
+        "tipo": "acaoBonus",
+        "texto": "1 ação bônus"
+      },
+      "alcance": {
+        "tipo": "pessoal",
+        "texto": "Pessoal"
+      },
+      "componentes": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duracao": {
+        "texto": "Instantânea",
+        "rodadas": null
+      },
       "concentracao": false,
-      "resolucao": { "tipo": "automatico" },
+      "resolucao": {
+        "tipo": "automatico"
+      },
       "resumo": "Gasta até dois Dados de Vida e recupera o resultado + mod. de conjuração.",
       "descricaoCompleta": "Você role até dois dos seus Dados de Vida não gastos e recupera pontos de vida iguais ao total + seu modificador de atributo de conjuração. Esses dados são gastos.\n\n**Em Ciclos Mais Altos.** Você pode rolar um Dado de Vida a mais para cada ciclo acima do 2º."
     },
     {
-      "id": "arma-magica", "nome": "Arma Mágica", "nomeOriginal": "Magic Weapon", "ciclo": 2,
-      "escola": "Transmutação", "fonte": "PHB 2024", "listaClerigo": false, "status2024": "ok", "origens": ["dominio"], "dominioDesde": 9,
-      "tags": ["buff"],
-      "tempo": { "tipo": "acaoBonus", "texto": "1 ação bônus" },
-      "alcance": { "tipo": "toque", "texto": "Toque" },
-      "componentes": { "v": true, "s": true, "m": false },
-      "duracao": { "texto": "1 hora", "rodadas": 600 },
+      "id": "arma-magica",
+      "nome": "Arma Mágica",
+      "nomeOriginal": "Magic Weapon",
+      "ciclo": 2,
+      "escola": "Transmutação",
+      "fonte": "PHB 2024",
+      "listaClerigo": false,
+      "status2024": "ok",
+      "origens": [
+        "dominio"
+      ],
+      "dominioDesde": 9,
+      "tags": [
+        "buff"
+      ],
+      "tempo": {
+        "tipo": "acaoBonus",
+        "texto": "1 ação bônus"
+      },
+      "alcance": {
+        "tipo": "toque",
+        "texto": "Toque"
+      },
+      "componentes": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duracao": {
+        "texto": "1 hora",
+        "rodadas": 600
+      },
       "concentracao": false,
       "alvo": "Uma arma não mágica",
-      "resolucao": { "tipo": "automatico" },
+      "resolucao": {
+        "tipo": "automatico"
+      },
       "resumo": "Uma arma não mágica vira mágica com +1 no ataque e no dano.",
       "descricaoCompleta": "Você toca uma arma não mágica. Ela se torna mágica e ganha **+1** nas jogadas de ataque e de dano pela duração.\n\n**Em Ciclos Mais Altos.** O bônus sobe para +2 com espaço de 3º a 5º ciclo e para +3 com espaço de 6º ciclo ou mais."
     },
     {
-      "id": "revivificar", "nome": "Revivificar", "nomeOriginal": "Revivify", "ciclo": 3,
-      "escola": "Necromancia", "fonte": "PHB 2024", "listaClerigo": true, "status2024": "ok", "origens": ["classe"],
-      "tags": ["cura"],
-      "tempo": { "tipo": "acao", "texto": "1 ação" },
-      "alcance": { "tipo": "toque", "texto": "Toque" },
-      "componentes": { "v": true, "s": true, "m": true }, "material": "um diamante de 300 PO, consumido pela magia",
-      "duracao": { "texto": "Instantânea", "rodadas": null },
-      "concentracao": false,
-      "resolucao": { "tipo": "automatico" },
-      "resumo": "Traz de volta com 1 PV uma criatura que morreu há até 1 minuto.",
-      "descricaoCompleta": "Você toca uma criatura que morreu há no máximo 1 minuto. Ela volta à vida com **1 ponto de vida**. A magia não funciona em quem morreu de velhice nem restaura partes do corpo perdidas."
-    },
-    {
-      "id": "lanca-de-prata-de-laeral", "nome": "Lança de Prata de Laeral", "nomeOriginal": "Laeral's Silver Lance", "ciclo": 3,
-      "escola": "Evocação", "fonte": "Forgotten Realms: Heroes of Faerûn", "listaClerigo": true, "status2024": "ok", "origens": ["classe"],
-      "tags": ["dano", "controle"],
-      "tempo": { "tipo": "acao", "texto": "1 ação" },
-      "alcance": { "tipo": "pessoal", "texto": "Pessoal (linha de 36 m)" },
+      "id": "lanca-de-prata-de-laeral",
+      "nome": "Lança de Prata de Laeral",
+      "nomeOriginal": "Laeral's Silver Lance",
+      "ciclo": 3,
+      "escola": "Evocação",
+      "fonte": "Forgotten Realms: Heroes of Faerûn",
+      "listaClerigo": true,
+      "status2024": "ok",
+      "origens": [
+        "classe"
+      ],
+      "tags": [
+        "dano",
+        "controle"
+      ],
+      "tempo": {
+        "tipo": "acao",
+        "texto": "1 ação"
+      },
+      "alcance": {
+        "tipo": "pessoal",
+        "texto": "Pessoal (linha de 36 m)"
+      },
       "area": "Linha de 36 m de comprimento e 1,5 m de largura",
-      "componentes": { "v": true, "s": true, "m": false },
-      "duracao": { "texto": "Instantânea", "rodadas": null },
+      "componentes": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duracao": {
+        "texto": "Instantânea",
+        "rodadas": null
+      },
       "concentracao": false,
-      "resolucao": { "tipo": "salvaguarda", "atributo": "for", "metadeNoSucesso": true },
-      "dano": [{ "dados": "3d10", "tipo": "forca", "porCiclo": "1d10" }],
-      "condicoes": ["Caído"],
+      "resolucao": {
+        "tipo": "salvaguarda",
+        "atributo": "for",
+        "metadeNoSucesso": true
+      },
+      "dano": [
+        {
+          "dados": "3d10",
+          "tipo": "forca",
+          "porCiclo": "1d10"
+        }
+      ],
+      "condicoes": [
+        "Caído"
+      ],
       "resumo": "Linha de 36 m: FOR ou 3d10 de força e Caído; metade no sucesso.",
       "descricaoCompleta": "Energia prateada sai de você numa linha de 36 m de comprimento e 1,5 m de largura. Cada criatura à sua escolha na linha faz uma salvaguarda de Força. Na falha, sofre **3d10 de dano de força** e fica **Caída**. No sucesso, sofre metade do dano.\n\n**Em Ciclos Mais Altos.** O dano aumenta em 1d10 para cada ciclo acima do 3º."
     },
     {
-      "id": "oracao-da-restauracao", "nome": "Oração da Restauração", "nomeOriginal": "Prayer of Mending", "ciclo": 3,
-      "escola": "Abjuração", "fonte": "World of Warcraft", "listaClerigo": true, "status2024": "ok", "origens": ["dominio"], "dominioDesde": 9,
-      "tags": ["cura"],
-      "tempo": { "tipo": "acao", "texto": "1 ação" },
-      "alcance": { "tipo": "distancia", "metros": 18, "pes": 60, "texto": "18 m" },
-      "componentes": { "v": true, "s": false, "m": true }, "material": "uma pitada de prata em pó",
-      "duracao": { "texto": "1 minuto", "rodadas": 10 },
+      "id": "oracao-da-restauracao",
+      "nome": "Oração da Restauração",
+      "nomeOriginal": "Prayer of Mending",
+      "ciclo": 3,
+      "escola": "Abjuração",
+      "fonte": "World of Warcraft",
+      "listaClerigo": true,
+      "status2024": "ok",
+      "origens": [
+        "dominio"
+      ],
+      "dominioDesde": 9,
+      "tags": [
+        "cura"
+      ],
+      "tempo": {
+        "tipo": "acao",
+        "texto": "1 ação"
+      },
+      "alcance": {
+        "tipo": "distancia",
+        "metros": 18,
+        "pes": 60,
+        "texto": "18 m"
+      },
+      "componentes": {
+        "v": true,
+        "s": false,
+        "m": true
+      },
+      "material": "uma pitada de prata em pó",
+      "duracao": {
+        "texto": "1 minuto",
+        "rodadas": 10
+      },
       "concentracao": false,
-      "resolucao": { "tipo": "automatico" },
-      "cura": { "dados": "1d8", "somaMod": "sab" },
+      "resolucao": {
+        "tipo": "automatico"
+      },
+      "cura": {
+        "dados": "1d8",
+        "somaMod": "sab"
+      },
       "resumo": "Proteção que cura 1d8 + mod. quando o aliado sofre dano e salta para outro aliado, até 5 vezes.",
       "descricaoCompleta": "Você coloca uma proteção sagrada numa criatura voluntária. Na próxima vez que ela sofrer dano, a proteção a cura em **1d8 + seu modificador de atributo de conjuração** e salta para outro aliado à sua escolha a até 9 m dela, com o mesmo efeito. A magia termina se não houver aliado ao alcance ou depois de curar **cinco vezes**.\n\n**Em Ciclos Mais Altos.** A proteção cura uma vez a mais para cada ciclo acima do 3º."
     },
     {
-      "id": "protecao-contra-energia", "nome": "Proteção contra Energia", "nomeOriginal": "Protection from Energy", "ciclo": 3,
-      "escola": "Abjuração", "fonte": "PHB 2024", "listaClerigo": true, "status2024": "ok", "origens": ["dominio"], "dominioDesde": 9,
-      "tags": ["defesa"],
-      "tempo": { "tipo": "acao", "texto": "1 ação" },
-      "alcance": { "tipo": "toque", "texto": "Toque" },
-      "componentes": { "v": true, "s": true, "m": false },
-      "duracao": { "texto": "Concentração, até 1 hora", "rodadas": 600 },
+      "id": "protecao-contra-energia",
+      "nome": "Proteção contra Energia",
+      "nomeOriginal": "Protection from Energy",
+      "ciclo": 3,
+      "escola": "Abjuração",
+      "fonte": "PHB 2024",
+      "listaClerigo": true,
+      "status2024": "ok",
+      "origens": [
+        "dominio"
+      ],
+      "dominioDesde": 9,
+      "tags": [
+        "defesa"
+      ],
+      "tempo": {
+        "tipo": "acao",
+        "texto": "1 ação"
+      },
+      "alcance": {
+        "tipo": "toque",
+        "texto": "Toque"
+      },
+      "componentes": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duracao": {
+        "texto": "Concentração, até 1 hora",
+        "rodadas": 600
+      },
       "concentracao": true,
-      "resolucao": { "tipo": "automatico" },
+      "resolucao": {
+        "tipo": "automatico"
+      },
       "resumo": "Uma criatura tem resistência a ácido, elétrico, fogo, gélido ou trovejante.",
       "descricaoCompleta": "Pela duração, a criatura voluntária que você tocar tem **resistência** a um tipo de dano à sua escolha: ácido, elétrico, fogo, gélido ou trovejante."
     },
     {
-      "id": "nova-sagrada", "nome": "Nova Sagrada", "nomeOriginal": "Holy Nova", "ciclo": 4,
-      "escola": "Evocação", "fonte": "World of Warcraft", "listaClerigo": true, "status2024": "ok", "origens": ["classe"],
-      "tags": ["dano", "cura"],
-      "tempo": { "tipo": "acao", "texto": "1 ação" },
-      "alcance": { "tipo": "pessoal", "texto": "Pessoal (emanação de 9 m)" },
+      "id": "nova-sagrada",
+      "nome": "Nova Sagrada",
+      "nomeOriginal": "Holy Nova",
+      "ciclo": 4,
+      "escola": "Evocação",
+      "fonte": "World of Warcraft",
+      "listaClerigo": true,
+      "status2024": "ok",
+      "origens": [
+        "classe"
+      ],
+      "tags": [
+        "dano",
+        "cura"
+      ],
+      "tempo": {
+        "tipo": "acao",
+        "texto": "1 ação"
+      },
+      "alcance": {
+        "tipo": "pessoal",
+        "texto": "Pessoal (emanação de 9 m)"
+      },
       "area": "Emanação de 9 m",
-      "componentes": { "v": true, "s": false, "m": false },
-      "duracao": { "texto": "Instantânea", "rodadas": null },
+      "componentes": {
+        "v": true,
+        "s": false,
+        "m": false
+      },
+      "duracao": {
+        "texto": "Instantânea",
+        "rodadas": null
+      },
       "concentracao": false,
-      "resolucao": { "tipo": "salvaguarda", "atributo": "con", "metadeNoSucesso": true },
-      "dano": [{ "rotulo": "Criaturas à sua escolha", "dados": "5d6", "tipo": "radiante", "porCiclo": "1d6" }],
-      "cura": { "dados": "3d6", "porCiclo": "1d6" },
+      "resolucao": {
+        "tipo": "salvaguarda",
+        "atributo": "con",
+        "metadeNoSucesso": true
+      },
+      "dano": [
+        {
+          "rotulo": "Criaturas à sua escolha",
+          "dados": "5d6",
+          "tipo": "radiante",
+          "porCiclo": "1d6"
+        }
+      ],
+      "cura": {
+        "dados": "3d6",
+        "porCiclo": "1d6"
+      },
       "resumo": "Emanação de 9 m: inimigos à escolha fazem CON contra 5d6 radiante; as outras criaturas recuperam 3d6.",
       "descricaoCompleta": "Uma explosão de luz sagrada sai de você numa emanação de 9 m. Cada criatura à sua escolha na área faz uma salvaguarda de Constituição e sofre **5d6 de dano radiante** na falha, ou metade no sucesso. Cada outra criatura na área recupera **3d6 pontos de vida**.\n\n**Em Ciclos Mais Altos.** O dano e a cura aumentam em 1d6 para cada ciclo acima do 4º."
     },
     {
-      "id": "horror-psiquico", "nome": "Horror Psíquico", "nomeOriginal": "Psychic Horror", "ciclo": 4,
-      "escola": "Encantamento", "fonte": "World of Warcraft", "listaClerigo": true, "status2024": "ok", "origens": ["classe"],
-      "tags": ["dano", "controle"],
-      "tempo": { "tipo": "acao", "texto": "1 ação" },
-      "alcance": { "tipo": "distancia", "metros": 9, "pes": 30, "texto": "9 m" },
-      "componentes": { "v": true, "s": false, "m": true }, "material": "um olho de vidro",
-      "duracao": { "texto": "Instantânea", "rodadas": null },
+      "id": "horror-psiquico",
+      "nome": "Horror Psíquico",
+      "nomeOriginal": "Psychic Horror",
+      "ciclo": 4,
+      "escola": "Encantamento",
+      "fonte": "World of Warcraft",
+      "listaClerigo": true,
+      "status2024": "ok",
+      "origens": [
+        "classe"
+      ],
+      "tags": [
+        "dano",
+        "controle"
+      ],
+      "tempo": {
+        "tipo": "acao",
+        "texto": "1 ação"
+      },
+      "alcance": {
+        "tipo": "distancia",
+        "metros": 9,
+        "pes": 30,
+        "texto": "9 m"
+      },
+      "componentes": {
+        "v": true,
+        "s": false,
+        "m": true
+      },
+      "material": "um olho de vidro",
+      "duracao": {
+        "texto": "Instantânea",
+        "rodadas": null
+      },
       "concentracao": false,
-      "resolucao": { "tipo": "salvaguarda", "atributo": "sab", "metadeNoSucesso": true },
-      "dano": [{ "dados": "2d10", "tipo": "psiquico", "porCiclo": "1d10" }],
-      "condicoes": ["Amedrontado", "Atordoado"],
+      "resolucao": {
+        "tipo": "salvaguarda",
+        "atributo": "sab",
+        "metadeNoSucesso": true
+      },
+      "dano": [
+        {
+          "dados": "2d10",
+          "tipo": "psiquico",
+          "porCiclo": "1d10"
+        }
+      ],
+      "condicoes": [
+        "Amedrontado",
+        "Atordoado"
+      ],
       "resumo": "SAB ou 2d10 psíquico, Amedrontado por 1 minuto e Atordoado até o fim do seu próximo turno.",
       "descricaoCompleta": "Uma criatura ao alcance é tomada por visões aterradoras e faz uma salvaguarda de Sabedoria. Na falha, sofre **2d10 de dano psíquico** e fica **Amedrontada** por 1 minuto; enquanto estiver Amedrontada, também fica **Atordoada** até o fim do seu próximo turno. No fim de cada um dos turnos dela, repete a salvaguarda e, no sucesso, o efeito termina. No sucesso inicial, sofre metade do dano e nada mais.\n\n**Em Ciclos Mais Altos.** O dano aumenta em 1d10 para cada ciclo acima do 4º."
     },
     {
-      "id": "aura-de-pureza", "nome": "Aura de Pureza", "nomeOriginal": "Aura of Purity", "ciclo": 4,
-      "escola": "Abjuração", "fonte": "PHB 2024", "listaClerigo": true, "status2024": "ok", "origens": ["classe"],
-      "tags": ["defesa"],
-      "tempo": { "tipo": "acao", "texto": "1 ação" },
-      "alcance": { "tipo": "pessoal", "texto": "Pessoal (emanação de 9 m)" },
+      "id": "aura-de-pureza",
+      "nome": "Aura de Pureza",
+      "nomeOriginal": "Aura of Purity",
+      "ciclo": 4,
+      "escola": "Abjuração",
+      "fonte": "PHB 2024",
+      "listaClerigo": true,
+      "status2024": "ok",
+      "origens": [
+        "classe"
+      ],
+      "tags": [
+        "defesa"
+      ],
+      "tempo": {
+        "tipo": "acao",
+        "texto": "1 ação"
+      },
+      "alcance": {
+        "tipo": "pessoal",
+        "texto": "Pessoal (emanação de 9 m)"
+      },
       "area": "Emanação de 9 m",
-      "componentes": { "v": true, "s": false, "m": false },
-      "duracao": { "texto": "Concentração, até 10 minutos", "rodadas": 100 },
+      "componentes": {
+        "v": true,
+        "s": false,
+        "m": false
+      },
+      "duracao": {
+        "texto": "Concentração, até 10 minutos",
+        "rodadas": 100
+      },
       "concentracao": true,
-      "resolucao": { "tipo": "automatico" },
+      "resolucao": {
+        "tipo": "automatico"
+      },
       "resumo": "Você e os aliados na aura resistem a veneno e têm vantagem contra Amedrontado, Atordoado, Paralisado e outras condições.",
       "descricaoCompleta": "Uma aura de 9 m sai de você. Na aura, você e seus aliados têm **resistência a dano de veneno** e **vantagem** nas salvaguardas para evitar ou encerrar efeitos que causem as condições Cego, Enfeitiçado, Surdo, Amedrontado, Paralisado, Envenenado ou Atordoado."
     },
     {
-      "id": "pele-de-pedra", "nome": "Pele de Pedra", "nomeOriginal": "Stoneskin", "ciclo": 4,
-      "escola": "Transmutação", "fonte": "PHB 2024", "listaClerigo": false, "status2024": "ok", "origens": ["dominio"], "dominioDesde": 9,
-      "tags": ["defesa"],
-      "tempo": { "tipo": "acao", "texto": "1 ação" },
-      "alcance": { "tipo": "toque", "texto": "Toque" },
-      "componentes": { "v": true, "s": true, "m": true }, "material": "pó de diamante de 100 PO, consumido pela magia",
-      "duracao": { "texto": "Concentração, até 1 hora", "rodadas": 600 },
+      "id": "pele-de-pedra",
+      "nome": "Pele de Pedra",
+      "nomeOriginal": "Stoneskin",
+      "ciclo": 4,
+      "escola": "Transmutação",
+      "fonte": "PHB 2024",
+      "listaClerigo": false,
+      "status2024": "ok",
+      "origens": [
+        "dominio"
+      ],
+      "dominioDesde": 9,
+      "tags": [
+        "defesa"
+      ],
+      "tempo": {
+        "tipo": "acao",
+        "texto": "1 ação"
+      },
+      "alcance": {
+        "tipo": "toque",
+        "texto": "Toque"
+      },
+      "componentes": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "material": "pó de diamante de 100 PO, consumido pela magia",
+      "duracao": {
+        "texto": "Concentração, até 1 hora",
+        "rodadas": 600
+      },
       "concentracao": true,
-      "resolucao": { "tipo": "automatico" },
+      "resolucao": {
+        "tipo": "automatico"
+      },
       "resumo": "Uma criatura tem resistência a dano contundente, cortante e perfurante.",
       "descricaoCompleta": "Pela duração, a criatura voluntária que você tocar tem **resistência a dano contundente, cortante e perfurante**."
     },
     {
-      "id": "circulo-de-poder", "nome": "Círculo de Poder", "nomeOriginal": "Circle of Power", "ciclo": 5,
-      "escola": "Abjuração", "fonte": "PHB 2024", "listaClerigo": true, "status2024": "ok", "origens": ["dominio"], "dominioDesde": 9,
-      "tags": ["defesa"],
-      "tempo": { "tipo": "acao", "texto": "1 ação" },
-      "alcance": { "tipo": "pessoal", "texto": "Pessoal (emanação de 9 m)" },
+      "id": "circulo-de-poder",
+      "nome": "Círculo de Poder",
+      "nomeOriginal": "Circle of Power",
+      "ciclo": 5,
+      "escola": "Abjuração",
+      "fonte": "PHB 2024",
+      "listaClerigo": true,
+      "status2024": "ok",
+      "origens": [
+        "dominio"
+      ],
+      "dominioDesde": 9,
+      "tags": [
+        "defesa"
+      ],
+      "tempo": {
+        "tipo": "acao",
+        "texto": "1 ação"
+      },
+      "alcance": {
+        "tipo": "pessoal",
+        "texto": "Pessoal (emanação de 9 m)"
+      },
       "area": "Emanação de 9 m",
-      "componentes": { "v": true, "s": false, "m": false },
-      "duracao": { "texto": "Concentração, até 10 minutos", "rodadas": 100 },
+      "componentes": {
+        "v": true,
+        "s": false,
+        "m": false
+      },
+      "duracao": {
+        "texto": "Concentração, até 10 minutos",
+        "rodadas": 100
+      },
       "concentracao": true,
-      "resolucao": { "tipo": "automatico" },
+      "resolucao": {
+        "tipo": "automatico"
+      },
       "resumo": "Aliados na aura têm vantagem em salvaguardas contra magias e efeitos mágicos; sucesso de metade vira nenhum dano.",
       "descricaoCompleta": "Uma aura de 9 m sai de você. Na aura, você e seus aliados têm **vantagem nas salvaguardas contra magias e outros efeitos mágicos**. Quando um deles passa numa salvaguarda contra uma magia ou efeito mágico que causaria metade do dano no sucesso, não sofre dano nenhum."
     },
     {
-      "id": "onda-destrutiva", "nome": "Onda Destrutiva", "nomeOriginal": "Destructive Wave", "ciclo": 5,
-      "escola": "Evocação", "fonte": "PHB 2024", "listaClerigo": false, "status2024": "ok", "origens": ["dominio"], "dominioDesde": 9,
-      "tags": ["dano", "controle"],
-      "tempo": { "tipo": "acao", "texto": "1 ação" },
-      "alcance": { "tipo": "pessoal", "texto": "Pessoal (emanação de 9 m)" },
-      "area": "Emanação de 9 m",
-      "componentes": { "v": true, "s": false, "m": false },
-      "duracao": { "texto": "Instantânea", "rodadas": null },
-      "concentracao": false,
-      "resolucao": { "tipo": "salvaguarda", "atributo": "con", "metadeNoSucesso": true },
-      "dano": [
-        { "rotulo": "Trovão", "dados": "5d6", "tipo": "trovejante" },
-        { "rotulo": "Radiante ou necrótico, à sua escolha", "dados": "5d6", "tipo": "radiante", "tipoAlternativo": "necrotico" }
+      "id": "onda-destrutiva",
+      "nome": "Onda Destrutiva",
+      "nomeOriginal": "Destructive Wave",
+      "ciclo": 5,
+      "escola": "Evocação",
+      "fonte": "PHB 2024",
+      "listaClerigo": false,
+      "status2024": "ok",
+      "origens": [
+        "dominio"
       ],
-      "condicoes": ["Caído"],
+      "dominioDesde": 9,
+      "tags": [
+        "dano",
+        "controle"
+      ],
+      "tempo": {
+        "tipo": "acao",
+        "texto": "1 ação"
+      },
+      "alcance": {
+        "tipo": "pessoal",
+        "texto": "Pessoal (emanação de 9 m)"
+      },
+      "area": "Emanação de 9 m",
+      "componentes": {
+        "v": true,
+        "s": false,
+        "m": false
+      },
+      "duracao": {
+        "texto": "Instantânea",
+        "rodadas": null
+      },
+      "concentracao": false,
+      "resolucao": {
+        "tipo": "salvaguarda",
+        "atributo": "con",
+        "metadeNoSucesso": true
+      },
+      "dano": [
+        {
+          "rotulo": "Trovão",
+          "dados": "5d6",
+          "tipo": "trovejante"
+        },
+        {
+          "rotulo": "Radiante ou necrótico, à sua escolha",
+          "dados": "5d6",
+          "tipo": "radiante",
+          "tipoAlternativo": "necrotico"
+        }
+      ],
+      "condicoes": [
+        "Caído"
+      ],
       "resumo": "Emanação de 9 m: CON ou 5d6 trovejante + 5d6 radiante ou necrótico e Caído; metade no sucesso.",
       "descricaoCompleta": "Você golpeia o chão e solta uma onda de energia divina numa emanação de 9 m. Cada criatura à sua escolha na área faz uma salvaguarda de Constituição. Na falha, sofre **5d6 de dano trovejante e 5d6 de dano radiante ou necrótico** (à sua escolha) e fica **Caída**. No sucesso, sofre metade do dano e não cai."
     }

@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.3 (19/11/2026)
+
+- Revivificar saiu do grimório: o mestre não permite.
+
 ## 0.4.2 (19/11/2026)
 
 - Corrigido: o app ficava com a tela preta em aparelhos com histórico de magias que saíram do grimório. Agora o histórico antigo mostra o nome dessas magias e nada quebra.

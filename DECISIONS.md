@@ -66,4 +66,5 @@ Pontos que continuam em aberto (não mudei, só registrei): Iniciativa +4 com DE
 | Troca de domínio | No nível 9, o Domínio da Morte dá lugar ao Domínio da Disciplina (World of Warcraft), com o texto normal por enquanto. Habilidades têm faixa de nível (nivelMin/nivelMax) e magias de domínio têm dominioDesde/dominioAte; fora da faixa viram magia comum da lista ou somem | Pedido do Lucas em 19/11/2026, depois das simulações de grupo |
 | Magias que saem do grimório | Ficam no extraído (fiel ao original) e são filtradas no build por _removidas; links do texto original para elas viram texto simples | Não perder o registro do original |
 | Magias novas | data/curation/spells-novas.json, escritas inteiras e validadas pelo mesmo Zod | Não existem no HTML original |
+| Ressurreição | Revivificar fora do grimório: o mestre não permite | Pedido do Lucas em 19/11/2026 |
 | Tema | Só escuro por enquanto | Pedido do prompt ("escuro como padrão"); tema claro fica para depois |
