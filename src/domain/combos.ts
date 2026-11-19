@@ -146,6 +146,29 @@ export const COMBOS: Combo[] = [
     ],
   },
 
+  {
+    id: 'vigilia-da-manha',
+    nome: 'Vigília da Manhã',
+    camada: 'rotina',
+    parte: 'acao',
+    quando: 'No começo do dia de aventura, antes de sair.',
+    formula: [
+      { rotulo: 'Auxílio', cat: 'c2' },
+      { rotulo: 'Ala da Morte ×2', cat: 'c4' },
+      { rotulo: 'Vínculo Protetor', cat: 'c2' },
+    ],
+    resultado: 'o grupo começa o dia com mais PV e duas mortes evitadas',
+    economia: 'fora de combate',
+    requer: { magias: ['auxilio', 'ala-da-morte', 'vinculo-protetor'] },
+    passos: [
+      { tipo: 'magia', id: 'auxilio', ciclo: 2, rotulo: 'Auxílio em três aliados (8 horas)' },
+      { tipo: 'magia', id: 'ala-da-morte', ciclo: 4, rotulo: 'Ala da Morte no paladino (8 horas)' },
+      { tipo: 'magia', id: 'ala-da-morte', ciclo: 4, rotulo: 'Ala da Morte no bárbaro (8 horas)' },
+      { tipo: 'lembrete', texto: 'Guarde o Vínculo Protetor para antes da luta grande: dura 1 hora. No paladino, ele resiste a tudo, e você sofre o mesmo dano que ele.' },
+      { tipo: 'magia', id: 'vinculo-protetor', ciclo: 2, rotulo: 'Vínculo Protetor no paladino (1 hora)' },
+    ],
+  },
+
   // ---------- médio: uma vez por luta, quando vale ----------
   {
     id: 'puxar-para-a-cova',
