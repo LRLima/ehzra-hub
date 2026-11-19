@@ -13,6 +13,8 @@ export interface Regras {
   magias: Spell[];
   /** Todas as magias do grimório, inclusive as indisponíveis no nível (para abrir links e playbooks antigos). */
   grimorio?: Spell[];
+  /** Magias que saíram do grimório (só o nome), para o histórico antigo continuar legível. */
+  removidas?: { id: string; nome: string }[];
   habilidades: Feature[];
   condicoes: Condition[];
   playbooks: Playbook[];
@@ -98,10 +100,21 @@ export function dominioNoNivel(r: Regras, nivel: number): string | null {
   return null;
 }
 
+/** Magia que não existe mais no grimório: só serve para mostrar o nome no histórico. */
+export const magiaRemovida = (id: string, nome: string): Spell => ({
+  id, nome, nomeFicha: nome, ciclo: 0, tags: [], fonte: 'Removida do grimório', listaClerigo: false, status2024: 'homebrew',
+  origens: ['grimorio'], perdida: true, descricaoCompleta: null, relacionadas: [],
+  tempo: { tipo: 'acao', texto: 'não registrado' }, alcance: { tipo: 'especial', texto: 'não registrado' },
+  componentes: { v: false, s: false, m: false }, duracao: { texto: 'não registrada', rodadas: null },
+  concentracao: false, ritual: false, dano: [], condicoes: [], escola: '', resumo: 'Esta magia saiu do grimório.',
+});
+
 export const magia = (r: Regras, id: string) => {
   const s = r.magias.find((m) => m.id === id) ?? r.grimorio?.find((m) => m.id === id);
-  if (!s) throw new Error(`Magia desconhecida: ${id}`);
-  return magiaEfetiva(r, s);
+  if (s) return magiaEfetiva(r, s);
+  // Nunca quebrar por causa do histórico: uma magia que saiu vira um registro só com o nome.
+  const nome = r.removidas?.find((m) => m.id === id)?.nome ?? id;
+  return magiaRemovida(id, nome);
 };
 
 // ---------- dados ----------

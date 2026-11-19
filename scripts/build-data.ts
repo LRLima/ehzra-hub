@@ -215,7 +215,12 @@ const semPatch = character.aprovacoes2024.filter((id) =>
 if (semPatch.length) broken.push(`aprovadas sem versão 2024 para aplicar: ${semPatch.join(', ')}`);
 if (broken.length) throw new Error(`Referências quebradas:\n  ${broken.join('\n  ')}`);
 
-write('spells.json', { schemaVersion: SCHEMA_VERSION, magias: spells });
+write('spells.json', {
+  schemaVersion: SCHEMA_VERSION,
+  magias: spells,
+  // O histórico de eventos ainda cita estas magias; o app mostra o nome em vez de quebrar.
+  removidas: removidasLista.map((x) => ({ id: x.id, nome: x.nomeFicha })),
+});
 write('features.json', { schemaVersion: SCHEMA_VERSION, habilidades: features });
 write('homebrew-rules.json', homebrew);
 write('lore.json', lore);

@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.4.2 (19/11/2026)
+
+- Corrigido: o app ficava com a tela preta em aparelhos com histórico de magias que saíram do grimório. Agora o histórico antigo mostra o nome dessas magias e nada quebra.
+- Se algum erro acontecer ao abrir, o app mostra a mensagem e um botão de recarregar, em vez de uma tela preta.
+
 ## 0.4.1 (19/11/2026)
 
 - O Manto Espiritual virou o Manto Espiritual do Ehzra: o dano extra vale para ataques corpo a corpo e à distância, e cresce 1d8 a cada dois ciclos acima do 3º. A Intenção Mortal saiu, porque fazia a mesma coisa só à distância.

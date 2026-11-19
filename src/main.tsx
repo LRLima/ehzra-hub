@@ -11,11 +11,14 @@ import './ui/app.css';
 import './ui/redesign.css';
 import { JogoProvider } from './store';
 import { App } from './App';
+import { ErroFatal } from './ui/ErroFatal';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <JogoProvider>
-      <App />
-    </JogoProvider>
+    <ErroFatal>
+      <JogoProvider>
+        <App />
+      </JogoProvider>
+    </ErroFatal>
   </StrictMode>,
 );

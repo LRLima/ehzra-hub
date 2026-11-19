@@ -332,3 +332,13 @@ describe('troca de domínio no nível 9', () => {
     expect(dominioNoNivel(r, 9)).toBe('Domínio da Disciplina');
   });
 });
+
+describe('histórico com magias que saíram do grimório', () => {
+  it('refaz o estado e descreve o evento sem quebrar', () => {
+    const antigo: Evento = { t: 'conjurar', magia: 'intencao-mortal', ciclo: 3, custo: 5, viaCeifadora: false, concentracao: true, rodadas: 10, tempo: 'acaoBonus' };
+    const { s } = run([antigo, { t: 'preparar', magia: 'necropsia', preparada: true }]);
+    expect(s.concentracao?.magia).toBe('intencao-mortal');
+    expect(magia(r, 'intencao-mortal').nome).toBe('Intenção Mortal');
+    expect(descrever(r, env(antigo))).toBe('Conjurou Intenção Mortal (3º, 5 mana)');
+  });
+});

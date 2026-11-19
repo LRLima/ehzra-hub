@@ -15,11 +15,17 @@ import type { Regras } from './rules';
 
 export function carregarRegras(): Regras {
   const strategies = Strategies.parse(strategiesJson);
+  const sp = z.object({
+    schemaVersion: z.literal(SCHEMA_VERSION),
+    magias: z.array(Spell),
+    removidas: z.array(z.object({ id: z.string(), nome: z.string() })).default([]),
+  }).parse(spellsJson);
   return {
     character: Character.parse(characterJson),
     progressao: ClassProgression.parse(progressaoJson),
     homebrew: HomebrewRules.parse(homebrewJson),
-    magias: z.object({ schemaVersion: z.literal(SCHEMA_VERSION), magias: z.array(Spell) }).parse(spellsJson).magias,
+    magias: sp.magias,
+    removidas: sp.removidas,
     habilidades: z.object({ schemaVersion: z.literal(SCHEMA_VERSION), habilidades: z.array(Feature) }).parse(featuresJson).habilidades,
     condicoes: Conditions.parse(conditionsJson).condicoes,
     playbooks: strategies.playbooks,

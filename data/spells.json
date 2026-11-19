@@ -3085,5 +3085,43 @@
       "relacionadas": [],
       "dominioDesde": 9
     }
+  ],
+  "removidas": [
+    {
+      "id": "necropsia",
+      "nome": "Necropsia"
+    },
+    {
+      "id": "taxidermia-de-ehzra",
+      "nome": "Taxidermia de Ehzra"
+    },
+    {
+      "id": "batedores-de-sarcofagos",
+      "nome": "Batedores de Sarcófagos"
+    },
+    {
+      "id": "fio-da-obediencia",
+      "nome": "Fio da Obediência"
+    },
+    {
+      "id": "despelar",
+      "nome": "Despelar"
+    },
+    {
+      "id": "minguar-ossos",
+      "nome": "Minguar Ossos"
+    },
+    {
+      "id": "bolsa-de-ossos",
+      "nome": "Bolsa de Ossos"
+    },
+    {
+      "id": "campeao-do-tumulo",
+      "nome": "Campeão do Túmulo"
+    },
+    {
+      "id": "intencao-mortal",
+      "nome": "Intenção Mortal"
+    }
   ]
 }
