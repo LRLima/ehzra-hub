@@ -24,17 +24,17 @@ body { background: var(--void); }
 :focus-visible { outline-color: var(--bone); }
 a { color: var(--bone); }
 
-.topbar { background: rgba(4, 11, 12, 0.985); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); border-bottom-color: var(--line-soft); }
-.nav { background: rgba(4, 11, 12, 0.96); border-top-color: var(--line-soft); }
+.topbar { background: rgba(11, 10, 10, 0.985); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); border-bottom-color: var(--line-soft); }
+.nav { background: rgba(11, 10, 10, 0.96); border-top-color: var(--line-soft); }
 .nav a { font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 0.12em; text-transform: uppercase; position: relative; transition: color 0.2s; }
 .nav a[aria-current='page'] { color: var(--bone); }
-.nav a[aria-current='page'] svg { filter: none; color: var(--crimson-fg); }
-.nav a[aria-current='page']::after { content: ''; position: absolute; top: 0; left: 30%; right: 30%; height: 2px; background: var(--crimson-fg); border-radius: 0 0 2px 2px; }
+.nav a[aria-current='page'] svg { filter: none; color: var(--bone); }
+.nav a[aria-current='page']::after { content: ''; position: absolute; top: 0; left: 30%; right: 30%; height: 2px; background: var(--bone); border-radius: 0 0 2px 2px; }
 .fab { border-color: var(--line); background: var(--panel-2); color: var(--bone); }
 
 .btn { border-radius: var(--r-pill); font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; background: transparent; }
-.btn.primario { background: var(--crimson-fill); border-color: var(--crimson-fg); color: #fff4e6; }
-.btn.primario:active { background: #a52a3e; }
+.btn.primario { background: var(--panel-3); border-color: var(--bone-dim); color: var(--bone); }
+.btn.primario:active { background: var(--line); }
 .btn.ouro { border-color: var(--bone-faint); color: var(--bone); }
 a.btn.ouro { color: var(--bone); }
 .btn.grande { font-size: 13.5px; }
@@ -55,7 +55,7 @@ a.btn.ouro { color: var(--bone); }
 .turno button[aria-pressed='true'] { border-color: var(--bone); color: var(--void); background: var(--bone); }
 .ciclos button[aria-pressed='true'] { border-color: var(--bone); color: var(--void); background: var(--bone); }
 .grade .v, .attr .m, .mudanca .depois { color: var(--bone); }
-.grade .card.prof .n::after { color: var(--crimson-fg); }
+.grade .card.prof .n::after { color: var(--bone-dim); }
 .desc strong { color: var(--bone); font-weight: 600; }
 .chip.res { border-color: var(--line); color: var(--bone); }
 .search-input { border-color: var(--line); border-radius: var(--r-pill); padding: 0 20px; }
@@ -71,7 +71,7 @@ a.btn.ouro { color: var(--bone); }
 }
 .palco::before { /* luar atrás da figura */
   content: ''; position: absolute; inset: 0; pointer-events: none;
-  background: radial-gradient(ellipse 62% 52% at 50% 56%, rgba(233, 220, 192, 0.16), rgba(64, 200, 190, 0.18) 46%, transparent 74%);
+  background: radial-gradient(ellipse 62% 52% at 50% 56%, rgba(233, 220, 192, 0.10), rgba(95, 208, 187, 0.05) 46%, transparent 74%);
 }
 /* a figura some no chão sem desenhar uma caixa sobre a textura (o esmaecimento é só na imagem) */
 .palco-nome {
@@ -106,12 +106,12 @@ a.btn.ouro { color: var(--bone); }
 .frasco-tubo > span { position: absolute; left: 0; right: 0; bottom: 0; }
 .frasco-tubo .rastro { background: var(--hp-trail); opacity: 0.8; transition: height 0.7s var(--ease-out); }
 .frasco-tubo .liquido {
-  background: linear-gradient(180deg, #ee6a7d, var(--crimson-fill) 55%, #4f101c);
-  box-shadow: 0 0 16px rgba(224, 87, 106, 0.6); transition: height 0.28s ease-out;
+  background: linear-gradient(180deg, #c9505e, #8a2433 50%, #3d0d15);
+  box-shadow: 0 0 12px rgba(214, 95, 107, 0.35); transition: height 0.28s ease-out;
 }
 .frasco-tubo .liquido::before { /* ondinha na superfície */
   content: ''; position: absolute; top: -3px; left: -12px; right: -12px; height: 6px;
-  background: radial-gradient(ellipse at 50% 100%, #ff9aa8 42%, transparent 44%) 0 0 / 12px 6px repeat-x;
+  background: radial-gradient(ellipse at 50% 100%, #e08893 42%, transparent 44%) 0 0 / 12px 6px repeat-x;
   animation: onda 1.8s linear infinite;
 }
 @keyframes onda { to { transform: translateX(12px); } }
@@ -119,7 +119,7 @@ a.btn.ouro { color: var(--bone); }
 .cristais {
   --alma: var(--mana);
   flex: 1; width: 18px; display: flex; flex-direction: column-reverse; gap: 2px; transition: transform 0.15s;
-  filter: drop-shadow(0 0 3px rgba(111, 232, 208, 0.55));
+  filter: drop-shadow(0 0 3px rgba(95, 208, 187, 0.5));
 }
 .cristais i {
   flex: 1; min-height: 6px;
@@ -131,7 +131,7 @@ a.btn.ouro { color: var(--bone); }
 .cristais i:nth-child(3n + 2) { animation-duration: 2.9s; animation-delay: -1.1s; }
 .cristais i:nth-child(3n) { animation-duration: 3.8s; animation-delay: -2.2s; }
 @keyframes alma { 0%, 100% { transform: translate(0, 0) rotate(0); } 33% { transform: translate(1px, -1px) rotate(4deg); } 66% { transform: translate(-1px, 0) rotate(-4deg); } }
-.cristais i.off { background: #1b3532; transform: scale(0.7); animation: none; }
+.cristais i.off { background: var(--mana-empty); transform: scale(0.7); animation: none; }
 @media (prefers-reduced-motion: reduce) { .cristais i { animation: none; } }
 
 .delta {
@@ -141,7 +141,7 @@ a.btn.ouro { color: var(--bone); }
 }
 .frasco.pv .delta { left: 118%; }
 .frasco.mana .delta { left: -18%; }
-.delta.neg { color: #ff9aa8; }
+.delta.neg { color: #e08893; }
 .frasco.mana .delta.neg { color: #a6f0e2; }
 .delta.pos { color: var(--heal); }
 .frasco.mana .delta.pos { color: #e6fff9; }
@@ -161,7 +161,7 @@ a.btn.ouro { color: var(--bone); }
   100% { transform: none; filter: drop-shadow(0 16px 26px rgba(0, 0, 0, 0.75)); }
 }
 .palco.fx-dano::before { animation: luar-dano 0.6s ease-out; }
-@keyframes luar-dano { 20% { background: radial-gradient(ellipse 70% 60% at 50% 56%, rgba(224, 87, 106, 0.6), transparent 74%); } }
+@keyframes luar-dano { 20% { background: radial-gradient(ellipse 70% 60% at 50% 56%, rgba(214, 95, 107, 0.4), transparent 74%); } }
 .palco.fx-cura .palco-figura img { animation: bencao 0.9s ease-out; }
 @keyframes bencao { 30% { filter: brightness(1.25) drop-shadow(0 0 26px var(--heal)); transform: translateY(-4px); } }
 .palco.fx-mana .palco-figura img { animation: arcano 0.8s ease-out; }
@@ -170,7 +170,7 @@ a.btn.ouro { color: var(--bone); }
 @keyframes cintila { 40% { filter: brightness(1.8); transform: scale(1.15); } }
 .palco.pv-baixo .frasco.pv .frasco-tubo { animation: pulso 1.1s ease-in-out infinite; }
 .palco.pv-baixo .frasco.pv .frasco-num b { color: var(--hp-fg); }
-@keyframes pulso { 50% { box-shadow: inset 0 0 0 1px var(--hp-fg), 0 0 18px rgba(224, 87, 106, 0.7); } }
+@keyframes pulso { 50% { box-shadow: inset 0 0 0 1px var(--hp-fg), 0 0 14px rgba(214, 95, 107, 0.5); } }
 .palco.caido .palco-figura img { animation: none; filter: grayscale(1) brightness(0.45); transform: rotate(-3deg); transition: filter 0.6s, transform 0.6s; }
 
 /* ---------- categorias ---------- */
@@ -201,7 +201,7 @@ a.btn.ouro { color: var(--bone); }
 
 /* ataque físico: cantos retos e aço, para não se confundir com magia */
 .atk-card { border-radius: 2px; }
-.grupo .atk-card { background: repeating-linear-gradient(135deg, rgba(195, 206, 219, 0.045) 0 2px, transparent 2px 9px), var(--panel); }
+.grupo .atk-card { background: repeating-linear-gradient(135deg, rgba(185, 191, 196, 0.045) 0 2px, transparent 2px 9px), var(--panel); }
 .atk-card .btn { margin-top: 10px; }
 
 /* ---------- animação de uso ---------- */
@@ -230,28 +230,29 @@ a.btn.ouro { color: var(--bone); }
 .reliquia-arte { border: 0; border-radius: 0; box-shadow: none; margin-top: 12px; background: none; overflow: visible; position: relative; }
 .reliquia-arte::before { /* névoa ciano atrás da foice */
   content: ''; position: absolute; inset: 6% 0; pointer-events: none;
-  background: radial-gradient(ellipse 55% 50% at 50% 50%, rgba(64, 224, 240, 0.22), transparent 70%);
+  background: radial-gradient(ellipse 55% 50% at 50% 50%, rgba(95, 208, 187, 0.14), transparent 70%);
   animation: aura-foice 4s ease-in-out infinite;
 }
-.reliquia-arte img { position: relative; filter: drop-shadow(0 0 3px rgba(120, 240, 255, 0.9)) drop-shadow(0 0 16px rgba(64, 224, 240, 0.65)) drop-shadow(0 0 42px rgba(64, 224, 240, 0.35)); }
+.reliquia-arte img { position: relative; filter: drop-shadow(0 0 3px rgba(150, 230, 215, 0.8)) drop-shadow(0 0 14px rgba(95, 208, 187, 0.45)) drop-shadow(0 0 36px rgba(95, 208, 187, 0.2)); }
 @keyframes aura-foice { 50% { opacity: 0.45; transform: scale(1.06); } }
 .reliquia-sub { text-align: left; font-family: var(--font-mono); font-style: normal; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--bone-faint); }
 .sintonia { border-color: var(--line); }
-.reliquia-mini img { border: 0; object-fit: contain; filter: drop-shadow(0 0 6px rgba(64, 224, 240, 0.8)); }
+.reliquia-mini img { border: 0; object-fit: contain; filter: drop-shadow(0 0 6px rgba(95, 208, 187, 0.6)); }
 
 /* fundo: manchas nas cores da capa e dos olhos, mais contidas */
 /* fundo: a textura verde-azulada, escurecida para o texto ler bem, com luzes lentas por cima */
 .lava {
   background:
-    linear-gradient(180deg, rgba(3, 9, 10, 0.62), rgba(3, 9, 10, 0.8)),
+    linear-gradient(180deg, rgba(11, 10, 10, 0.55), rgba(11, 10, 10, 0.78)),
     url('/img/fundo.webp') center / cover no-repeat,
     var(--void);
+  filter: saturate(0.12) brightness(0.85);
 }
-.lava i { opacity: 0.55; }
-.lava i:nth-child(1) { background: radial-gradient(circle, rgba(64, 200, 190, 0.35), transparent 62%); }
-.lava i:nth-child(2) { background: radial-gradient(circle, rgba(10, 30, 32, 0.9), transparent 64%); }
-.lava i:nth-child(3) { background: radial-gradient(circle, rgba(40, 150, 145, 0.3), transparent 60%); }
-.lava i:nth-child(4) { background: radial-gradient(circle, rgba(4, 14, 16, 0.85), transparent 64%); }
+.lava i { opacity: 0.4; }
+.lava i:nth-child(1) { background: radial-gradient(circle, rgba(60, 54, 50, 0.35), transparent 62%); }
+.lava i:nth-child(2) { background: radial-gradient(circle, rgba(0, 0, 0, 0.9), transparent 64%); }
+.lava i:nth-child(3) { background: radial-gradient(circle, rgba(50, 45, 42, 0.3), transparent 60%); }
+.lava i:nth-child(4) { background: radial-gradient(circle, rgba(0, 0, 0, 0.85), transparent 64%); }
 
 @media (prefers-reduced-motion: reduce) {
   .palco-figura img, .frasco-tubo .liquido::before { animation: none !important; }
@@ -274,7 +275,7 @@ a.btn.ouro { color: var(--bone); }
 @keyframes retrato-mana { 30% { border-color: var(--mana); box-shadow: 0 0 16px var(--mana); transform: scale(1.08); } }
 .vital-row { position: relative; }
 .delta-mini { position: absolute; right: 0; top: -15px; pointer-events: none; font-family: var(--font-mono); font-size: 15px; font-weight: 600; text-shadow: 0 2px 8px #000; animation: delta-mini 1s var(--ease-out) forwards; }
-.delta-mini.neg { color: #ff9aa8; }
+.delta-mini.neg { color: #e08893; }
 .delta-mini.pos { color: var(--heal); }
 .delta-mini.mana.neg { color: #a6f0e2; }
 .delta-mini.mana.pos { color: #e6fff9; }
@@ -282,7 +283,7 @@ a.btn.ouro { color: var(--bone); }
 @media (prefers-reduced-motion: reduce) { .topbar.flutuante, .delta-mini { animation: none; } }
 
 /* pílulas e seletores sobre a textura: fundo escuro translúcido para o texto não brigar com o desenho */
-.segmented, .turno button:not([aria-pressed='true']), .status-strip, .btn.fantasma, .btn.ouro, .btn.aco, .ciclos button:not([aria-pressed='true']) { background-color: rgba(4, 11, 12, 0.6); }
+.segmented, .turno button:not([aria-pressed='true']), .status-strip, .btn.fantasma, .btn.ouro, .btn.aco, .ciclos button:not([aria-pressed='true']) { background-color: rgba(11, 10, 10, 0.6); }
 
 /* ---------- fumaça negra nas margens ----------
  * Textura procedural (scripts/gerar-fumaca.ts) que se repete sem emenda.
@@ -322,33 +323,33 @@ a.btn.ouro { color: var(--bone); }
  * Moldura prateada com volutas nas pontas e uma gema vermelha polida no meio. */
 .btn.gema {
   position: relative; display: block; width: 100%; min-height: 62px; padding: 0; border: 0; background: none;
-  color: #fff4e6; font-family: var(--font-display); font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--bone); font-family: var(--font-display); font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase;
 }
 .btn.gema::after {
   content: ''; position: absolute; inset: 0; pointer-events: none;
   background:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 62'%3E%3Cg fill='none' stroke='%23878579' stroke-width='3' stroke-linecap='round'%3E%3Cpath d='M42 31C24 31 10 22 5 8c9 6 18 6 26 1-6 8-4 15 6 17'/%3E%3Cpath d='M42 31C24 31 10 40 5 54c9-6 18-6 26-1-6-8-4-15 6-17'/%3E%3C/g%3E%3Ccircle cx='9' cy='31' r='4' fill='%23878579'/%3E%3C/svg%3E") left center / auto 100% no-repeat,
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 62'%3E%3Cg transform='translate(44 0) scale(-1 1)'%3E%3Cg fill='none' stroke='%23878579' stroke-width='3' stroke-linecap='round'%3E%3Cpath d='M42 31C24 31 10 22 5 8c9 6 18 6 26 1-6 8-4 15 6 17'/%3E%3Cpath d='M42 31C24 31 10 40 5 54c9-6 18-6 26-1-6-8-4-15 6-17'/%3E%3C/g%3E%3Ccircle cx='9' cy='31' r='4' fill='%23878579'/%3E%3C/g%3E%3C/svg%3E") right center / auto 100% no-repeat;
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 62'%3E%3Cg fill='none' stroke='%235f5c55' stroke-width='3' stroke-linecap='round'%3E%3Cpath d='M42 31C24 31 10 22 5 8c9 6 18 6 26 1-6 8-4 15 6 17'/%3E%3Cpath d='M42 31C24 31 10 40 5 54c9-6 18-6 26-1-6-8-4-15 6-17'/%3E%3C/g%3E%3Ccircle cx='9' cy='31' r='4' fill='%235f5c55'/%3E%3C/svg%3E") left center / auto 100% no-repeat,
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 62'%3E%3Cg transform='translate(44 0) scale(-1 1)'%3E%3Cg fill='none' stroke='%235f5c55' stroke-width='3' stroke-linecap='round'%3E%3Cpath d='M42 31C24 31 10 22 5 8c9 6 18 6 26 1-6 8-4 15 6 17'/%3E%3Cpath d='M42 31C24 31 10 40 5 54c9-6 18-6 26-1-6-8-4-15 6-17'/%3E%3C/g%3E%3Ccircle cx='9' cy='31' r='4' fill='%235f5c55'/%3E%3C/g%3E%3C/svg%3E") right center / auto 100% no-repeat;
 }
 .btn.gema::before {
   content: ''; position: absolute; top: 5px; bottom: 5px; left: 34px; right: 34px; border-radius: 16px;
-  background: linear-gradient(180deg, #a3a196 0%, #6e6c63 38%, #3a3c38 58%, #575a52 80%, #8a887d 100%);
-  box-shadow: inset 0 1px 0 rgba(220, 215, 200, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.5);
+  background: linear-gradient(180deg, #6f6c64 0%, #4a4843 38%, #2a2927 58%, #3c3a36 80%, #5f5c55 100%);
+  box-shadow: inset 0 1px 0 rgba(220, 215, 200, 0.14), inset 0 -1px 0 rgba(0, 0, 0, 0.5);
 }
 .btn.gema span {
   position: relative; z-index: 1; display: flex; align-items: center; justify-content: center;
   margin: 9px 38px; min-height: 44px; border-radius: 12px;
   background:
-    radial-gradient(ellipse 45% 38% at 28% 26%, rgba(255, 255, 255, 0.55), transparent 70%),
-    radial-gradient(ellipse 30% 22% at 72% 78%, rgba(255, 160, 175, 0.35), transparent 70%),
-    linear-gradient(180deg, #e2475d 0%, #a3192f 48%, #690b1b 100%);
-  box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.35), inset 0 -5px 10px rgba(0, 0, 0, 0.4);
-  text-shadow: 0 1px 2px rgba(60, 0, 10, 0.8);
+    radial-gradient(ellipse 45% 38% at 28% 26%, rgba(255, 235, 225, 0.16), transparent 70%),
+    radial-gradient(ellipse 30% 22% at 72% 78%, rgba(214, 95, 107, 0.16), transparent 70%),
+    linear-gradient(180deg, #7a2431 0%, #551520 48%, #2e0910 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 220, 210, 0.16), inset 0 -5px 10px rgba(0, 0, 0, 0.45);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
 }
 .btn.gema:active span { filter: brightness(1.15); transform: scale(0.985); }
 
 /* ---------- combos ---------- */
-[data-cat='combo'] { --cat: #f3ead2; } /* osso claro: nenhuma categoria usa, e destoa do rosa do 4º ciclo */
+[data-cat='combo'] { --cat: var(--bone); } /* combos misturam recursos: ficam em osso, sem cor própria */
 .combo-card { text-align: left; padding: 0; border-left: 3px solid var(--cat); border-radius: 0; }
 .combo-resumo { display: block; width: 100%; text-align: left; background: none; border: 0; color: inherit; padding: 8px 11px 9px 13px; cursor: pointer; }
 .combo-desc { display: block; font-size: 14px; line-height: 1.35; color: var(--bone-dim); margin-top: 2px; }
@@ -357,24 +358,24 @@ a.btn.ouro { color: var(--bone); }
 .combo-card .nome { font-family: var(--font-display); font-size: 15px; color: var(--bone); }
 .combo-topo { gap: 8px; align-items: center; }
 .camada { font-size: 12px; letter-spacing: 0.15em; padding: 0 2px; line-height: 1; white-space: nowrap; }
-.camada[data-camada="rotina"] { color: var(--mana); }
-.camada[data-camada="medio"] { color: var(--cat-habilidade); }
-.camada[data-camada="feito"] { color: var(--crimson-fg); }
+.camada[data-camada="rotina"] { color: var(--bone-faint); }
+.camada[data-camada="medio"] { color: var(--bone-dim); }
+.camada[data-camada="feito"] { color: var(--bone); }
 .combo-card.faltando { opacity: 0.6; }
 .combo-bar .falta-bar { margin: 0 0 6px; font-size: 13.5px; color: var(--hp-fg); }
 .formula { display: flex; flex-wrap: wrap; align-items: center; gap: 5px; margin: 6px 0 4px; }
 .peca { font-family: var(--font-mono); font-size: 12px; padding: 2px 8px; border-radius: 6px; color: var(--cat); border: 1px solid var(--cat); background: color-mix(in srgb, var(--cat) 14%, transparent); }
 .formula .op { font-family: var(--font-mono); font-size: 16px; color: var(--bone); font-weight: 600; }
-.formula .resultado { font-family: var(--font-mono); font-size: 13px; color: #f4b6be; }
+.formula .resultado { font-family: var(--font-mono); font-size: 13px; color: var(--bone); }
 .combo-card .custo { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 6px; font-family: var(--font-mono); font-size: 12px; color: var(--bone-dim); }
 .custo .gasto { padding: 1px 7px; border-radius: var(--r-pill); border: 1px solid currentColor; font-weight: 600; }
-.custo .gasto.insp { color: var(--hp-fg); }
+.custo .gasto.insp { color: var(--gold); }
 .custo .gasto.mana { color: var(--mana); }
 .custo .gasto.canal { color: var(--cat-habilidade); }
 .custo .economia { color: var(--bone-faint); }
 .combo-card .quando { font-size: 13.5px; color: var(--bone-faint); font-style: italic; margin-top: 2px; }
 .combo-card .falta { font-size: 13px; color: var(--hp-fg); margin-top: 2px; }
-.combo-bar { position: sticky; top: calc(var(--topbar-h, 0px) + 6px); z-index: 5; margin: 0 0 10px; padding: 10px 12px; background: var(--panel); border: 1px solid #f3ead2; border-radius: var(--r); }
+.combo-bar { position: sticky; top: calc(var(--topbar-h, 0px) + 6px); z-index: 5; margin: 0 0 10px; padding: 10px 12px; background: var(--panel); border: 1px solid var(--bone-dim); border-radius: var(--r); }
 .combo-bar .combo-texto { margin: 6px 0 8px; font-size: 15px; color: var(--bone); }
 .combo-bar .combo-cancelar { margin-top: 6px; }
 

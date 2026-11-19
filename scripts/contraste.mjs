@@ -11,7 +11,7 @@ const lum = (hex) => {
 const razao = (a, b) => { const [x, y] = [lum(cor(a)), lum(cor(b))].sort((p, q) => q - p); return (x + 0.05) / (y + 0.05); };
 
 // Ponto mais claro da textura (~#3fb8ad) sob o véu de 62% de preto do .lava.
-const texturaClara = '#18463f';
+const texturaClara = '#2a2826'; // textura dessaturada sob o véu
 const pares = [
   ['Texto principal / cartão', 'bone', 'panel', 4.5],
   ['Texto secundário / cartão', 'bone-dim', 'panel', 4.5],
@@ -20,10 +20,12 @@ const pares = [
   ['Número de PV / fundo claro da textura (grande)', 'bone', texturaClara, 3],
   ['Número de mana / fundo claro da textura (grande)', 'mana', texturaClara, 3],
   ['Rótulo VIDA/MANA / fundo claro da textura', 'bone', texturaClara, 4.5],
-  ['Botão primário: texto / vinho', '#fff4e6', 'crimson-fill', 4.5],
-  ['Botão primário: borda / fundo (forma)', 'crimson-fg', 'void', 3],
+  ['Botão primário: texto / fundo', 'bone', 'panel-3', 4.5],
+  ['Botão de combate: texto / gema', 'bone', '#551520', 4.5],
+  ['Botão primário: borda / fundo (forma)', 'bone-dim', 'void', 3],
   ['Pílula ativa: texto / osso', 'void', 'bone', 4.5],
-  ['Chip de dano / chip', '#f4b6be', 'void-2', 4.5],
+  ['Chip de dano / chip', 'bone', 'void-2', 4.5],
+  ['Chip de habilidade / chip', 'gold', 'void-2', 4.5],
   ['Chip de mana / chip', 'mana', 'void-2', 4.5],
   ['Chip de concentração / chip', 'conc', 'void-2', 4.5],
   ['Selo homebrew / cartão', 'src-homebrew', 'panel', 4.5],

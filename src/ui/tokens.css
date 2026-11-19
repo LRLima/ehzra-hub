@@ -6,49 +6,76 @@
 :root {
   color-scheme: dark;
 
-  --void: #040b0c; /* fundo: verde-azulado quase preto, da textura */
-  --void-2: #0b1517;
-  --panel: #0e1819; /* opaco: os cartões ficam como ilhas escuras sobre a textura */
-  --panel-2: #152224;
-  --panel-3: #1e2f31;
-  --line: #2f4547;
-  --line-soft: #1f3133;
+  /*
+   * Paleta "cripta": o fundo é carvão neutro, levemente quente como pedra e osso.
+   * Só quatro cores têm significado, e cada uma vem do próprio Ehzra:
+   *   vinho (a capa)        vida, dano sofrido e perigo
+   *   almas (a Ceifadora)   mana e tudo que gasta mana: magias e concentração
+   *   ouro  (os adornos)    habilidades e recursos de classe
+   *   prata (a lâmina)      o ataque físico e os PV temporários
+   * O resto é osso em três intensidades. O brilho diz o tamanho: ciclo maior, alma mais clara.
+   */
+  /*
+   * Paleta "cripta": o fundo é carvão neutro, levemente quente como pedra e osso.
+   * Só quatro cores têm significado, e cada uma vem do próprio Ehzra:
+   *   vinho (a capa)        vida, dano sofrido e perigo
+   *   almas (a Ceifadora)   mana e tudo que gasta mana: magias e concentração
+   *   ouro  (os adornos)    habilidades e recursos de classe
+   *   prata (a lâmina)      o ataque físico e os PV temporários
+   * O resto é osso em três intensidades. O brilho diz o tamanho: ciclo maior, alma mais clara.
+   */
+  /*
+   * Paleta "cripta": o fundo é carvão neutro, levemente quente como pedra e osso.
+   * Só quatro cores têm significado, e cada uma vem do próprio Ehzra:
+   *   vinho (a capa)        vida, dano sofrido e perigo
+   *   almas (a Ceifadora)   mana e tudo que gasta mana: magias e concentração
+   *   ouro  (os adornos)    habilidades e recursos de classe
+   *   prata (a lâmina)      o ataque físico e os PV temporários
+   * O resto é osso em três intensidades. O brilho diz o tamanho: ciclo maior, alma mais clara.
+   */
+  --void: #0b0a0a;
+  --void-2: #110f0f;
+  --panel: #151313;
+  --panel-2: #1c1a19;
+  --panel-3: #262322;
+  --line: #3b3532;
+  --line-soft: #282422;
 
-  --bone: #e9dcc0;
-  --bone-dim: #b3a08a;
-  --bone-faint: #9a8a7e; /* era #7d6f66 (3,5:1) */
+  --bone: #e8dfcf;
+  --bone-dim: #b6ab9a;
+  --bone-faint: #958a7c;
 
-  --gold: #c9a961;
-  --gold-dim: #a88d55; /* era #8a7442 (3,5:1) */
-  --crimson-fill: #8c2233;
-  --crimson-fg: #e0576a; /* texto; o #b8394a original dava 3,0:1 */
-  --violet-fill: #6b4a80;
-  --violet-fg: #a585c0; /* texto; o #6b4a80 original dava 2,3:1 */
+  --gold: #c4a46a;
+  --gold-dim: #9e8656;
+  --crimson-fill: #6b1c27;
+  --crimson-fg: #d65f6b;
+  --violet-fill: #3b3532;
+  --violet-fg: #b6ab9a;
 
   /* semânticos */
-  --hp-fill: #8c2233;
-  --hp-fg: #e0576a;
-  --hp-trail: #f0c9a0;
-  --heal: #7fc98a;
-  --temp-hp: #c3cedb;
-  --mana: #6fe8d0; /* verde-água das almas (antes, azul dos olhos do Ehzra) */
-  --mana-empty: #1b3532;
-  --conc: #b58ae0;
-  --src-ok: #8fc79a;
-  --src-mudou: #e5b567;
-  --src-legado: #a585c0;
-  --src-homebrew: #e0576a;
+  --hp-fill: #6b1c27;
+  --hp-fg: #d65f6b;
+  --hp-trail: #e9cdb0;
+  --heal: #9cc09e;
+  --temp-hp: #b9bfc4;
+  --mana: #5fd0bb;
+  --mana-empty: #1d2725;
+  --conc: #5fd0bb; /* concentração é magia mantida: mesma cor das almas */
+  --src-ok: #958a7c;
+  --src-mudou: #c4a46a;
+  --src-legado: #958a7c;
+  --src-homebrew: #b6ab9a;
 
-  /* categorias: cada tipo de opção tem uma cor só dela */
-  --cat-fisico: #c3cedb;     /* aço: ataque com a foice, sem custo */
-  --cat-habilidade: #c9a961; /* ouro: habilidades de classe e relíquia */
-  --cat-truque: #c8e38a;     /* lima: truques, sem mana */
-  --cat-c1: #7fb6ee;
-  --cat-c2: #9d92f5;
-  --cat-c3: #cc84e0;
-  --cat-c4: #ee6f93;
-  --cat-c5: #f29455;
-  --cat-c6: #f2c14e;
+  /* categorias: a cor diz o que você gasta */
+  --cat-fisico: #b9bfc4;     /* prata: a foice, sem custo */
+  --cat-habilidade: #c4a46a; /* ouro: recursos de classe */
+  --cat-truque: #b6ab9a;     /* osso: magia sem custo */
+  --cat-c1: #45968a;         /* almas: gasta mana, mais clara quanto maior o ciclo */
+  --cat-c2: #4fab9c;
+  --cat-c3: #5abfae;
+  --cat-c4: #6fd2c0;
+  --cat-c5: #98e2d3;
+  --cat-c6: #c4f0e6;
 
   --font-display: 'Cinzel', Georgia, serif;
   --font-deco: 'Cinzel Decorative', 'Cinzel', Georgia, serif;
@@ -66,7 +93,7 @@
   --safe-bottom: env(safe-area-inset-bottom, 0px);
 
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-  --shadow: 0 10px 30px rgba(10, 4, 12, 0.55);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
 
   /* camadas */
   --z-topbar: 20;

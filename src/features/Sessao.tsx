@@ -149,7 +149,7 @@ function Diario() {
       <div className="stack">
         {d.sessoes.map((x, i) => (
           <div key={i} className="card">
-            <div style={{ fontFamily: 'var(--font-display)', color: 'var(--gold)' }}>{x.titulo}</div>
+            <div style={{ fontFamily: 'var(--font-display)', color: 'var(--bone)' }}>{x.titulo}</div>
             <div className="num muted" style={{ fontSize: 14 }}>{x.resumo.join(' · ')}</div>
             {x.notas.map((n) => <p key={n} className="muted" style={{ fontSize: 14.5, margin: '6px 0 0' }}>{n}</p>)}
           </div>

@@ -1,0 +1,27 @@
+[WebServer] [plugin builtin:vite-reporter] 
+[WebServer] (!) Some chunks are larger than 500 kB after minification. Consider:
+[WebServer] - Using dynamic import() to code-split the application
+[WebServer] - Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+[WebServer] - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+
+Running 16 tests using 2 workers
+
+  ok  2 [celular] › tests\e2e\hub.spec.ts:41:1 › Ceifadora corta o custo pela metade, arredondando para baixo (4.3s)
+  ok  1 [celular] › tests\e2e\hub.spec.ts:31:1 › conjurar atualiza mana, concentração, efeito e log de uma vez (4.6s)
+  ok  3 [celular] › tests\e2e\hub.spec.ts:48:1 › dano com concentração avisa o teste de CON e desfazer volta (2.5s)
+  ok  5 [celular] › tests\e2e\hub.spec.ts:70:1 › subir do nível 8 para o 9 mostra os ganhos, aplica e reverte (1.1s)
+  ok  6 [celular] › tests\e2e\hub.spec.ts:86:1 › exportar e importar backup (1.8s)
+  ok  7 [celular] › tests\e2e\hub.spec.ts:106:1 › dano, alcance, tempo e concentração de qualquer magia em até 2 toques (2.3s)
+  -   8 [celular] › tests\e2e\sync.spec.ts:25:1 › alteração no celular aparece no PC, inclusive depois de ficar offline
+  ok  4 [celular] › tests\e2e\hub.spec.ts:58:1 › descanso longo restaura tudo (7.6s)
+  ok 10 [desktop] › tests\e2e\hub.spec.ts:41:1 › Ceifadora corta o custo pela metade, arredondando para baixo (4.5s)
+  ok  9 [desktop] › tests\e2e\hub.spec.ts:31:1 › conjurar atualiza mana, concentração, efeito e log de uma vez (4.9s)
+  ok 11 [desktop] › tests\e2e\hub.spec.ts:48:1 › dano com concentração avisa o teste de CON e desfazer volta (2.4s)
+  ok 12 [desktop] › tests\e2e\hub.spec.ts:58:1 › descanso longo restaura tudo (7.6s)
+  ok 14 [desktop] › tests\e2e\hub.spec.ts:86:1 › exportar e importar backup (2.5s)
+  ok 13 [desktop] › tests\e2e\hub.spec.ts:70:1 › subir do nível 8 para o 9 mostra os ganhos, aplica e reverte (9.1s)
+  -  16 [desktop] › tests\e2e\sync.spec.ts:25:1 › alteração no celular aparece no PC, inclusive depois de ficar offline
+  ok 15 [desktop] › tests\e2e\hub.spec.ts:106:1 › dano, alcance, tempo e concentração de qualquer magia em até 2 toques (3.0s)
+
+  2 skipped
+  14 passed (46.2s)

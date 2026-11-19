@@ -25,7 +25,7 @@ function Pilulas<T extends string | number>({ opcoes, valor, set, rotulo }: { op
   return (
     <div className="row" role="group" aria-label={rotulo} style={{ gap: 5, marginBottom: 6 }}>
       {opcoes.map(([v, t]) => (
-        <button key={String(v)} className="chip" style={valor === v ? { borderColor: 'var(--gold)', color: 'var(--gold)' } : undefined} aria-pressed={valor === v} onClick={() => set(valor === v ? null : v)}>{t}</button>
+        <button key={String(v)} className="chip" style={valor === v ? { borderColor: 'var(--bone)', color: 'var(--bone)' } : undefined} aria-pressed={valor === v} onClick={() => set(valor === v ? null : v)}>{t}</button>
       ))}
     </div>
   );
@@ -58,7 +58,7 @@ export function Grimorio() {
     <>
       <h1 className="page-title">Grimório</h1>
       <p className="page-sub">
-        {r.magias.length} magias. Preparadas: <span className="num" style={{ color: prep.usadas > prep.limite ? 'var(--hp-fg)' : 'var(--gold)' }}>{prep.usadas}/{prep.limite}</span>
+        {r.magias.length} magias. Preparadas: <span className="num" style={{ color: prep.usadas > prep.limite ? 'var(--hp-fg)' : 'var(--bone)' }}>{prep.usadas}/{prep.limite}</span>
         {s.preparadas === null && ' (escolha as suas em Mais, Preparar magias)'}
       </p>
 

@@ -91,7 +91,7 @@ function Hud() {
         <button className="btn gema largo" onClick={() => dispatch({ t: 'iniciarCombate' }, { silencioso: true })}><span>Iniciar combate</span></button>
       ) : (
         <div className="row">
-          <span className="grow" style={{ fontFamily: 'var(--font-display)' }}>Rodada <b className="num" style={{ color: 'var(--gold)', fontSize: 20 }} data-testid="rodada">{s.combate.rodada}</b></span>
+          <span className="grow" style={{ fontFamily: 'var(--font-display)' }}>Rodada <b className="num" style={{ color: 'var(--bone)', fontSize: 20 }} data-testid="rodada">{s.combate.rodada}</b></span>
           <label className="row faint" style={{ fontSize: 14, gap: 6 }}>
             <input type="checkbox" checked={telaAcesa} onChange={(e) => setTelaAcesa(e.target.checked)} /> Tela acesa
           </label>
@@ -124,7 +124,7 @@ function Hud() {
               <div className="chips">
                 <span className="chip dano">{arma.dano} + {modAtr(r, c, arma.atributo)} {arma.tipo}</span>
                 <span className="chip">{String(arma.alcanceMetros).replace('.', ',')} m</span>
-                {canal && r.habilidades.some((f) => f.id === 'toque-da-morte') && <span className="chip conc">Toque da Morte +{toqueDaMorte(c)}</span>}
+                {canal && r.habilidades.some((f) => f.id === 'toque-da-morte') && <span className="chip hab">Toque da Morte +{toqueDaMorte(c)}</span>}
               </div>
               <button className="btn mini aco" onClick={atacar}><SwordIcon size={16} />Atacar</button>
             </div>

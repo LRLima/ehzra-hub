@@ -43,7 +43,7 @@ function Menu() {
   const item = (href: string, Icone: typeof FeatherIcon, t: string, d: string) => (
     <a href={href} className="card card-btn">
       <span className="menu"><span style={{ display: 'flex', alignItems: 'center', gap: 12, minHeight: 44 }}>
-        <Icone size={22} color="var(--gold)" />
+        <Icone size={22} color="var(--bone-dim)" />
         <span className="grow"><span style={{ fontFamily: 'var(--font-display)' }}>{t}</span><br /><span className="faint" style={{ fontSize: 14 }}>{d}</span></span>
         <CaretRightIcon size={18} />
       </span></span>
@@ -100,7 +100,7 @@ function Lore({ id }: { id?: string }) {
   return (
     <article className="leitura">
       <Voltar />
-      <p className="tipo" style={{ color: 'var(--crimson-fg)' }}>{p.eyebrow}</p>
+      <p className="tipo" style={{ color: 'var(--bone-faint)' }}>{p.eyebrow}</p>
       <h1 className="page-title" style={{ fontSize: 30 }}>{p.titulo}</h1>
       <p className="page-sub">{p.sub}</p>
       {p.blocos.map((b, i) =>
@@ -143,7 +143,7 @@ function Estrategias({ id }: { id?: string }) {
                 <p style={{ fontSize: 15 }}><b style={{ color: 'var(--hp-fg)' }}>Quando não usar:</b> {p.quandoNaoUsar.join(' ')}</p>
                 {[...(p.preCombate ? [{ ...p.preCombate, rotulo: 'Antes da iniciativa' }] : []), ...p.turnos].map((t, i) => (
                   <div key={i} className="box" style={{ borderStyle: 'solid' }}>
-                    <h4 style={{ color: 'var(--gold)' }}>{t.rotulo}</h4>
+                    <h4 style={{ color: 'var(--bone)' }}>{t.rotulo}</h4>
                     {PARTES.slice(1).map(([k, rot]) => t[k as 'acao'] ? <p key={k} style={{ fontSize: 15, margin: '4px 0' }}><b>{rot}:</b> {t[k as 'acao']}</p> : null)}
                     {t.magias.map((m) => (
                       <button key={m.id} className="btn mini ouro" style={{ marginTop: 6, marginRight: 6 }} onClick={() => abrir({ tipo: 'magia', id: m.id, ciclo: m.ciclo })}>
@@ -204,7 +204,7 @@ function Avatar() {
       {s.avatar && <p className="aviso">Ativo: {r.homebrew.avatar.aspectos[s.avatar.aspecto - 1].nome}, {s.avatar.rodadas} rodadas restantes.</p>}
       {ativo && rolando === null && (
         <div className="card aspecto revela" data-id={ativo.id} style={{ marginTop: 14 }}>
-          <h2 style={{ fontSize: 22, color: 'var(--gold)' }}>{ativo.nome}</h2>
+          <h2 style={{ fontSize: 22, color: 'var(--bone)' }}>{ativo.nome}</h2>
           <p className="muted">{ativo.titulo}</p>
           <blockquote>"{ativo.citacao}"</blockquote>
           <Markdown md={ativo.visual} className="muted" />
@@ -388,7 +388,7 @@ function Preparar() {
       <Voltar />
       <h1 className="page-title">Preparar magias</h1>
       <p className="page-sub">
-        <span className="num" style={{ color: cont.usadas > cont.limite ? 'var(--hp-fg)' : 'var(--gold)' }}>{cont.usadas}/{cont.limite}</span> preparadas.
+        <span className="num" style={{ color: cont.usadas > cont.limite ? 'var(--hp-fg)' : 'var(--bone)' }}>{cont.usadas}/{cont.limite}</span> preparadas.
         {s.preparadas === null && ' Hoje todas contam como preparadas; desmarque até chegar no limite.'}
       </p>
       <ListaSugerida />

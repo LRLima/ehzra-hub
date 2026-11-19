@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.7.0 (19/11/2026)
+
+- Paleta nova, a "cripta": fundo de carvão neutro no lugar do verde-azulado, e só quatro cores com significado.
+- Vinho é vida e perigo; verde-água das almas é mana, magias e concentração; ouro é recurso de classe; prata é o ataque físico.
+- Magias ficam em verde-água, mais claras quanto maior o ciclo; truques em osso; combos em osso, com o peso nas bolinhas.
+- Botão de combate em granada escura, sem o brilho forte; os demais botões principais em osso.
+- Dano causado em osso; Toque da Morte em ouro, como habilidade.
+
 ## 0.6.9 (19/11/2026)
 
 - Preparar magias ordenado por ciclo e por nome, com um título colorido para cada ciclo.
