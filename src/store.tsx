@@ -47,6 +47,9 @@ interface UI {
   /** Animação de uso (ataque ou conjuração) em andamento. */
   flash: { id: string; nome: string; cat: string } | null;
   lancar: (nome: string, cat: string) => void;
+  /** Combo em andamento: qual e em que passo. Sobrevive ao fechar das fichas. */
+  combo: { id: string; passo: number; aviso?: string } | null;
+  setCombo: (c: { id: string; passo: number; aviso?: string } | null) => void;
 }
 
 export const useUI = create<UI>((set, get) => ({
@@ -65,6 +68,8 @@ export const useUI = create<UI>((set, get) => ({
   tirarToast: (id) => set({ toasts: get().toasts.filter((x) => x.id !== id) }),
   palcoVisivel: true,
   setPalco: (v) => get().palcoVisivel !== v && set({ palcoVisivel: v }),
+  combo: null,
+  setCombo: (combo) => set({ combo }),
   flash: null,
   lancar: (nome, cat) => {
     const id = novoId();

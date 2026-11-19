@@ -306,3 +306,72 @@ a.btn.ouro { color: var(--bone); }
   .fumaca.dir { -webkit-mask-image: linear-gradient(270deg, #000 15%, transparent); mask-image: linear-gradient(270deg, #000 15%, transparent); }
 }
 @media (prefers-reduced-motion: reduce) { .fumaca i { animation: none !important; } }
+
+/* ---------- botão em gema (Iniciar combate) ----------
+ * Moldura prateada com volutas nas pontas e uma gema vermelha polida no meio. */
+.btn.gema {
+  position: relative; display: block; width: 100%; min-height: 62px; padding: 0; border: 0; background: none;
+  color: #fff4e6; font-family: var(--font-display); font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase;
+}
+.btn.gema::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 62'%3E%3Cg fill='none' stroke='%23878579' stroke-width='3' stroke-linecap='round'%3E%3Cpath d='M42 31C24 31 10 22 5 8c9 6 18 6 26 1-6 8-4 15 6 17'/%3E%3Cpath d='M42 31C24 31 10 40 5 54c9-6 18-6 26-1-6-8-4-15 6-17'/%3E%3C/g%3E%3Ccircle cx='9' cy='31' r='4' fill='%23878579'/%3E%3C/svg%3E") left center / auto 100% no-repeat,
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 62'%3E%3Cg transform='translate(44 0) scale(-1 1)'%3E%3Cg fill='none' stroke='%23878579' stroke-width='3' stroke-linecap='round'%3E%3Cpath d='M42 31C24 31 10 22 5 8c9 6 18 6 26 1-6 8-4 15 6 17'/%3E%3Cpath d='M42 31C24 31 10 40 5 54c9-6 18-6 26-1-6-8-4-15 6-17'/%3E%3C/g%3E%3Ccircle cx='9' cy='31' r='4' fill='%23878579'/%3E%3C/g%3E%3C/svg%3E") right center / auto 100% no-repeat;
+}
+.btn.gema::before {
+  content: ''; position: absolute; top: 5px; bottom: 5px; left: 34px; right: 34px; border-radius: 16px;
+  background: linear-gradient(180deg, #a3a196 0%, #6e6c63 38%, #3a3c38 58%, #575a52 80%, #8a887d 100%);
+  box-shadow: inset 0 1px 0 rgba(220, 215, 200, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.5);
+}
+.btn.gema span {
+  position: relative; z-index: 1; display: flex; align-items: center; justify-content: center;
+  margin: 9px 38px; min-height: 44px; border-radius: 12px;
+  background:
+    radial-gradient(ellipse 45% 38% at 28% 26%, rgba(255, 255, 255, 0.55), transparent 70%),
+    radial-gradient(ellipse 30% 22% at 72% 78%, rgba(255, 160, 175, 0.35), transparent 70%),
+    linear-gradient(180deg, #e2475d 0%, #a3192f 48%, #690b1b 100%);
+  box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.35), inset 0 -5px 10px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 1px 2px rgba(60, 0, 10, 0.8);
+}
+.btn.gema:active span { filter: brightness(1.15); transform: scale(0.985); }
+
+/* ---------- combos ---------- */
+[data-cat='combo'] { --cat: var(--crimson-fg); }
+.combo-card { text-align: left; padding: 9px 12px 10px 14px; border-left: 3px solid var(--crimson-fg); border-radius: 0; }
+.combo-card .nome { font-family: var(--font-display); font-size: 15px; color: var(--bone); }
+.combo-card:disabled { opacity: 0.55; }
+.formula { display: flex; flex-wrap: wrap; align-items: center; gap: 5px; margin: 6px 0 4px; }
+.peca { font-family: var(--font-mono); font-size: 12px; padding: 2px 8px; border-radius: 6px; color: var(--cat); border: 1px solid var(--cat); background: color-mix(in srgb, var(--cat) 14%, transparent); }
+.formula .op { font-family: var(--font-mono); font-size: 16px; color: var(--bone); font-weight: 600; }
+.formula .resultado { font-family: var(--font-mono); font-size: 13px; color: #f4b6be; }
+.combo-card .custo { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 6px; font-family: var(--font-mono); font-size: 12px; color: var(--bone-dim); }
+.custo .gasto { padding: 1px 7px; border-radius: var(--r-pill); border: 1px solid currentColor; font-weight: 600; }
+.custo .gasto.insp { color: var(--hp-fg); }
+.custo .gasto.mana { color: var(--mana); }
+.custo .gasto.canal { color: var(--cat-habilidade); }
+.custo .economia { color: var(--bone-faint); }
+.combo-card .quando { font-size: 13.5px; color: var(--bone-faint); font-style: italic; margin-top: 2px; }
+.combo-card .falta { font-size: 13px; color: var(--hp-fg); margin-top: 2px; }
+.combo-bar { position: sticky; top: calc(var(--topbar-h, 0px) + 6px); z-index: 5; margin: 0 0 10px; padding: 10px 12px; background: var(--panel); border: 1px solid var(--crimson-fg); border-radius: var(--r); }
+.combo-bar .combo-texto { margin: 6px 0 8px; font-size: 15px; color: var(--bone); }
+.combo-bar .combo-cancelar { margin-top: 6px; }
+
+/* ---------- ações básicas ---------- */
+.acoes-basicas { margin-top: 14px; padding-top: 10px; border-top: 1px solid var(--line-soft); }
+.acoes-titulo { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 6px; }
+.acoes-chips { display: flex; flex-wrap: wrap; gap: 5px; }
+.acao-chip { font-family: var(--font-mono); font-size: 12px; padding: 3px 9px; border-radius: var(--r-pill); border: 1px solid var(--line); background: none; color: var(--bone-dim); }
+.acao-chip[aria-pressed='true'] { border-color: var(--bone); color: var(--bone); }
+.acao-regra { margin: 8px 2px 0; font-size: 14.5px; color: var(--bone-dim); }
+
+/* ---------- cartões de magia compactos no celular ---------- */
+@media (max-width: 699px) {
+  .spell-card { padding: 6px 10px 7px 13px; }
+  .spell-card .ciclo-rot { display: none; }
+  .spell-card .nome { font-size: 14px; }
+  .spell-card .sub { font-size: 11.5px; }
+  .spell-card .chips { gap: 3px 12px; margin-top: 3px; }
+  .spell-card .chip { border: 0; background: none; padding: 0; min-height: 0; font-size: 12px; gap: 3px; }
+  .spell-card .chip .t, .spell-card .chip.dur, .spell-card .chip.vazio { display: none; }
+}

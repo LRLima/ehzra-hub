@@ -3,8 +3,8 @@ import { useEffect, useMemo, type ReactNode } from 'react';
 import { marked } from 'marked';
 import DOMPurify from 'dompurify';
 import {
-  HourglassIcon, CrosshairIcon, DropIcon, HeartIcon, ShieldIcon, TargetIcon, EyeIcon, ClockIcon, DiamondIcon, XIcon,
-  ArrowCounterClockwiseIcon,
+  HourglassIcon, CrosshairIcon, DropIcon, HeartIcon, ShieldIcon, TargetIcon, ClockIcon, DiamondIcon, XIcon,
+  ArrowCounterClockwiseIcon, LightningIcon, ArrowBendUpLeftIcon, ClockCountdownIcon,
 } from '@phosphor-icons/react';
 import type { Spell, Status2024 } from '../domain/schemas';
 import {
@@ -40,8 +40,9 @@ export function SpellChips({ spell, ciclo }: { spell: Spell; ciclo?: number }) {
 
   return (
     <div className="chips">
-      <span className="chip" title="Tempo de conjuração">
-        <HourglassIcon {...I} />{TEMPO_CURTO[spell.tempo.tipo] ?? spell.tempo.texto}
+      <span className="chip tempo" title={TEMPO_CURTO[spell.tempo.tipo] ?? spell.tempo.texto}>
+        {spell.tempo.tipo === 'acaoBonus' ? <LightningIcon {...I} /> : spell.tempo.tipo === 'reacao' ? <ArrowBendUpLeftIcon {...I} /> : <HourglassIcon {...I} />}
+        <span className="t">{TEMPO_CURTO[spell.tempo.tipo] ?? spell.tempo.texto}</span>
       </span>
       <span className="chip" title="Alcance"><CrosshairIcon {...I} />{spell.alcance.texto}</span>
       {dano ? (
@@ -58,10 +59,10 @@ export function SpellChips({ spell, ciclo }: { spell: Spell; ciclo?: number }) {
       )}
       {spell.concentracao && (
         <span className={`chip conc${troca ? ' troca' : ''}`} title={troca ? `Encerra ${troca}` : 'Concentração'}>
-          <EyeIcon {...I} />{troca ? `troca ${troca}` : 'Conc.'}
+          <ClockCountdownIcon {...I} /><span className="t">{troca ? `troca ${troca}` : 'Conc.'}</span>
         </span>
       )}
-      <span className="chip" title="Duração"><ClockIcon {...I} />{duracaoCurta(spell)}</span>
+      <span className="chip dur" title="Duração"><ClockIcon {...I} />{duracaoCurta(spell)}</span>
       {cic > 0 && (
         <span className="chip mana" title={usaCeifadora(r, spell) ? 'Metade do custo pela Ceifadora' : 'Custo em mana'}>
           <DiamondIcon {...I} />
@@ -151,7 +152,7 @@ export function SpellCard({ spell, ciclo, mostrarSelo = false }: { spell: Spell;
         <span className="nome">{spell.nome}</span>
         <span className="row" style={{ gap: 6 }}>
           {mostrarSelo && <SeloDe id={spell.id} status={spell.status2024} />}
-          <span className="faint num" style={{ fontSize: 13 }}>{spell.ciclo === 0 ? 'truque' : `${spell.ciclo}º`}</span>
+          <span className="faint num ciclo-rot" style={{ fontSize: 13 }}>{spell.ciclo === 0 ? 'truque' : `${spell.ciclo}º`}</span>
         </span>
       </div>
       {spell.nomeOriginal && <div className="sub">{spell.nomeOriginal}</div>}

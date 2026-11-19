@@ -1,4 +1,5 @@
 /** Modo Combate (HUD) e Modo Testes/Exploração. */
+import { AcoesBasicas, ComboBar, CombosDoTurno } from './Combos';
 import { useEffect, useState } from 'react';
 import { PlusIcon, MinusIcon, TrashIcon, SkullIcon, CampfireIcon, XIcon, SwordIcon } from '@phosphor-icons/react';
 import { useJogo, useUI } from '../store';
@@ -88,7 +89,7 @@ function Hud() {
   return (
     <>
       {!s.combate ? (
-        <button className="btn primario largo grande" onClick={() => dispatch({ t: 'iniciarCombate' }, { silencioso: true })}>Iniciar combate</button>
+        <button className="btn gema largo" onClick={() => dispatch({ t: 'iniciarCombate' }, { silencioso: true })}><span>Iniciar combate</span></button>
       ) : (
         <div className="row">
           <span className="grow" style={{ fontFamily: 'var(--font-display)' }}>Rodada <b className="num" style={{ color: 'var(--gold)', fontSize: 20 }} data-testid="rodada">{s.combate.rodada}</b></span>
@@ -112,6 +113,7 @@ function Hud() {
         </div>
       )}
 
+      <ComboBar />
       <div className="grupos page-in" key={parte} data-testid={`opcoes-${parte}`}>
         {parte === 'acao' && (
           <Grupo cat="fisico" titulo="Ataque físico" nota="só gasta a ação">
@@ -129,6 +131,7 @@ function Hud() {
             </div>
           </Grupo>
         )}
+        {parte !== 'movimento' && <CombosDoTurno parte={parte} />}
         {parte === 'reacao' && (
           <Grupo cat="fisico" titulo="Ataque físico" nota="só gasta a reação">
             <div className="card atk-card"><span className="nome">Ataque de oportunidade</span><p className="muted" style={{ fontSize: 15, margin: '4px 0 0' }}>Quando um inimigo sai do seu alcance. Com Conjurador de Guerra, pode conjurar uma magia de 1 ação nele.</p></div>
@@ -170,6 +173,7 @@ function Hud() {
           );
         })}
         {magias.length === 0 && feats.length === 0 && parte !== 'acao' && parte !== 'movimento' && <p className="faint">Nada preparado para este tempo.</p>}
+        {parte === 'acao' && <AcoesBasicas />}
       </div>
 
       <h3 className="section-h">Recursos</h3>

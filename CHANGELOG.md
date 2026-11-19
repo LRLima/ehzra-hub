@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.5.0 (19/11/2026)
+
+- Combos guiados na tela de Combate: fórmula colorida (A + B = dano), custo em selos, e uma barra que conduz passo a passo, perguntando se acertou antes de gastar o próximo recurso. Só aparecem os combos que existem no nível.
+- Ações básicas no fim da aba Ação (Esquivar, Disparada, Desengajar, Ajudar, Esconder, Empurrar, Agarrar, Preparar, Usar objeto, Ataque de oportunidade), com a regra ao tocar.
+- Cartões de magia compactos no celular: só ícones (ação, bônus, reação, concentração) e o que importa; sem a palavra do ciclo repetida.
+- Botão Iniciar combate em gema vermelha com moldura de prata oxidada.
+
 ## 0.4.4 (19/11/2026)
 
 - Truque Luz trocado por Chama Sagrada.

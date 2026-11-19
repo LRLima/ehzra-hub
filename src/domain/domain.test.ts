@@ -8,6 +8,7 @@ import {
 import { estadoInicial, reduzir, contexto, type GameState, recursoRestante } from './state';
 import type { Envelope, Evento } from './events';
 import { ganhosProximoNivel } from './levelup';
+import { combosDisponiveis } from './combos';
 import { migrar } from './migrations';
 import { descrever } from './log';
 
@@ -340,5 +341,25 @@ describe('histórico com magias que saíram do grimório', () => {
     expect(s.concentracao?.magia).toBe('intencao-mortal');
     expect(magia(r, 'intencao-mortal').nome).toBe('Intenção Mortal');
     expect(descrever(r, env(antigo))).toBe('Conjurou Intenção Mortal (3º, 5 mana)');
+  });
+});
+
+describe('combos', () => {
+  it('no nível 8 mostra os combos da Morte, com custo e o que falta', () => {
+    const s0 = estadoInicial(r);
+    const n8 = regrasNoNivel(r, 8);
+    const lista = combosDisponiveis(n8, s0);
+    const ids = lista.map((x) => x.combo.id);
+    expect(ids).toEqual(expect.arrayContaining(['golpe-do-epitafio', 'carrasco-do-paralisado', 'ferida-no-chefe']));
+    expect(ids).not.toContain('nova-e-barreira'); // Barreira Luminosa só no 9
+    const golpe = lista.find((x) => x.combo.id === 'golpe-do-epitafio')!;
+    expect(golpe.mana).toBe(6);
+    const semInspiracao = combosDisponiveis(n8, { ...s0, inspiracao: 0 }).find((x) => x.combo.id === 'golpe-do-epitafio')!;
+    expect(semInspiracao.falta).toContain('Inspiração');
+  });
+  it('no nível 9 troca para os combos da Disciplina', () => {
+    const ids = combosDisponiveis(regrasNoNivel(r, 9), { ...estadoInicial(r), nivel: 9 }).map((x) => x.combo.id);
+    expect(ids).toContain('nova-e-barreira');
+    expect(ids).not.toContain('golpe-do-epitafio'); // sem Toque da Morte
   });
 });

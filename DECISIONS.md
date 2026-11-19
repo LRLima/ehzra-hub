@@ -67,4 +67,5 @@ Pontos que continuam em aberto (não mudei, só registrei): Iniciativa +4 com DE
 | Magias que saem do grimório | Ficam no extraído (fiel ao original) e são filtradas no build por _removidas; links do texto original para elas viram texto simples | Não perder o registro do original |
 | Magias novas | data/curation/spells-novas.json, escritas inteiras e validadas pelo mesmo Zod | Não existem no HTML original |
 | Ressurreição | Revivificar fora do grimório: o mestre não permite | Pedido do Lucas em 19/11/2026 |
+| Combos | Guiados passo a passo; cada passo abre a ficha normal e nada é gasto sozinho. Perguntas como "acertou?" decidem o próximo gasto. O combo em andamento fica numa barra na tela de Combate, porque as fichas se fecham ao conjurar | Pedido do Lucas em 19/11/2026; mesma regra do "Executar passo" dos playbooks |
 | Tema | Só escuro por enquanto | Pedido do prompt ("escuro como padrão"); tema claro fica para depois |
