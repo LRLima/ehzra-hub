@@ -1951,9 +1951,9 @@
       "escola": "Necromancia",
       "resumo": "Reação: até o seu próximo turno, o alvo não se cura e sofre 2d6 necrótico extra, uma vez por turno, ao ser atingido.",
       "id": "ferida-aberta",
-      "nome": "Ferida Aberta",
+      "nome": "Sangria",
       "nomeOriginal": "Open Wounds",
-      "nomeFicha": "Ferida Aberta",
+      "nomeFicha": "Sangria",
       "ciclo": 2,
       "tags": [
         "dano"
@@ -2004,9 +2004,9 @@
       "escola": "Necromancia",
       "resumo": "Reação: quem cai a 0 PV a até 18 m recupera 2d8 + mod. de conjuração e não fica Inconsciente.",
       "id": "ainda-nao",
-      "nome": "Ainda Não",
-      "nomeOriginal": "Not Yet",
-      "nomeFicha": "Ainda Não",
+      "nome": "Veto da Morte",
+      "nomeOriginal": "Death's Veto",
+      "nomeFicha": "Veto da Morte",
       "ciclo": 3,
       "tags": [
         "cura"

@@ -3,7 +3,7 @@
   "magias": [
     {
       "id": "ferida-aberta",
-      "nome": "Ferida Aberta",
+      "nome": "Sangria",
       "nomeOriginal": "Open Wounds",
       "ciclo": 2,
       "escola": "Necromancia",
@@ -56,8 +56,8 @@
     },
     {
       "id": "ainda-nao",
-      "nome": "Ainda Não",
-      "nomeOriginal": "Not Yet",
+      "nome": "Veto da Morte",
+      "nomeOriginal": "Death's Veto",
       "ciclo": 3,
       "escola": "Necromancia",
       "fonte": "Homebrew",

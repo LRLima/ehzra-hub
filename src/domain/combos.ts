@@ -56,7 +56,7 @@ export const COMBOS: Combo[] = [
       { rotulo: 'atravessar', cat: 'fisico' },
       { rotulo: 'Palavra Radiante', cat: 'truque' },
       { rotulo: 'Lanterna', cat: 'c5' },
-      { rotulo: 'Ferida Aberta', cat: 'c2' },
+      { rotulo: 'Sangria', cat: 'c2' },
     ],
     resultado: '~120 por rodada em três inimigos, ~65 num chefe',
     economia: 'concentração + movimento + ação + bônus + reação',
@@ -66,7 +66,7 @@ export const COMBOS: Combo[] = [
       { tipo: 'magia', id: 'lanterna-espiritual', ciclo: 5, rotulo: 'Lanterna Espiritual (antes da luta; dura 10 minutos)' },
       { tipo: 'lembrete', texto: 'Movimento: atravesse o grupo inimigo. Cada um que a aura tocar faz a salvaguarda agora e de novo no fim do turno dele.' },
       { tipo: 'magia', id: 'palavra-radiante', ciclo: 0, rotulo: 'Ação: Palavra Radiante em todos a 1,5 m' },
-      { tipo: 'lembrete', texto: 'Ação bônus: se a Lanterna tiver alma, Drenar Vida no mais perigoso (4d8 + 5). Reação: Ferida Aberta quando um aliado acertar o chefe.' },
+      { tipo: 'lembrete', texto: 'Ação bônus: se a Lanterna tiver alma, Drenar Vida no mais perigoso (4d8 + 5). Reação: Sangria quando um aliado acertar o chefe.' },
     ],
   },
   {
@@ -80,7 +80,7 @@ export const COMBOS: Combo[] = [
       { rotulo: 'Palavra Sombria: Dor', cat: 'c1' },
       { rotulo: 'Soar os Mortos', cat: 'truque' },
       { rotulo: 'Lanterna', cat: 'c5' },
-      { rotulo: 'Ferida Aberta', cat: 'c2' },
+      { rotulo: 'Sangria', cat: 'c2' },
     ],
     resultado: '~52 por rodada num alvo',
     economia: 'ação + bônus + reação, sem concentração',
@@ -89,7 +89,7 @@ export const COMBOS: Combo[] = [
       { tipo: 'magia', id: 'lanterna-espiritual', ciclo: 5, rotulo: 'Lanterna Espiritual (antes da luta; dura 10 minutos)' },
       { tipo: 'magia', id: 'palavra-sombria-dor', ciclo: 1, rotulo: 'Ação, 1ª rodada: Palavra Sombria: Dor no alvo (1 de mana)' },
       { tipo: 'magia', id: 'soar-os-mortos', ciclo: 0, rotulo: 'Ação, rodadas seguintes: Soar os Mortos (sempre no d12)' },
-      { tipo: 'lembrete', texto: 'Ação bônus: Drenar Vida quando houver alma na Lanterna. Reação: Ferida Aberta quando um aliado acertar. A concentração fica livre.' },
+      { tipo: 'lembrete', texto: 'Ação bônus: Drenar Vida quando houver alma na Lanterna. Reação: Sangria quando um aliado acertar. A concentração fica livre.' },
     ],
   },
   {
@@ -180,23 +180,23 @@ export const COMBOS: Combo[] = [
   // ---------- médio: uma vez por luta, quando vale ----------
   {
     id: 'cego-e-aberto',
-    nome: 'Cegar e Abrir a Ferida',
+    nome: 'Cegar e Sangrar',
     descricao: 'O inimigo fica cego: todos acertam mais e cada golpe sangra mais.',
     camada: 'medio',
     parte: 'acao',
     quando: 'Um alvo perigoso que enxerga (dragões não: eles percebem às cegas).',
     formula: [
       { rotulo: 'Cegueira e Surdez', cat: 'c2' },
-      { rotulo: 'Ferida Aberta', cat: 'c2' },
+      { rotulo: 'Sangria', cat: 'c2' },
     ],
     resultado: 'vantagem para todos contra ele, e cada acerto soma 2d6',
     economia: 'ação + reação',
     requer: { magias: ['cegueira-e-surdez', 'ferida-aberta'] },
     passos: [
       { tipo: 'magia', id: 'cegueira-e-surdez', ciclo: 2, rotulo: 'Cegueira e Surdez (Cego) no alvo' },
-      { tipo: 'pergunta', texto: 'Ele ficou Cego?', senao: 'Passou na salvaguarda. Guarde a reação para o Ainda Não.' },
+      { tipo: 'pergunta', texto: 'Ele ficou Cego?', senao: 'Passou na salvaguarda. Guarde a reação para o Veto da Morte.' },
       { tipo: 'lembrete', texto: 'Cego: todos atacam com vantagem e ele ataca com desvantagem. Quando o primeiro aliado acertar, use a reação.' },
-      { tipo: 'magia', id: 'ferida-aberta', ciclo: 2, rotulo: 'Ferida Aberta no alvo cego' },
+      { tipo: 'magia', id: 'ferida-aberta', ciclo: 2, rotulo: 'Sangria no alvo cego' },
     ],
   },
 

@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.7.2 (19/11/2026)
+
+- Ferida Aberta agora se chama Sangria (Open Wounds) e Ainda Não virou Veto da Morte (Death's Veto). O combo Cegar e Abrir a Ferida virou Cegar e Sangrar.
+
 ## 0.7.1 (19/11/2026)
 
 - Sai o controle de rodadas: sem Iniciar combate, Próxima rodada e Marcar ação. Ficam as abas de ação, bônus, reação e movimento e o aviso de concentração.
