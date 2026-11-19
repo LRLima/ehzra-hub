@@ -349,7 +349,7 @@ describe('combos', () => {
     const n8 = regrasNoNivel(r, 8);
     const lista = combosDisponiveis(n8, s0);
     const ids = lista.map((x) => x.combo.id);
-    expect(ids).toEqual(expect.arrayContaining(['golpe-do-epitafio', 'danca-dos-guardioes', 'puxar-para-a-cova', 'dor-e-sino']));
+    expect(ids).toEqual(expect.arrayContaining(['golpe-do-epitafio', 'danca-dos-guardioes', 'dor-e-sino']));
     expect(lista[0].combo.camada).toBe('rotina'); // da rotina ao feito
     expect(ids).not.toContain('nova-e-barreira'); // Barreira Luminosa só no 9
     const golpe = lista.find((x) => x.combo.id === 'golpe-do-epitafio')!;

@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.6.7 (19/11/2026)
+
+- Sai o combo Comando para dentro dos Guardiões. O Comando continua no grimório.
+
 ## 0.6.6 (19/11/2026)
 
 - Combos com nomes que dizem as peças e o efeito: Dança Selvagem dos Guardiões, Dor sem Fim e Sino Fúnebre, Nova Sagrada com Barreira Luminosa, Horror que Atordoa, Lança que Derruba, e os demais.

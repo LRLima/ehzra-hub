@@ -179,25 +179,6 @@ export const COMBOS: Combo[] = [
 
   // ---------- médio: uma vez por luta, quando vale ----------
   {
-    id: 'puxar-para-a-cova',
-    nome: 'Comando para dentro dos Guardiões',
-    descricao: 'Obriga inimigos distantes a virem até você, para dentro dos espíritos.',
-    camada: 'medio',
-    parte: 'acao',
-    quando: 'Arqueiros ou conjuradores longe, fora da sua aura.',
-    formula: [
-      { rotulo: 'Comando: Aproxime-se', cat: 'c1' },
-      { rotulo: 'Guardiões Espirituais', cat: 'c3' },
-    ],
-    resultado: 'eles andam até você, dentro da aura e do alcance do bárbaro',
-    economia: 'ação',
-    requer: { magias: ['comando', 'guardioes-espirituais'] },
-    passos: [
-      { tipo: 'magia', id: 'comando', ciclo: 2, rotulo: 'Comando "Aproxime-se" (um alvo a mais por ciclo acima do 1º)' },
-      { tipo: 'lembrete', texto: 'Quem falhar anda até você pelo caminho mais curto e termina o turno a 1,5 m: entra nos Guardiões e fica ao alcance da linha de frente.' },
-    ],
-  },
-  {
     id: 'cego-e-aberto',
     nome: 'Cegar e Abrir a Ferida',
     descricao: 'O inimigo fica cego: todos acertam mais e cada golpe sangra mais.',
