@@ -163,50 +163,6 @@
         "texto": "1 ação"
       },
       "alcance": {
-        "tipo": "toque",
-        "texto": "Toque"
-      },
-      "componentes": {
-        "v": true,
-        "s": false,
-        "m": true
-      },
-      "material": "um vagalume ou musgo fosforescente",
-      "duracao": {
-        "texto": "1 hora",
-        "rodadas": 600
-      },
-      "concentracao": false,
-      "ritual": false,
-      "dano": [],
-      "condicoes": [],
-      "escola": "Evocação",
-      "resumo": "Objeto brilha: luz forte em 6 m e fraca por mais 6 m.",
-      "id": "luz",
-      "nome": "Luz",
-      "nomeOriginal": "Light",
-      "nomeFicha": "Light",
-      "ciclo": 0,
-      "tags": [
-        "utilidade"
-      ],
-      "fonte": "PHB 2024",
-      "listaClerigo": true,
-      "status2024": "ok",
-      "itemValidacao": "M3",
-      "origens": [
-        "classe"
-      ],
-      "perdida": false,
-      "descricaoCompleta": "Magia padrão de D&D 5e, sem anotação própria no grimório. Você toca um objeto que não exceda 3 metros em nenhuma dimensão; ele passa a emitir luz forte num raio de 6 m e luz fraca por mais 6 m, na cor que você escolher.",
-      "relacionadas": []
-    },
-    {
-      "tempo": {
-        "tipo": "acao",
-        "texto": "1 ação"
-      },
-      "alcance": {
         "tipo": "pessoal",
         "texto": "Pessoal (raio de 1,5 m)"
       },
@@ -2311,6 +2267,65 @@
       },
       "alcance": {
         "tipo": "distancia",
+        "metros": 18,
+        "pes": 60,
+        "texto": "18 m"
+      },
+      "componentes": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duracao": {
+        "texto": "Instantânea",
+        "rodadas": null
+      },
+      "concentracao": false,
+      "ritual": false,
+      "resolucao": {
+        "tipo": "salvaguarda",
+        "atributo": "des",
+        "metadeNoSucesso": false
+      },
+      "dano": [
+        {
+          "porNivel": {
+            "5": "2d8",
+            "11": "3d8",
+            "17": "4d8"
+          },
+          "dados": "1d8",
+          "tipo": "radiante"
+        }
+      ],
+      "condicoes": [],
+      "escola": "Evocação",
+      "resumo": "Uma criatura a até 18 m: DES ou dano radiante; cobertura não ajuda.",
+      "id": "chama-sagrada",
+      "nome": "Chama Sagrada",
+      "nomeOriginal": "Sacred Flame",
+      "nomeFicha": "Chama Sagrada",
+      "ciclo": 0,
+      "tags": [
+        "dano"
+      ],
+      "fonte": "PHB 2024",
+      "listaClerigo": true,
+      "status2024": "ok",
+      "origens": [
+        "classe"
+      ],
+      "perdida": false,
+      "descricaoCompleta": "Uma chama radiante desce sobre uma criatura que você possa ver ao alcance. Ela faz uma salvaguarda de Destreza e, na falha, sofre **1d8 de dano radiante**. O alvo não ganha benefício de meia cobertura nem de três quartos de cobertura nessa salvaguarda.\n\n**Truque.** O dano aumenta para 2d8 no 5º nível, 3d8 no 11º e 4d8 no 17º.",
+      "relacionadas": []
+    },
+    {
+      "tempo": {
+        "tipo": "acao",
+        "texto": "1 ação"
+      },
+      "alcance": {
+        "tipo": "distancia",
         "metros": 36,
         "pes": 120,
         "texto": "36 m"
@@ -3076,6 +3091,10 @@
     {
       "id": "intencao-mortal",
       "nome": "Intenção Mortal"
+    },
+    {
+      "id": "luz",
+      "nome": "Light"
     }
   ]
 }

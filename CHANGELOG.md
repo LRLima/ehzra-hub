@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.4 (19/11/2026)
+
+- Truque Luz trocado por Chama Sagrada.
+
 ## 0.4.3 (19/11/2026)
 
 - Revivificar saiu do grimório: o mestre não permite.

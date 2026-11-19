@@ -36,6 +36,10 @@
     {
       "nomeFicha": "Intenção Mortal",
       "id": "intencao-mortal"
+    },
+    {
+      "nomeFicha": "Light",
+      "id": "luz"
     }
   ],
   "Soar os Mortos": {
@@ -138,23 +142,6 @@
       },
       "resumo": "+1d4 em todos os testes de uma perícia escolhida, por 1 minuto."
     }
-  },
-  "Light": {
-    "id": "luz",
-    "nome": "Luz",
-    "nomeOriginal": "Light",
-    "tags": [
-      "utilidade"
-    ],
-    "fonte": "PHB 2024",
-    "listaClerigo": true,
-    "status2024": "ok",
-    "itemValidacao": "M3",
-    "origens": [
-      "classe"
-    ],
-    "resumo": "Objeto brilha: luz forte em 6 m e fraca por mais 6 m.",
-    "material": "um vagalume ou musgo fosforescente"
   },
   "Lâmina Necrótica": {
     "id": "lamina-necrotica",

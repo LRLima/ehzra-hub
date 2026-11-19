@@ -199,6 +199,59 @@
       "descricaoCompleta": "Luz ardente irrompe de você. Cada criatura à sua escolha que você possa ver a até 1,5 m faz uma salvaguarda de Constituição e, na falha, sofre **1d6 de dano radiante**.\n\n**Truque.** O dano aumenta para 2d6 no 5º nível, 3d6 no 11º e 4d6 no 17º."
     },
     {
+      "id": "chama-sagrada",
+      "nome": "Chama Sagrada",
+      "nomeOriginal": "Sacred Flame",
+      "ciclo": 0,
+      "escola": "Evocação",
+      "fonte": "PHB 2024",
+      "listaClerigo": true,
+      "status2024": "ok",
+      "origens": [
+        "classe"
+      ],
+      "tags": [
+        "dano"
+      ],
+      "tempo": {
+        "tipo": "acao",
+        "texto": "1 ação"
+      },
+      "alcance": {
+        "tipo": "distancia",
+        "metros": 18,
+        "pes": 60,
+        "texto": "18 m"
+      },
+      "componentes": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duracao": {
+        "texto": "Instantânea",
+        "rodadas": null
+      },
+      "concentracao": false,
+      "resolucao": {
+        "tipo": "salvaguarda",
+        "atributo": "des"
+      },
+      "dano": [
+        {
+          "dados": "1d8",
+          "tipo": "radiante",
+          "porNivel": {
+            "5": "2d8",
+            "11": "3d8",
+            "17": "4d8"
+          }
+        }
+      ],
+      "resumo": "Uma criatura a até 18 m: DES ou dano radiante; cobertura não ajuda.",
+      "descricaoCompleta": "Uma chama radiante desce sobre uma criatura que você possa ver ao alcance. Ela faz uma salvaguarda de Destreza e, na falha, sofre **1d8 de dano radiante**. O alvo não ganha benefício de meia cobertura nem de três quartos de cobertura nessa salvaguarda.\n\n**Truque.** O dano aumenta para 2d8 no 5º nível, 3d8 no 11º e 4d8 no 17º."
+    },
+    {
       "id": "raio-guia",
       "nome": "Raio Guia",
       "nomeOriginal": "Guiding Bolt",

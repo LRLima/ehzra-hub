@@ -91,7 +91,7 @@ Para mudar uma decisão: edite `aprovacoes2024` ou `recusadas2024` em `data/char
 
 No nível 8, o Clérigo 2024 tem **4 truques e 12 magias preparadas**. Por cima disso vêm as magias do Domínio da Morte (sempre preparadas, 8 até o 4º ciclo) e as 4 da Ceifadora.
 
-- **Truques:** a ficha tem 6: 4 de classe + 2 do antecedente Acólito (Iniciado em Magia). Confirmado pelo Lucas em 19/11/2026. Como nenhum vem do Ceifador, a troca para o Domínio da Disciplina no nível 9 não tira truque; o 5º truque de classe chega no nível 10.
+- **Truques:** a ficha tem 6: 4 de classe + 2 do antecedente Acólito (Iniciado em Magia). Confirmado pelo Lucas em 19/11/2026. Em 19/11/2026 a Luz foi trocada pela Chama Sagrada. Como nenhum vem do Ceifador, a troca para o Domínio da Disciplina no nível 9 não tira truque; o 5º truque de classe chega no nível 10.
 - **Magias com ciclo:** a ficha tem 29 que não são do Domínio nem da Ceifadora. O limite é 12.
 - **Proposta:** o app mostra todas no grimório, e você marca quais estão preparadas hoje com um contador "x/12". Até você escolher, todas aparecem como preparadas com um aviso.
 
