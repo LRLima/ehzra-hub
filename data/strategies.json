@@ -75,7 +75,7 @@
       "turnos": [
         {
           "acao": "Lâmina Necrótica: ataque com a foice. Se acertar, use Toque da Morte (+21 necrótico, 1 Canalizar Divindade).",
-          "bonus": "Manto Espiritual no 3º ciclo (5 mana, +1d8 por acerto). O dano só sobe no 5º ciclo (2d8), então no nível 8 não vale gastar um 4º.",
+          "bonus": "Manto Espiritual do Ehzra no 3º ciclo (5 mana, +1d8 por acerto). O dano só sobe no 5º ciclo (2d8), então no nível 8 não vale gastar um 4º.",
           "movimento": "Cole no alvo; se ele se afastar, a Lâmina pune.",
           "magias": [
             {
@@ -136,14 +136,14 @@
         },
         {
           "acao": "Raio da Doença (2 mana por turno).",
-          "bonus": "Intenção Mortal (5 mana), só se você for usar Raio da Doença, que é ataque à distância.",
+          "bonus": "O Manto Espiritual do Ehzra também vale para ataques à distância: mantenha-o e troque a foice por Raio da Doença.",
           "magias": [
             {
-              "id": "intencao-mortal",
-              "ciclo": 3
+              "id": "raio-da-doenca",
+              "ciclo": 1
             }
           ],
-          "rotulo": "Variante com Intenção Mortal"
+          "rotulo": "Variante à distância"
         }
       ],
       "conflitosConcentracao": [

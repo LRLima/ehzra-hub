@@ -90,7 +90,7 @@ const spellsOriginais = rawSpells.map((raw: any) => {
     ritual: /ritual/i.test(raw.escola) || /ritual/i.test(m.tempo),
     alvo: c.alvo ?? m.alvo,
     perdida: raw.tagOriginal === 'perdida',
-    descricaoCompleta: raw.descricaoMd || null,
+    descricaoCompleta: c.descricaoCompleta ?? (raw.descricaoMd || null), // a curadoria pode reescrever (variantes homebrew)
   });
 });
 // Magias que entraram depois do original: escritas inteiras à mão.

@@ -89,12 +89,10 @@ describe('dano e cura calculados', () => {
   it('Lâmina Necrótica não soma Conjurador Potente (não é truque da lista de Clérigo)', () => {
     expect(exprs('lamina-necrotica')).toEqual(['1d8', '2d8']);
   });
-  it('Manto Espiritual: ficha cresce por nível, versão oficial por ciclo a cada 2', () => {
+  it('Manto Espiritual do Ehzra cresce por ciclo, a cada 2', () => {
+    expect(exprs('manto-espiritual', 3)).toEqual(['1d8']);
     expect(exprs('manto-espiritual', 5)).toEqual(['2d8']);
-    const aprovado = { ...r, character: { ...r.character, aprovacoes2024: ['manto-espiritual'] } };
-    expect(exprs('manto-espiritual', 3, aprovado)).toEqual(['1d8']);
-    expect(exprs('manto-espiritual', 5, aprovado)).toEqual(['2d8']);
-    expect(exprs('manto-espiritual', 7, aprovado)).toEqual(['3d8']);
+    expect(exprs('manto-espiritual', 7)).toEqual(['3d8']);
   });
   it('curas', () => {
     expect(curaMagia(r, c8, magia(r, 'curar-ferimentos'), 2)?.expr).toBe('2d8 + 5');
@@ -288,10 +286,9 @@ describe('decisões de 29/09/2026 aplicadas nos dados reais', () => {
   it('Soar os Mortos com o escalonamento oficial (M1)', () => {
     expect(danoMagia(real, { nivel: 11, bonusAtributos: {} }, magia(real, 'soar-os-mortos')).map((x) => x.expr)).toEqual(['3d8 + 5', '3d12 + 5']);
   });
-  it('Manto e Intenção Mortal crescem por ciclo, a cada 2 (M32, M37)', () => {
+  it('Manto Espiritual do Ehzra cresce por ciclo, a cada 2 (M32)', () => {
     expect(ex('manto-espiritual', 4)).toEqual(['1d8']);
     expect(ex('manto-espiritual', 5)).toEqual(['2d8']);
-    expect(ex('intencao-mortal', 5)).toEqual(['2d8']);
   });
   it('Canalizar Divindade com 3 usos e Centelha Divina visível (H1, H2)', () => {
     const s = estadoInicial(real);

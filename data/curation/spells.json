@@ -32,6 +32,10 @@
     {
       "nomeFicha": "Campeão do Túmulo",
       "id": "campeao-do-tumulo"
+    },
+    {
+      "nomeFicha": "Intenção Mortal",
+      "id": "intencao-mortal"
     }
   ],
   "Soar os Mortos": {
@@ -884,20 +888,20 @@
   },
   "Manto Espiritual": {
     "id": "manto-espiritual",
-    "nome": "Manto Espiritual",
+    "nome": "Manto Espiritual do Ehzra",
     "nomeOriginal": "Spirit Shroud",
     "tags": [
       "dano",
       "buff"
     ],
-    "fonte": "Tasha (2020)",
+    "fonte": "Homebrew (variante do Manto Espiritual, Tasha)",
     "listaClerigo": false,
-    "status2024": "legado",
+    "status2024": "homebrew",
     "itemValidacao": "M32",
     "origens": [
       "classe"
     ],
-    "resumo": "Seus ataques corpo a corpo causam dano extra e bloqueiam cura.",
+    "resumo": "Concentração: todo ataque que acerta, corpo a corpo ou à distância, causa 1d8 extra e impede a cura do alvo.",
     "resolucao": {
       "tipo": "automatico"
     },
@@ -906,30 +910,18 @@
         "rotulo": "Por acerto de ataque",
         "dados": "1d8",
         "tipo": "escolha",
-        "porNivel": {
-          "5": "2d8",
-          "11": "3d8"
-        },
-        "condicao": "necrótico, radiante ou gélido"
+        "condicao": "radiante, necrótico ou gélido",
+        "porCiclo": "1d8",
+        "porCicloACada": 2
       }
     ],
     "relacionadas": [
-      "intencao-mortal",
       "lamina-necrotica"
     ],
-    "v2024": {
-      "texto": "Texto oficial (Tasha): o dano cresce por ciclo, +1d8 a cada 2 ciclos acima do 3º (2d8 no 5º, 3d8 no 7º). Não cresce com o nível do personagem.",
-      "dano": [
-        {
-          "rotulo": "Por acerto de ataque",
-          "dados": "1d8",
-          "tipo": "escolha",
-          "porCiclo": "1d8",
-          "porCicloACada": 2,
-          "condicao": "necrótico, radiante ou gélido"
-        }
-      ]
-    }
+    "condicoes": [
+      "Não pode recuperar PV"
+    ],
+    "descricaoCompleta": "Você chama espíritos dos mortos para pairar ao seu redor. Até o fim da magia, sempre que você atingir uma criatura com uma jogada de ataque, corpo a corpo ou à distância, ela sofre **1d8 de dano adicional** radiante, necrótico ou gélido (à sua escolha ao conjurar). Uma criatura que sofrer esse dano não pode recuperar pontos de vida até o início do seu próximo turno.\n\nAlém disso, toda criatura à sua escolha que você possa ver e que comece o turno a até 3 m de você tem o deslocamento reduzido em 3 m até o início do seu próximo turno.\n\n**Em Ciclos Mais Altos.** O dano aumenta em 1d8 a cada dois ciclos acima do 3º."
   },
   "Life Transference": {
     "id": "transferencia-de-vida",
@@ -1021,39 +1013,6 @@
     "v2024": {
       "texto": "Opção 1: desvantagem em testes e salvaguardas do atributo. Opção 3: SAB no início do turno ou é forçado a usar Esquivar. 4º ciclo: 10 min com concentração; 5º e 6º: 8 h sem concentração; 7º e 8º: 24 h; 9º: até ser dissipada."
     }
-  },
-  "Intenção Mortal": {
-    "id": "intencao-mortal",
-    "nome": "Intenção Mortal",
-    "tags": [
-      "dano",
-      "buff"
-    ],
-    "fonte": "Homebrew (variante à distância de Spirit Shroud; escalonamento alinhado ao Manto em 29/09/2026)",
-    "listaClerigo": false,
-    "status2024": "homebrew",
-    "itemValidacao": "M37",
-    "origens": [
-      "classe"
-    ],
-    "resumo": "Seus ataques à distância causam dano extra e bloqueiam cura.",
-    "resolucao": {
-      "tipo": "automatico"
-    },
-    "dano": [
-      {
-        "rotulo": "Por acerto de ataque à distância",
-        "dados": "1d8",
-        "tipo": "escolha",
-        "porCiclo": "1d8",
-        "porCicloACada": 2,
-        "condicao": "necrótico, radiante ou gélido"
-      }
-    ],
-    "relacionadas": [
-      "manto-espiritual",
-      "soar-os-mortos"
-    ]
   },
   "Guardian of Faith": {
     "id": "guardiao-da-fe",

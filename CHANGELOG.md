@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.1 (19/11/2026)
+
+- O Manto Espiritual virou o Manto Espiritual do Ehzra: o dano extra vale para ataques corpo a corpo e à distância, e cresce 1d8 a cada dois ciclos acima do 3º. A Intenção Mortal saiu, porque fazia a mesma coisa só à distância.
+
 ## 0.4.0 (19/11/2026)
 
 - Grimório revisto: saem Necropsia, Taxidermia de Ehzra, Batedores de Sarcófagos, Fio da Obediência, Despelar, Minguar Ossos, Bolsa de Ossos e Campeão do Túmulo. Ficam Lâmina Necrótica e Intenção Mortal.

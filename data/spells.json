@@ -1660,21 +1660,21 @@
       },
       "dano": [
         {
-          "porNivel": {
-            "5": "2d8",
-            "11": "3d8"
-          },
+          "porCiclo": "1d8",
+          "porCicloACada": 2,
           "rotulo": "Por acerto de ataque",
           "dados": "1d8",
           "tipo": "escolha",
-          "condicao": "necrótico, radiante ou gélido"
+          "condicao": "radiante, necrótico ou gélido"
         }
       ],
-      "condicoes": [],
+      "condicoes": [
+        "Não pode recuperar PV"
+      ],
       "escola": "Necromancia",
-      "resumo": "Seus ataques corpo a corpo causam dano extra e bloqueiam cura.",
+      "resumo": "Concentração: todo ataque que acerta, corpo a corpo ou à distância, causa 1d8 extra e impede a cura do alvo.",
       "id": "manto-espiritual",
-      "nome": "Manto Espiritual",
+      "nome": "Manto Espiritual do Ehzra",
       "nomeOriginal": "Spirit Shroud",
       "nomeFicha": "Manto Espiritual",
       "ciclo": 3,
@@ -1682,32 +1682,18 @@
         "dano",
         "buff"
       ],
-      "fonte": "Tasha (2020)",
+      "fonte": "Homebrew (variante do Manto Espiritual, Tasha)",
       "listaClerigo": false,
-      "status2024": "legado",
+      "status2024": "homebrew",
       "itemValidacao": "M32",
       "origens": [
         "classe"
       ],
       "perdida": false,
-      "descricaoCompleta": "Você chama espíritos do além para pairarem ao seu redor, envolvendo suas ações em um frio sobrenatural. Até o fim da magia: sempre que atingir uma criatura com um ataque, ela sofre **1d8 de dano adicional** (necrótico, radiante ou gélido, à sua escolha); criaturas afetadas não podem recuperar PV a até 3 m de você; e têm o deslocamento reduzido em 3 m até o início do seu próximo turno.\n\n**No 5º nível:** o dano adicional aumenta para 2d8.  \n**No 11º nível:** 3d8.",
+      "descricaoCompleta": "Você chama espíritos dos mortos para pairar ao seu redor. Até o fim da magia, sempre que você atingir uma criatura com uma jogada de ataque, corpo a corpo ou à distância, ela sofre **1d8 de dano adicional** radiante, necrótico ou gélido (à sua escolha ao conjurar). Uma criatura que sofrer esse dano não pode recuperar pontos de vida até o início do seu próximo turno.\n\nAlém disso, toda criatura à sua escolha que você possa ver e que comece o turno a até 3 m de você tem o deslocamento reduzido em 3 m até o início do seu próximo turno.\n\n**Em Ciclos Mais Altos.** O dano aumenta em 1d8 a cada dois ciclos acima do 3º.",
       "relacionadas": [
-        "intencao-mortal",
         "lamina-necrotica"
-      ],
-      "v2024": {
-        "dano": [
-          {
-            "porCiclo": "1d8",
-            "porCicloACada": 2,
-            "rotulo": "Por acerto de ataque",
-            "dados": "1d8",
-            "tipo": "escolha",
-            "condicao": "necrótico, radiante ou gélido"
-          }
-        ],
-        "texto": "Texto oficial (Tasha): o dano cresce por ciclo, +1d8 a cada 2 ciclos acima do 3º (2d8 no 5º, 3d8 no 7º). Não cresce com o nível do personagem."
-      }
+      ]
     },
     {
       "tempo": {
@@ -1879,64 +1865,6 @@
       "v2024": {
         "texto": "Opção 1: desvantagem em testes e salvaguardas do atributo. Opção 3: SAB no início do turno ou é forçado a usar Esquivar. 4º ciclo: 10 min com concentração; 5º e 6º: 8 h sem concentração; 7º e 8º: 24 h; 9º: até ser dissipada."
       }
-    },
-    {
-      "tempo": {
-        "tipo": "acaoBonus",
-        "texto": "1 ação bônus"
-      },
-      "alcance": {
-        "tipo": "pessoal",
-        "texto": "Pessoal"
-      },
-      "componentes": {
-        "v": true,
-        "s": false,
-        "m": false
-      },
-      "duracao": {
-        "texto": "Concentração, até 1 minuto",
-        "rodadas": 10
-      },
-      "concentracao": true,
-      "ritual": false,
-      "resolucao": {
-        "tipo": "automatico"
-      },
-      "dano": [
-        {
-          "porCiclo": "1d8",
-          "porCicloACada": 2,
-          "rotulo": "Por acerto de ataque à distância",
-          "dados": "1d8",
-          "tipo": "escolha",
-          "condicao": "necrótico, radiante ou gélido"
-        }
-      ],
-      "condicoes": [],
-      "escola": "Necromancia",
-      "resumo": "Seus ataques à distância causam dano extra e bloqueiam cura.",
-      "id": "intencao-mortal",
-      "nome": "Intenção Mortal",
-      "nomeFicha": "Intenção Mortal",
-      "ciclo": 3,
-      "tags": [
-        "dano",
-        "buff"
-      ],
-      "fonte": "Homebrew (variante à distância de Spirit Shroud; escalonamento alinhado ao Manto em 29/09/2026)",
-      "listaClerigo": false,
-      "status2024": "homebrew",
-      "itemValidacao": "M37",
-      "origens": [
-        "classe"
-      ],
-      "perdida": false,
-      "descricaoCompleta": "Você canaliza seus sentimentos negativos, envolvendo suas ações em um frio sobrenatural. Até o fim da magia: sempre que atingir uma criatura com um **ataque à distância**, ela sofre **1d8 de dano adicional** (necrótico, radiante ou gélido, à sua escolha); criaturas afetadas não podem recuperar PV a até 9 m de você; e têm deslocamento reduzido em 3 m até o início do seu próximo turno.\n\n**No 5º nível:** o dano adicional aumenta para 2d8.  \n**No 11º nível:** 3d8.",
-      "relacionadas": [
-        "manto-espiritual",
-        "soar-os-mortos"
-      ]
     },
     {
       "tempo": {
