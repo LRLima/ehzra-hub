@@ -68,4 +68,5 @@ Pontos que continuam em aberto (não mudei, só registrei): Iniciativa +4 com DE
 | Magias novas | data/curation/spells-novas.json, escritas inteiras e validadas pelo mesmo Zod | Não existem no HTML original |
 | Ressurreição | Revivificar fora do grimório: o mestre não permite | Pedido do Lucas em 19/11/2026 |
 | Combos | Guiados passo a passo; cada passo abre a ficha normal e nada é gasto sozinho. Perguntas como "acertou?" decidem o próximo gasto. O combo em andamento fica numa barra na tela de Combate, porque as fichas se fecham ao conjurar | Pedido do Lucas em 19/11/2026; mesma regra do "Executar passo" dos playbooks |
+| Cor da mana | Verde-água (#6fe8d0), a cor das almas do palco; antes era o azul dos olhos do Ehzra. Contraste conferido com scripts/contraste.mjs | Pedido do Lucas em 19/11/2026 |
 | Tema | Só escuro por enquanto | Pedido do prompt ("escuro como padrão"); tema claro fica para depois |

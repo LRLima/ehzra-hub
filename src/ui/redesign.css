@@ -94,7 +94,7 @@ a.btn.ouro { color: var(--bone); }
 .frasco-num { display: flex; flex-direction: column; align-items: center; line-height: 1; }
 .frasco-num b { font-family: var(--font-mono); font-size: 32px; font-weight: 600; font-variant-numeric: tabular-nums; }
 .frasco-num small { font-family: var(--font-mono); font-size: 12px; color: var(--bone-dim); margin-top: 3px; }
-.frasco.mana .frasco-num b { color: #7ee8d4; }
+.frasco.mana .frasco-num b { color: var(--mana); }
 .frasco .badge-temp { font-size: 11px; }
 .frasco-rot { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--bone); text-shadow: 0 1px 6px #000; }
 .frasco-tubo {
@@ -117,7 +117,7 @@ a.btn.ouro { color: var(--bone); }
 @keyframes onda { to { transform: translateX(12px); } }
 /* almas: a mana do Ehzra são almas verde-água que flutuam; as gastas se apagam */
 .cristais {
-  --alma: #6fe8d0;
+  --alma: var(--mana);
   flex: 1; width: 18px; display: flex; flex-direction: column-reverse; gap: 2px; transition: transform 0.15s;
   filter: drop-shadow(0 0 3px rgba(111, 232, 208, 0.55));
 }
@@ -165,7 +165,7 @@ a.btn.ouro { color: var(--bone); }
 .palco.fx-cura .palco-figura img { animation: bencao 0.9s ease-out; }
 @keyframes bencao { 30% { filter: brightness(1.25) drop-shadow(0 0 26px var(--heal)); transform: translateY(-4px); } }
 .palco.fx-mana .palco-figura img { animation: arcano 0.8s ease-out; }
-@keyframes arcano { 30% { filter: brightness(1.2) drop-shadow(0 0 28px #6fe8d0); } }
+@keyframes arcano { 30% { filter: brightness(1.2) drop-shadow(0 0 28px var(--mana)); } }
 .palco.fx-mana-sobe .cristais i:not(.off) { animation: cintila 0.7s ease-out; }
 @keyframes cintila { 40% { filter: brightness(1.8); transform: scale(1.15); } }
 .palco.pv-baixo .frasco.pv .frasco-tubo { animation: pulso 1.1s ease-in-out infinite; }
@@ -276,8 +276,8 @@ a.btn.ouro { color: var(--bone); }
 .delta-mini { position: absolute; right: 0; top: -15px; pointer-events: none; font-family: var(--font-mono); font-size: 15px; font-weight: 600; text-shadow: 0 2px 8px #000; animation: delta-mini 1s var(--ease-out) forwards; }
 .delta-mini.neg { color: #ff9aa8; }
 .delta-mini.pos { color: var(--heal); }
-.delta-mini.mana.neg { color: #b7d9ff; }
-.delta-mini.mana.pos { color: #e3f1ff; }
+.delta-mini.mana.neg { color: #a6f0e2; }
+.delta-mini.mana.pos { color: #e6fff9; }
 @keyframes delta-mini { 0% { opacity: 0; transform: translateY(6px); } 20% { opacity: 1; transform: none; } 100% { opacity: 0; transform: translateY(-18px); } }
 @media (prefers-reduced-motion: reduce) { .topbar.flutuante, .delta-mini { animation: none; } }
 

@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.5.2 (19/11/2026)
+
+- A mana inteira ficou verde-água, igual às almas: barra do topo, números, selos de custo e animações.
+
 ## 0.5.1 (19/11/2026)
 
 - A mana do palco virou almas verde-água que flutuam; as gastas se apagam. O número da mana e o brilho de conjuração acompanham a cor.
