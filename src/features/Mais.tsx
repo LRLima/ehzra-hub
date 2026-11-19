@@ -2,7 +2,7 @@
 import { Fragment, useRef, useState } from 'react';
 import {
   CaretRightIcon, FeatherIcon, SwordIcon, ArrowUpIcon, WarningIcon, ListBulletsIcon, DownloadSimpleIcon, SparkleIcon,
-  CloudIcon, CloudSlashIcon, SkullIcon, UserIcon, BookOpenTextIcon, ScrollIcon, GearSixIcon, CrownIcon,
+  CloudIcon, CloudSlashIcon, SkullIcon, UserIcon, BookOpenTextIcon, ScrollIcon, GearSixIcon,
 } from '@phosphor-icons/react';
 import { Reliquia } from './Reliquia';
 import { useSync, sincronizar, reentrar, type StatusSync as StatusSyncT } from '../db/sync';
@@ -56,11 +56,10 @@ function useGrupos(): Grupo[] {
   const { s } = useJogo();
   return [
     {
-      id: 'personagem', titulo: 'Personagem', desc: 'Nível, relíquia e avatar', Icone: UserIcon,
+      id: 'personagem', titulo: 'Personagem', desc: 'Nível e relíquia', Icone: UserIcon,
       itens: [
         { href: '#/mais/nivel', Icone: ArrowUpIcon, titulo: 'Subir de nível', desc: `Nível ${s.nivel} para ${s.nivel + 1}` },
         { href: '#/mais/ceifadora', Icone: SkullIcon, titulo: 'Ceifadora de Myrkul', desc: 'A relíquia, suas magias e a sintonia' },
-        { href: '#/mais/avatar', Icone: CrownIcon, titulo: 'Avatar dos Quatro Túmulos', desc: 'Os quatro aspectos e o ativo' },
       ],
     },
     {
