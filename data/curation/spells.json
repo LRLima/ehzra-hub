@@ -44,6 +44,10 @@
     {
       "nomeFicha": "Animar Morto",
       "id": "animar-morto"
+    },
+    {
+      "nomeFicha": "Lâmina Necrótica",
+      "id": "lamina-necrotica"
     }
   ],
   "Soar os Mortos": {
@@ -146,55 +150,6 @@
       },
       "resumo": "+1d4 em todos os testes de uma perícia escolhida, por 1 minuto."
     }
-  },
-  "Lâmina Necrótica": {
-    "id": "lamina-necrotica",
-    "nome": "Lâmina Necrótica",
-    "nomeOriginal": "Booming Blade (reflavor)",
-    "tags": [
-      "dano",
-      "controle"
-    ],
-    "fonte": "Homebrew (reflavor necrótico de Booming Blade, Tasha)",
-    "listaClerigo": false,
-    "status2024": "homebrew",
-    "itemValidacao": "M4",
-    "origens": [
-      "classe"
-    ],
-    "resumo": "Ataque com arma que pune o alvo se ele se mover e bloqueia cura.",
-    "alcanceTexto": "Pessoal (raio de 1,5 m)",
-    "resolucao": {
-      "tipo": "ataque",
-      "alcance": "corpo"
-    },
-    "dano": [
-      {
-        "rotulo": "Ao acertar (além da arma)",
-        "dados": "0d8",
-        "tipo": "necrotico",
-        "porNivel": {
-          "5": "1d8",
-          "11": "2d8",
-          "17": "3d8"
-        }
-      },
-      {
-        "rotulo": "Se ele se mover",
-        "dados": "1d8",
-        "tipo": "necrotico",
-        "porNivel": {
-          "5": "2d8",
-          "11": "3d8",
-          "17": "4d8"
-        },
-        "condicao": "salvaguarda de CON; na falha, não recupera PV até o fim do seu próximo turno"
-      }
-    ],
-    "relacionadas": [
-      "ceifadora-de-myrkul",
-      "ceifador"
-    ]
   },
   "Salve o Moribundo": {
     "id": "salve-o-moribundo",
@@ -880,9 +835,7 @@
         "porCicloACada": 2
       }
     ],
-    "relacionadas": [
-      "lamina-necrotica"
-    ],
+    "relacionadas": [],
     "condicoes": [
       "Não pode recuperar PV"
     ],

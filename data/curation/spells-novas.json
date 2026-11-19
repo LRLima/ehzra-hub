@@ -252,6 +252,47 @@
       "descricaoCompleta": "Uma chama radiante desce sobre uma criatura que você possa ver ao alcance. Ela faz uma salvaguarda de Destreza e, na falha, sofre **1d8 de dano radiante**. O alvo não ganha benefício de meia cobertura nem de três quartos de cobertura nessa salvaguarda.\n\n**Truque.** O dano aumenta para 2d8 no 5º nível, 3d8 no 11º e 4d8 no 17º."
     },
     {
+      "id": "taumaturgia",
+      "nome": "Taumaturgia",
+      "nomeOriginal": "Thaumaturgy",
+      "ciclo": 0,
+      "escola": "Transmutação",
+      "fonte": "PHB 2024",
+      "listaClerigo": true,
+      "status2024": "ok",
+      "origens": [
+        "classe"
+      ],
+      "tags": [
+        "utilidade"
+      ],
+      "tempo": {
+        "tipo": "acao",
+        "texto": "1 ação"
+      },
+      "alcance": {
+        "tipo": "distancia",
+        "metros": 9,
+        "pes": 30,
+        "texto": "9 m"
+      },
+      "componentes": {
+        "v": true,
+        "s": false,
+        "m": false
+      },
+      "duracao": {
+        "texto": "Até 1 minuto",
+        "rodadas": 10
+      },
+      "concentracao": false,
+      "resolucao": {
+        "tipo": "automatico"
+      },
+      "resumo": "Pequeno sinal de poder divino: voz trovejante, chamas que tremem, tremores, sons, portas que batem, olhos que mudam.",
+      "descricaoCompleta": "Você manifesta um pequeno sinal de poder sobrenatural ao alcance. Escolha um destes efeitos:\n\n- **Voz Trovejante.** Sua voz soa até três vezes mais alta por 1 minuto. Enquanto isso, você tem vantagem nos testes de Carisma (Intimidação).\n- **Chamas Tremeluzentes.** Chamas tremem, ficam mais fortes ou mais fracas, ou mudam de cor por 1 minuto.\n- **Tremores Inofensivos.** O chão treme de leve por 1 minuto.\n- **Som Fantasma.** Um som instantâneo vem de um ponto à sua escolha, como um trovão, o grito de um corvo ou sussurros ameaçadores.\n- **Portas e Janelas.** Uma porta ou janela destrancada se abre ou se fecha com força.\n- **Olhos Alterados.** A aparência dos seus olhos muda por 1 minuto.\n\nVocê pode manter até três efeitos de 1 minuto ativos ao mesmo tempo."
+    },
+    {
       "id": "raio-guia",
       "nome": "Raio Guia",
       "nomeOriginal": "Guiding Bolt",

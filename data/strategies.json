@@ -24,9 +24,9 @@
       },
       "turnos": [
         {
-          "acao": "Lâmina Necrótica: ataque com a foice. Se acertar, use Toque da Morte (+21 necrótico, 1 Canalizar Divindade).",
+          "acao": "Ataque com a Ceifadora. Se acertar, use Toque da Morte (+21 necrótico, 1 Canalizar Divindade).",
           "bonus": "Manto Espiritual do Ehzra no 3º ciclo (5 mana, +1d8 por acerto). O dano só sobe no 5º ciclo (2d8), então no nível 8 não vale gastar um 4º.",
-          "movimento": "Cole no alvo; se ele se afastar, a Lâmina pune.",
+          "movimento": "Cole no alvo; se ele se afastar, o Conjurador de Guerra pune com uma magia.",
           "magias": [
             {
               "id": "manto-espiritual",
@@ -36,7 +36,7 @@
           "rotulo": "Turno 1"
         },
         {
-          "acao": "Lâmina Necrótica todo turno.",
+          "acao": "Ataque com a Ceifadora todo turno, ou Palavra Radiante se estiver cercado.",
           "reacao": "Conjurador de Guerra: se o alvo sair do seu alcance, conjure Soar os Mortos nele.",
           "magias": [],
           "rotulo": "Turno 2 em diante"
@@ -56,7 +56,6 @@
         "Manto Espiritual é concentração."
       ],
       "dependeDeHomebrew": [
-        "Lâmina Necrótica",
         "Toque da Morte (legado 2014)"
       ],
       "original": true
@@ -137,7 +136,7 @@
           "rotulo": "Turno 1"
         },
         {
-          "acao": "Soar os Mortos ou Lâmina Necrótica.",
+          "acao": "Soar os Mortos ou Palavra Radiante.",
           "reacao": "Conjurador de Guerra.",
           "movimento": "Mantenha o máximo de inimigos na aura.",
           "magias": [],
@@ -323,7 +322,7 @@
     },
     {
       "tipo": "paragrafo",
-      "md": "**Passo 2:** Dar suporte aos esqueletos com uma opção de longa distância, [Soar os Mortos](#/magia/soar-os-mortos), ou de curta distância, [Lâmina Necrótica](#/magia/lamina-necrotica)."
+      "md": "**Passo 2:** Dar suporte aos esqueletos com uma opção de longa distância, [Soar os Mortos](#/magia/soar-os-mortos), ou de curta distância, Lâmina Necrótica."
     },
     {
       "tipo": "paragrafo",
@@ -347,7 +346,7 @@
     },
     {
       "tipo": "paragrafo",
-      "md": "**Uso contínuo:** Utilizar o truque [Lâmina Necrótica](#/magia/lamina-necrotica) continuamente, impossibilitando o inimigo de se mover sem tomar dano."
+      "md": "**Uso contínuo:** Utilizar o truque Lâmina Necrótica continuamente, impossibilitando o inimigo de se mover sem tomar dano."
     },
     {
       "tipo": "paragrafo",

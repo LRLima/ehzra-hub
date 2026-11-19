@@ -349,7 +349,11 @@ a.btn.ouro { color: var(--bone); }
 
 /* ---------- combos ---------- */
 [data-cat='combo'] { --cat: var(--crimson-fg); }
-.combo-card { text-align: left; padding: 9px 12px 10px 14px; border-left: 3px solid var(--crimson-fg); border-radius: 0; }
+.combo-card { text-align: left; padding: 0; border-left: 3px solid var(--crimson-fg); border-radius: 0; }
+.combo-resumo { display: block; width: 100%; text-align: left; background: none; border: 0; color: inherit; padding: 8px 11px 9px 13px; cursor: pointer; }
+.combo-desc { display: block; font-size: 14px; line-height: 1.35; color: var(--bone-dim); margin-top: 2px; }
+.combo-detalhe { padding: 0 11px 10px 13px; border-top: 1px solid var(--line-soft); }
+.combo-card .nome { font-size: 14.5px; }
 .combo-card .nome { font-family: var(--font-display); font-size: 15px; color: var(--bone); }
 .combo-topo { gap: 8px; align-items: center; }
 .camada { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; padding: 1px 7px; border-radius: var(--r-pill); border: 1px solid currentColor; }

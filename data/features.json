@@ -141,8 +141,7 @@
       "resumo": "Truque de dano pode acertar um segundo inimigo a até 1,5 m do primeiro.",
       "texto": "Ao lançar um truque de dano contra um inimigo, pode causar o mesmo dano a um segundo inimigo até 1,5 m do primeiro alvo.",
       "relacionadas": [
-        "soar-os-mortos",
-        "lamina-necrotica"
+        "soar-os-mortos"
       ],
       "somenteSeAprovado": false,
       "custoInspiracao": false,

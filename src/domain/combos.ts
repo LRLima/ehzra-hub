@@ -28,6 +28,8 @@ export type Passo =
 export interface Combo {
   id: string;
   nome: string;
+  /** Uma frase em linguagem de mesa, para o cartão fechado. */
+  descricao: string;
   camada: Camada;
   parte: ParteTurno;
   quando: string;
@@ -44,7 +46,8 @@ export const COMBOS: Combo[] = [
   // ---------- rotina: toda luta, quase de graça ----------
   {
     id: 'canhao-de-perto',
-    nome: 'Canhão de Perto',
+    nome: 'Canhão de perto',
+    descricao: 'Você entra no meio dos inimigos e fere todos à volta, todo turno, gastando pouco.',
     camada: 'rotina',
     parte: 'acao',
     quando: 'No meio dos inimigos. Usa as cinco partes do turno sem gastar Canalizar.',
@@ -68,7 +71,8 @@ export const COMBOS: Combo[] = [
   },
   {
     id: 'canhao-de-longe',
-    nome: 'Canhão de Longe',
+    nome: 'Canhão de longe',
+    descricao: 'Castiga um alvo distante a luta inteira, sem ocupar a concentração.',
     camada: 'rotina',
     parte: 'acao',
     quando: 'Alvo longe ou voando. Deixa a concentração livre para outra magia.',
@@ -90,7 +94,8 @@ export const COMBOS: Combo[] = [
   },
   {
     id: 'danca-dos-guardioes',
-    nome: 'Dança dos Guardiões',
+    nome: 'Guardiões em movimento',
+    descricao: 'Os espíritos acertam cada inimigo duas vezes por rodada enquanto você caminha entre eles.',
     camada: 'rotina',
     parte: 'acao',
     quando: 'Toda luta com inimigos agrupados. Conjure antes de abrir a porta: dura 10 minutos.',
@@ -110,7 +115,8 @@ export const COMBOS: Combo[] = [
   },
   {
     id: 'dor-e-sino',
-    nome: 'Dor e Sino',
+    nome: 'Maldição e sino',
+    descricao: 'Uma dor que não passa deixa o alvo sempre ferido, e o sino fúnebre bate mais forte.',
     camada: 'rotina',
     parte: 'acao',
     quando: 'Um alvo forte que vai durar a luta.',
@@ -129,7 +135,8 @@ export const COMBOS: Combo[] = [
   },
   {
     id: 'cura-que-abencoa',
-    nome: 'Cura que Abençoa',
+    nome: 'Cura que protege',
+    descricao: 'Cura um aliado e já o deixa pronto para receber a Barreira.',
     camada: 'rotina',
     parte: 'acaoBonus',
     quando: 'Um aliado ferido, e você vai causar dano com magia nesta rodada.',
@@ -148,7 +155,8 @@ export const COMBOS: Combo[] = [
 
   {
     id: 'vigilia-da-manha',
-    nome: 'Vigília da Manhã',
+    nome: 'Preparação do dia',
+    descricao: 'Antes de sair: mais vida para o grupo e duas mortes evitadas.',
     camada: 'rotina',
     parte: 'acao',
     quando: 'No começo do dia de aventura, antes de sair.',
@@ -172,7 +180,8 @@ export const COMBOS: Combo[] = [
   // ---------- médio: uma vez por luta, quando vale ----------
   {
     id: 'puxar-para-a-cova',
-    nome: 'Puxar para a Cova',
+    nome: 'Puxar para a aura',
+    descricao: 'Obriga inimigos distantes a virem até você, para dentro dos espíritos.',
     camada: 'medio',
     parte: 'acao',
     quando: 'Arqueiros ou conjuradores longe, fora da sua aura.',
@@ -190,7 +199,8 @@ export const COMBOS: Combo[] = [
   },
   {
     id: 'cego-e-aberto',
-    nome: 'Cego e Aberto',
+    nome: 'Cegar o inimigo',
+    descricao: 'O inimigo fica cego: todos acertam mais e cada golpe sangra mais.',
     camada: 'medio',
     parte: 'acao',
     quando: 'Um alvo perigoso que enxerga (dragões não: eles percebem às cegas).',
@@ -212,7 +222,8 @@ export const COMBOS: Combo[] = [
   // ---------- feito: o momento decisivo ----------
   {
     id: 'nova-e-barreira',
-    nome: 'Nova e Barreira',
+    nome: 'Escudo contra o sopro',
+    descricao: 'Cura o grupo inteiro e corta pela metade o próximo golpe grande.',
     camada: 'feito',
     parte: 'acao',
     quando: 'O grupo tomou dano em área, ou o sopro vai voltar.',
@@ -231,7 +242,8 @@ export const COMBOS: Combo[] = [
   },
   {
     id: 'tribunal',
-    nome: 'O Tribunal',
+    nome: 'Travar o chefe',
+    descricao: 'O chefe fica atordoado e caído por duas rodadas.',
     camada: 'feito',
     parte: 'acao',
     quando: 'Chefe sem Resistência Lendária: meio-dragões, magos, capitães do Culto.',
@@ -251,7 +263,8 @@ export const COMBOS: Combo[] = [
   },
   {
     id: 'sentenca-final',
-    nome: 'Sentença Final',
+    nome: 'Condenar o chefe',
+    descricao: 'Envenena o chefe e quase garante que ele fique atordoado.',
     camada: 'feito',
     parte: 'acao',
     quando: 'O chefe da sessão, ao alcance da mão.',
@@ -270,7 +283,8 @@ export const COMBOS: Combo[] = [
   },
   {
     id: 'golpe-do-epitafio',
-    nome: 'Golpe do Epitáfio',
+    nome: 'Golpe do epitáfio',
+    descricao: 'Um único golpe seu que pode derrubar um chefe sozinho.',
     camada: 'feito',
     parte: 'acao',
     quando: 'Um chefe ao alcance da sua mão.',
@@ -293,7 +307,8 @@ export const COMBOS: Combo[] = [
   },
   {
     id: 'epitafio-do-aliado',
-    nome: 'Sentença do Paladino',
+    nome: 'Golpe dobrado do paladino',
+    descricao: 'Marca o chefe para o próximo golpe do paladino causar o dobro.',
     camada: 'feito',
     parte: 'acaoBonus',
     quando: 'O paladino vai bater no chefe com Destruição Divina.',

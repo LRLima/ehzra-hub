@@ -163,79 +163,6 @@
         "texto": "1 ação"
       },
       "alcance": {
-        "tipo": "pessoal",
-        "texto": "Pessoal (raio de 1,5 m)"
-      },
-      "componentes": {
-        "v": true,
-        "s": true,
-        "m": false
-      },
-      "duracao": {
-        "texto": "Instantânea",
-        "rodadas": null
-      },
-      "concentracao": false,
-      "ritual": false,
-      "resolucao": {
-        "tipo": "ataque",
-        "alcance": "corpo"
-      },
-      "dano": [
-        {
-          "porNivel": {
-            "5": "1d8",
-            "11": "2d8",
-            "17": "3d8"
-          },
-          "rotulo": "Ao acertar (além da arma)",
-          "dados": "0d8",
-          "tipo": "necrotico"
-        },
-        {
-          "porNivel": {
-            "5": "2d8",
-            "11": "3d8",
-            "17": "4d8"
-          },
-          "rotulo": "Se ele se mover",
-          "dados": "1d8",
-          "tipo": "necrotico",
-          "condicao": "salvaguarda de CON; na falha, não recupera PV até o fim do seu próximo turno"
-        }
-      ],
-      "condicoes": [],
-      "escola": "Necromancia",
-      "resumo": "Ataque com arma que pune o alvo se ele se mover e bloqueia cura.",
-      "id": "lamina-necrotica",
-      "nome": "Lâmina Necrótica",
-      "nomeOriginal": "Booming Blade (reflavor)",
-      "nomeFicha": "Lâmina Necrótica",
-      "ciclo": 0,
-      "tags": [
-        "dano",
-        "controle"
-      ],
-      "fonte": "Homebrew (reflavor necrótico de Booming Blade, Tasha)",
-      "listaClerigo": false,
-      "status2024": "homebrew",
-      "itemValidacao": "M4",
-      "origens": [
-        "classe"
-      ],
-      "perdida": false,
-      "descricaoCompleta": "Você canaliza energia necromântica em sua arma corpo a corpo e atinge uma criatura ao seu alcance. O ataque não causa dano imediato adicional além do dano normal da arma.\n\nSe a criatura se mover voluntariamente antes do início do seu próximo turno, tentáculos sombrios emergem do solo, forçando-a a um teste de resistência de Constituição. Em caso de falha, sofre **1d8 de dano necrótico** e não pode recuperar pontos de vida até o final do seu próximo turno.\n\n**No 5º nível:** +1d8 ao ser atingida inicialmente, +2d8 se sair do lugar antes do próximo turno.  \n**No 11º nível:** 2d8 e 3d8.  \n**No 17º nível:** 3d8 e 4d8.",
-      "relacionadas": [
-        "ceifadora-de-myrkul",
-        "ceifador"
-      ]
-    },
-    {
-      "tempo": {
-        "tipo": "acao",
-        "texto": "1 ação"
-      },
-      "alcance": {
         "tipo": "toque",
         "texto": "Toque"
       },
@@ -1593,9 +1520,7 @@
       ],
       "perdida": false,
       "descricaoCompleta": "Você chama espíritos dos mortos para pairar ao seu redor. Até o fim da magia, sempre que você atingir uma criatura com uma jogada de ataque, corpo a corpo ou à distância, ela sofre **1d8 de dano adicional** radiante, necrótico ou gélido (à sua escolha ao conjurar). Uma criatura que sofrer esse dano não pode recuperar pontos de vida até o início do seu próximo turno.\n\nAlém disso, toda criatura à sua escolha que você possa ver e que comece o turno a até 3 m de você tem o deslocamento reduzido em 3 m até o início do seu próximo turno.\n\n**Em Ciclos Mais Altos.** O dano aumenta em 1d8 a cada dois ciclos acima do 3º.",
-      "relacionadas": [
-        "lamina-necrotica"
-      ]
+      "relacionadas": []
     },
     {
       "tempo": {
@@ -2263,6 +2188,53 @@
       ],
       "perdida": false,
       "descricaoCompleta": "Uma chama radiante desce sobre uma criatura que você possa ver ao alcance. Ela faz uma salvaguarda de Destreza e, na falha, sofre **1d8 de dano radiante**. O alvo não ganha benefício de meia cobertura nem de três quartos de cobertura nessa salvaguarda.\n\n**Truque.** O dano aumenta para 2d8 no 5º nível, 3d8 no 11º e 4d8 no 17º.",
+      "relacionadas": []
+    },
+    {
+      "tempo": {
+        "tipo": "acao",
+        "texto": "1 ação"
+      },
+      "alcance": {
+        "tipo": "distancia",
+        "metros": 9,
+        "pes": 30,
+        "texto": "9 m"
+      },
+      "componentes": {
+        "v": true,
+        "s": false,
+        "m": false
+      },
+      "duracao": {
+        "texto": "Até 1 minuto",
+        "rodadas": 10
+      },
+      "concentracao": false,
+      "ritual": false,
+      "resolucao": {
+        "tipo": "automatico"
+      },
+      "dano": [],
+      "condicoes": [],
+      "escola": "Transmutação",
+      "resumo": "Pequeno sinal de poder divino: voz trovejante, chamas que tremem, tremores, sons, portas que batem, olhos que mudam.",
+      "id": "taumaturgia",
+      "nome": "Taumaturgia",
+      "nomeOriginal": "Thaumaturgy",
+      "nomeFicha": "Taumaturgia",
+      "ciclo": 0,
+      "tags": [
+        "utilidade"
+      ],
+      "fonte": "PHB 2024",
+      "listaClerigo": true,
+      "status2024": "ok",
+      "origens": [
+        "classe"
+      ],
+      "perdida": false,
+      "descricaoCompleta": "Você manifesta um pequeno sinal de poder sobrenatural ao alcance. Escolha um destes efeitos:\n\n- **Voz Trovejante.** Sua voz soa até três vezes mais alta por 1 minuto. Enquanto isso, você tem vantagem nos testes de Carisma (Intimidação).\n- **Chamas Tremeluzentes.** Chamas tremem, ficam mais fortes ou mais fracas, ou mudam de cor por 1 minuto.\n- **Tremores Inofensivos.** O chão treme de leve por 1 minuto.\n- **Som Fantasma.** Um som instantâneo vem de um ponto à sua escolha, como um trovão, o grito de um corvo ou sussurros ameaçadores.\n- **Portas e Janelas.** Uma porta ou janela destrancada se abre ou se fecha com força.\n- **Olhos Alterados.** A aparência dos seus olhos muda por 1 minuto.\n\nVocê pode manter até três efeitos de 1 minuto ativos ao mesmo tempo.",
       "relacionadas": []
     },
     {
@@ -3315,6 +3287,10 @@
     {
       "id": "animar-morto",
       "nome": "Animar Morto"
+    },
+    {
+      "id": "lamina-necrotica",
+      "nome": "Lâmina Necrótica"
     }
   ]
 }

@@ -89,9 +89,6 @@ describe('dano e cura calculados', () => {
     expect(exprs('infligir-ferimentos', 3)).toEqual(['5d10']);
     expect(exprs('praga', 5)).toEqual(['9d8']);
   });
-  it('Lâmina Necrótica não soma Conjurador Potente (não é truque da lista de Clérigo)', () => {
-    expect(exprs('lamina-necrotica')).toEqual(['1d8', '2d8']);
-  });
   it('Manto Espiritual do Ehzra cresce por ciclo, a cada 2', () => {
     expect(exprs('manto-espiritual', 3)).toEqual(['1d8']);
     expect(exprs('manto-espiritual', 5)).toEqual(['2d8']);

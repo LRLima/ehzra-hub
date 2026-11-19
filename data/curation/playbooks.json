@@ -27,8 +27,8 @@
         {
           "rotulo": "Turno 1",
           "bonus": "Manto Espiritual do Ehzra no 3º ciclo (5 mana, +1d8 por acerto). O dano só sobe no 5º ciclo (2d8), então no nível 8 não vale gastar um 4º.",
-          "acao": "Lâmina Necrótica: ataque com a foice. Se acertar, use Toque da Morte (+21 necrótico, 1 Canalizar Divindade).",
-          "movimento": "Cole no alvo; se ele se afastar, a Lâmina pune.",
+          "acao": "Ataque com a Ceifadora. Se acertar, use Toque da Morte (+21 necrótico, 1 Canalizar Divindade).",
+          "movimento": "Cole no alvo; se ele se afastar, o Conjurador de Guerra pune com uma magia.",
           "magias": [
             {
               "id": "manto-espiritual",
@@ -38,7 +38,7 @@
         },
         {
           "rotulo": "Turno 2 em diante",
-          "acao": "Lâmina Necrótica todo turno.",
+          "acao": "Ataque com a Ceifadora todo turno, ou Palavra Radiante se estiver cercado.",
           "reacao": "Conjurador de Guerra: se o alvo sair do seu alcance, conjure Soar os Mortos nele."
         },
         {
@@ -56,7 +56,6 @@
         "Manto Espiritual é concentração."
       ],
       "dependeDeHomebrew": [
-        "Lâmina Necrótica",
         "Toque da Morte (legado 2014)"
       ]
     },
@@ -135,7 +134,7 @@
         },
         {
           "rotulo": "Turno 2 em diante",
-          "acao": "Soar os Mortos ou Lâmina Necrótica.",
+          "acao": "Soar os Mortos ou Palavra Radiante.",
           "movimento": "Mantenha o máximo de inimigos na aura.",
           "reacao": "Conjurador de Guerra."
         }

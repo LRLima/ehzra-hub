@@ -128,8 +128,7 @@
       "gatilho": "passiva",
       "resumo": "Truque de dano pode acertar um segundo inimigo a até 1,5 m do primeiro.",
       "relacionadas": [
-        "soar-os-mortos",
-        "lamina-necrotica"
+        "soar-os-mortos"
       ],
       "v2024": {
         "texto": "Texto oficial 2014: quando você conjura um truque de necromancia que mira uma única criatura, ele pode mirar duas criaturas a até 1,5 m uma da outra, cada uma com sua própria salvaguarda ou ataque.",

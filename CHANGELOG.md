@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.6.5 (19/11/2026)
+
+- Cartões de combo compactos: título que se explica e uma frase do que acontece. Tocar abre a fórmula, o custo e o botão Começar combo.
+- Combos renomeados para nomes claros (Canhão de perto, Guardiões em movimento, Escudo contra o sopro, Travar o chefe...).
+- Truques: sai a Lâmina Necrótica, entra a Taumaturgia.
+
 ## 0.6.4 (19/11/2026)
 
 - Todo combo é clicável. Se faltar recurso ou magia preparada, o cartão fica apagado e a barra do combo mostra o que falta, mas os passos abrem normalmente.

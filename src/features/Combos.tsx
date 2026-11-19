@@ -34,6 +34,7 @@ function Custo({ combo, mana }: { combo: Combo; mana: number }) {
 export function CombosDoTurno({ parte }: { parte: ParteTurno }) {
   const { r, s } = useJogo();
   const setCombo = useUI((u) => u.setCombo);
+  const [aberto, setAberto] = useState<string | null>(null);
   const lista = combosDisponiveis(r, s).filter((x) => x.combo.parte === parte);
   if (!lista.length) return null;
   return (
@@ -45,15 +46,25 @@ export function CombosDoTurno({ parte }: { parte: ParteTurno }) {
         <span className="cat-n num">{lista.length}</span>
       </header>
       <div className="stack">
-        {lista.map(({ combo, mana, falta }) => (
-          <button key={combo.id} className={`card card-btn combo-card${falta.length > 0 ? " faltando" : ""}`}
-            onClick={() => setCombo({ id: combo.id, passo: 0 })} data-testid={`combo-${combo.id}`}>
-            <div className="row combo-topo"><span className="nome grow">{combo.nome}</span><span className="camada" data-camada={combo.camada}>{NOME_CAMADA[combo.camada]}</span></div>
-            <Formula combo={combo} />
-            <Custo combo={combo} mana={mana} />
-            {falta.length > 0 ? <div className="falta">Falta: {falta.join(', ')}</div> : <div className="quando">{combo.quando}</div>}
-          </button>
-        ))}
+        {lista.map(({ combo, mana, falta }) => {
+          const ab = aberto === combo.id;
+          return (
+            <div key={combo.id} className={`card combo-card${falta.length > 0 ? ' faltando' : ''}${ab ? ' aberto' : ''}`}>
+              <button className="combo-resumo" aria-expanded={ab} onClick={() => setAberto(ab ? null : combo.id)} data-testid={`combo-${combo.id}`}>
+                <span className="row combo-topo"><span className="nome grow">{combo.nome}</span><span className="camada" data-camada={combo.camada}>{NOME_CAMADA[combo.camada]}</span></span>
+                <span className="combo-desc">{combo.descricao}</span>
+              </button>
+              {ab && (
+                <div className="combo-detalhe">
+                  <Formula combo={combo} />
+                  <Custo combo={combo} mana={mana} />
+                  {falta.length > 0 ? <div className="falta">Falta: {falta.join(', ')}</div> : <div className="quando">{combo.quando}</div>}
+                  <button className="btn mini primario" style={{ marginTop: 8 }} onClick={() => { setCombo({ id: combo.id, passo: 0 }); setAberto(null); }} data-testid={`comecar-${combo.id}`}>Começar combo</button>
+                </div>
+              )}
+            </div>
+          );
+        })}
       </div>
     </section>
   );
