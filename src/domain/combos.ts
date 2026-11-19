@@ -46,7 +46,7 @@ export const COMBOS: Combo[] = [
   // ---------- rotina: toda luta, quase de graça ----------
   {
     id: 'canhao-de-perto',
-    nome: 'Canhão de perto',
+    nome: 'Dança dos Guardiões e Colheita de Almas',
     descricao: 'Você entra no meio dos inimigos e fere todos à volta, todo turno, gastando pouco.',
     camada: 'rotina',
     parte: 'acao',
@@ -71,7 +71,7 @@ export const COMBOS: Combo[] = [
   },
   {
     id: 'canhao-de-longe',
-    nome: 'Canhão de longe',
+    nome: 'Dor sem Fim, Sino e Lanterna',
     descricao: 'Castiga um alvo distante a luta inteira, sem ocupar a concentração.',
     camada: 'rotina',
     parte: 'acao',
@@ -94,7 +94,7 @@ export const COMBOS: Combo[] = [
   },
   {
     id: 'danca-dos-guardioes',
-    nome: 'Guardiões em movimento',
+    nome: 'Dança Selvagem dos Guardiões',
     descricao: 'Os espíritos acertam cada inimigo duas vezes por rodada enquanto você caminha entre eles.',
     camada: 'rotina',
     parte: 'acao',
@@ -115,7 +115,7 @@ export const COMBOS: Combo[] = [
   },
   {
     id: 'dor-e-sino',
-    nome: 'Maldição e sino',
+    nome: 'Dor sem Fim e Sino Fúnebre',
     descricao: 'Uma dor que não passa deixa o alvo sempre ferido, e o sino fúnebre bate mais forte.',
     camada: 'rotina',
     parte: 'acao',
@@ -135,7 +135,7 @@ export const COMBOS: Combo[] = [
   },
   {
     id: 'cura-que-abencoa',
-    nome: 'Cura que protege',
+    nome: 'Cura Abençoada para a Barreira',
     descricao: 'Cura um aliado e já o deixa pronto para receber a Barreira.',
     camada: 'rotina',
     parte: 'acaoBonus',
@@ -155,7 +155,7 @@ export const COMBOS: Combo[] = [
 
   {
     id: 'vigilia-da-manha',
-    nome: 'Preparação do dia',
+    nome: 'Bênçãos da Manhã',
     descricao: 'Antes de sair: mais vida para o grupo e duas mortes evitadas.',
     camada: 'rotina',
     parte: 'acao',
@@ -180,7 +180,7 @@ export const COMBOS: Combo[] = [
   // ---------- médio: uma vez por luta, quando vale ----------
   {
     id: 'puxar-para-a-cova',
-    nome: 'Puxar para a aura',
+    nome: 'Comando para dentro dos Guardiões',
     descricao: 'Obriga inimigos distantes a virem até você, para dentro dos espíritos.',
     camada: 'medio',
     parte: 'acao',
@@ -199,7 +199,7 @@ export const COMBOS: Combo[] = [
   },
   {
     id: 'cego-e-aberto',
-    nome: 'Cegar o inimigo',
+    nome: 'Cegar e Abrir a Ferida',
     descricao: 'O inimigo fica cego: todos acertam mais e cada golpe sangra mais.',
     camada: 'medio',
     parte: 'acao',
@@ -222,7 +222,7 @@ export const COMBOS: Combo[] = [
   // ---------- feito: o momento decisivo ----------
   {
     id: 'nova-e-barreira',
-    nome: 'Escudo contra o sopro',
+    nome: 'Nova Sagrada com Barreira Luminosa',
     descricao: 'Cura o grupo inteiro e corta pela metade o próximo golpe grande.',
     camada: 'feito',
     parte: 'acao',
@@ -242,7 +242,7 @@ export const COMBOS: Combo[] = [
   },
   {
     id: 'tribunal',
-    nome: 'Travar o chefe',
+    nome: 'Horror que Atordoa, Lança que Derruba',
     descricao: 'O chefe fica atordoado e caído por duas rodadas.',
     camada: 'feito',
     parte: 'acao',
@@ -263,7 +263,7 @@ export const COMBOS: Combo[] = [
   },
   {
     id: 'sentenca-final',
-    nome: 'Condenar o chefe',
+    nome: 'Contágio que Abre o Horror',
     descricao: 'Envenena o chefe e quase garante que ele fique atordoado.',
     camada: 'feito',
     parte: 'acao',
@@ -283,7 +283,7 @@ export const COMBOS: Combo[] = [
   },
   {
     id: 'golpe-do-epitafio',
-    nome: 'Golpe do epitáfio',
+    nome: 'Epitáfio com Infligir Ferimentos',
     descricao: 'Um único golpe seu que pode derrubar um chefe sozinho.',
     camada: 'feito',
     parte: 'acao',
@@ -307,7 +307,7 @@ export const COMBOS: Combo[] = [
   },
   {
     id: 'epitafio-do-aliado',
-    nome: 'Golpe dobrado do paladino',
+    nome: 'Epitáfio no Golpe do Paladino',
     descricao: 'Marca o chefe para o próximo golpe do paladino causar o dobro.',
     camada: 'feito',
     parte: 'acaoBonus',

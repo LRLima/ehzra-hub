@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.6.6 (19/11/2026)
+
+- Combos com nomes que dizem as peças e o efeito: Dança Selvagem dos Guardiões, Dor sem Fim e Sino Fúnebre, Nova Sagrada com Barreira Luminosa, Horror que Atordoa, Lança que Derruba, e os demais.
+
 ## 0.6.5 (19/11/2026)
 
 - Cartões de combo compactos: título que se explica e uma frase do que acontece. Tocar abre a fórmula, o custo e o botão Começar combo.
