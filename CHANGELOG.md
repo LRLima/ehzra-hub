@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.7.1 (19/11/2026)
+
+- Sai o controle de rodadas: sem Iniciar combate, Próxima rodada e Marcar ação. Ficam as abas de ação, bônus, reação e movimento e o aviso de concentração.
+- Concentração: o teclado de PV mostra a CD antes de confirmar o dano, e o aviso fica até você responder Mantive ou Perdi.
+- Os cartões de magia não mostram mais ícone de tempo; o único ícone de relógio é o da concentração.
+- Com uma ficha aberta, a página de trás fica travada.
+- Figura do palco recortada sem o halo branco. Vitrine pública sem login para os amigos.
+
 ## 0.7.0 (19/11/2026)
 
 - Paleta nova, a "cripta": fundo de carvão neutro no lugar do verde-azulado, e só quatro cores com significado.

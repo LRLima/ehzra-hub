@@ -1,6 +1,6 @@
 /** Modo Combate (HUD) e Modo Testes/Exploração. */
 import { AcoesBasicas, ComboBar, CombosDoTurno } from './Combos';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { SkullIcon, CampfireIcon, XIcon, SwordIcon } from '@phosphor-icons/react';
 import { useJogo, useUI } from '../store';
 import { SpellCard, Grupo, catDe } from '../ui/components';
@@ -50,24 +50,10 @@ function Status() {
   );
 }
 
-function useWakeLock(ativo: boolean) {
-  useEffect(() => {
-    if (!ativo || !('wakeLock' in navigator)) return;
-    let lock: WakeLockSentinel | null = null;
-    const pedir = () => navigator.wakeLock.request('screen').then((l) => { lock = l; }).catch(() => undefined);
-    pedir();
-    const vis = () => document.visibilityState === 'visible' && pedir();
-    document.addEventListener('visibilitychange', vis);
-    return () => { document.removeEventListener('visibilitychange', vis); lock?.release().catch(() => undefined); };
-  }, [ativo]);
-}
-
 function Hud() {
   const { r, c, s, dispatch } = useJogo();
   const abrir = useUI((u) => u.abrir);
   const [parte, setParte] = useState<Parte>('acao');
-  const [telaAcesa, setTelaAcesa] = useState(true);
-  useWakeLock(!!s.combate && telaAcesa);
 
   const cicloMax = cicloMaximo(r, s.nivel);
   const magias = r.magias
@@ -80,37 +66,15 @@ function Hud() {
   const canal = recursoRestante(r, s, 'canalizar');
   const ciclos = [...new Set(magias.map((m: Spell) => m.ciclo))].sort((a, b) => a - b);
   const lancar = useUI((u) => u.lancar);
-  const atacar = () => {
-    lancar(arma.nome, 'fisico');
-    if (s.combate && !s.turno.acao) dispatch({ t: 'usarTurno', parte: 'acao' }, { silencioso: true });
-  };
+  const atacar = () => lancar(arma.nome, 'fisico');
 
   return (
     <>
-      {!s.combate ? (
-        <button className="btn gema largo" onClick={() => dispatch({ t: 'iniciarCombate' }, { silencioso: true })}><span>Iniciar combate</span></button>
-      ) : (
-        <div className="row">
-          <span className="grow" style={{ fontFamily: 'var(--font-display)' }}>Rodada <b className="num" style={{ color: 'var(--bone)', fontSize: 20 }} data-testid="rodada">{s.combate.rodada}</b></span>
-          <label className="row faint" style={{ fontSize: 14, gap: 6 }}>
-            <input type="checkbox" checked={telaAcesa} onChange={(e) => setTelaAcesa(e.target.checked)} /> Tela acesa
-          </label>
-          <button className="btn mini fantasma" onClick={() => dispatch({ t: 'encerrarCombate' })}>Encerrar</button>
-        </div>
-      )}
-
       <div className="turno" role="group" aria-label="O que posso fazer neste turno">
         {PARTES.map((p) => (
-          <button key={p.id} aria-pressed={parte === p.id} className={s.combate && s.turno[p.id] ? 'gasto' : ''} onClick={() => setParte(p.id)}>{p.rotulo}</button>
+          <button key={p.id} aria-pressed={parte === p.id} onClick={() => setParte(p.id)}>{p.rotulo}</button>
         ))}
       </div>
-      {s.combate && (
-        <div className="row" style={{ justifyContent: 'flex-end', marginBottom: 6 }}>
-          <button className="btn mini fantasma" onClick={() => dispatch({ t: 'usarTurno', parte }, { silencioso: true })}>
-            {s.turno[parte] ? 'Desmarcar' : 'Marcar'} {PARTES.find((p) => p.id === parte)!.rotulo.toLowerCase()} como usada
-          </button>
-        </div>
-      )}
 
       <ComboBar />
       <div className="grupos page-in" key={parte} data-testid={`opcoes-${parte}`}>
@@ -189,14 +153,6 @@ function Hud() {
       </div>
 
       <Efeitos />
-
-      {s.combate && (
-        <div className="proxima">
-          <button className="btn primario largo grande" onClick={() => dispatch({ t: 'proximaRodada' }, { silencioso: true })} data-testid="proxima-rodada">
-            Próxima rodada
-          </button>
-        </div>
-      )}
     </>
   );
 }
@@ -210,11 +166,10 @@ function Efeitos() {
       <h3 className="section-h">Efeitos ativos</h3>
       <div className="stack" data-testid="efeitos">
         {s.efeitos.map((e) => (
-          <div key={e.id} className={`card efeito${e.rodadas === 0 ? ' expirou' : ''}`}>
+          <div key={e.id} className="card efeito">
             <button className="nome" style={{ background: 'none', border: 0, textAlign: 'left', padding: 0 }} onClick={() => e.origem && abrir({ tipo: 'magia', id: e.origem })}>
               {e.nome}{e.concentracao && <span className="chip conc" style={{ marginLeft: 6 }}>Conc.</span>}
             </button>
-            <span className="rodadas">{e.rodadas === null ? 'longa' : e.rodadas === 0 ? 'expirou?' : `${e.rodadas} rod.`}</span>
             <button className="icon-btn" aria-label={`Encerrar ${e.nome}`} onClick={() => dispatch({ t: 'efeitoRemover', efeito: e.id })}><XIcon size={16} /></button>
           </div>
         ))}

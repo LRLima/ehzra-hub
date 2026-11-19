@@ -107,7 +107,7 @@ export function JogoProvider({ children }: { children: ReactNode }) {
     const depois = reduzir(regras, todos);
     const ui = useUI.getState();
     if (!opts?.silencioso) ui.toast({ texto: descrever(regras, env, todos), desfazer: env.id });
-    for (const a of depois.avisos) ui.toast({ texto: a.texto, tipo: a.tipo, ms: a.tipo === 'concentracao' ? 12000 : 7000 });
+    for (const a of depois.avisos) ui.toast({ texto: a.texto, tipo: a.tipo, ms: a.tipo === 'concentracao' ? 600000 : 7000 });
     return env.id;
   }, []);
 

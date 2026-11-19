@@ -3,12 +3,12 @@ import { useEffect, useMemo, type ReactNode } from 'react';
 import { marked } from 'marked';
 import DOMPurify from 'dompurify';
 import {
-  HourglassIcon, CrosshairIcon, DropIcon, HeartIcon, ShieldIcon, TargetIcon, ClockIcon, DiamondIcon, XIcon,
-  ArrowCounterClockwiseIcon, LightningIcon, ArrowBendUpLeftIcon, ClockCountdownIcon,
+  CrosshairIcon, DropIcon, HeartIcon, ShieldIcon, TargetIcon, ClockIcon, DiamondIcon, XIcon,
+  ArrowCounterClockwiseIcon, ClockCountdownIcon,
 } from '@phosphor-icons/react';
 import type { Spell, Status2024 } from '../domain/schemas';
 import {
-  custoMana, curaMagia, danoMagia, resolucaoTexto, usaCeifadora, magia as achaMagia,
+  custoMana, curaMagia, danoMagia, resolucaoTexto, usaCeifadora, magia as achaMagia, salvaguarda, fmtMod,
 } from '../domain/rules';
 import { useJogo, useUI } from '../store';
 
@@ -41,7 +41,6 @@ export function SpellChips({ spell, ciclo }: { spell: Spell; ciclo?: number }) {
   return (
     <div className="chips">
       <span className="chip tempo" title={TEMPO_CURTO[spell.tempo.tipo] ?? spell.tempo.texto}>
-        {spell.tempo.tipo === 'acaoBonus' ? <LightningIcon {...I} /> : spell.tempo.tipo === 'reacao' ? <ArrowBendUpLeftIcon {...I} /> : <HourglassIcon {...I} />}
         <span className="t">{TEMPO_CURTO[spell.tempo.tipo] ?? spell.tempo.texto}</span>
       </span>
       <span className="chip" title="Alcance"><CrosshairIcon {...I} />{spell.alcance.texto}</span>
@@ -94,6 +93,22 @@ export function Markdown({ md, className = 'desc' }: { md: string; className?: s
   return <div className={className} dangerouslySetInnerHTML={{ __html: html }} />;
 }
 
+/** Trava a página por trás enquanto houver folha aberta (contador para folhas empilhadas). */
+let travas = 0;
+let scrollSalvo = 0;
+function travarFundo() {
+  if (travas++ > 0) return;
+  scrollSalvo = window.scrollY;
+  const b = document.body.style;
+  b.position = 'fixed'; b.top = `-${scrollSalvo}px`; b.left = '0'; b.right = '0'; b.overflow = 'hidden';
+}
+function soltarFundo() {
+  if (--travas > 0) return;
+  const b = document.body.style;
+  b.position = ''; b.top = ''; b.left = ''; b.right = ''; b.overflow = '';
+  window.scrollTo(0, scrollSalvo);
+}
+
 export function Sheet({ titulo, sub, extra, children, onClose, label }: {
   titulo: ReactNode; sub?: ReactNode; extra?: ReactNode; children: ReactNode; onClose: () => void; label: string;
 }) {
@@ -102,6 +117,7 @@ export function Sheet({ titulo, sub, extra, children, onClose, label }: {
     window.addEventListener('keydown', k);
     return () => window.removeEventListener('keydown', k);
   }, [onClose]);
+  useEffect(() => { travarFundo(); return soltarFundo; }, []);
   return (
     <>
       <div className="sheet-backdrop" onClick={onClose} />
@@ -125,12 +141,18 @@ export function Sheet({ titulo, sub, extra, children, onClose, label }: {
 
 export function Toasts() {
   const { toasts, tirarToast } = useUI();
-  const { desfazer } = useJogo();
+  const { desfazer, r, c, s, dispatch } = useJogo();
   return (
     <div className="toasts" aria-live="polite">
       {toasts.map((t) => (
         <div key={t.id} className={`toast ${t.tipo ?? ''}`} role={t.tipo === 'concentracao' || t.tipo === 'caiu' ? 'alert' : 'status'}>
-          <span className="t">{t.texto}</span>
+          <span className="t">{t.texto}{t.tipo === 'concentracao' && <> Seu bônus: <b className="num">{fmtMod(salvaguarda(r, c, 'con'))}</b>.</>}</span>
+          {t.tipo === 'concentracao' && s.concentracao && (
+            <span className="row" style={{ gap: 6, flexWrap: 'nowrap' }}>
+              <button className="btn mini" onClick={() => tirarToast(t.id)}>Mantive</button>
+              <button className="btn mini dano" onClick={() => { dispatch({ t: 'quebrarConcentracao' }); tirarToast(t.id); }}>Perdi</button>
+            </span>
+          )}
           {t.desfazer && (
             <button className="btn mini ouro" onClick={() => { desfazer(t.desfazer!); tirarToast(t.id); }}>
               <ArrowCounterClockwiseIcon size={16} />Desfazer

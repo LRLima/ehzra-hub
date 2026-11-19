@@ -55,12 +55,11 @@ export function ConcBanner({ semTestId = false }: { semTestId?: boolean }) {
   const { r, s, dispatch } = useJogo();
   const [quebrando, setQuebrando] = useState<string | null>(null);
   const conc = s.concentracao ? magia(r, s.concentracao.magia) : null;
-  const efeito = s.concentracao ? s.efeitos.find((e) => e.origem === s.concentracao!.magia) : null;
   if (!conc && !quebrando) return null;
   return (
     <div className={`conc-banner${quebrando ? ' quebra' : ''}`} role="status" data-testid={semTestId ? undefined : 'concentracao'}>
       <EyeIcon size={18} color="var(--conc)" />
-      <span className="t">Concentrado em <b>{conc?.nome ?? quebrando}</b>{efeito?.rodadas != null ? ` · ${efeito.rodadas > 10 ? `${Math.ceil(efeito.rodadas / 10)} min` : `${efeito.rodadas} rod.`}` : ''}</span>
+      <span className="t">Concentrado em <b>{conc?.nome ?? quebrando}</b></span>
       <button className="btn mini" onClick={() => {
         setQuebrando(conc?.nome ?? null);
         setTimeout(() => setQuebrando(null), 300);

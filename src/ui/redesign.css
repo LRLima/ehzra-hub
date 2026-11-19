@@ -319,35 +319,6 @@ a.btn.ouro { color: var(--bone); }
 }
 @media (prefers-reduced-motion: reduce) { .fumaca i { animation: none !important; } }
 
-/* ---------- botão em gema (Iniciar combate) ----------
- * Moldura prateada com volutas nas pontas e uma gema vermelha polida no meio. */
-.btn.gema {
-  position: relative; display: block; width: 100%; min-height: 62px; padding: 0; border: 0; background: none;
-  color: var(--bone); font-family: var(--font-display); font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase;
-}
-.btn.gema::after {
-  content: ''; position: absolute; inset: 0; pointer-events: none;
-  background:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 62'%3E%3Cg fill='none' stroke='%235f5c55' stroke-width='3' stroke-linecap='round'%3E%3Cpath d='M42 31C24 31 10 22 5 8c9 6 18 6 26 1-6 8-4 15 6 17'/%3E%3Cpath d='M42 31C24 31 10 40 5 54c9-6 18-6 26-1-6-8-4-15 6-17'/%3E%3C/g%3E%3Ccircle cx='9' cy='31' r='4' fill='%235f5c55'/%3E%3C/svg%3E") left center / auto 100% no-repeat,
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 62'%3E%3Cg transform='translate(44 0) scale(-1 1)'%3E%3Cg fill='none' stroke='%235f5c55' stroke-width='3' stroke-linecap='round'%3E%3Cpath d='M42 31C24 31 10 22 5 8c9 6 18 6 26 1-6 8-4 15 6 17'/%3E%3Cpath d='M42 31C24 31 10 40 5 54c9-6 18-6 26-1-6-8-4-15 6-17'/%3E%3C/g%3E%3Ccircle cx='9' cy='31' r='4' fill='%235f5c55'/%3E%3C/g%3E%3C/svg%3E") right center / auto 100% no-repeat;
-}
-.btn.gema::before {
-  content: ''; position: absolute; top: 5px; bottom: 5px; left: 34px; right: 34px; border-radius: 16px;
-  background: linear-gradient(180deg, #6f6c64 0%, #4a4843 38%, #2a2927 58%, #3c3a36 80%, #5f5c55 100%);
-  box-shadow: inset 0 1px 0 rgba(220, 215, 200, 0.14), inset 0 -1px 0 rgba(0, 0, 0, 0.5);
-}
-.btn.gema span {
-  position: relative; z-index: 1; display: flex; align-items: center; justify-content: center;
-  margin: 9px 38px; min-height: 44px; border-radius: 12px;
-  background:
-    radial-gradient(ellipse 45% 38% at 28% 26%, rgba(255, 235, 225, 0.16), transparent 70%),
-    radial-gradient(ellipse 30% 22% at 72% 78%, rgba(214, 95, 107, 0.16), transparent 70%),
-    linear-gradient(180deg, #7a2431 0%, #551520 48%, #2e0910 100%);
-  box-shadow: inset 0 1px 0 rgba(255, 220, 210, 0.16), inset 0 -5px 10px rgba(0, 0, 0, 0.45);
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
-}
-.btn.gema:active span { filter: brightness(1.15); transform: scale(0.985); }
-
 /* ---------- combos ---------- */
 [data-cat='combo'] { --cat: var(--bone); } /* combos misturam recursos: ficam em osso, sem cor própria */
 .combo-card { text-align: left; padding: 0; border-left: 3px solid var(--cat); border-radius: 0; }
@@ -396,8 +367,11 @@ a.btn.ouro { color: var(--bone); }
   .spell-card .chips { gap: 3px 12px; margin-top: 3px; }
   .spell-card .chip { border: 0; background: none; padding: 0; min-height: 0; font-size: 12px; gap: 3px; }
   .spell-card .chip .t, .spell-card .chip.dur, .spell-card .chip.vazio { display: none; }
+  .spell-card .chip.tempo { display: none; } /* o tempo já vem da aba (ação, bônus, reação) */
 }
 
 /* títulos de ciclo na tela de preparar */
 .ciclo-titulo { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--cat); margin: 12px 2px 2px; }
 .ciclo-titulo:first-child { margin-top: 0; }
+.numpad-conc { margin: -4px 0 10px; font-size: 14.5px; color: var(--bone-dim); text-align: center; }
+.numpad-conc b { color: var(--conc); }

@@ -218,7 +218,7 @@ p { margin: 0 0 12px; }
 .grade .card.prof .n::after { content: ' ●'; color: var(--gold); font-size: 10px; vertical-align: middle; }
 
 /* ---------- folha (bottom sheet) ---------- */
-.sheet-backdrop { position: fixed; inset: 0; z-index: var(--z-sheet); background: rgba(0, 0, 0, 0.6); animation: fade 0.2s ease-out; }
+.sheet-backdrop { touch-action: none; position: fixed; inset: 0; z-index: var(--z-sheet); background: rgba(0, 0, 0, 0.6); animation: fade 0.2s ease-out; }
 .sheet {
   position: fixed; left: 0; right: 0; bottom: 0; z-index: calc(var(--z-sheet) + 1);
   max-height: 92dvh; overflow-y: auto; overscroll-behavior: contain;

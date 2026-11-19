@@ -7,6 +7,7 @@ import { catDe, Sheet, SpellChips, SeloDe, Markdown, SpellCard, TEMPO_CURTO } fr
 import {
   alvosMagia, cicloMaximo, custoMana, curaMagia, danoMagia, estaPreparada, habilidadeEfetiva, magia as achaMagia,
   manaMaxima, metrosParaPes, podeConjurar, resolucaoTexto, usaCeifadora, toqueDaMorte, dadosQueimarMortos, habilidadeVisivel,
+  cdConcentracao, temConjuradorDeGuerra, salvaguarda, fmtMod,
 } from '../domain/rules';
 import { pvMaximo, recursoRestante } from '../domain/state';
 
@@ -266,7 +267,7 @@ function BuscaSheet() {
 
 // ---------- PV: teclado numérico ----------
 function PvSheet() {
-  const { r, s, dispatch } = useJogo();
+  const { r, c, s, dispatch } = useJogo();
   const fechar = useUI((u) => u.fechar);
   const [v, setV] = useState('');
   const n = Number(v) || 0;
@@ -286,6 +287,11 @@ function PvSheet() {
       <div className="numpad-prev">
         {n > 0 && <>Dano: {s.pv} → <b style={{ color: 'var(--hp-fg)' }}>{prevDano}</b>{absorve ? ` (−${absorve} temp)` : ''} · Cura: {s.pv} → <b style={{ color: 'var(--heal)' }}>{prevCura}</b></>}
       </div>
+      {n > 0 && s.concentracao && (
+        <p className="numpad-conc" data-testid="cd-concentracao">
+          Se for dano: CON <b className="num">CD {cdConcentracao(n)}</b> para manter {achaMagia(r, s.concentracao.magia).nome}. Seu bônus {fmtMod(salvaguarda(r, c, 'con'))}{temConjuradorDeGuerra(r) ? ', com vantagem' : ''}.
+        </p>
+      )}
       <div className="numpad">
         {['1', '2', '3', '4', '5', '6', '7', '8', '9'].map((d) => <button key={d} onClick={() => tecla(d)}>{d}</button>)}
         <button onClick={() => setV('')} aria-label="Limpar">C</button>

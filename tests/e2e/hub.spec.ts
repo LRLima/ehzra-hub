@@ -55,6 +55,17 @@ test('dano com concentração avisa o teste de CON e desfazer volta', async ({ p
   await expect(pv(page)).toHaveText('70');
 });
 
+test('o teclado de PV mostra a CD antes do dano, e "Perdi" encerra a concentração', async ({ page }) => {
+  await abrirMagiaPelaBusca(page, 'Escudo da Fé');
+  await conjurar(page);
+  await pv(page).click();
+  for (const d of '30') await page.getByRole('dialog').getByRole('button', { name: d, exact: true }).click();
+  await expect(page.getByTestId('cd-concentracao')).toContainText('CD 15');
+  await page.getByRole('dialog').getByRole('button', { name: 'Dano', exact: true }).click();
+  await page.getByRole('button', { name: 'Perdi' }).click();
+  await expect(page.getByTestId('concentracao')).toHaveCount(0);
+});
+
 test('descanso longo restaura tudo', async ({ page }) => {
   await abrirMagiaPelaBusca(page, 'Guardiões Espirituais');
   await conjurar(page);

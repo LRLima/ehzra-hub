@@ -4,24 +4,26 @@
 [WebServer] - Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
 [WebServer] - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
 
-Running 16 tests using 2 workers
+Running 18 tests using 2 workers
 
-  ok  2 [celular] › tests\e2e\hub.spec.ts:41:1 › Ceifadora corta o custo pela metade, arredondando para baixo (4.3s)
-  ok  1 [celular] › tests\e2e\hub.spec.ts:31:1 › conjurar atualiza mana, concentração, efeito e log de uma vez (4.6s)
-  ok  3 [celular] › tests\e2e\hub.spec.ts:48:1 › dano com concentração avisa o teste de CON e desfazer volta (2.5s)
-  ok  5 [celular] › tests\e2e\hub.spec.ts:70:1 › subir do nível 8 para o 9 mostra os ganhos, aplica e reverte (1.1s)
-  ok  6 [celular] › tests\e2e\hub.spec.ts:86:1 › exportar e importar backup (1.8s)
-  ok  7 [celular] › tests\e2e\hub.spec.ts:106:1 › dano, alcance, tempo e concentração de qualquer magia em até 2 toques (2.3s)
-  -   8 [celular] › tests\e2e\sync.spec.ts:25:1 › alteração no celular aparece no PC, inclusive depois de ficar offline
-  ok  4 [celular] › tests\e2e\hub.spec.ts:58:1 › descanso longo restaura tudo (7.6s)
-  ok 10 [desktop] › tests\e2e\hub.spec.ts:41:1 › Ceifadora corta o custo pela metade, arredondando para baixo (4.5s)
-  ok  9 [desktop] › tests\e2e\hub.spec.ts:31:1 › conjurar atualiza mana, concentração, efeito e log de uma vez (4.9s)
-  ok 11 [desktop] › tests\e2e\hub.spec.ts:48:1 › dano com concentração avisa o teste de CON e desfazer volta (2.4s)
-  ok 12 [desktop] › tests\e2e\hub.spec.ts:58:1 › descanso longo restaura tudo (7.6s)
-  ok 14 [desktop] › tests\e2e\hub.spec.ts:86:1 › exportar e importar backup (2.5s)
-  ok 13 [desktop] › tests\e2e\hub.spec.ts:70:1 › subir do nível 8 para o 9 mostra os ganhos, aplica e reverte (9.1s)
-  -  16 [desktop] › tests\e2e\sync.spec.ts:25:1 › alteração no celular aparece no PC, inclusive depois de ficar offline
-  ok 15 [desktop] › tests\e2e\hub.spec.ts:106:1 › dano, alcance, tempo e concentração de qualquer magia em até 2 toques (3.0s)
+  ok  2 [celular] › tests\e2e\hub.spec.ts:41:1 › Ceifadora corta o custo pela metade, arredondando para baixo (4.2s)
+  ok  1 [celular] › tests\e2e\hub.spec.ts:31:1 › conjurar atualiza mana, concentração, efeito e log de uma vez (4.7s)
+  ok  3 [celular] › tests\e2e\hub.spec.ts:48:1 › dano com concentração avisa o teste de CON e desfazer volta (3.1s)
+  ok  4 [celular] › tests\e2e\hub.spec.ts:58:1 › o teclado de PV mostra a CD antes do dano, e "Perdi" encerra a concentração (8.0s)
+  ok  6 [celular] › tests\e2e\hub.spec.ts:81:1 › subir do nível 8 para o 9 mostra os ganhos, aplica e reverte (1.2s)
+  ok  5 [celular] › tests\e2e\hub.spec.ts:69:1 › descanso longo restaura tudo (7.4s)
+  ok  7 [celular] › tests\e2e\hub.spec.ts:97:1 › exportar e importar backup (3.9s)
+  -   9 [celular] › tests\e2e\sync.spec.ts:25:1 › alteração no celular aparece no PC, inclusive depois de ficar offline
+  ok  8 [celular] › tests\e2e\hub.spec.ts:117:1 › dano, alcance, tempo e concentração de qualquer magia em até 2 toques (5.1s)
+  ok 10 [desktop] › tests\e2e\hub.spec.ts:31:1 › conjurar atualiza mana, concentração, efeito e log de uma vez (6.3s)
+  ok 11 [desktop] › tests\e2e\hub.spec.ts:41:1 › Ceifadora corta o custo pela metade, arredondando para baixo (7.4s)
+  ok 12 [desktop] › tests\e2e\hub.spec.ts:48:1 › dano com concentração avisa o teste de CON e desfazer volta (6.6s)
+  ok 13 [desktop] › tests\e2e\hub.spec.ts:58:1 › o teclado de PV mostra a CD antes do dano, e "Perdi" encerra a concentração (9.3s)
+  ok 14 [desktop] › tests\e2e\hub.spec.ts:69:1 › descanso longo restaura tudo (9.6s)
+  ok 16 [desktop] › tests\e2e\hub.spec.ts:97:1 › exportar e importar backup (3.2s)
+  ok 17 [desktop] › tests\e2e\hub.spec.ts:117:1 › dano, alcance, tempo e concentração de qualquer magia em até 2 toques (3.7s)
+  -  18 [desktop] › tests\e2e\sync.spec.ts:25:1 › alteração no celular aparece no PC, inclusive depois de ficar offline
+  ok 15 [desktop] › tests\e2e\hub.spec.ts:81:1 › subir do nível 8 para o 9 mostra os ganhos, aplica e reverte (8.8s)
 
   2 skipped
-  14 passed (46.2s)
+  16 passed (1.1m)
