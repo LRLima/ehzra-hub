@@ -4,26 +4,28 @@
 [WebServer] - Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
 [WebServer] - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
 
-Running 18 tests using 2 workers
+Running 20 tests using 2 workers
 
-  ok  2 [celular] › tests\e2e\hub.spec.ts:41:1 › Ceifadora corta o custo pela metade, arredondando para baixo (10.4s)
-  ok  1 [celular] › tests\e2e\hub.spec.ts:31:1 › conjurar atualiza mana, concentração, efeito e log de uma vez (10.8s)
-  ok  3 [celular] › tests\e2e\hub.spec.ts:48:1 › dano com concentração avisa o teste de CON e desfazer volta (5.6s)
-  ok  4 [celular] › tests\e2e\hub.spec.ts:58:1 › o teclado de PV mostra a CD antes do dano, e "Perdi" encerra a concentração (10.0s)
-  ok  6 [celular] › tests\e2e\hub.spec.ts:81:1 › subir do nível 8 para o 9 mostra os ganhos, aplica e reverte (2.0s)
-  ok  5 [celular] › tests\e2e\hub.spec.ts:69:1 › descanso longo restaura tudo (8.7s)
-  ok  7 [celular] › tests\e2e\hub.spec.ts:97:1 › exportar e importar backup (2.9s)
-  -   9 [celular] › tests\e2e\sync.spec.ts:25:1 › alteração no celular aparece no PC, inclusive depois de ficar offline
-  ok  8 [celular] › tests\e2e\hub.spec.ts:117:1 › dano, alcance, tempo e concentração de qualquer magia em até 2 toques (4.1s)
-  ok 10 [desktop] › tests\e2e\hub.spec.ts:31:1 › conjurar atualiza mana, concentração, efeito e log de uma vez (4.2s)
-  ok 11 [desktop] › tests\e2e\hub.spec.ts:48:1 › dano com concentração avisa o teste de CON e desfazer volta (3.8s)
-  ok 12 [desktop] › tests\e2e\hub.spec.ts:41:1 › Ceifadora corta o custo pela metade, arredondando para baixo (5.4s)
-  ok 13 [desktop] › tests\e2e\hub.spec.ts:58:1 › o teclado de PV mostra a CD antes do dano, e "Perdi" encerra a concentração (10.0s)
-  ok 14 [desktop] › tests\e2e\hub.spec.ts:69:1 › descanso longo restaura tudo (8.0s)
-  ok 16 [desktop] › tests\e2e\hub.spec.ts:97:1 › exportar e importar backup (3.2s)
-  ok 15 [desktop] › tests\e2e\hub.spec.ts:81:1 › subir do nível 8 para o 9 mostra os ganhos, aplica e reverte (8.6s)
-  -  18 [desktop] › tests\e2e\sync.spec.ts:25:1 › alteração no celular aparece no PC, inclusive depois de ficar offline
-  ok 17 [desktop] › tests\e2e\hub.spec.ts:117:1 › dano, alcance, tempo e concentração de qualquer magia em até 2 toques (3.9s)
+  ok  2 [celular] › tests\e2e\hub.spec.ts:41:1 › Ceifadora corta o custo pela metade, arredondando para baixo (6.5s)
+  ok  1 [celular] › tests\e2e\hub.spec.ts:31:1 › conjurar atualiza mana, concentração, efeito e log de uma vez (6.8s)
+  ok  3 [celular] › tests\e2e\hub.spec.ts:48:1 › dano com concentração avisa o teste de CON e desfazer volta (3.9s)
+  ok  4 [celular] › tests\e2e\hub.spec.ts:58:1 › o teclado de PV mostra a CD antes do dano, e "Perdi" encerra a concentração (8.8s)
+  ok  6 [celular] › tests\e2e\hub.spec.ts:81:1 › subir do nível 8 para o 9 mostra os ganhos, aplica e reverte (1.3s)
+  ok  5 [celular] › tests\e2e\hub.spec.ts:69:1 › descanso longo restaura tudo (8.3s)
+  ok  7 [celular] › tests\e2e\hub.spec.ts:97:1 › exportar e importar backup (3.1s)
+  ok  9 [celular] › tests\e2e\hub.spec.ts:135:1 › Mais abre em categorias e o Voltar sobe um nível por vez (3.1s)
+  -  10 [celular] › tests\e2e\sync.spec.ts:25:1 › alteração no celular aparece no PC, inclusive depois de ficar offline
+  ok  8 [celular] › tests\e2e\hub.spec.ts:117:1 › dano, alcance, tempo e concentração de qualquer magia em até 2 toques (5.2s)
+  ok 11 [desktop] › tests\e2e\hub.spec.ts:31:1 › conjurar atualiza mana, concentração, efeito e log de uma vez (5.7s)
+  ok 12 [desktop] › tests\e2e\hub.spec.ts:41:1 › Ceifadora corta o custo pela metade, arredondando para baixo (5.3s)
+  ok 13 [desktop] › tests\e2e\hub.spec.ts:48:1 › dano com concentração avisa o teste de CON e desfazer volta (3.7s)
+  ok 14 [desktop] › tests\e2e\hub.spec.ts:58:1 › o teclado de PV mostra a CD antes do dano, e "Perdi" encerra a concentração (7.7s)
+  ok 15 [desktop] › tests\e2e\hub.spec.ts:69:1 › descanso longo restaura tudo (7.7s)
+  ok 17 [desktop] › tests\e2e\hub.spec.ts:97:1 › exportar e importar backup (2.0s)
+  ok 18 [desktop] › tests\e2e\hub.spec.ts:117:1 › dano, alcance, tempo e concentração de qualquer magia em até 2 toques (2.4s)
+  ok 19 [desktop] › tests\e2e\hub.spec.ts:135:1 › Mais abre em categorias e o Voltar sobe um nível por vez (1.4s)
+  -  20 [desktop] › tests\e2e\sync.spec.ts:25:1 › alteração no celular aparece no PC, inclusive depois de ficar offline
+  ok 16 [desktop] › tests\e2e\hub.spec.ts:81:1 › subir do nível 8 para o 9 mostra os ganhos, aplica e reverte (9.1s)
 
   2 skipped
-  16 passed (1.3m)
+  18 passed (1.2m)

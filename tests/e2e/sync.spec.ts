@@ -17,7 +17,7 @@ async function dano(page: Page, n: number) {
 }
 
 async function sincronizado(page: Page) {
-  await page.goto(`${URL}/#/mais`);
+  await page.goto(`${URL}/#/mais/g/ajustes`);
   await page.getByTestId('sync').getByRole('button', { name: 'Sincronizar' }).click().catch(() => undefined);
   await expect(page.getByTestId('sync')).toContainText('Sincronizado', { timeout: 15_000 });
 }

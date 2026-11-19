@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.7.3 (19/11/2026)
+
+- Tela Mais em categorias, como menu de jogo: Personagem, Magias e táticas, História e Ajustes. Cada uma abre a sua lista, e o Voltar sobe um nível por vez.
+- O status da sincronização mora em Ajustes; no topo do Mais só aparece quando há problema.
+- Avatar dos Quatro Túmulos ganhou entrada no menu, em Personagem.
+
 ## 0.7.2 (19/11/2026)
 
 - Ferida Aberta agora se chama Sangria (Open Wounds) e Ainda Não virou Veto da Morte (Death's Veto). O combo Cegar e Abrir a Ferida virou Cegar e Sangrar.

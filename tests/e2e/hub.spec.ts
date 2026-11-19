@@ -131,3 +131,15 @@ test('dano, alcance, tempo e concentração de qualquer magia em até 2 toques',
     await page.keyboard.press('Escape');
   }
 });
+
+test('Mais abre em categorias e o Voltar sobe um nível por vez', async ({ page }) => {
+  await page.goto('/#/mais');
+  await expect(page.locator('.categoria')).toHaveCount(4);
+  await page.getByTestId('grupo-magias').click();
+  await expect(page.getByRole('heading', { name: 'Magias e táticas' })).toBeVisible();
+  await page.getByRole('link', { name: /Preparar magias/ }).click();
+  await page.getByRole('link', { name: 'Voltar' }).click();
+  await expect(page.getByRole('heading', { name: 'Magias e táticas' })).toBeVisible();
+  await page.getByRole('link', { name: 'Voltar' }).click();
+  await expect(page.locator('.categoria')).toHaveCount(4);
+});

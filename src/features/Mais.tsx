@@ -2,7 +2,7 @@
 import { Fragment, useRef, useState } from 'react';
 import {
   CaretRightIcon, FeatherIcon, SwordIcon, ArrowUpIcon, WarningIcon, ListBulletsIcon, DownloadSimpleIcon, SparkleIcon,
-  CloudIcon, CloudSlashIcon, SkullIcon,
+  CloudIcon, CloudSlashIcon, SkullIcon, UserIcon, BookOpenTextIcon, ScrollIcon, GearSixIcon, CrownIcon,
 } from '@phosphor-icons/react';
 import { Reliquia } from './Reliquia';
 import { useSync, sincronizar, reentrar, type StatusSync as StatusSyncT } from '../db/sync';
@@ -30,40 +30,101 @@ export function Mais({ rota }: { rota: string[] }) {
     case 'condicoes': return <Condicoes />;
     case 'preparar': return <Preparar />;
     case 'backup': return <BackupPage />;
+    case 'g': return <GrupoMenu id={id} />;
     default: return <Menu />;
   }
 }
 
+/** Em que categoria cada página mora: o "Voltar" sobe um nível, como num menu de jogo. */
+const GRUPO_DA_PAGINA: Record<string, string> = {
+  nivel: 'personagem', ceifadora: 'personagem', avatar: 'personagem',
+  preparar: 'magias', estrategias: 'magias', condicoes: 'magias',
+  lore: 'historia', backup: 'ajustes',
+};
+export const voltarPara = (pagina: string) => (GRUPO_DA_PAGINA[pagina] ? `#/mais/g/${GRUPO_DA_PAGINA[pagina]}` : '#/mais');
+
 function Voltar() {
-  return <a href="#/mais" className="btn mini fantasma" style={{ marginBottom: 10 }}>Voltar</a>;
+  const [, , pagina, id] = location.hash.split('/');
+  const href = pagina === 'estrategias' && id ? '#/mais/estrategias' : voltarPara(pagina);
+  return <a href={href} className="btn mini fantasma" style={{ marginBottom: 10 }}>Voltar</a>;
 }
 
-function Menu() {
+type Item = { href: string; Icone: typeof FeatherIcon; titulo: string; desc: string };
+type Grupo = { id: string; titulo: string; desc: string; Icone: typeof FeatherIcon; itens: Item[] };
+
+function useGrupos(): Grupo[] {
   const { s } = useJogo();
-  const item = (href: string, Icone: typeof FeatherIcon, t: string, d: string) => (
+  return [
+    {
+      id: 'personagem', titulo: 'Personagem', desc: 'Nível, relíquia e avatar', Icone: UserIcon,
+      itens: [
+        { href: '#/mais/nivel', Icone: ArrowUpIcon, titulo: 'Subir de nível', desc: `Nível ${s.nivel} para ${s.nivel + 1}` },
+        { href: '#/mais/ceifadora', Icone: SkullIcon, titulo: 'Ceifadora de Myrkul', desc: 'A relíquia, suas magias e a sintonia' },
+        { href: '#/mais/avatar', Icone: CrownIcon, titulo: 'Avatar dos Quatro Túmulos', desc: 'Os quatro aspectos e o ativo' },
+      ],
+    },
+    {
+      id: 'magias', titulo: 'Magias e táticas', desc: 'Preparar, estratégias e regras', Icone: BookOpenTextIcon,
+      itens: [
+        { href: '#/mais/preparar', Icone: SparkleIcon, titulo: 'Preparar magias', desc: 'Escolha as preparadas do dia' },
+        { href: '#/mais/estrategias', Icone: SwordIcon, titulo: 'Estratégias', desc: 'Playbooks por turno com custo de mana' },
+        { href: '#/mais/condicoes', Icone: WarningIcon, titulo: 'Condições 2024', desc: 'Glossário rápido' },
+      ],
+    },
+    {
+      id: 'historia', titulo: 'História', desc: 'A lore de Ehzra', Icone: ScrollIcon,
+      itens: lore.paginas.filter((p) => p.id !== 'reliquia' && p.id !== 'avatar')
+        .map((p) => ({ href: `#/mais/lore/${p.id}`, Icone: FeatherIcon, titulo: p.titulo, desc: p.sub })),
+    },
+    {
+      id: 'ajustes', titulo: 'Ajustes', desc: 'Sincronização e backup', Icone: GearSixIcon,
+      itens: [{ href: '#/mais/backup', Icone: DownloadSimpleIcon, titulo: 'Backup', desc: 'Exportar e importar tudo em JSON' }],
+    },
+  ];
+}
+
+function ItemMenu({ href, Icone, titulo, desc }: Item) {
+  return (
     <a href={href} className="card card-btn">
       <span className="menu"><span style={{ display: 'flex', alignItems: 'center', gap: 12, minHeight: 44 }}>
         <Icone size={22} color="var(--bone-dim)" />
-        <span className="grow"><span style={{ fontFamily: 'var(--font-display)' }}>{t}</span><br /><span className="faint" style={{ fontSize: 14 }}>{d}</span></span>
+        <span className="grow"><span style={{ fontFamily: 'var(--font-display)' }}>{titulo}</span><br /><span className="faint" style={{ fontSize: 14 }}>{desc}</span></span>
         <CaretRightIcon size={18} />
       </span></span>
     </a>
   );
+}
+
+/** Primeiro nível: só as quatro categorias. O detalhe aparece ao entrar em cada uma. */
+function Menu() {
+  const grupos = useGrupos();
+  const { status } = useSync();
   return (
     <>
       <h1 className="page-title">Mais</h1>
-      <StatusSync />
-      <div className="stack">
-        {item('#/mais/ceifadora', SkullIcon, 'Ceifadora de Myrkul', 'A relíquia, suas magias e a sintonia')}
-        {item('#/mais/estrategias', SwordIcon, 'Estratégias', 'Playbooks por turno com custo de mana')}
-        {item('#/mais/nivel', ArrowUpIcon, 'Subir de nível', `Nível ${s.nivel} para ${s.nivel + 1}`)}
-        {item('#/mais/preparar', SparkleIcon, 'Preparar magias', 'Escolha as preparadas do dia')}
-        {item('#/mais/condicoes', WarningIcon, 'Condições 2024', 'Glossário rápido')}
-        {lore.paginas.filter((p) => p.id !== 'reliquia' && p.id !== 'avatar').map((p) => (
-          <div key={p.id}>{item(`#/mais/lore/${p.id}`, FeatherIcon, p.titulo, p.sub)}</div>
+      {(status === 'login' || status === 'erro') && <StatusSync />}
+      <nav className="categorias" aria-label="Categorias">
+        {grupos.map((g) => (
+          <a key={g.id} href={`#/mais/g/${g.id}`} className="categoria" data-testid={`grupo-${g.id}`}>
+            <g.Icone size={30} weight="light" aria-hidden="true" />
+            <span className="categoria-titulo">{g.titulo}</span>
+            <span className="categoria-desc">{g.desc}</span>
+          </a>
         ))}
-        {item('#/mais/backup', DownloadSimpleIcon, 'Backup', 'Exportar e importar tudo em JSON')}
-      </div>
+      </nav>
+    </>
+  );
+}
+
+function GrupoMenu({ id }: { id?: string }) {
+  const g = useGrupos().find((x) => x.id === id);
+  if (!g) return <Menu />;
+  return (
+    <>
+      <a href="#/mais" className="btn mini fantasma" style={{ marginBottom: 10 }}>Voltar</a>
+      <h1 className="page-title">{g.titulo}</h1>
+      {g.id === 'ajustes' && <StatusSync />}
+      <div className="stack">{g.itens.map((it) => <ItemMenu key={it.href} {...it} />)}</div>
     </>
   );
 }

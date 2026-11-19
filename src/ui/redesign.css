@@ -375,3 +375,15 @@ a.btn.ouro { color: var(--bone); }
 .ciclo-titulo:first-child { margin-top: 0; }
 .numpad-conc { margin: -4px 0 10px; font-size: 14.5px; color: var(--bone-dim); text-align: center; }
 .numpad-conc b { color: var(--conc); }
+
+/* ---------- Mais: categorias em blocos, como menu de jogo ---------- */
+.categorias { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 8px; }
+.categoria {
+  display: flex; flex-direction: column; gap: 6px; min-height: 132px; padding: 16px 14px;
+  border: 1px solid var(--line); border-radius: var(--r); background: linear-gradient(160deg, var(--panel-2), var(--panel));
+  color: var(--bone); text-decoration: none; transition: border-color 0.2s, transform 0.15s var(--ease-out);
+}
+.categoria svg { color: var(--bone-dim); margin-bottom: auto; }
+.categoria:active { transform: scale(0.98); border-color: var(--bone-dim); }
+.categoria-titulo { font-family: var(--font-display); font-size: 16px; letter-spacing: 0.04em; text-transform: uppercase; }
+.categoria-desc { font-size: 13.5px; line-height: 1.3; color: var(--bone-faint); }

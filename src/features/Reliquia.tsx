@@ -28,7 +28,7 @@ export function Reliquia() {
 
   return (
     <>
-      <a href="#/mais" className="btn mini fantasma" style={{ marginBottom: 10 }}>Voltar</a>
+      <a href="#/mais/g/personagem" className="btn mini fantasma" style={{ marginBottom: 10 }}>Voltar</a>
       <article className="reliquia">
         <header className="reliquia-topo">
           <h1 className="reliquia-nome">{cartao.nome}</h1>
