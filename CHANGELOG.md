@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.6.3 (19/11/2026)
+
+- Combos enxutos: saem os que eram uma magia só ou preparação (Sol dos Kobolds, Vida pela Vida, Vigília da Manhã, Colheita de Almas, Ferida no Chefe, Chão e Corte). Ficam 11 combos de verdade.
+
 ## 0.6.2 (19/11/2026)
 
 - Preparar magias ganhou a lista sugerida do nível, aplicada com um toque (evento definirPreparadas, com desfazer).

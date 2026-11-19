@@ -352,7 +352,7 @@ describe('combos', () => {
     const n8 = regrasNoNivel(r, 8);
     const lista = combosDisponiveis(n8, s0);
     const ids = lista.map((x) => x.combo.id);
-    expect(ids).toEqual(expect.arrayContaining(['golpe-do-epitafio', 'danca-dos-guardioes', 'ferida-no-chefe', 'dor-e-sino']));
+    expect(ids).toEqual(expect.arrayContaining(['golpe-do-epitafio', 'danca-dos-guardioes', 'puxar-para-a-cova', 'dor-e-sino']));
     expect(lista[0].combo.camada).toBe('rotina'); // da rotina ao feito
     expect(ids).not.toContain('nova-e-barreira'); // Barreira Luminosa só no 9
     const golpe = lista.find((x) => x.combo.id === 'golpe-do-epitafio')!;
@@ -364,7 +364,7 @@ describe('combos', () => {
     const ids = combosDisponiveis(regrasNoNivel(r, 9), { ...estadoInicial(r), nivel: 9 }).map((x) => x.combo.id);
     expect(ids).toContain('nova-e-barreira');
     expect(ids).not.toContain('golpe-do-epitafio'); // sem Toque da Morte
-    expect(ids).toContain('colheita-de-almas');
+    expect(ids).toContain('canhao-de-perto');
     expect(ids).toContain('cura-que-abencoa');
   });
 });

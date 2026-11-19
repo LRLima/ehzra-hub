@@ -128,42 +128,6 @@ export const COMBOS: Combo[] = [
     ],
   },
   {
-    id: 'colheita-de-almas',
-    nome: 'Colheita de Almas',
-    camada: 'rotina',
-    parte: 'acaoBonus',
-    quando: 'Depois de acender a Lanterna: cada inimigo que cai vira munição.',
-    formula: [
-      { rotulo: 'Lanterna Espiritual', cat: 'c5' },
-      { rotulo: 'inimigos caindo', cat: 'fisico' },
-    ],
-    resultado: '4d8 + 5 por alma, com a ação bônus',
-    economia: 'ação uma vez, depois bônus',
-    requer: { magias: ['lanterna-espiritual'] },
-    passos: [
-      { tipo: 'magia', id: 'lanterna-espiritual', ciclo: 5, rotulo: 'Lanterna Espiritual (3 de mana pela Ceifadora, 10 minutos)' },
-      { tipo: 'lembrete', texto: 'Cada inimigo que morre na luz vira um fragmento (até 5). Na ação bônus: Drenar Vida, 4d8 + 5 necrótico, ou Proteger Aliado, desvantagem nos ataques contra ele.' },
-    ],
-  },
-  {
-    id: 'ferida-no-chefe',
-    nome: 'Ferida no Chefe',
-    camada: 'rotina',
-    parte: 'reacao',
-    quando: 'Um aliado acabou de acertar o chefe.',
-    formula: [
-      { rotulo: 'Ferida Aberta', cat: 'c2' },
-      { rotulo: 'golpes do grupo', cat: 'fisico' },
-    ],
-    resultado: '+2d6 por aliado que acertar',
-    economia: 'reação',
-    requer: { magias: ['ferida-aberta'] },
-    passos: [
-      { tipo: 'magia', id: 'ferida-aberta', ciclo: 2, rotulo: 'Ferida Aberta no chefe' },
-      { tipo: 'lembrete', texto: 'Até o seu próximo turno, cada aliado que acertar o chefe soma 2d6 necrótico (uma vez no turno de cada um), e o chefe não se cura.' },
-    ],
-  },
-  {
     id: 'cura-que-abencoa',
     nome: 'Cura que Abençoa',
     camada: 'rotina',
@@ -179,45 +143,6 @@ export const COMBOS: Combo[] = [
     passos: [
       { tipo: 'magia', id: 'palavra-curativa', ciclo: 1, rotulo: 'Palavra Curativa no 1º ciclo' },
       { tipo: 'lembrete', texto: 'O aliado está abençoado até o fim do seu próximo turno: cada magia de dano que você conjurar com ciclo o cura de novo, e ele pode receber a Barreira Luminosa.' },
-    ],
-  },
-  {
-    id: 'transferencia',
-    nome: 'Vida pela Vida',
-    camada: 'rotina',
-    parte: 'acao',
-    quando: 'Um aliado muito ferido e você com PV sobrando.',
-    formula: [
-      { rotulo: 'Transferência de Vida', cat: 'c3' },
-    ],
-    resultado: '~36 de cura por 2 de mana',
-    economia: 'ação',
-    requer: { magias: ['transferencia-de-vida'] },
-    passos: [
-      { tipo: 'magia', id: 'transferencia-de-vida', ciclo: 3, rotulo: 'Transferência de Vida (2 de mana pela Ceifadora)' },
-      { tipo: 'lembrete', texto: 'Você sofre 4d8 necrótico e o aliado recupera o dobro. Na Disciplina, ele também fica abençoado para a Barreira.' },
-    ],
-  },
-  {
-    id: 'vigilia-da-manha',
-    nome: 'Vigília da Manhã',
-    camada: 'rotina',
-    parte: 'acao',
-    quando: 'No começo do dia de aventura, antes de sair.',
-    formula: [
-      { rotulo: 'Auxílio', cat: 'c2' },
-      { rotulo: 'Ala da Morte ×2', cat: 'c4' },
-      { rotulo: 'Vínculo Protetor', cat: 'c2' },
-    ],
-    resultado: 'o grupo começa o dia com mais PV e duas mortes evitadas',
-    economia: 'fora de combate',
-    requer: { magias: ['auxilio', 'ala-da-morte', 'vinculo-protetor'] },
-    passos: [
-      { tipo: 'magia', id: 'auxilio', ciclo: 2, rotulo: 'Auxílio em três aliados (8 horas)' },
-      { tipo: 'magia', id: 'ala-da-morte', ciclo: 4, rotulo: 'Ala da Morte no paladino (8 horas)' },
-      { tipo: 'magia', id: 'ala-da-morte', ciclo: 4, rotulo: 'Ala da Morte no bárbaro (8 horas)' },
-      { tipo: 'lembrete', texto: 'Guarde o Vínculo Protetor para antes da luta grande: dura 1 hora. No paladino, ele resiste a tudo, e você sofre o mesmo dano que ele.' },
-      { tipo: 'magia', id: 'vinculo-protetor', ciclo: 2, rotulo: 'Vínculo Protetor no paladino (1 hora)' },
     ],
   },
 
@@ -241,24 +166,6 @@ export const COMBOS: Combo[] = [
     ],
   },
   {
-    id: 'chao-e-corte',
-    nome: 'Chão e Corte',
-    camada: 'medio',
-    parte: 'acao',
-    quando: 'Inimigos em fila, de Força fraca, perto do bárbaro e do paladino.',
-    formula: [
-      { rotulo: 'Lança de Prata', cat: 'c3' },
-      { rotulo: 'Guardiões', cat: 'c3' },
-    ],
-    resultado: 'fila caída: vantagem corpo a corpo e presos na aura',
-    economia: 'ação',
-    requer: { magias: ['lanca-de-prata-de-laeral'] },
-    passos: [
-      { tipo: 'magia', id: 'lanca-de-prata-de-laeral', ciclo: 3, rotulo: 'Lança de Prata de Laeral na fila' },
-      { tipo: 'lembrete', texto: 'Caídos: ataques corpo a corpo contra eles têm vantagem, e levantar custa metade do deslocamento, que os Guardiões já cortaram pela metade.' },
-    ],
-  },
-  {
     id: 'cego-e-aberto',
     nome: 'Cego e Aberto',
     camada: 'medio',
@@ -276,23 +183,6 @@ export const COMBOS: Combo[] = [
       { tipo: 'pergunta', texto: 'Ele ficou Cego?', senao: 'Passou na salvaguarda. Guarde a reação para o Ainda Não.' },
       { tipo: 'lembrete', texto: 'Cego: todos atacam com vantagem e ele ataca com desvantagem. Quando o primeiro aliado acertar, use a reação.' },
       { tipo: 'magia', id: 'ferida-aberta', ciclo: 2, rotulo: 'Ferida Aberta no alvo cego' },
-    ],
-  },
-  {
-    id: 'sol-dos-kobolds',
-    nome: 'Sol dos Kobolds',
-    camada: 'medio',
-    parte: 'acao',
-    quando: 'Covil de kobolds ou criaturas que odeiam o sol.',
-    formula: [
-      { rotulo: 'Luz do Dia', cat: 'c3' },
-    ],
-    resultado: 'desvantagem nos ataques de quem tem sensibilidade ao sol, por 1 hora',
-    economia: 'ação, sem concentração',
-    requer: { magias: ['luz-do-dia'] },
-    passos: [
-      { tipo: 'magia', id: 'luz-do-dia', ciclo: 3, rotulo: 'Luz do Dia num objeto que você carrega' },
-      { tipo: 'lembrete', texto: 'Confirme com o mestre se a Luz do Dia conta como luz do sol. Se contar, kobolds e drow atacam com desvantagem dentro dela.' },
     ],
   },
 
