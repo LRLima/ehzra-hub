@@ -256,6 +256,8 @@ function aplicar(r: Regras, s: GameState, e: Evento): GameState {
       const preparadas = e.preparada ? [...new Set([...base, e.magia])] : base.filter((id) => id !== e.magia);
       return { ...s, preparadas };
     }
+    case 'definirPreparadas':
+      return { ...s, preparadas: [...new Set(e.magias)] };
     case 'subirNivel': {
       const bonusAtributos = { ...s.bonusAtributos };
       for (const [a, v] of Object.entries(e.atributos)) bonusAtributos[a as Atributo] = (bonusAtributos[a as Atributo] ?? 0) + v;
@@ -269,6 +271,7 @@ function aplicar(r: Regras, s: GameState, e: Evento): GameState {
         pv: s.pv + e.pvGanho,
         mana: s.mana + (mana - manaMaxima(r, s.nivel)),
         magiasExtras: [...new Set([...s.magiasExtras, ...e.magias])],
+        preparadas: e.preparadas ? [...new Set(e.preparadas)] : s.preparadas,
         avisos: [{ tipo: 'info', texto: `Nível ${e.para}! Agora você conjura até o ${cicloMaximo(r, e.para)}º ciclo.` }],
       };
     }

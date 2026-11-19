@@ -10,7 +10,7 @@ import { useJogo, useUI, ir } from '../store';
 import { Markdown, SpellCard } from '../ui/components';
 import { carregarLore, carregarEstrategiasOriginais } from '../domain/data';
 import { ganhosProximoNivel } from '../domain/levelup';
-import { contagemPreparadas, estaPreparada, magiaEfetiva, custoMana, magia as achaMagia, NOMES_ATRIBUTO } from '../domain/rules';
+import { contagemPreparadas, estaPreparada, magiaEfetiva, custoMana, magia as achaMagia, NOMES_ATRIBUTO, linhaNivel } from '../domain/rules';
 import { recursoRestante } from '../domain/state';
 import { db } from '../db/dexie';
 import { migrar, type Backup } from '../domain/migrations';
@@ -234,6 +234,7 @@ function SubirNivel() {
   const [atr, setAtr] = useState<Partial<Record<Atributo, number>>>({});
   const [talento, setTalento] = useState('');
   const [magias, setMagias] = useState<string[]>([]);
+  const [trocarLista, setTrocarLista] = useState(true);
   const [festa, setFesta] = useState<number | null>(null);
   const ultimoUp = [...eventos].filter((e) => e.e.t === 'subirNivel').sort((a, b) => b.em - a.em)[0];
   const desfeito = ultimoUp && eventos.some((e) => e.e.t === 'desfazer' && e.e.alvo === ultimoUp.id);
@@ -255,7 +256,8 @@ function SubirNivel() {
   const somaAsi = Object.values(atr).reduce((a, b) => a + (b ?? 0), 0);
   const asiOk = !g.asi || somaAsi === 0 || somaAsi === 2 || talento.trim();
   const aplicar = async () => {
-    await dispatch({ t: 'subirNivel', para: g.para, pvGanho, atributos: atr, talento: talento.trim() || undefined, magias });
+    const listaNova = r.progressao.niveis[g.para - 1]?.preparadasSugeridas;
+    await dispatch({ t: 'subirNivel', para: g.para, pvGanho, atributos: atr, talento: talento.trim() || undefined, magias, preparadas: trocarLista && listaNova ? listaNova : undefined });
     setFesta(g.para);
   };
 
@@ -315,6 +317,12 @@ function SubirNivel() {
         </>
       )}
 
+      {r.progressao.niveis[g.para - 1]?.preparadasSugeridas && (
+        <label className="card row" style={{ marginTop: 12, gap: 10 }}>
+          <input type="checkbox" checked={trocarLista} onChange={(e) => setTrocarLista(e.target.checked)} data-testid="trocar-lista" />
+          <span>Trocar as preparadas pela lista sugerida do nível {g.para}: {r.progressao.niveis[g.para - 1]!.preparadasSugeridas!.map((id) => achaMagia(r, id).nome).join(', ')}</span>
+        </label>
+      )}
       <button className="btn primario largo grande" style={{ marginTop: 16 }} disabled={!asiOk} onClick={aplicar} data-testid="aplicar-nivel">
         <ArrowUpIcon size={20} />Subir para o nível {g.para}
       </button>
@@ -349,6 +357,24 @@ function Condicoes() {
 }
 
 // ---------- preparar ----------
+/** Botão que troca as preparadas pela lista sugerida do nível, num evento só (com desfazer). */
+function ListaSugerida() {
+  const { r, s, dispatch } = useJogo();
+  const lista = linhaNivel(r, s.nivel).preparadasSugeridas;
+  if (!lista?.length) return null;
+  const atuais = new Set(r.magias.filter((m) => m.ciclo > 0 && m.origens.includes('classe') && estaPreparada(m, s.preparadas)).map((m) => m.id));
+  const igual = lista.length === atuais.size && lista.every((id) => atuais.has(id));
+  return (
+    <div className="card" style={{ marginBottom: 12 }} data-testid="lista-sugerida">
+      <b>Lista sugerida do nível {s.nivel}</b>
+      <p className="faint" style={{ fontSize: 14, margin: '4px 0 8px' }}>{lista.map((id) => achaMagia(r, id).nome).join(', ')}</p>
+      {igual
+        ? <p className="faint" style={{ margin: 0 }}>Você já está com essa lista.</p>
+        : <button className="btn mini primario" onClick={() => dispatch({ t: 'definirPreparadas', magias: lista, origem: `lista sugerida do nível ${s.nivel}` })}>Usar esta lista</button>}
+    </div>
+  );
+}
+
 function Preparar() {
   const { r, c, s, dispatch } = useJogo();
   const cont = contagemPreparadas(r, c, s.preparadas);
@@ -363,6 +389,7 @@ function Preparar() {
         <span className="num" style={{ color: cont.usadas > cont.limite ? 'var(--hp-fg)' : 'var(--gold)' }}>{cont.usadas}/{cont.limite}</span> preparadas.
         {s.preparadas === null && ' Hoje todas contam como preparadas; desmarque até chegar no limite.'}
       </p>
+      <ListaSugerida />
       <div className="stack">
         {escolhiveis.map((m) => {
           const on = estaPreparada(m, s.preparadas);

@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { carregarRegras } from './data';
 import {
-  regrasNoNivel, dominioNoNivel,
+  regrasNoNivel, dominioNoNivel, contagemPreparadas,
   cdMagia, ataqueMagia, pericia, salvaguarda, custoMana, danoMagia, curaMagia, magia, podeConjurar, magiaEfetiva,
   percepcaoPassiva, type Regras,
 } from './rules';
@@ -366,5 +366,22 @@ describe('combos', () => {
     expect(ids).not.toContain('golpe-do-epitafio'); // sem Toque da Morte
     expect(ids).toContain('colheita-de-almas');
     expect(ids).toContain('cura-que-abencoa');
+  });
+});
+
+describe('listas sugeridas de preparadas', () => {
+  it('a do nível 8 fecha exatamente no limite', () => {
+    const lista = r.progressao.niveis[7].preparadasSugeridas!;
+    const { s } = run([{ t: 'definirPreparadas', magias: lista }]);
+    expect(contagemPreparadas(regrasNoNivel(r, 8), contexto(s), s.preparadas)).toEqual({ usadas: 12, limite: 12 });
+  });
+  it('subir para o 9 troca para a lista da Disciplina, e desfazer volta', () => {
+    const l8 = r.progressao.niveis[7].preparadasSugeridas!;
+    const l9 = r.progressao.niveis[8].preparadasSugeridas!;
+    const sobe: Evento = { t: 'subirNivel', para: 9, pvGanho: 7, atributos: {}, magias: [], preparadas: l9 };
+    const { s, envs } = run([{ t: 'definirPreparadas', magias: l8 }, sobe]);
+    expect(contagemPreparadas(regrasNoNivel(r, 9), contexto(s), s.preparadas)).toEqual({ usadas: 14, limite: 14 });
+    const voltou = reduzir(r, [...envs, env({ t: 'desfazer', alvo: envs[1].id })]);
+    expect(new Set(voltou.preparadas)).toEqual(new Set(l8));
   });
 });

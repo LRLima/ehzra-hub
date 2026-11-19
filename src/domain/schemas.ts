@@ -208,6 +208,8 @@ export const ClassLevel = z.object({
   subclasse: z.array(z.string()).default([]),
   /** Nome do domínio a partir deste nível, quando ele muda. */
   dominio: z.string().optional(),
+  /** Lista sugerida de preparadas neste nível (só as que contam no limite). */
+  preparadasSugeridas: z.array(z.string()).optional(),
   asi: z.boolean().default(false),
 });
 export const ClassProgression = z.object({

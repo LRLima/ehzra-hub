@@ -191,7 +191,7 @@ const strategies = Strategies.parse({
 
 // ---------- valida arquivos escritos à mão ----------
 const character = Character.parse(read('data/character.json'));
-ClassProgression.parse(read('data/class-progression.json'));
+const progressao = ClassProgression.parse(read('data/class-progression.json'));
 Conditions.parse(read('data/conditions-2024.json'));
 
 // Referências cruzadas: tudo que aponta para um id precisa existir.
@@ -205,6 +205,7 @@ const broken: string[] = [];
 for (const s of spells) for (const r of s.relacionadas) if (!ids.has(r)) broken.push(`${s.id} -> ${r}`);
 for (const f of features) for (const r of f.relacionadas) if (!ids.has(r)) broken.push(`${f.id} -> ${r}`);
 for (const id of homebrew.ceifadora.magias) if (!ids.has(id)) broken.push(`ceifadora -> ${id}`);
+for (const n of progressao.niveis) for (const id of n.preparadasSugeridas ?? []) if (!ids.has(id)) broken.push(`preparadas do nível ${n.nivel} -> ${id}`);
 for (const p of strategies.playbooks)
   for (const t of [p.preCombate, ...p.turnos]) for (const m of t?.magias ?? []) if (!ids.has(m.id)) broken.push(`${p.id} -> ${m.id}`);
 for (const id of character.aprovacoes2024) if (!ids.has(id)) broken.push(`aprovacoes2024 -> ${id}`);

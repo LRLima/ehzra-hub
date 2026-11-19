@@ -62,6 +62,7 @@ export const Evento = z.discriminatedUnion('t', [
   z.object({ t: z.literal('novaSessao'), sessao: id, nome: z.string() }),
   z.object({ t: z.literal('nota'), sessao: id, texto: z.string() }),
   z.object({ t: z.literal('preparar'), magia: id, preparada: z.boolean() }),
+  z.object({ t: z.literal('definirPreparadas'), magias: z.array(id), origem: z.string().optional() }),
   z.object({
     t: z.literal('subirNivel'),
     para: z.number().int().min(2).max(20),
@@ -69,6 +70,8 @@ export const Evento = z.discriminatedUnion('t', [
     atributos: z.partialRecord(Atributo, z.number().int()).default({}),
     talento: z.string().optional(),
     magias: z.array(id).default([]),
+    /** Troca a lista de preparadas junto com a subida (desfazer a subida desfaz a troca). */
+    preparadas: z.array(id).optional(),
   }),
   z.object({ t: z.literal('desfazer'), alvo: id }),
 ]);

@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.6.2 (19/11/2026)
+
+- Preparar magias ganhou a lista sugerida do nível, aplicada com um toque (evento definirPreparadas, com desfazer).
+- Subir para o nível 9 já oferece trocar as preparadas pela lista da Disciplina, dentro do mesmo evento da subida: reverter a subida devolve a lista antiga.
+
 ## 0.6.1 (19/11/2026)
 
 - Combos Canhão de Perto (Guardiões dançando, Palavra Radiante, Lanterna e Ferida) e Canhão de Longe (Dor, Soar os Mortos, Lanterna e Ferida), usando todas as partes do turno sem gastar Canalizar.

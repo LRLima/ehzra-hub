@@ -185,7 +185,21 @@
         0,
         0
       ],
-      "asi": true
+      "asi": true,
+      "preparadasSugeridas": [
+        "guardioes-espirituais",
+        "palavra-curativa",
+        "nova-sagrada",
+        "infligir-ferimentos",
+        "auxilio",
+        "ferida-aberta",
+        "ainda-nao",
+        "egide-do-ocaso",
+        "vinculo-protetor",
+        "comando",
+        "lanca-de-prata-de-laeral",
+        "horror-psiquico"
+      ]
     },
     {
       "nivel": 9,
@@ -210,6 +224,22 @@
         "Raio Sagrado",
         "Expiação",
         "Barreira Luminosa"
+      ],
+      "preparadasSugeridas": [
+        "guardioes-espirituais",
+        "palavra-curativa",
+        "palavra-curativa-em-massa",
+        "nova-sagrada",
+        "auxilio",
+        "vinculo-protetor",
+        "ferida-aberta",
+        "ainda-nao",
+        "egide-do-ocaso",
+        "comando",
+        "lanca-de-prata-de-laeral",
+        "horror-psiquico",
+        "contagio",
+        "cegueira-e-surdez"
       ]
     },
     {

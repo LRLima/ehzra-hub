@@ -44,7 +44,8 @@ export function descrever(r: Regras, env: Envelope, todos: Envelope[] = []): str
     case 'novaSessao': return `Nova sessão: ${e.nome}`;
     case 'nota': return 'Notas da sessão editadas';
     case 'preparar': return `${e.preparada ? 'Preparou' : 'Despreparou'} ${magia(r, e.magia).nome}`;
-    case 'subirNivel': return `Subiu para o nível ${e.para} (+${e.pvGanho} PV)`;
+    case 'definirPreparadas': return `Preparou ${e.magias.length} magias${e.origem ? ` (${e.origem})` : ''}`;
+    case 'subirNivel': return `Subiu para o nível ${e.para} (+${e.pvGanho} PV)${e.preparadas ? ' e trocou as preparadas' : ''}`;
     case 'desfazer': {
       const alvo = todos.find((x) => x.id === e.alvo);
       return `Desfez: ${alvo ? descrever(r, alvo, todos) : 'ação'}`;
