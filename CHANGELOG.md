@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.6.8 (19/11/2026)
+
+- O peso dos combos virou bolinhas: ● leve (toda luta), ●● médio (uma vez por luta), ●●● pesado (momento decisivo).
+
 ## 0.6.7 (19/11/2026)
 
 - Sai o combo Comando para dentro dos Guardiões. O Comando continua no grimório.

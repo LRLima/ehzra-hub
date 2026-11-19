@@ -356,7 +356,7 @@ a.btn.ouro { color: var(--bone); }
 .combo-card .nome { font-size: 14.5px; }
 .combo-card .nome { font-family: var(--font-display); font-size: 15px; color: var(--bone); }
 .combo-topo { gap: 8px; align-items: center; }
-.camada { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; padding: 1px 7px; border-radius: var(--r-pill); border: 1px solid currentColor; }
+.camada { font-size: 12px; letter-spacing: 0.15em; padding: 0 2px; line-height: 1; white-space: nowrap; }
 .camada[data-camada="rotina"] { color: var(--mana); }
 .camada[data-camada="medio"] { color: var(--cat-habilidade); }
 .camada[data-camada="feito"] { color: var(--crimson-fg); }

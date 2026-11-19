@@ -1,7 +1,7 @@
 /** Combos guiados passo a passo e a faixa de ações básicas da tela de Combate. */
 import { Fragment, useState } from 'react';
 import { useJogo, useUI } from '../store';
-import { COMBOS, NOME_CAMADA, combosDisponiveis, type Combo, type ParteTurno } from '../domain/combos';
+import { COMBOS, NOME_CAMADA, DICA_CAMADA, combosDisponiveis, type Combo, type ParteTurno } from '../domain/combos';
 import { modAtr, proficiencia } from '../domain/rules';
 
 function Formula({ combo }: { combo: Combo }) {
@@ -42,7 +42,7 @@ export function CombosDoTurno({ parte }: { parte: ParteTurno }) {
       <header className="cat-h">
         <i className="cat-marca" aria-hidden="true" />
         <h3>Combos</h3>
-        <span className="cat-nota">da rotina ao feito</span>
+        <span className="cat-nota">● leve até ●●● pesado</span>
         <span className="cat-n num">{lista.length}</span>
       </header>
       <div className="stack">
@@ -51,7 +51,7 @@ export function CombosDoTurno({ parte }: { parte: ParteTurno }) {
           return (
             <div key={combo.id} className={`card combo-card${falta.length > 0 ? ' faltando' : ''}${ab ? ' aberto' : ''}`}>
               <button className="combo-resumo" aria-expanded={ab} onClick={() => setAberto(ab ? null : combo.id)} data-testid={`combo-${combo.id}`}>
-                <span className="row combo-topo"><span className="nome grow">{combo.nome}</span><span className="camada" data-camada={combo.camada}>{NOME_CAMADA[combo.camada]}</span></span>
+                <span className="row combo-topo"><span className="nome grow">{combo.nome}</span><span className="camada" data-camada={combo.camada} title={DICA_CAMADA[combo.camada]} aria-label={DICA_CAMADA[combo.camada]}>{NOME_CAMADA[combo.camada]}</span></span>
                 <span className="combo-desc">{combo.descricao}</span>
               </button>
               {ab && (

@@ -309,7 +309,9 @@ export const COMBOS: Combo[] = [
 ];
 
 const ORDEM: Record<Camada, number> = { rotina: 0, medio: 1, feito: 2 };
-export const NOME_CAMADA: Record<Camada, string> = { rotina: 'rotina', medio: 'médio', feito: 'feito' };
+export const NOME_CAMADA: Record<Camada, string> = { rotina: '●', medio: '●●', feito: '●●●' };
+/** Texto para leitores de tela e dica ao passar o mouse. */
+export const DICA_CAMADA: Record<Camada, string> = { rotina: 'Leve: gasta pouco, use toda luta', medio: 'Médio: uma vez por luta, quando vale', feito: 'Pesado: gasta recurso escasso, para o momento decisivo' };
 
 /** Mana total das magias do combo, já com a Ceifadora (cada magia contada uma vez por passo). */
 export function manaDoCombo(r: Regras, combo: Combo) {
