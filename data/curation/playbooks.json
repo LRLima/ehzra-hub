@@ -6,13 +6,13 @@
       "resumo": "Os mortos-vivos seguram a linha de frente; você controla o inimigo mais perigoso e dá suporte de longe.",
       "quandoUsar": ["Você já tem mortos-vivos animados (Animar Morto leva 1 minuto, então se prepara antes do combate).", "Há um inimigo de elite que pode desmontar os esqueletos."],
       "quandoNaoUsar": ["Sem cadáveres nem mortos-vivos à mão.", "Área de luz sagrada ou contra muitos inimigos com dano em área."],
-      "preCombate": { "acao": "Fio da Obediência em cada morto-vivo (8 horas).", "magias": [{ "id": "fio-da-obediencia", "ciclo": 1 }] },
+      "preCombate": { "acao": "Animar Morto antes do combate (leva 1 minuto; pela Ceifadora, metade da mana).", "magias": [{ "id": "animar-morto", "ciclo": 3 }] },
       "turnos": [
-        { "rotulo": "Turno 1", "acao": "Impor Maldição no inimigo de elite (opção 2: desvantagem nos ataques contra você, ou opção 4 para dano).", "bonus": "Comandar os mortos-vivos (Animar Morto).", "movimento": "Fique a até 3 m de dois mortos-vivos para ativar o +2 de CA do Fio.", "magias": [{ "id": "impor-maldicao", "ciclo": 3 }] },
+        { "rotulo": "Turno 1", "acao": "Impor Maldição no inimigo de elite (opção 2: desvantagem nos ataques contra você, ou opção 4 para dano).", "bonus": "Comandar os mortos-vivos (Animar Morto).", "movimento": "Fique atrás dos mortos-vivos, que seguram a linha.", "magias": [{ "id": "impor-maldicao", "ciclo": 3 }] },
         { "rotulo": "Turno 2 em diante", "acao": "Soar os Mortos no alvo ferido (1d12 vira 2d12 + 5), ou Lâmina Necrótica se estiver colado.", "bonus": "Comandar os mortos-vivos.", "reacao": "Conjurador de Guerra se alguém sair do seu alcance." }
       ],
       "conflitosConcentracao": ["Impor Maldição ocupa a concentração até o 4º ciclo."],
-      "dependeDeHomebrew": ["Fio da Obediência", "Pavor da Tumba (citada na estratégia original, mas não existe no grimório)"]
+      "dependeDeHomebrew": ["Pavor da Tumba (citada na estratégia original, mas não existe no grimório)"]
     },
     {
       "id": "combatente-corpo-a-corpo", "nome": "Combatente Solitário: corpo a corpo", "original": true,

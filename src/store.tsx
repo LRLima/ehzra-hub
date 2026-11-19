@@ -13,6 +13,7 @@ import { SCHEMA_VERSION } from './domain/schemas';
 import { reduzir, estadoInicial, contexto, type GameState } from './domain/state';
 import { descrever } from './domain/log';
 import type { Regras, Contexto } from './domain/rules';
+import { regrasNoNivel } from './domain/rules';
 
 // ---------- interface ----------
 export type Aberto =
@@ -90,6 +91,7 @@ export function JogoProvider({ children }: { children: ReactNode }) {
   const eventos = useLiveQuery(() => db.eventos.toArray(), [], undefined);
   const lista = useMemo(() => eventos ?? [], [eventos]);
   const s = useMemo(() => (eventos ? reduzir(regras, lista) : estadoInicial(regras)), [eventos, lista]);
+  const regrasNivel = useMemo(() => regrasNoNivel(regras, s.nivel), [s.nivel]);
 
   const dispatch = useCallback<Jogo['dispatch']>(async (e, opts) => {
     const env: Envelope = { id: novoId(), em: Date.now(), aparelho: await aparelho(), v: SCHEMA_VERSION, e };
@@ -113,8 +115,8 @@ export function JogoProvider({ children }: { children: ReactNode }) {
   useEffect(() => iniciarSync(), []);
 
   const valor = useMemo<Jogo>(
-    () => ({ r: regras, s, c: contexto(s), eventos: lista, pronto: eventos !== undefined, dispatch, desfazer }),
-    [s, lista, eventos, dispatch, desfazer],
+    () => ({ r: regrasNivel, s, c: contexto(s), eventos: lista, pronto: eventos !== undefined, dispatch, desfazer }),
+    [s, regrasNivel, lista, eventos, dispatch, desfazer],
   );
   return <JogoCtx.Provider value={valor}>{children}</JogoCtx.Provider>;
 }

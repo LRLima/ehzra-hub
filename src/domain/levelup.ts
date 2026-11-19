@@ -1,6 +1,6 @@
 /** "O que você ganha" ao subir de nível, calculado só a partir dos dados. */
 import {
-  type Regras, cdMagia, ataqueMagia, cicloMaximo, danoMagia, linhaNivel, manaMaxima, modAtr, proficiencia,
+  dominioNoNivel, type Regras, cdMagia, ataqueMagia, cicloMaximo, danoMagia, linhaNivel, manaMaxima, modAtr, proficiencia,
   toqueDaMorte, magiaEfetiva,
 } from './rules';
 import type { GameState } from './state';
@@ -14,6 +14,11 @@ export interface Ganhos {
   mudancas: Mudanca[];
   featuresNovas: string[];
   subclasseNova: string[];
+  /** Domínio em vigor depois de subir. */
+  dominio: string | null;
+  /** Domínio novo neste nível (troca de domínio), e o que sai do antigo. */
+  dominioNovo: string | null;
+  dominioSai: string[];
   asi: boolean;
   magiasDominioNovas: string[];
   magiasLiberadas: { id: string; nome: string }[];
@@ -44,7 +49,8 @@ export function ganhosProximoNivel(r: Regras, s: GameState): Ganhos | null {
   add('Magias preparadas', l0.preparadas, l1.preparadas);
   add('Truques conhecidos', l0.truques, l1.truques);
   add('Canalizar Divindade', l0.canalizar, l1.canalizar);
-  add('Toque da Morte', toqueDaMorte(c0), toqueDaMorte(c1));
+  const toque = r.habilidades.find((f) => f.id === 'toque-da-morte');
+  if (toque) add('Toque da Morte', toqueDaMorte(c0), para <= (toque.nivelMax ?? 20) ? toqueDaMorte(c1) : 'sai com o domínio');
 
   const truquesEscalados = r.magias
     .filter((sp) => sp.ciclo === 0 && sp.dano.some((d) => d.porNivel))
@@ -66,6 +72,9 @@ export function ganhosProximoNivel(r: Regras, s: GameState): Ganhos | null {
     mudancas: m,
     featuresNovas: l1.features,
     subclasseNova: l1.subclasse,
+    dominio: dominioNoNivel(r, para),
+    dominioNovo: l1.dominio ?? null,
+    dominioSai: l1.dominio ? r.habilidades.filter((f) => f.nivelMax !== undefined && f.nivelMax < para).map((f) => f.nome) : [],
     asi: l1.asi,
     magiasDominioNovas: r.progressao.magiasDeDominio[String(para)] ?? [],
     magiasLiberadas,

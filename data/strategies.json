@@ -14,11 +14,11 @@
         "Área de luz sagrada ou contra muitos inimigos com dano em área."
       ],
       "preCombate": {
-        "acao": "Fio da Obediência em cada morto-vivo (8 horas).",
+        "acao": "Animar Morto antes do combate (leva 1 minuto; pela Ceifadora, metade da mana).",
         "magias": [
           {
-            "id": "fio-da-obediencia",
-            "ciclo": 1
+            "id": "animar-morto",
+            "ciclo": 3
           }
         ]
       },
@@ -26,7 +26,7 @@
         {
           "acao": "Impor Maldição no inimigo de elite (opção 2: desvantagem nos ataques contra você, ou opção 4 para dano).",
           "bonus": "Comandar os mortos-vivos (Animar Morto).",
-          "movimento": "Fique a até 3 m de dois mortos-vivos para ativar o +2 de CA do Fio.",
+          "movimento": "Fique atrás dos mortos-vivos, que seguram a linha.",
           "magias": [
             {
               "id": "impor-maldicao",
@@ -47,7 +47,6 @@
         "Impor Maldição ocupa a concentração até o 4º ciclo."
       ],
       "dependeDeHomebrew": [
-        "Fio da Obediência",
         "Pavor da Tumba (citada na estratégia original, mas não existe no grimório)"
       ],
       "original": true
@@ -362,7 +361,7 @@
     },
     {
       "tipo": "paragrafo",
-      "md": "**Passo 2:** Utilizar [Fio da Obediência](#/magia/fio-da-obediencia) para proporcionar-lhes mais autonomia e +2 de CA."
+      "md": "**Passo 2:** Utilizar Fio da Obediência para proporcionar-lhes mais autonomia e +2 de CA."
     },
     {
       "tipo": "subtitulo",
@@ -378,7 +377,7 @@
     },
     {
       "tipo": "paragrafo",
-      "md": "**Opção Extra:** Utilizar [Campeão do Túmulo](#/magia/campeao-do-tumulo) para intensificar a resistência e o dano de um dos esqueletos."
+      "md": "**Opção Extra:** Utilizar Campeão do Túmulo para intensificar a resistência e o dano de um dos esqueletos."
     },
     {
       "tipo": "titulo",

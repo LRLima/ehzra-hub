@@ -123,7 +123,7 @@ function Hud() {
               <div className="chips">
                 <span className="chip dano">{arma.dano} + {modAtr(r, c, arma.atributo)} {arma.tipo}</span>
                 <span className="chip">{String(arma.alcanceMetros).replace('.', ',')} m</span>
-                {canal && <span className="chip conc">Toque da Morte +{toqueDaMorte(c)}</span>}
+                {canal && r.habilidades.some((f) => f.id === 'toque-da-morte') && <span className="chip conc">Toque da Morte +{toqueDaMorte(c)}</span>}
               </div>
               <button className="btn mini aco" onClick={atacar}><SwordIcon size={16} />Atacar</button>
             </div>

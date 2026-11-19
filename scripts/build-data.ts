@@ -65,8 +65,12 @@ const componentesDe = (comp: string) => ({ v: /\bV\b/.test(comp), s: /\bS\b/.tes
 
 // ---------- magias ----------
 const curSpells = read('data/curation/spells.json');
-const rawSpells = extracted('spells.json');
-const spells = rawSpells.map((raw: any) => {
+// Magias que saíram do grimório: continuam no extraído (fiel ao original), mas não entram no app.
+const removidasLista: { nomeFicha: string; id: string }[] = curSpells._removidas ?? [];
+const removidas = new Set<string>(removidasLista.map((x) => x.nomeFicha));
+const idsRemovidos = new Set<string>(removidasLista.map((x) => x.id));
+const rawSpells = extracted('spells.json').filter((raw: any) => !removidas.has(raw.nomeFicha));
+const spellsOriginais = rawSpells.map((raw: any) => {
   const c = curSpells[raw.nomeFicha];
   if (!c) throw new Error(`Magia sem curadoria: ${raw.nomeFicha}`);
   const m = raw.meta ?? { tempo: 'não registrado', alcance: 'não registrado', comp: '', duracao: 'não registrada' };
@@ -89,7 +93,12 @@ const spells = rawSpells.map((raw: any) => {
     descricaoCompleta: raw.descricaoMd || null,
   });
 });
-const unused = Object.keys(curSpells).filter((k) => k !== '_leia' && !rawSpells.some((r: any) => r.nomeFicha === k));
+// Magias que entraram depois do original: escritas inteiras à mão.
+const novas = read('data/curation/spells-novas.json').magias.map((m: any) => Spell.parse({ nomeFicha: m.nome, descricaoCompleta: null, ...m }));
+const spells = [...spellsOriginais, ...novas];
+const repetidas = spells.map((x: Spell) => x.id).filter((id: string, i: number, a: string[]) => a.indexOf(id) !== i);
+if (repetidas.length) throw new Error(`Magias com id repetido: ${repetidas.join(', ')}`);
+const unused = Object.keys(curSpells).filter((k) => !k.startsWith('_') && !rawSpells.some((r: any) => r.nomeFicha === k));
 if (unused.length) throw new Error(`Curadoria sem magia correspondente: ${unused.join(', ')}`);
 
 // ---------- habilidades ----------
@@ -175,7 +184,9 @@ const strat = read('data/curation/playbooks.json');
 const strategies = Strategies.parse({
   schemaVersion: SCHEMA_VERSION,
   playbooks: strat.playbooks,
-  textoOriginal: extracted('strategies.json').blocos,
+  // Links para magias que saíram viram texto simples.
+  textoOriginal: JSON.parse(JSON.stringify(extracted('strategies.json').blocos)
+    .replace(/\[([^\][")]+)\]\(#\/magia\/([a-z0-9-]+)\)/g, (m: string, nome: string, id: string) => (idsRemovidos.has(id) ? nome : m))),
 });
 
 // ---------- valida arquivos escritos à mão ----------

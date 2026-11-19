@@ -47,7 +47,8 @@
         "canalizar-divindade",
         "infligir-ferimentos",
         "ceifadora-de-myrkul"
-      ]
+      ],
+      "nivelMax": 8
     },
     {
       "id": "repreender-mortos-vivos",
@@ -133,7 +134,8 @@
       "v2024": {
         "texto": "Texto oficial 2014: quando você conjura um truque de necromancia que mira uma única criatura, ele pode mirar duas criaturas a até 1,5 m uma da outra, cada uma com sua própria salvaguarda ou ataque.",
         "resumo": "Truque de necromancia de alvo único mira 2 criaturas a até 1,5 m uma da outra."
-      }
+      },
+      "nivelMax": 8
     },
     {
       "id": "morte-inescapavel",
@@ -145,7 +147,8 @@
       "itemValidacao": "H9",
       "nivel": 6,
       "gatilho": "passiva",
-      "resumo": "Seu dano necrótico de clérigo ignora resistência a necrótico."
+      "resumo": "Seu dano necrótico de clérigo ignora resistência a necrótico.",
+      "nivelMax": 8
     },
     {
       "id": "natureza-imortal",
@@ -214,6 +217,71 @@
       "resumo": "1 Inspiração. Marca uma criatura a até 9 m: o próximo acerto contra ela causa dano dobrado, e até lá ela não se cura.",
       "texto": "**Custo:** 1 Inspiração. **Tempo:** 1 ação bônus. **Alcance:** 9 m (30 ft). **Duração:** até o fim do próximo turno de Ehzra.\n\nEhzra aponta para uma criatura que possa ver e pronuncia o epitáfio dela. Enquanto estiver marcada, a criatura não recupera PV.\n\nNa próxima vez que Ehzra ou um aliado a atingir com uma jogada de ataque, ela fica vulnerável a todo o dano desse ataque, exceto aos tipos de dano aos quais é imune. Depois desse ataque, o epitáfio se encerra.\n\nSe a criatura não for atingida até o fim do próximo turno de Ehzra, o epitáfio se encerra sem efeito.",
       "relacionadas": []
+    },
+    {
+      "origem": "Domínio da Disciplina (World of Warcraft), nível 3",
+      "status2024": "ok",
+      "relacionadas": [
+        "canalizar-divindade",
+        "expiacao"
+      ],
+      "id": "raio-sagrado",
+      "nome": "Raio Sagrado",
+      "nomeOriginal": "Holy Bolt",
+      "nivel": 9,
+      "nivelMin": 9,
+      "gatilho": "acaoBonus",
+      "recurso": "canalizar",
+      "resumo": "Ação bônus e 1 Canalizar Divindade: ataque mágico a até 18 m, 2d10 + SAB radiante; no acerto, um aliado recupera 1d10 + SAB.",
+      "texto": "Como ação bônus, você apresenta seu símbolo sagrado e gasta um uso de Canalizar Divindade para fazer um ataque mágico à distância contra uma criatura a até 18 m. No acerto, o alvo sofre dano radiante igual a 2d10 + seu modificador de Sabedoria, e uma criatura que você possa ver a até 18 m recupera PV iguais a 1d10 + seu modificador de Sabedoria."
+    },
+    {
+      "origem": "Domínio da Disciplina (World of Warcraft), nível 3",
+      "status2024": "ok",
+      "relacionadas": [
+        "barreira-luminosa",
+        "raio-sagrado"
+      ],
+      "id": "expiacao",
+      "nome": "Expiação",
+      "nomeOriginal": "Atonement",
+      "nivel": 9,
+      "nivelMin": 9,
+      "gatilho": "passiva",
+      "resumo": "Quem você cura com magia fica abençoado até o fim do seu próximo turno; suas magias de dano curam os abençoados.",
+      "texto": "Quando uma magia de 1º ciclo ou mais que você conjura restaura PV de uma ou mais criaturas, cada uma delas recebe uma bênção que dura até o fim do seu próximo turno. Sempre que você conjurar uma magia que cause dano gastando um espaço de magia, cada criatura abençoada recupera PV iguais ao ciclo do espaço usado."
+    },
+    {
+      "origem": "Domínio da Disciplina (World of Warcraft), nível 6",
+      "status2024": "ok",
+      "relacionadas": [
+        "expiacao",
+        "canalizar-divindade"
+      ],
+      "id": "barreira-luminosa",
+      "nome": "Barreira Luminosa",
+      "nomeOriginal": "Luminous Barrier",
+      "nivel": 9,
+      "nivelMin": 9,
+      "gatilho": "acaoBonus",
+      "recurso": "canalizar",
+      "resumo": "Ação bônus e 1 Canalizar Divindade: os abençoados pela Expiação ganham nível + SAB de PV temporários e resistência a todo dano enquanto durarem.",
+      "texto": "Como ação bônus, você gasta um uso de Canalizar Divindade para cobrir cada criatura abençoada pela sua Expiação com uma proteção de luz. Cada uma ganha PV temporários iguais ao seu nível de clérigo + seu modificador de Sabedoria. Enquanto tiver esses PV temporários, a criatura tem resistência a todo dano."
+    },
+    {
+      "origem": "Domínio da Disciplina (World of Warcraft), nível 17",
+      "status2024": "ok",
+      "relacionadas": [
+        "raio-sagrado"
+      ],
+      "id": "penitencia-suprema",
+      "nome": "Penitência Suprema",
+      "nomeOriginal": "Ultimate Penitence",
+      "nivel": 17,
+      "nivelMin": 17,
+      "gatilho": "passiva",
+      "resumo": "Raio Sagrado com teletransporte de 9 m e raios extras gastando um espaço de magia.",
+      "texto": "Ao usar o Raio Sagrado, você pode se teletransportar até 9 m para um espaço desocupado que possa ver antes do ataque. Como parte da mesma ação bônus, você também pode gastar um espaço de magia para disparar raios adicionais iguais ao ciclo do espaço, contra um ou vários alvos, com uma jogada de ataque para cada."
     }
   ]
 }

@@ -1,5 +1,39 @@
 {
   "_leia": "Curadoria das magias. A chave é o nome como estava na ficha original. Campos mecânicos refletem a FICHA; a versão oficial 2024 fica em v2024 e só vale se o id estiver em character.aprovacoes2024. Componentes, escola, duração, concentração, ritual, tempo e alcance são derivados do original pelo build-data.ts.",
+  "_removidas": [
+    {
+      "nomeFicha": "Necropsia",
+      "id": "necropsia"
+    },
+    {
+      "nomeFicha": "Taxidermia de Ehzra",
+      "id": "taxidermia-de-ehzra"
+    },
+    {
+      "nomeFicha": "Batedores de Sarcófagos",
+      "id": "batedores-de-sarcofagos"
+    },
+    {
+      "nomeFicha": "Fio da Obediência",
+      "id": "fio-da-obediencia"
+    },
+    {
+      "nomeFicha": "Despelar",
+      "id": "despelar"
+    },
+    {
+      "nomeFicha": "Minguar Ossos",
+      "id": "minguar-ossos"
+    },
+    {
+      "nomeFicha": "Bolsa de Ossos",
+      "id": "bolsa-de-ossos"
+    },
+    {
+      "nomeFicha": "Campeão do Túmulo",
+      "id": "campeao-do-tumulo"
+    }
+  ],
   "Soar os Mortos": {
     "id": "soar-os-mortos",
     "nome": "Soar os Mortos",
@@ -196,21 +230,6 @@
       }
     }
   },
-  "Necropsia": {
-    "id": "necropsia",
-    "nome": "Necropsia",
-    "tags": [
-      "utilidade"
-    ],
-    "fonte": "Homebrew",
-    "listaClerigo": false,
-    "status2024": "homebrew",
-    "itemValidacao": "M6",
-    "origens": [
-      "classe"
-    ],
-    "resumo": "Sem anotação no grimório."
-  },
   "Ceremony": {
     "id": "cerimonia",
     "nome": "Cerimônia",
@@ -395,7 +414,8 @@
     "v2024": {
       "texto": "Sem salvaguarda: no acerto, 2d8 veneno e o alvo fica Envenenado até o fim do seu próximo turno.",
       "resumo": "Raio de veneno: no acerto, 2d8 e Envenenado automático."
-    }
+    },
+    "dominioAte": 8
   },
   "Vitalidade Falsa": {
     "id": "vitalidade-falsa",
@@ -420,67 +440,8 @@
       "bonus": 4,
       "bonusPorCiclo": 5,
       "pvTemporario": true
-    }
-  },
-  "Batedores de Sarcófagos": {
-    "id": "batedores-de-sarcofagos",
-    "nome": "Batedores de Sarcófagos",
-    "tags": [
-      "buff",
-      "mortos-vivos"
-    ],
-    "fonte": "Homebrew",
-    "listaClerigo": false,
-    "status2024": "homebrew",
-    "itemValidacao": "M14",
-    "origens": [
-      "classe"
-    ],
-    "cicloNota": "Corrigida para o 2º ciclo em 29/09/2026 (a ficha listava no 1º; a nota original já dizia 2º).",
-    "resumo": "Até 3 mortos-vivos ganham Percepção, Furtividade e +1d8 no ataque furtivo.",
-    "resolucao": {
-      "tipo": "automatico"
     },
-    "dano": [
-      {
-        "rotulo": "1º ataque fora da visão do inimigo (por morto-vivo)",
-        "dados": "1d8",
-        "tipo": "necrotico"
-      }
-    ],
-    "relacionadas": [
-      "animar-morto",
-      "fio-da-obediencia"
-    ],
-    "ciclo": 2
-  },
-  "Fio da Obediência": {
-    "id": "fio-da-obediencia",
-    "nome": "Fio da Obediência",
-    "tags": [
-      "buff",
-      "defesa",
-      "mortos-vivos"
-    ],
-    "fonte": "Homebrew",
-    "listaClerigo": false,
-    "status2024": "homebrew",
-    "itemValidacao": "M15",
-    "origens": [
-      "classe"
-    ],
-    "cicloNota": "Corrigida para o 2º ciclo em 29/09/2026 (a ficha listava no 1º; a nota original já dizia 2º).",
-    "resumo": "Morto-vivo age sozinho, resiste a controle e ganha +2 CA perto de outro.",
-    "resolucao": {
-      "tipo": "automatico"
-    },
-    "alvosPorCiclo": 1,
-    "relacionadas": [
-      "animar-morto",
-      "batedores-de-sarcofagos",
-      "campeao-do-tumulo"
-    ],
-    "ciclo": 2
+    "dominioAte": 8
   },
   "Comando": {
     "id": "comando",
@@ -523,13 +484,14 @@
     "status2024": "ok",
     "itemValidacao": "M17",
     "origens": [
-      "classe"
+      "dominio"
     ],
     "resumo": "+2 de CA numa criatura.",
     "resolucao": {
       "tipo": "automatico"
     },
-    "material": "um pergaminho com texto sagrado"
+    "material": "um pergaminho com texto sagrado",
+    "dominioDesde": 9
   },
   "Proteção Contra o Bem e o Mal": {
     "id": "protecao-contra-o-bem-e-o-mal",
@@ -688,7 +650,8 @@
         "texto": "36 m"
       },
       "escola": "Transmutação"
-    }
+    },
+    "dominioAte": 8
   },
   "Raio do Enfraquecimento": {
     "id": "raio-do-enfraquecimento",
@@ -716,7 +679,8 @@
         "atributo": "con"
       },
       "resumo": "CON ou desvantagem em FOR e −1d8 em cada dano que causar."
-    }
+    },
+    "dominioAte": 8
   },
   "Repouso Gentil": {
     "id": "repouso-gentil",
@@ -747,22 +711,6 @@
       "ritual": true
     }
   },
-  "Taxidermia de Ehzra": {
-    "id": "taxidermia-de-ehzra",
-    "nome": "Taxidermia de Ehzra",
-    "tags": [
-      "utilidade",
-      "mortos-vivos"
-    ],
-    "fonte": "Homebrew",
-    "listaClerigo": false,
-    "status2024": "homebrew",
-    "itemValidacao": "M26",
-    "origens": [
-      "classe"
-    ],
-    "resumo": "Sem anotação no grimório."
-  },
   "Animar Morto": {
     "id": "animar-morto",
     "nome": "Animar Morto",
@@ -785,12 +733,8 @@
     },
     "alvosPorCiclo": 2,
     "material": "uma gota de sangue, um pedaço de carne e uma pitada de pó de osso",
-    "relacionadas": [
-      "fio-da-obediencia",
-      "batedores-de-sarcofagos",
-      "campeao-do-tumulo",
-      "despelar"
-    ]
+    "relacionadas": [],
+    "dominioAte": 8
   },
   "Aura de Vitalidade": {
     "id": "aura-de-vitalidade",
@@ -1043,7 +987,8 @@
         "porCiclo": "1d6",
         "condicao": "você recupera metade do dano causado"
       }
-    ]
+    ],
+    "dominioAte": 8
   },
   "Impor Maldição": {
     "id": "impor-maldicao",
@@ -1123,7 +1068,7 @@
     "status2024": "ok",
     "itemValidacao": "M38",
     "origens": [
-      "classe"
+      "dominio"
     ],
     "resumo": "Guardião espectral fere inimigos que se aproximam.",
     "resolucao": {
@@ -1137,7 +1082,8 @@
         "tipo": "radiante",
         "condicao": "inimigo a até 3 m; some após causar 60 de dano no total"
       }
-    ]
+    ],
+    "dominioDesde": 9
   },
   "Banishment": {
     "id": "banimento",
@@ -1190,7 +1136,8 @@
     ],
     "v2024": {
       "texto": "Sem exceção para mortos-vivos e constructos. Criatura Planta falha automaticamente (sem dano máximo)."
-    }
+    },
+    "dominioAte": 8
   },
   "Ala da Morte": {
     "id": "ala-da-morte",
@@ -1210,110 +1157,7 @@
     "resumo": "A primeira queda a 0 PV vira 1 PV.",
     "resolucao": {
       "tipo": "automatico"
-    }
-  },
-  "Campeão do Túmulo": {
-    "id": "campeao-do-tumulo",
-    "nome": "Campeão do Túmulo",
-    "tags": [
-      "buff",
-      "mortos-vivos"
-    ],
-    "fonte": "Homebrew",
-    "listaClerigo": false,
-    "status2024": "homebrew",
-    "itemValidacao": "M42",
-    "origens": [
-      "classe"
-    ],
-    "cicloNota": "5º ciclo: só pode ser conjurada a partir do nível 9.",
-    "resumo": "Um morto-vivo vira campeão: PV ×3, +3 CA, +2d8 necrótico.",
-    "resolucao": {
-      "tipo": "automatico"
     },
-    "dano": [
-      {
-        "rotulo": "Ataques do campeão",
-        "dados": "2d8",
-        "tipo": "necrotico"
-      },
-      {
-        "rotulo": "Explosão ao cair a 0 PV",
-        "dados": "4d10",
-        "tipo": "necrotico",
-        "condicao": "CON, raio de 3 m, 1 vez por combate"
-      }
-    ],
-    "relacionadas": [
-      "animar-morto",
-      "fio-da-obediencia"
-    ]
-  },
-  "Despelar": {
-    "id": "despelar",
-    "nome": "Despelar",
-    "tags": [
-      "utilidade",
-      "mortos-vivos"
-    ],
-    "fonte": "Homebrew",
-    "listaClerigo": false,
-    "status2024": "homebrew",
-    "itemValidacao": "M43",
-    "origens": [
-      "grimorio"
-    ],
-    "resumo": "Deixa um cadáver só nos ossos, pronto para animar.",
-    "resolucao": {
-      "tipo": "automatico"
-    },
-    "relacionadas": [
-      "animar-morto"
-    ]
-  },
-  "Minguar Ossos": {
-    "id": "minguar-ossos",
-    "nome": "Minguar Ossos",
-    "tags": [
-      "utilidade",
-      "mortos-vivos"
-    ],
-    "fonte": "Homebrew",
-    "listaClerigo": false,
-    "status2024": "homebrew",
-    "itemValidacao": "M45",
-    "origens": [
-      "grimorio"
-    ],
-    "resumo": "Encolhe um cadáver ou morto-vivo para 1/5 do tamanho.",
-    "resolucao": {
-      "tipo": "automatico"
-    },
-    "relacionadas": [
-      "bolsa-de-ossos"
-    ]
-  },
-  "Bolsa de Ossos": {
-    "id": "bolsa-de-ossos",
-    "nome": "Bolsa de Ossos",
-    "tags": [
-      "utilidade",
-      "mortos-vivos"
-    ],
-    "fonte": "Homebrew",
-    "listaClerigo": false,
-    "status2024": "homebrew",
-    "itemValidacao": "M44",
-    "origens": [
-      "grimorio"
-    ],
-    "resumo": "Guarda um morto-vivo desmontado num saco de até 2 kg.",
-    "resolucao": {
-      "tipo": "automatico"
-    },
-    "relacionadas": [
-      "minguar-ossos",
-      "animar-morto"
-    ]
+    "dominioAte": 8
   }
 }

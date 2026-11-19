@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.4.0 (19/11/2026)
+
+- Grimório revisto: saem Necropsia, Taxidermia de Ehzra, Batedores de Sarcófagos, Fio da Obediência, Despelar, Minguar Ossos, Bolsa de Ossos e Campeão do Túmulo. Ficam Lâmina Necrótica e Intenção Mortal.
+- Magias novas homebrew: Ferida Aberta (Open Wounds), Ainda Não e Égide do Ocaso.
+- Magias novas oficiais: Palavra Radiante, Imobilizar Pessoa, Auxílio, Revivificar, Lança de Prata de Laeral, Nova Sagrada, Horror Psíquico e Aura de Pureza.
+- Subir para o nível 9 troca o Domínio da Morte pelo Domínio da Disciplina: entram Raio Sagrado, Expiação e Barreira Luminosa, e as magias de domínio da Disciplina. Saem Ceifador, Toque da Morte e Morte Inescapável.
+
 ## 0.3.3 (17/11/2026)
 
 - Fumaça 50% mais rápida e mais densa perto das bordas, chegando ao preto na linha da tela.

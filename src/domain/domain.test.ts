@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { carregarRegras } from './data';
 import {
+  regrasNoNivel, dominioNoNivel,
   cdMagia, ataqueMagia, pericia, salvaguarda, custoMana, danoMagia, curaMagia, magia, podeConjurar, magiaEfetiva,
   percepcaoPassiva, type Regras,
 } from './rules';
@@ -65,10 +66,9 @@ describe('mana', () => {
   });
   it('bloqueia ciclo acima do nível e mana insuficiente', () => {
     const base = { nivel: 8, mana: 44, ciclosAltosUsados: [] };
-    expect(podeConjurar(r, base, magia(r, 'campeao-do-tumulo'), 5).ok).toBe(false);
-    expect(podeConjurar(r, { ...base, nivel: 9 }, magia(r, 'campeao-do-tumulo'), 5).ok).toBe(true);
+    expect(podeConjurar(r, base, magia(r, 'circulo-de-poder'), 5).ok).toBe(false);
+    expect(podeConjurar(r, { ...base, nivel: 9 }, magia(r, 'circulo-de-poder'), 5).ok).toBe(true);
     expect(podeConjurar(r, { ...base, mana: 4 }, magia(r, 'guardioes-espirituais'), 3).ok).toBe(false);
-    expect(podeConjurar(r, base, magia(r, 'necropsia'), 0).ok).toBe(false);
   });
 });
 
@@ -222,12 +222,15 @@ describe('subida de nível 8 para 9', () => {
     expect(mudou('Ciclo máximo')).toMatchObject({ antes: '4º', depois: '5º' });
     expect(mudou('Espaços de magia')).toMatchObject({ antes: '4/3/3/2', depois: '4/3/3/3/1' });
     expect(mudou('Magias preparadas')).toMatchObject({ antes: '12', depois: '14' });
-    expect(mudou('Toque da Morte')).toMatchObject({ antes: '21', depois: '23' });
+    expect(mudou('Toque da Morte')).toMatchObject({ antes: '21', depois: 'sai com o domínio' });
     expect(mudou('Truques conhecidos')).toBeUndefined();
     expect(g.pvMedio).toBe(7);
     expect(g.featuresNovas).toEqual([]);
-    expect(g.magiasLiberadas.map((m) => m.id)).toContain('campeao-do-tumulo');
-    expect(g.magiasDominioNovas).toHaveLength(2);
+    expect(g.magiasLiberadas.map((m) => m.id)).toContain('circulo-de-poder');
+    expect(g.magiasDominioNovas).toHaveLength(10);
+    expect(g.dominioNovo).toBe('Domínio da Disciplina');
+    expect(g.dominioSai).toEqual(expect.arrayContaining(['Ceifador', 'Toque da Morte', 'Morte Inescapável']));
+    expect(g.subclasseNova).toEqual(['Raio Sagrado', 'Expiação', 'Barreira Luminosa']);
     expect(g.truquesEscalados).toEqual([]);
   });
 
@@ -290,11 +293,6 @@ describe('decisões de 29/09/2026 aplicadas nos dados reais', () => {
     expect(ex('manto-espiritual', 5)).toEqual(['2d8']);
     expect(ex('intencao-mortal', 5)).toEqual(['2d8']);
   });
-  it('Batedores e Fio no 2º ciclo (M14, M15)', () => {
-    expect(magia(real, 'batedores-de-sarcofagos').ciclo).toBe(2);
-    expect(magia(real, 'fio-da-obediencia').ciclo).toBe(2);
-    expect(custoMana(real, magia(real, 'fio-da-obediencia'))).toBe(3);
-  });
   it('Canalizar Divindade com 3 usos e Centelha Divina visível (H1, H2)', () => {
     const s = estadoInicial(real);
     expect(recursoRestante(real, s, 'canalizar')).toMatchObject({ max: 3, restante: 3 });
@@ -310,5 +308,30 @@ describe('backup', () => {
   it('aceita backup atual', () => {
     const b = migrar({ app: 'ehzra-hub', schemaVersion: 1, exportadoEm: 'x', eventos: [env({ t: 'dano', valor: 3 })] });
     expect(b.eventos).toHaveLength(1);
+  });
+});
+
+describe('troca de domínio no nível 9', () => {
+  const ids = (xs: { id: string }[]) => xs.map((x) => x.id);
+  const n8 = regrasNoNivel(r, 8);
+  const n9 = regrasNoNivel(r, 9);
+  it('no 8 vale o Domínio da Morte', () => {
+    expect(ids(n8.habilidades)).toEqual(expect.arrayContaining(['ceifador', 'toque-da-morte', 'morte-inescapavel']));
+    expect(ids(n8.habilidades)).not.toContain('barreira-luminosa');
+    expect(n8.magias.find((m) => m.id === 'praga')?.origens).toContain('dominio');
+    expect(n8.magias.find((m) => m.id === 'raio-guia')?.origens).toEqual(['classe']);
+    expect(ids(n8.magias)).not.toContain('pele-de-pedra'); // fora da lista de clérigo, só pelo domínio
+    expect(dominioNoNivel(r, 8)).toBe('Domínio da Morte');
+  });
+  it('no 9 vale o Domínio da Disciplina', () => {
+    expect(ids(n9.habilidades)).toEqual(expect.arrayContaining(['raio-sagrado', 'expiacao', 'barreira-luminosa']));
+    expect(ids(n9.habilidades)).not.toContain('toque-da-morte');
+    expect(ids(n9.habilidades)).not.toContain('penitencia-suprema');
+    expect(n9.magias.find((m) => m.id === 'raio-guia')?.origens).toEqual(['dominio']);
+    expect(n9.magias.find((m) => m.id === 'pele-de-pedra')?.origens).toEqual(['dominio']);
+    expect(ids(n9.magias)).not.toContain('praga'); // saiu do domínio e não está na lista de clérigo
+    expect(n9.magias.find((m) => m.id === 'ala-da-morte')?.origens).toEqual(['ceifadora']);
+    expect(n9.magias.find((m) => m.id === 'cegueira-e-surdez')?.origens).toEqual(['classe']);
+    expect(dominioNoNivel(r, 9)).toBe('Domínio da Disciplina');
   });
 });

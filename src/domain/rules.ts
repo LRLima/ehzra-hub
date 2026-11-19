@@ -11,6 +11,8 @@ export interface Regras {
   progressao: ClassProgression;
   homebrew: HomebrewRules;
   magias: Spell[];
+  /** Todas as magias do grimório, inclusive as indisponíveis no nível (para abrir links e playbooks antigos). */
+  grimorio?: Spell[];
   habilidades: Feature[];
   condicoes: Condition[];
   playbooks: Playbook[];
@@ -73,8 +75,31 @@ export function habilidadeEfetiva(r: Regras, f: Feature): Feature {
 export const habilidadeVisivel = (r: Regras, f: Feature) =>
   !f.somenteSeAprovado || r.character.aprovacoes2024.includes(f.id);
 
+/**
+ * As regras como valem num nível: habilidades fora da faixa de nível somem, e
+ * magias de domínio fora da faixa viram magia comum da lista (ou somem, se não
+ * estiverem na lista de clérigo). É assim que a troca de domínio acontece.
+ */
+export function regrasNoNivel(r: Regras, nivel: number): Regras {
+  const magias = r.magias.flatMap((s) => {
+    const foraDoDominio = (s.dominioDesde !== undefined && nivel < s.dominioDesde) || (s.dominioAte !== undefined && nivel > s.dominioAte);
+    if (!foraDoDominio || !s.origens.includes('dominio')) return [s];
+    const origens = s.origens.filter((o) => o !== 'dominio');
+    if (s.listaClerigo && origens.length === 0) origens.push('classe');
+    return origens.length ? [{ ...s, origens }] : [];
+  });
+  const habilidades = r.habilidades.filter((f) => (f.nivelMin ?? 1) <= nivel && nivel <= (f.nivelMax ?? 20));
+  return { ...r, magias, grimorio: r.grimorio ?? r.magias, habilidades };
+}
+
+/** Nome do domínio no nível: o último declarado na progressão até ali. */
+export function dominioNoNivel(r: Regras, nivel: number): string | null {
+  for (let n = nivel; n >= 1; n--) { const d = r.progressao.niveis[n - 1]?.dominio; if (d) return d; }
+  return null;
+}
+
 export const magia = (r: Regras, id: string) => {
-  const s = r.magias.find((m) => m.id === id);
+  const s = r.magias.find((m) => m.id === id) ?? r.grimorio?.find((m) => m.id === id);
   if (!s) throw new Error(`Magia desconhecida: ${id}`);
   return magiaEfetiva(r, s);
 };

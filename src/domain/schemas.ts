@@ -106,6 +106,9 @@ export const Spell = SpellMecanica.extend({
   descricaoCompleta: z.string().nullable(), // markdown fiel ao original
   notasPessoais: z.string().optional(),
   relacionadas: z.array(z.string()).default([]),
+  /** Magia de domínio só entre estes níveis de clérigo (troca de domínio). Fora deles vale como magia comum da lista, se estiver nela. */
+  dominioDesde: z.number().int().optional(),
+  dominioAte: z.number().int().optional(),
   /** Versão 2024. Só entra em vigor se o id estiver em character.aprovacoes2024. */
   // Sem .default() aqui: um patch só pode trocar o que ele declara (senão "dano: []" apagaria o dano).
   v2024: SpellMecanica.extend({
@@ -136,6 +139,9 @@ export const Feature = z.object({
   somenteSeAprovado: z.boolean().default(false),
   /** Gasta 1 Inspiração ao usar (o Epitáfio). */
   custoInspiracao: z.boolean().default(false),
+  /** Só vale entre estes níveis (habilidades do domínio antigo e do novo). */
+  nivelMin: z.number().int().optional(),
+  nivelMax: z.number().int().optional(),
   v2024: z.object({
     texto: z.string(),
     resumo: z.string().optional(),
@@ -200,6 +206,8 @@ export const ClassLevel = z.object({
   preparadas: z.number().int(),
   espacos: z.array(z.number().int()).length(9),
   subclasse: z.array(z.string()).default([]),
+  /** Nome do domínio a partir deste nível, quando ele muda. */
+  dominio: z.string().optional(),
   asi: z.boolean().default(false),
 });
 export const ClassProgression = z.object({

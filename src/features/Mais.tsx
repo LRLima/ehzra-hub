@@ -270,7 +270,8 @@ function SubirNivel() {
         ))}
         {g.featuresNovas.length > 0 && <p style={{ marginTop: 10 }}><b>Habilidades de classe:</b> {g.featuresNovas.join(', ')}</p>}
         {g.featuresNovas.length === 0 && <p className="faint" style={{ marginTop: 10 }}>Nenhuma habilidade nova de classe neste nível.</p>}
-        {g.subclasseNova.length > 0 && <p><b>Domínio da Morte:</b> {g.subclasseNova.join(', ')}</p>}
+        {g.dominioNovo && <p><b>Troca de domínio:</b> {g.dominioNovo}.{g.dominioSai.length > 0 && <> Saem {g.dominioSai.join(', ')}.</>}</p>}
+        {g.subclasseNova.length > 0 && <p><b>{g.dominio ?? 'Domínio'}:</b> {g.subclasseNova.join(', ')}</p>}
         {g.magiasDominioNovas.length > 0 && <p><b>Magias de domínio novas:</b> {g.magiasDominioNovas.join(', ')}</p>}
         {g.truquesEscalados.map((t) => <p key={t.nome}><b>{t.nome}:</b> {t.antes} → {t.depois}</p>)}
         {g.preparadasExtras > 0 && <p><b>+{g.preparadasExtras}</b> magias preparadas.</p>}
